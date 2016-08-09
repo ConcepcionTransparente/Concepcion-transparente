@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Xray = require('x-ray');
 var x = Xray();
+var time = require('node-tictoc');
 
 
 var routes = require('./routes/index');
@@ -14,21 +15,21 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
+ app.set('views', path.join(__dirname, 'views'));
+ app.set('view engine', 'jade');
 //
-// app.use(express.static(__dirname + '/public'));
-// app.set('views', __dirname + '/views');
+ app.use(express.static(__dirname + '/public'));
+ app.set('views', __dirname + '/views');
 // app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'html');
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'jade');
 
-app.use(express.static(__dirname + '/public'));
-app.set('views', __dirname + '/views');
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+// app.use(express.static(__dirname + '/public'));
+// app.set('views', __dirname + '/views');
+// app.engine('html', require('ejs').renderFile);
+// app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -72,12 +73,32 @@ app.use(function(err, req, res, next) {
   });
 });
 
-x('http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio=2016', 'body tr.textoTabla',[{
-  CUILproveedor :'td',
-  RazonSocial: 'td:nth-of-type(1)',
-  Importe: 'td:nth-of-type(6)',
-}])
-  // .paginate('.next_page@href')
-  // .limit(3)
-  .write('public/results.json')
+//Scraping
+//2016/proveedor
+var url='http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio=2016';
+
+function xrayfunction(val) {
+    // console.log("Iteracion "+ val);
+    x( url , 'body tr.textoTabla', [{
+            name: 'td',
+            SocialR: 'td:nth-of-type(1)',
+            price: 'td:nth-of-type(6)'
+        }])(function() {
+            console.log(val);
+        })
+        .write('public/results_' + val + '.json');
+
+}
+
+//Midiendo el tiempo, hay que llevar el scrap a un controller
+  time.tic();
+     for (var i = 0; i < 1; i++) {
+         xrayfunction(i);
+     }
+  time.toc();
+
+
+
+
+
 module.exports = app;

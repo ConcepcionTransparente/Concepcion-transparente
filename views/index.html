@@ -2,108 +2,133 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Dashboard</title>
-    <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-      <!--Import materialize.css-->
-    <!-- <link type="text/css" rel="stylesheet" href="../stylesheets/materialize.min.css"  media="screen,projection"/> -->
-    <link type="text/css" rel="stylesheet" href="../stylesheets/style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>DCU DAshboard</title>
+
+    <!-- CSS  -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/index.css" />
     <script src="//d3js.org/d3.v3.min.js"></script>
   </head>
 
 
   <body>
-    <h1>Datos Concepcion</h1>
+        <header class="container">
+          <h1>CONCEPCIÓN DEL URUGUAY</h1>
+          <h3>Visualización de datos publicos</h3>
+          <hr>
+        </header>
 
-    <script type="text/javascript">
-    /*var dataset = [
-                  [ 5,     20 ],
-                  [ 480,   90 ],
-                  [ 250,   50 ],
-                  [ 100,   33 ],
-                  [ 330,   95 ],
-                  [ 410,   12 ],
-                  [ 475,   44 ],
-                  [ 25,    67 ],
-                  [ 85,    21 ],
-                  [ 220,   88 ]
-              ];
+        <div class="container">
+          <section>
+            <h3>PROVEEDORES 2016</h3>
+            <div class="paint"></div>
+            <hr>
+            <br><br><br><br>
+          </section>
+        </div>
 
-        var w = 500;
-        var h = 100;
-        var svg = d3.select("body")
-                .append("svg")
-                .attr("width", w)   // <-- Acá
-                .attr("height", h); // <-- y aca!
 
-        svg.selectAll("circle")
-        .data(dataset)
-        .enter()
-        .append("circle")
-        .attr("fill","blue")
-        .attr("cx", function(d) {
-            return d[0];
-        })
-        .attr("cy", function(d) {
-            return d[1];
-        })
-        .attr("r", 5)
-        .attr("r", function(d) {
-        return Math.sqrt(h - d[1]);
-        });
+        <div class="container">
+          <div class="section">
 
-        */
-        </script>
-        <script>
+            <!--   Icon Section   -->
+            <div class="row">
+              <div class="col s12 m12">
+                <h3>INVERSIONES Y GASTOS DEL PRESUPUESTO</h3>
+              </div>
+              <div class="col s12 m6">
+                <div class="icon-block">
 
-          d3.json("results.json",function(data){
-            function randomcolor(){
-	             return "#" + Math.random().toString(16).slice(2, 8) + "";
-             }
-            var w = 900;
-            var h = 700;
-            var svg = d3.select("body")
-                    .append("svg")
-                    .attr("width", w)   // <-- Acá
-                    .attr("height", h); // <-- y aca!
-                    svg.selectAll("circle")
-                    .data(data)
-                    .enter()
-                      .append("circle")
-                      .attr("fill",function(){return randomcolor()})
-                      .attr("cx", function(d){
-                        // return d.presupuesto;
-                        var cx=Math.floor((Math.random() * 100) + 100);
-                        return cx;
-                      })
-                      .attr("cy", function(d){
-                        var cy=Math.floor((Math.random() * 100) + 200);
-                        return cy;
-                      })
-                      .attr("r", function(d){
-                        var index = d.Importe.indexOf(',');
-                        var indexpoint = d.Importe.indexOf('.');
-                        var string1 = d.Importe.substring(0,indexpoint);
-                        var string2 = d.Importe.substring(indexpoint+1,index);
-                        var string = string1.concat(string2);
-                        var radius = parseInt(string) /10000;
-                        console.debug("Index:" +index);
-                        console.debug("String:" +string);
-                        console.debug("Radius:" +radius);
-                        return radius;
-                      });
 
-                    svg.selectAll("text")
-                    .data(data)
-                    .enter()
-                      append("text")
-                      .attr("fill","black")
-                      .attr("font-weght",100)
-                      .attr("y",100)
-                      .text(function(d){return d.name})
-          })//end d3.json
+                  <p class="light">
+                    <svg width="auto" height="150">
+                      <circle cx="50%" cy="50%" r="70" fill="#880e4f" />
+                      <text x="40%" y="60%" font-family="sans-serif" font-size="40px" font-weight="bold" fill="white">57%</text>
+                    </svg>
+                    <p class="fixedprice">
+                      <span>$220</span>.000.000 <br>Millones <br>Destinado a sueldos
+                    </p>
+                  </p>
+                </div>
+              </div>
 
-        </script>
+              <div class="col s12 m6">
+                <div class="icon-block">
+                  <p class="light">
+                    <svg width="auto" height="150">
+                      <circle cx="50%" cy="50%" r="70" fill="#880e4f" />
+                      <text x="40%" y="60%" font-family="sans-serif" font-size="40px" font-weight="bold" fill="white">43%</text>
+                    </svg>
+                    <p class="fixedprice">
+                      <span>$164</span>.000.000 <br>Millones <br>Otros gastos
+                    </p>
+                  </p>
+                </div>
+              </div>
 
+            </div>
+
+          </div>
+          <br><br>
+
+        </div>
+
+
+
+        </div>
+
+
+        <footer>
+          <hr>
+          <p>
+          Gasto Público de Concepción del Uruguay - <span>Copyright (c) 2016 Copyright All Rights Reserved.</span>
+          </p>
+        </footer>
+
+
+        <script type="text/javascript">
+            var width = 900,
+                height = 600;
+
+            var canvas = d3.select("div.paint").append("svg")
+                  .attr("width", width)
+                  .attr("height",height)
+                  .append("g")
+                    //.attr("transform","translate(50, 50)")
+                    ;
+
+            var pack = d3.layout.pack()
+                  .size([width, height - 50])
+                  .padding(1);
+
+            d3.json("mydata.json",function(data){
+              var nodes = pack.nodes(data);
+              // Evito el nodo raiz
+              nodes.shift();
+
+              var node = canvas.selectAll(".node")
+                  .data(nodes)
+                  .enter()
+                  .append("g")
+                    .attr("class","node")
+                    .attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";});
+
+              node.append("circle")
+                    .attr("r",function(d){return d.r; })
+                    .attr("fill","#e91e63")
+                    .attr("opacity",function(){var opacity=0;opacity=Math.random();return opacity});
+            });
+            </script>
+
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../bower_components/materialize/dist/materialize.min.js"></script>
+        <script src="../bower_components/materialize/dist/js/init.js"></script>
 
   </body>
 </html>
