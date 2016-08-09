@@ -1,0 +1,212 @@
+[
+  {
+    "category": "CANT",
+    "categotyName": "CANTERA",
+    "numberOfVendors": "2",
+    "amount": "240,00"
+  },
+  {
+    "category": "CARP",
+    "categotyName": "CARPINTERIA",
+    "numberOfVendors": "1",
+    "amount": "2.100,00"
+  },
+  {
+    "category": "COMB",
+    "categotyName": "COMBUSTIBLE",
+    "numberOfVendors": "85",
+    "amount": "102.458,92"
+  },
+  {
+    "category": "COME",
+    "categotyName": "COMESTIBLES",
+    "numberOfVendors": "33",
+    "amount": "5.842,49"
+  },
+  {
+    "category": "COMU",
+    "categotyName": "COMUNICACION",
+    "numberOfVendors": "119",
+    "amount": "18.166,26"
+  },
+  {
+    "category": "ELEC",
+    "categotyName": "ELECTRICIDAD",
+    "numberOfVendors": "34",
+    "amount": "37.288,12"
+  },
+  {
+    "category": "ELED",
+    "categotyName": "ELECTRODOMÉSTICO",
+    "numberOfVendors": "3",
+    "amount": "6.652,20"
+  },
+  {
+    "category": "FECO",
+    "categotyName": "FERRETERIA/CORRALON",
+    "numberOfVendors": "66",
+    "amount": "72.536,32"
+  },
+  {
+    "category": "FORR",
+    "categotyName": "FORRAJERIA",
+    "numberOfVendors": "5",
+    "amount": "2.384,50"
+  },
+  {
+    "category": "GASE",
+    "categotyName": "GAS ENVASADO/NATURAL",
+    "numberOfVendors": "3",
+    "amount": "588,00"
+  },
+  {
+    "category": "HERR",
+    "categotyName": "HERRAMIENTAS",
+    "numberOfVendors": "15",
+    "amount": "24.513,64"
+  },
+  {
+    "category": "IMPR",
+    "categotyName": "IMPRENTA",
+    "numberOfVendors": "4",
+    "amount": "46.837,24"
+  },
+  {
+    "category": "INFO",
+    "categotyName": "INFORMATICA",
+    "numberOfVendors": "57",
+    "amount": "19.751,88"
+  },
+  {
+    "category": "USIN",
+    "categotyName": "INSUMOS DE USO INTERNO",
+    "numberOfVendors": "7",
+    "amount": "178.948,94"
+  },
+  {
+    "category": "INHO",
+    "categotyName": "INSUMOS HOSPITALARIOS",
+    "numberOfVendors": "2",
+    "amount": "10.062,00"
+  },
+  {
+    "category": "LIBR",
+    "categotyName": "LIBRERIA",
+    "numberOfVendors": "46",
+    "amount": "29.990,20"
+  },
+  {
+    "category": "LIMP",
+    "categotyName": "LIMPIEZA",
+    "numberOfVendors": "14",
+    "amount": "8.613,75"
+  },
+  {
+    "category": "LUBR",
+    "categotyName": "LUBRICANTES",
+    "numberOfVendors": "5",
+    "amount": "20.005,00"
+  },
+  {
+    "category": "MAQU",
+    "categotyName": "MAQUINARIA",
+    "numberOfVendors": "1",
+    "amount": "73.500,00"
+  },
+  {
+    "category": "NEUM",
+    "categotyName": "NEUMATICOS",
+    "numberOfVendors": "1",
+    "amount": "14.052,00"
+  },
+  {
+    "category": "PINT",
+    "categotyName": "PINTURERIA",
+    "numberOfVendors": "1",
+    "amount": "902,00"
+  },
+  {
+    "category": "PROF",
+    "categotyName": "PROFESIONALES",
+    "numberOfVendors": "2",
+    "amount": "1.713,00"
+  },
+  {
+    "category": "PUBL",
+    "categotyName": "PUBLICIDAD",
+    "numberOfVendors": "29",
+    "amount": "51.011,63"
+  },
+  {
+    "category": "REIN",
+    "categotyName": "REPARACION INFORMATICA",
+    "numberOfVendors": "11",
+    "amount": "5.873,80"
+  },
+  {
+    "category": "REVE",
+    "categotyName": "REPARACION VEHICULAR",
+    "numberOfVendors": "3",
+    "amount": "4.385,00"
+  },
+  {
+    "category": "REPU",
+    "categotyName": "REPUESTOS",
+    "numberOfVendors": "22",
+    "amount": "14.703,99"
+  },
+  {
+    "category": "SLAB",
+    "categotyName": "SEGURIDAD INDUSTRIAL",
+    "numberOfVendors": "4",
+    "amount": "3.200,40"
+  },
+  {
+    "category": "SECO",
+    "categotyName": "SEGUROS Y COMISIONES",
+    "numberOfVendors": "12",
+    "amount": "8.679,02"
+  },
+  {
+    "category": "DESA",
+    "categotyName": "SERVICIO DESAGOTE",
+    "numberOfVendors": "1",
+    "amount": "1.900,00"
+  },
+  {
+    "category": "SELE",
+    "categotyName": "SERVICIO ELECTRICO",
+    "numberOfVendors": "5",
+    "amount": "13.531,94"
+  },
+  {
+    "category": "SOPU",
+    "categotyName": "SERVICIO OBRA PUBLICA",
+    "numberOfVendors": "5",
+    "amount": "398.301,00"
+  },
+  {
+    "category": "SEPE",
+    "categotyName": "SERVICIO SEPELIO",
+    "numberOfVendors": "11",
+    "amount": "49.000,00"
+  },
+  {
+    "category": "CONS",
+    "categotyName": "SERVICIOS CONSTRUCCION",
+    "numberOfVendors": "1",
+    "amount": "78.000,00"
+  },
+  {
+    "category": "SSEG",
+    "categotyName": "SISTEMA DE SEGURIDAD",
+    "numberOfVendors": "1",
+    "amount": "1.720,00"
+  },
+  {
+    "category": "TRPA",
+    "categotyName": "TRANSPORTE",
+    "numberOfVendors": "1",
+    "amount": "651,00"
+  }
+]

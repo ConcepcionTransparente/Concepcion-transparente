@@ -11,7 +11,13 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../css/index.css" />
+
+    <!-- Load c3.css -->
+    <link href="/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
+
+    <!-- Load d3.js and c3.js -->
     <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="/c3/htdocs/js/c3.min.js"></script>
   </head>
 
 
@@ -19,23 +25,33 @@
         <header class="container">
           <h1>CONCEPCIÓN DEL URUGUAY</h1>
           <h3>Visualización de datos publicos</h3>
-          <hr>
+          <div class="divider"></div>
         </header>
 
         <div class="container">
           <section>
             <h3>PROVEEDORES 2016</h3>
             <div class="paint"></div>
-            <hr>
+            <div class="divider"></div>
             <br><br><br><br>
           </section>
         </div>
 
+        <div class="container">
+          <div class="article">
+            <div id="lineschart" class=""></div>
+          </div>
+          <div class="divider">
+          </div>
+          <div class="article">
+            <div id="barschart"></div>
+          </div>
+        </div>
 
+        <div class="divider"></div>
         <div class="container">
           <div class="section">
-
-            <!--   Icon Section   -->
+          <!--   Icon Section   -->
             <div class="row">
               <div class="col s12 m12">
                 <h3>INVERSIONES Y GASTOS DEL PRESUPUESTO</h3>
@@ -45,9 +61,9 @@
 
 
                   <p class="light">
-                    <svg width="auto" height="150">
+                    <svg width="150" height="150">
                       <circle cx="50%" cy="50%" r="70" fill="#880e4f" />
-                      <text x="40%" y="60%" font-family="sans-serif" font-size="40px" font-weight="bold" fill="white">57%</text>
+                      <text x="25%" y="60%" font-family="sans-serif" font-size="40px" font-weight="bold" fill="white">57%</text>
                     </svg>
                     <p class="fixedprice">
                       <span>$220</span>.000.000 <br>Millones <br>Destinado a sueldos
@@ -59,9 +75,9 @@
               <div class="col s12 m6">
                 <div class="icon-block">
                   <p class="light">
-                    <svg width="auto" height="150">
+                    <svg width="150" height="150">
                       <circle cx="50%" cy="50%" r="70" fill="#880e4f" />
-                      <text x="40%" y="60%" font-family="sans-serif" font-size="40px" font-weight="bold" fill="white">43%</text>
+                      <text x="25%" y="60%" font-family="sans-serif" font-size="40px" font-weight="bold" fill="white">43%</text>
                     </svg>
                     <p class="fixedprice">
                       <span>$164</span>.000.000 <br>Millones <br>Otros gastos
@@ -74,25 +90,92 @@
 
           </div>
           <br><br>
+        </div>
 
+        <div class="divider"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col s6">
+              <table>
+                <tr>
+                  <th>Año</th>
+                  <th>Cantidad de Contratados</th>
+                  <th>Importe</th>
+                </tr>
+                <tr>
+                  <td>2016</td>
+                  <td>7580</td>
+                  <td>102.555.353,64</td>
+                </tr>
+                <tr>
+                  <td>2015</td>
+                  <td>15207</td>
+                  <td>183.773.386,74</td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
 
 
 
-        </div>
 
 
         <footer>
-          <hr>
+          <div class="divider"></div>
           <p>
           Gasto Público de Concepción del Uruguay - <span>Copyright (c) 2016 Copyright All Rights Reserved.</span>
           </p>
         </footer>
 
 
+
+
+
+        <script>
+        var chart = c3.generate({
+            bindto: '#lineschart',
+            data: {
+              columns: [
+                ['data1', 30, 200, 100, 400, 150],
+                ['proveedor',220, 240, 270, 250, 280],
+                ['data4',180, 150, 300, 70, 120],
+                ['data5',200, 310, 150, 100, 180]
+              ]
+            }
+          });
+        </script>
+        <script>
+        var chart = c3.generate({
+              bindto: '#barschart',
+              data: {
+                columns: [
+                  ['data1', 30, 200, 100, 400, 150, 250],
+                  ['data2', 50, 20, 10, 40, 15, 25]
+                ],
+                axes: {
+                  data2: 'y2'
+                },
+                types: {
+                  data2: 'bar' // ADD
+                },
+                colors:{
+                  data2: 'lightgray'
+                }
+              },
+              axis: {
+                y: {
+                  label: {
+                    text: 'Y Label',
+                    position: 'outer-middle'
+                  }
+                }
+              }
+          });
+        </script>
         <script type="text/javascript">
             var width = 900,
-                height = 600;
+                height = 350;
 
             var canvas = d3.select("div.paint").append("svg")
                   .attr("width", width)
@@ -117,8 +200,27 @@
                     .attr("class","node")
                     .attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";});
 
+
               node.append("circle")
                     .attr("r",function(d){return d.r; })
+                    // .attr("r",function(d){
+                    //   console.log(d.value);
+                    //   var value=String(d.value);
+                    //   console.log(value);
+                    //   var index = value.indexOf(',');
+                    //   var indexpoint = value.indexOf('.');
+                    //   var string1 = value.substring(0,indexpoint);
+                    //   var string2 = value.substring(indexpoint+1,index);
+                    //   var string = string1.concat(string2);
+                    //   var radius = parseInt(string) /15000;
+                    //   console.log("index:"+index);
+                    //   console.log("indexpoint:"+indexpoint);
+                    //   console.log("strin1:"+strin1);
+                    //   console.log("string2:"+string2);
+                    //   console.log("string:"+string);
+                    //   console.log("Radius:" +radius);
+                    //   return radius;
+                    // })
                     .attr("fill","#e91e63")
                     .attr("opacity",function(){var opacity=0;opacity=Math.random();return opacity});
             });

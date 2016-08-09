@@ -1,0 +1,230 @@
+[
+  {
+    "category": "ALOJ",
+    "categotyName": "ALOJAMIENTO",
+    "numberOfVendors": "5",
+    "amount": "11.850,00"
+  },
+  {
+    "category": "CANT",
+    "categotyName": "CANTERA",
+    "numberOfVendors": "1",
+    "amount": "556,60"
+  },
+  {
+    "category": "CARP",
+    "categotyName": "CARPINTERIA",
+    "numberOfVendors": "3",
+    "amount": "899,42"
+  },
+  {
+    "category": "CERR",
+    "categotyName": "CERRAJERIA",
+    "numberOfVendors": "1",
+    "amount": "40,00"
+  },
+  {
+    "category": "COMB",
+    "categotyName": "COMBUSTIBLE",
+    "numberOfVendors": "85",
+    "amount": "145.382,02"
+  },
+  {
+    "category": "COME",
+    "categotyName": "COMESTIBLES",
+    "numberOfVendors": "18",
+    "amount": "23.677,25"
+  },
+  {
+    "category": "COMU",
+    "categotyName": "COMUNICACION",
+    "numberOfVendors": "80",
+    "amount": "89.777,89"
+  },
+  {
+    "category": "COHO",
+    "categotyName": "CORTESIA Y HOMENAJE",
+    "numberOfVendors": "1",
+    "amount": "380,00"
+  },
+  {
+    "category": "ELEC",
+    "categotyName": "ELECTRICIDAD",
+    "numberOfVendors": "41",
+    "amount": "94.922,83"
+  },
+  {
+    "category": "ELED",
+    "categotyName": "ELECTRODOMÉSTICO",
+    "numberOfVendors": "1",
+    "amount": "223,00"
+  },
+  {
+    "category": "FECO",
+    "categotyName": "FERRETERIA/CORRALON",
+    "numberOfVendors": "31",
+    "amount": "25.642,37"
+  },
+  {
+    "category": "GASE",
+    "categotyName": "GAS ENVASADO/NATURAL",
+    "numberOfVendors": "10",
+    "amount": "4.642,21"
+  },
+  {
+    "category": "GAST",
+    "categotyName": "GASTRONOMIA",
+    "numberOfVendors": "2",
+    "amount": "4.619,00"
+  },
+  {
+    "category": "HERR",
+    "categotyName": "HERRAMIENTAS",
+    "numberOfVendors": "3",
+    "amount": "1.825,11"
+  },
+  {
+    "category": "IMPR",
+    "categotyName": "IMPRENTA",
+    "numberOfVendors": "18",
+    "amount": "31.112,84"
+  },
+  {
+    "category": "INDU",
+    "categotyName": "INDUMENTARIA",
+    "numberOfVendors": "5",
+    "amount": "8.922,50"
+  },
+  {
+    "category": "INFO",
+    "categotyName": "INFORMATICA",
+    "numberOfVendors": "48",
+    "amount": "36.943,56"
+  },
+  {
+    "category": "USIN",
+    "categotyName": "INSUMOS DE USO INTERNO",
+    "numberOfVendors": "4",
+    "amount": "200.103,32"
+  },
+  {
+    "category": "INVE",
+    "categotyName": "INSUMOS VETERINARIOS",
+    "numberOfVendors": "1",
+    "amount": "22,00"
+  },
+  {
+    "category": "LIBR",
+    "categotyName": "LIBRERIA",
+    "numberOfVendors": "12",
+    "amount": "1.566,00"
+  },
+  {
+    "category": "LIMP",
+    "categotyName": "LIMPIEZA",
+    "numberOfVendors": "159",
+    "amount": "6.621,91"
+  },
+  {
+    "category": "LUBR",
+    "categotyName": "LUBRICANTES",
+    "numberOfVendors": "3",
+    "amount": "3.020,00"
+  },
+  {
+    "category": "MANT",
+    "categotyName": "MANTENIMIENTOS VARIOS",
+    "numberOfVendors": "2",
+    "amount": "3.690,00"
+  },
+  {
+    "category": "MOBI",
+    "categotyName": "MOBILIARIOS",
+    "numberOfVendors": "1",
+    "amount": "1.700,00"
+  },
+  {
+    "category": "OREV",
+    "categotyName": "ORGANIZACION DE EVENTOS",
+    "numberOfVendors": "11",
+    "amount": "44.946,00"
+  },
+  {
+    "category": "PINT",
+    "categotyName": "PINTURERIA",
+    "numberOfVendors": "14",
+    "amount": "3.727,29"
+  },
+  {
+    "category": "PROF",
+    "categotyName": "PROFESIONALES",
+    "numberOfVendors": "12",
+    "amount": "12.549,26"
+  },
+  {
+    "category": "PUBL",
+    "categotyName": "PUBLICIDAD",
+    "numberOfVendors": "15",
+    "amount": "19.340,50"
+  },
+  {
+    "category": "REIN",
+    "categotyName": "REPARACION INFORMATICA",
+    "numberOfVendors": "11",
+    "amount": "2.116,25"
+  },
+  {
+    "category": "REVE",
+    "categotyName": "REPARACION VEHICULAR",
+    "numberOfVendors": "4",
+    "amount": "6.518,40"
+  },
+  {
+    "category": "REPU",
+    "categotyName": "REPUESTOS",
+    "numberOfVendors": "38",
+    "amount": "40.007,82"
+  },
+  {
+    "category": "SLAB",
+    "categotyName": "SEGURIDAD INDUSTRIAL",
+    "numberOfVendors": "13",
+    "amount": "19.192,71"
+  },
+  {
+    "category": "SECO",
+    "categotyName": "SEGUROS Y COMISIONES",
+    "numberOfVendors": "3",
+    "amount": "4.371,54"
+  },
+  {
+    "category": "SELE",
+    "categotyName": "SERVICIO ELECTRICO",
+    "numberOfVendors": "45",
+    "amount": "403.246,22"
+  },
+  {
+    "category": "SOPU",
+    "categotyName": "SERVICIO OBRA PUBLICA",
+    "numberOfVendors": "11",
+    "amount": "734.147,53"
+  },
+  {
+    "category": "SEPE",
+    "categotyName": "SERVICIO SEPELIO",
+    "numberOfVendors": "1",
+    "amount": "3.800,00"
+  },
+  {
+    "category": "TRPA",
+    "categotyName": "TRANSPORTE",
+    "numberOfVendors": "2",
+    "amount": "3.192,00"
+  },
+  {
+    "category": "VIVE",
+    "categotyName": "VIVERO/FLORERIA",
+    "numberOfVendors": "1",
+    "amount": "900,00"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "year": "2016",
+    "numberOfVendors": "7580",
+    "totalamount": "102.555.353,64"
+  },
+  {
+    "year": "2015",
+    "numberOfVendors": "15207",
+    "totalamount": "183.773.386,74"
+  },
+  {
+    "year": "2014",
+    "numberOfVendors": "15786",
+    "totalamount": "112.546.975,19"
+  },
+  {
+    "year": "2013",
+    "numberOfVendors": "15593",
+    "totalamount": "74.059.448,26"
+  },
+  {
+    "year": "2012",
+    "numberOfVendors": "9672",
+    "totalamount": "38.184.262,95"
+  },
+  {
+    "year": "2011",
+    "numberOfVendors": "8665",
+    "totalamount": "39.306.552,26"
+  },
+  {
+    "year": "2010",
+    "numberOfVendors": "12092",
+    "totalamount": "19.025.989,38"
+  },
+  {
+    "year": "2009",
+    "numberOfVendors": "14775",
+    "totalamount": "15.642.558,50"
+  }
+]

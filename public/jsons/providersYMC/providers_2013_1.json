@@ -1,0 +1,290 @@
+[
+  {
+    "category": "ALOJ",
+    "categotyName": "ALOJAMIENTO",
+    "numberOfVendors": "6",
+    "amount": "4.516,00"
+  },
+  {
+    "category": "CANT",
+    "categotyName": "CANTERA",
+    "numberOfVendors": "6",
+    "amount": "290.117,21"
+  },
+  {
+    "category": "CARP",
+    "categotyName": "CARPINTERIA",
+    "numberOfVendors": "5",
+    "amount": "17.090,48"
+  },
+  {
+    "category": "CERR",
+    "categotyName": "CERRAJERIA",
+    "numberOfVendors": "1",
+    "amount": "350,00"
+  },
+  {
+    "category": "COMB",
+    "categotyName": "COMBUSTIBLE",
+    "numberOfVendors": "82",
+    "amount": "257.523,96"
+  },
+  {
+    "category": "COME",
+    "categotyName": "COMESTIBLES",
+    "numberOfVendors": "144",
+    "amount": "79.940,83"
+  },
+  {
+    "category": "COMU",
+    "categotyName": "COMUNICACION",
+    "numberOfVendors": "177",
+    "amount": "55.544,44"
+  },
+  {
+    "category": "COHO",
+    "categotyName": "CORTESIA Y HOMENAJE",
+    "numberOfVendors": "3",
+    "amount": "3.541,00"
+  },
+  {
+    "category": "DEPO",
+    "categotyName": "DEPORTES",
+    "numberOfVendors": "2",
+    "amount": "923,70"
+  },
+  {
+    "category": "ELEC",
+    "categotyName": "ELECTRICIDAD",
+    "numberOfVendors": "196",
+    "amount": "227.205,76"
+  },
+  {
+    "category": "ELED",
+    "categotyName": "ELECTRODOMÉSTICO",
+    "numberOfVendors": "3",
+    "amount": "2.226,74"
+  },
+  {
+    "category": "FECO",
+    "categotyName": "FERRETERIA/CORRALON",
+    "numberOfVendors": "211",
+    "amount": "227.171,80"
+  },
+  {
+    "category": "FORR",
+    "categotyName": "FORRAJERIA",
+    "numberOfVendors": "3",
+    "amount": "2.230,30"
+  },
+  {
+    "category": "GASE",
+    "categotyName": "GAS ENVASADO/NATURAL",
+    "numberOfVendors": "19",
+    "amount": "3.727,97"
+  },
+  {
+    "category": "GAST",
+    "categotyName": "GASTRONOMIA",
+    "numberOfVendors": "2",
+    "amount": "2.952,00"
+  },
+  {
+    "category": "GOME",
+    "categotyName": "GOMERIA",
+    "numberOfVendors": "8",
+    "amount": "53.620,00"
+  },
+  {
+    "category": "HERR",
+    "categotyName": "HERRAMIENTAS",
+    "numberOfVendors": "15",
+    "amount": "57.875,81"
+  },
+  {
+    "category": "IMPR",
+    "categotyName": "IMPRENTA",
+    "numberOfVendors": "26",
+    "amount": "127.755,46"
+  },
+  {
+    "category": "INDU",
+    "categotyName": "INDUMENTARIA",
+    "numberOfVendors": "15",
+    "amount": "23.996,50"
+  },
+  {
+    "category": "INFO",
+    "categotyName": "INFORMATICA",
+    "numberOfVendors": "31",
+    "amount": "13.755,22"
+  },
+  {
+    "category": "USIN",
+    "categotyName": "INSUMOS DE USO INTERNO",
+    "numberOfVendors": "15",
+    "amount": "95.933,46"
+  },
+  {
+    "category": "INHO",
+    "categotyName": "INSUMOS HOSPITALARIOS",
+    "numberOfVendors": "27",
+    "amount": "18.582,70"
+  },
+  {
+    "category": "LIBR",
+    "categotyName": "LIBRERIA",
+    "numberOfVendors": "19",
+    "amount": "7.779,50"
+  },
+  {
+    "category": "LIMP",
+    "categotyName": "LIMPIEZA",
+    "numberOfVendors": "102",
+    "amount": "5.091,77"
+  },
+  {
+    "category": "LUBR",
+    "categotyName": "LUBRICANTES",
+    "numberOfVendors": "18",
+    "amount": "36.052,93"
+  },
+  {
+    "category": "MANT",
+    "categotyName": "MANTENIMIENTOS VARIOS",
+    "numberOfVendors": "4",
+    "amount": "8.353,00"
+  },
+  {
+    "category": "MAQU",
+    "categotyName": "MAQUINARIA",
+    "numberOfVendors": "8",
+    "amount": "339.195,00"
+  },
+  {
+    "category": "MEDI",
+    "categotyName": "MEDICION",
+    "numberOfVendors": "1",
+    "amount": "50,00"
+  },
+  {
+    "category": "META",
+    "categotyName": "METALURGICA",
+    "numberOfVendors": "2",
+    "amount": "2.880,00"
+  },
+  {
+    "category": "MOBI",
+    "categotyName": "MOBILIARIOS",
+    "numberOfVendors": "2",
+    "amount": "57.923,65"
+  },
+  {
+    "category": "NEUM",
+    "categotyName": "NEUMATICOS",
+    "numberOfVendors": "9",
+    "amount": "10.660,90"
+  },
+  {
+    "category": "OREV",
+    "categotyName": "ORGANIZACION DE EVENTOS",
+    "numberOfVendors": "3",
+    "amount": "11.018,00"
+  },
+  {
+    "category": "PINT",
+    "categotyName": "PINTURERIA",
+    "numberOfVendors": "40",
+    "amount": "11.495,48"
+  },
+  {
+    "category": "POTA",
+    "categotyName": "POTABILIZACION",
+    "numberOfVendors": "4",
+    "amount": "273.121,50"
+  },
+  {
+    "category": "PROF",
+    "categotyName": "PROFESIONALES",
+    "numberOfVendors": "12",
+    "amount": "88.009,16"
+  },
+  {
+    "category": "PUBL",
+    "categotyName": "PUBLICIDAD",
+    "numberOfVendors": "50",
+    "amount": "67.682,24"
+  },
+  {
+    "category": "REIN",
+    "categotyName": "REPARACION INFORMATICA",
+    "numberOfVendors": "6",
+    "amount": "787,50"
+  },
+  {
+    "category": "REVE",
+    "categotyName": "REPARACION VEHICULAR",
+    "numberOfVendors": "11",
+    "amount": "12.337,75"
+  },
+  {
+    "category": "REPU",
+    "categotyName": "REPUESTOS",
+    "numberOfVendors": "172",
+    "amount": "108.875,54"
+  },
+  {
+    "category": "RETA",
+    "categotyName": "RETACERIA",
+    "numberOfVendors": "1",
+    "amount": "666,40"
+  },
+  {
+    "category": "SLAB",
+    "categotyName": "SEGURIDAD INDUSTRIAL",
+    "numberOfVendors": "51",
+    "amount": "67.516,38"
+  },
+  {
+    "category": "SECO",
+    "categotyName": "SEGUROS Y COMISIONES",
+    "numberOfVendors": "13",
+    "amount": "16.498,92"
+  },
+  {
+    "category": "SELE",
+    "categotyName": "SERVICIO ELECTRICO",
+    "numberOfVendors": "9",
+    "amount": "44.380,00"
+  },
+  {
+    "category": "SOPU",
+    "categotyName": "SERVICIO OBRA PUBLICA",
+    "numberOfVendors": "7",
+    "amount": "331.556,91"
+  },
+  {
+    "category": "SEPE",
+    "categotyName": "SERVICIO SEPELIO",
+    "numberOfVendors": "3",
+    "amount": "16.850,00"
+  },
+  {
+    "category": "CONS",
+    "categotyName": "SERVICIOS CONSTRUCCION",
+    "numberOfVendors": "1",
+    "amount": "68.000,00"
+  },
+  {
+    "category": "UTIL",
+    "categotyName": "UTILITARIOS",
+    "numberOfVendors": "1",
+    "amount": "99.900,00"
+  },
+  {
+    "category": "VIVE",
+    "categotyName": "VIVERO/FLORERIA",
+    "numberOfVendors": "4",
+    "amount": "6.280,00"
+  }
+]

@@ -2,15 +2,7 @@
   "name":"max",
   "value":100,
   "children":[
-    {
-      "name":"Sylvia",
-      "value":"4",
-      "children":[
-        {"name":"craig","value":25},
-        {"name":"craig","value":12},
-        {"name":"craig","value":5}
-      ]
-    },
+
     {
       "name":"david",
       "value":55

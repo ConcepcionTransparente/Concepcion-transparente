@@ -10,7 +10,7 @@ var router = express.Router();
 //   res.render('index', { title: 'Express' });
 // });
 
-router.get('/', function(req, res) {
+router.get('/', function(req, res,next) {
     res.sendfile('views/index.html');
 });
 
