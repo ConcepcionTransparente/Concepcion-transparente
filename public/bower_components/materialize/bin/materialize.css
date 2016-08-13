@@ -3411,13 +3411,15 @@ input[type=range] + .thumb {
 
 @media only screen and (min-width: 601px) {
   .container {
-    width: 85%;
+    /*width: 85%;*/
+    width: 100%;
   }
 }
 
 @media only screen and (min-width: 993px) {
   .container {
-    width: 70%;
+    /*width: 70%;*/
+    width: 100%;
   }
 }
 

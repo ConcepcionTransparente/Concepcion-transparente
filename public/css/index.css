@@ -1,9 +1,8 @@
 body {
   padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  text-align: center;
+  text-align: left;
 }
-
 a {color: #00B7FF;}
 h1{font-size: 2.5em;}
 h2{font-size: 2em;}
@@ -14,7 +13,7 @@ hr{
   border: 1px solid lightgray;
   margin-top: 2em;
 }
-/*------------------------------------------*/
+/*-------------header-----------------------*/
 p.fixedprice{
   font-size: 2em;
   font-weight: bold;
@@ -23,9 +22,9 @@ p.fixedprice span{
   font-size: 1.5em;
 }
 
-header.container{
+/*header.container{
   width: 100%;
-}
+}*/
 header.container h1{
   text-align: left;
   font-weight: 400;
@@ -38,11 +37,35 @@ header.container h3{
   color: gray;
 }
 
+/*------------first data info------------------*/
+.first-datainfo{
+  margin-top: 100px;
+}
+.first-datainfo .col:last-child{
+  border-right: none;
+}
+.first-datainfo .col{
+  text-align: center;
+  border-right: 1px solid lightgray;
+  min-height: 80px;
+}
+.first-datainfo span{
+  font-weight: bold;
+}
 
-
-
-
-/*------------------------------*/
+/*------------pie chart row------------------*/
+#pie-info article p{
+  font-size: 2em;
+}
+#pie-info span.color{
+  font-size: 0.8em;
+  color: gray;
+  font-weight: normal;
+}
+#pie-info article p span{
+  font-weight: bold;
+}
+/*------------footer------------------*/
 footer{
   text-align: center;
   color: gray;

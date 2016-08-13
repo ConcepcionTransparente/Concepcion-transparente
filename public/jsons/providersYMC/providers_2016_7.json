@@ -74,8 +74,8 @@
   {
     "category": "FECO",
     "categotyName": "FERRETERIA/CORRALON",
-    "numberOfVendors": "139",
-    "amount": "482.899,48"
+    "numberOfVendors": "136",
+    "amount": "482.640,49"
   },
   {
     "category": "FORR",
@@ -140,8 +140,8 @@
   {
     "category": "INHO",
     "categotyName": "INSUMOS HOSPITALARIOS",
-    "numberOfVendors": "11",
-    "amount": "40.317,50"
+    "numberOfVendors": "8",
+    "amount": "34.940,46"
   },
   {
     "category": "INVE",
@@ -212,8 +212,8 @@
   {
     "category": "PUBL",
     "categotyName": "PUBLICIDAD",
-    "numberOfVendors": "63",
-    "amount": "329.029,10"
+    "numberOfVendors": "62",
+    "amount": "325.029,10"
   },
   {
     "category": "REIN",
