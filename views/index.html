@@ -7,6 +7,7 @@
     <title>Datos abiertos</title>
     <!-- CSS  -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,300,300italic' rel='stylesheet' type='text/css'>
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../css/index.css" />
@@ -21,38 +22,44 @@
   <body>
     <div class="container">
 
-        <header>
-          <h1>CONCEPCIÓN DEL URUGUAY</h1>
-          <h3>Visualización de datos publicos</h3>
-          <div class="divider"></div>
+        <header class="row">
+          <div class="col s12 m8 border-right">
+            <h1>CONCEPCIÓN DEL URUGUAY</h1>
+            <h3>Visualización de datos publicos</h3>
+          </div>
+          <div class="col s12 m4 date">
+            <script>
+            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+            var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+            var f=new Date();
+            document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+            </script>
+          </div>
         </header>
 
-        <div class="first-datainfo">
-          <div class="row ">
-            <h3>En 2016 la municipalidad de Concepción del Uruguay:</h3>
-            <div class="col s12 m3">
-              <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>$543.303,53</span></p>
-            </div>
-            <div class="col s12 m3">
-              <p>PROMEDIO DE GASTO MENSUAL:<br><br><span>$143.303,53</span></p>
-            </div>
-            <div class="col s12 m3">
-              <p>PROVEEDORES:<br><br><br><span>1312</span></p>
-            </div>
-            <div class="col s12 m3">
-              <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>3254</span></p>
-            </div>
+        <div class="divider"></div>
+        <div class="row general-data">
+          <h3>En 2016 la municipalidad de Concepción del Uruguay:</h3>
+          <div class="col s12 m3 border-right">
+            <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>$543.303,53</span></p>
           </div>
+          <div class="col s12 m3 border-right">
+            <p>PROMEDIO DE GASTO MENSUAL:<br><br><br><span>$143.303,53</span></p>
+          </div>
+          <div class="col s12 m3 border-right">
+            <p>CANTIDAD DE PROVEEDORES:<br><br><br><span>1312</span></p>
+          </div>
+          <div class="col s12 m3">
+            <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>3254</span></p>
+          </div>
+        <div class="divider"></div>
+        <div class="row">
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida.</p>
+          <br>
           <div class="divider"></div>
-          <div class="row">
-            <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida.</p>
-            <br>
-            <div class="divider">
-
-            </div>
-          </div>
         </div>
+      </div>
 
 
           <div class="row">
@@ -210,7 +217,7 @@
             <!--   Icon Section   -->
               <div class="row">
                 <div class="col s12 m12">
-                  <h3>Inversiones y gastos del presupuesto del año 2015:</h3>
+                  <h3>Presupuesto del año 2015:</h3>
                 </div>
                 <div class="col s12 m6" style="text-align:center">
                   <div class="icon-block">
@@ -246,10 +253,10 @@
               <div class="divider"></div>
               <div class="col s12 m8">
                 <br><br>
-
                 <article>
+                  <h3>Presupuesto del año 2015:</h3>
                   <p>
-                    $<span>220.</span>000.000 <span class="color">destinados a sueldos</span><br><br><br><br>
+                    $<span>220.</span>000.000 <span class="color">destinados a sueldos</span><br>
                   </p>
                   <p>
                     <span>$164.</span>000.000 <span class="color">otros gastos</span>

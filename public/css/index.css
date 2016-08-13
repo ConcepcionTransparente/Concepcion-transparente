@@ -1,53 +1,35 @@
 body {
-  padding: 20px;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: left;
 }
 a {color: #00B7FF;}
-h1{font-size: 2.5em;}
+h1{font-size: 2.5em;font-family: 'Open Sans', sans-serif;padding: 0 !important;}
 h2{font-size: 2em;}
-h3{font-size: 1.5em;}
+h3{font-size: 1.5em;font-family: 'Open Sans', sans-serif; font-weight: 400;font-style: italic;}
 h4{font-size: 1em;}
 svg{}
-hr{
-  border: 1px solid lightgray;
-  margin-top: 2em;
+
+.border-right{
+  border-right: 1px solid lightgray;
 }
 /*-------------header-----------------------*/
-p.fixedprice{
-  font-size: 2em;
-  font-weight: bold;
-}
-p.fixedprice span{
-  font-size: 1.5em;
+.date{
+  text-align: right;
+  margin-top:2.6em;
 }
 
-/*header.container{
-  width: 100%;
-}*/
-header.container h1{
-  text-align: left;
-  font-weight: 400;
-  line-height: 1px;
+/*-------------general views-----------------------*/
+.general-data{
+  text-align: center;
 }
-header.container h3{
+.general-data h3{
   text-align: left;
-  font-weight: 300;
-  line-height: 2px;
-  color: gray;
 }
 
 /*------------first data info------------------*/
 .first-datainfo{
   margin-top: 100px;
-}
-.first-datainfo .col:last-child{
-  border-right: none;
-}
-.first-datainfo .col{
-  text-align: center;
-  border-right: 1px solid lightgray;
-  min-height: 80px;
 }
 .first-datainfo span{
   font-weight: bold;
@@ -64,6 +46,14 @@ header.container h3{
 }
 #pie-info article p span{
   font-weight: bold;
+}
+/*------------2015 statics views------------------*/
+p.fixedprice{
+  font-size: 2em;
+  font-weight: bold;
+}
+p.fixedprice span{
+  font-size: 1.5em;
 }
 /*------------footer------------------*/
 footer{
