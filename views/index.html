@@ -11,11 +11,14 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/bubble_chart.css">
+
     <!-- Load c3.css -->
-    <link href="/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
+    <link href="/lib/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
     <!-- Load d3.js and c3.js -->
-    <script src="//d3js.org/d3.v3.min.js"></script>
-    <script src="/c3/htdocs/js/c3.min.js"></script>
+    <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
+    <script src="../lib/d3.js"></script>
+    <script src="/lib/c3/htdocs/js/c3.min.js"></script>
   </head>
 
 
@@ -61,25 +64,33 @@
         </div>
       </div>
 
+      <!-- <div class="container"> -->
+      <div>
+        <h3>Total de proveedores 2016:</h3>
+        <!-- <div id="toolbar">
+          <a href="#" id="all" class="button active">All Grants</a>
+          <a href="#" id="year" class="button">Grants By Year</a>
+        </div> -->
+        <div id="vis"></div>
+      <!-- </div> -->
+      </div>
+      <br>
+      <div class="divider"></div>
+      <br>
 
           <div class="row">
             <div class="article">
               <h3>Evolución del gasto durante el año 2016: </h3>
               <div id="lineschart" class=""></div>
             </div>
+            <br>
             <div class="divider"></div>
-          </div>
-          <div class="row">
-            <div class="article">
-              <h3>Comparación de gasto total entre 2009 y 2016: </h3>
-              <div id="barschart"></div>
-            </div>
-            <div class="divider"></div>
+            <br>
           </div>
           <div class="row">
             <br>
             <h3>Mejores proveedores en lo que va del presente año: </h3>
-            <div class="col s12 m8">
+            <div class="col s12">
               <table class="striped">
                 <thead>
                   <tr>
@@ -123,11 +134,19 @@
                 </tbody>
               </table>
             </div>
-            <div class="col s12 m4">
+            <!-- <div class="col s12 m4">
               <div id="donut"></div>
+            </div> -->
+          </div>
+          <br>
+          <div class="divider"></div>
+          <br>
+          <div class="row">
+            <div class="article">
+              <h3>Comparación de gasto total entre 2009 y 2016: </h3>
+              <div id="barschart"></div>
             </div>
           </div>
-
 
 
           <div class="divider"></div>
@@ -249,7 +268,7 @@
               </div> <!-- end row -->
 
 
-            <div id="pie-info" class="row">
+            <!-- <div id="pie-info" class="row">
               <div class="divider"></div>
               <div class="col s12 m8">
                 <br><br>
@@ -266,15 +285,15 @@
               <div class="col s12 m4">
                 <div id="pie-chart"></div>
               </div>
-            </div>
-            <div class="divider"></div>
+            </div> -->
+            <!-- <div class="divider"></div>
             <div ="row">
               <div class="s12">
                 <h3>OPCIONES</h3>
                 <div class="paint"></div>
                 <br><br><br><br>
               </div>
-            </div>
+            </div> -->
             <br><br>
 
 
@@ -364,7 +383,7 @@
           });
         </script>
 
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             var width = 900,
                 height = 350;
 
@@ -414,12 +433,17 @@
                     .attr("fill","#e91e63")
                     .attr("opacity",function(){var opacity=0;opacity=Math.random();return opacity});
             });
-            </script>
+            </script> -->
 
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../bower_components/materialize/dist/materialize.min.js"></script>
     <script src="../bower_components/materialize/dist/js/init.js"></script>
+
+    <script src="../lib/d3.js"></script>
+    <script src="../src/tooltip.js"></script>
+    <script src="../src/bubble_chart.js"></script>
+
   </body>
 </html>

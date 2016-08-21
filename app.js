@@ -5,9 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Xray = require('x-ray');
-var x = Xray();
 var time = require('node-tictoc');
 
+var x= Xray({
+  filters: {
+    reverse: function (value) {
+      return typeof value === 'string' ? value.split(',')[0] : value
+    }
+  }
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -88,6 +94,7 @@ function year(val){
       }])
       .write('public/jsons/year/years.json');
 };
+
 time.tic();
  for (var i = 0; i < 1; i++) {
      year(i);
@@ -140,11 +147,12 @@ time.toc();
 function yearProvider(val) {
   var date = new Date();
   for(i = 2009 ; i <= date.getFullYear(); i++){
-     var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio="+i;
+    var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio="+i;
     x( url , 'body tr.textoTabla', [{
-            cuil: 'td',
-            businessName: 'td:nth-of-type(2)',
-            amount: 'td:nth-of-type(6)'
+            grant_title: 'td:nth-of-type(2)',
+            id: 'td' ,
+            total_amount: 'td:nth-of-type(6) | reverse'
+
         }])
         .write('public/jsons/yearProvider/providers_'+i+'.json');
   }

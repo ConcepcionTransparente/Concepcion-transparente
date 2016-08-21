@@ -32,8 +32,8 @@
   {
     "category": "CARP",
     "nameCategory": "CARPINTERIA",
-    "numberOfVendors": "27",
-    "amount": "57.841,30"
+    "numberOfVendors": "29",
+    "amount": "62.741,30"
   },
   {
     "category": "CERR",
@@ -56,8 +56,8 @@
   {
     "category": "COMU",
     "nameCategory": "COMUNICACION",
-    "numberOfVendors": "662",
-    "amount": "472.827,11"
+    "numberOfVendors": "663",
+    "amount": "473.148,97"
   },
   {
     "category": "COHO",
@@ -80,20 +80,20 @@
   {
     "category": "ELEC",
     "nameCategory": "ELECTRICIDAD",
-    "numberOfVendors": "523",
-    "amount": "1.493.170,76"
+    "numberOfVendors": "543",
+    "amount": "1.506.393,91"
   },
   {
     "category": "ELED",
     "nameCategory": "ELECTRODOMÉSTICO",
-    "numberOfVendors": "35",
-    "amount": "162.700,53"
+    "numberOfVendors": "36",
+    "amount": "163.075,53"
   },
   {
     "category": "FECO",
     "nameCategory": "FERRETERIA/CORRALON",
-    "numberOfVendors": "798",
-    "amount": "2.777.870,33"
+    "numberOfVendors": "821",
+    "amount": "2.803.430,65"
   },
   {
     "category": "FORR",
@@ -104,14 +104,14 @@
   {
     "category": "GASE",
     "nameCategory": "GAS ENVASADO/NATURAL",
-    "numberOfVendors": "78",
-    "amount": "53.884,49"
+    "numberOfVendors": "80",
+    "amount": "54.224,49"
   },
   {
     "category": "GAST",
     "nameCategory": "GASTRONOMIA",
-    "numberOfVendors": "26",
-    "amount": "186.042,00"
+    "numberOfVendors": "27",
+    "amount": "187.892,00"
   },
   {
     "category": "GOME",
@@ -122,14 +122,14 @@
   {
     "category": "HERR",
     "nameCategory": "HERRAMIENTAS",
-    "numberOfVendors": "73",
-    "amount": "594.294,43"
+    "numberOfVendors": "75",
+    "amount": "599.524,03"
   },
   {
     "category": "IMPR",
     "nameCategory": "IMPRENTA",
-    "numberOfVendors": "124",
-    "amount": "760.516,01"
+    "numberOfVendors": "125",
+    "amount": "775.515,86"
   },
   {
     "category": "INDU",
@@ -140,14 +140,14 @@
   {
     "category": "INFO",
     "nameCategory": "INFORMATICA",
-    "numberOfVendors": "172",
-    "amount": "233.590,50"
+    "numberOfVendors": "183",
+    "amount": "243.655,50"
   },
   {
     "category": "INME",
     "nameCategory": "INSTRUMENTAL MEDICO",
-    "numberOfVendors": "43",
-    "amount": "66.819,54"
+    "numberOfVendors": "51",
+    "amount": "93.782,34"
   },
   {
     "category": "USIN",
@@ -158,8 +158,8 @@
   {
     "category": "INHO",
     "nameCategory": "INSUMOS HOSPITALARIOS",
-    "numberOfVendors": "169",
-    "amount": "422.027,35"
+    "numberOfVendors": "173",
+    "amount": "422.649,44"
   },
   {
     "category": "INVE",
@@ -170,14 +170,14 @@
   {
     "category": "LIBR",
     "nameCategory": "LIBRERIA",
-    "numberOfVendors": "436",
-    "amount": "371.301,82"
+    "numberOfVendors": "445",
+    "amount": "373.077,82"
   },
   {
     "category": "LIMP",
     "nameCategory": "LIMPIEZA",
-    "numberOfVendors": "756",
-    "amount": "358.425,20"
+    "numberOfVendors": "780",
+    "amount": "360.847,92"
   },
   {
     "category": "LUBR",
@@ -212,8 +212,8 @@
   {
     "category": "MOBI",
     "nameCategory": "MOBILIARIOS",
-    "numberOfVendors": "25",
-    "amount": "62.958,63"
+    "numberOfVendors": "27",
+    "amount": "67.252,63"
   },
   {
     "category": "NEUM",
@@ -230,32 +230,32 @@
   {
     "category": "PINT",
     "nameCategory": "PINTURERIA",
-    "numberOfVendors": "176",
-    "amount": "100.232,91"
+    "numberOfVendors": "178",
+    "amount": "100.789,34"
   },
   {
     "category": "POTA",
     "nameCategory": "POTABILIZACION",
-    "numberOfVendors": "12",
-    "amount": "3.304.402,44"
+    "numberOfVendors": "13",
+    "amount": "5.349.082,44"
   },
   {
     "category": "PROF",
     "nameCategory": "PROFESIONALES",
-    "numberOfVendors": "244",
-    "amount": "14.461.411,84"
+    "numberOfVendors": "249",
+    "amount": "14.838.427,07"
   },
   {
     "category": "PUBL",
     "nameCategory": "PUBLICIDAD",
-    "numberOfVendors": "240",
-    "amount": "1.119.354,32"
+    "numberOfVendors": "252",
+    "amount": "1.184.289,76"
   },
   {
     "category": "REIN",
     "nameCategory": "REPARACION INFORMATICA",
-    "numberOfVendors": "43",
-    "amount": "89.274,24"
+    "numberOfVendors": "45",
+    "amount": "90.614,24"
   },
   {
     "category": "REVE",
@@ -266,8 +266,8 @@
   {
     "category": "REPU",
     "nameCategory": "REPUESTOS",
-    "numberOfVendors": "476",
-    "amount": "823.772,26"
+    "numberOfVendors": "501",
+    "amount": "870.585,86"
   },
   {
     "category": "RETA",
@@ -290,8 +290,8 @@
   {
     "category": "COOP",
     "nameCategory": "SERVICIO COOPERATIVA",
-    "numberOfVendors": "14",
-    "amount": "375.000,00"
+    "numberOfVendors": "20",
+    "amount": "575.000,00"
   },
   {
     "category": "DESA",
@@ -302,14 +302,14 @@
   {
     "category": "SELE",
     "nameCategory": "SERVICIO ELECTRICO",
-    "numberOfVendors": "571",
-    "amount": "16.094.761,29"
+    "numberOfVendors": "572",
+    "amount": "16.103.899,67"
   },
   {
     "category": "SOPU",
     "nameCategory": "SERVICIO OBRA PUBLICA",
-    "numberOfVendors": "208",
-    "amount": "34.743.430,61"
+    "numberOfVendors": "239",
+    "amount": "37.733.430,61"
   },
   {
     "category": "SEPO",

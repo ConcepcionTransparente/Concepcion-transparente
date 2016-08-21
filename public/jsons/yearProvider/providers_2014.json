@@ -1,2171 +1,2171 @@
 [
   {
-    "cuil": "20113601192",
-    "amount": "11.495,00"
+    "id": "20113601192",
+    "total_amount": "11.495"
   },
   {
-    "cuil": "30579843531",
-    "businessName": "A. ROPELATO S.R.L.",
-    "amount": "805.560,76"
+    "grant_title": "A. ROPELATO S.R.L.",
+    "id": "30579843531",
+    "total_amount": "805.560"
   },
   {
-    "cuil": "30712200576",
-    "businessName": "ACEVEDO GERARDO Y BOTTI VALENTIN",
-    "amount": "194.773,40"
+    "grant_title": "ACEVEDO GERARDO Y BOTTI VALENTIN",
+    "id": "30712200576",
+    "total_amount": "194.773"
   },
   {
-    "cuil": "30712482385",
-    "businessName": "ACUN S.R.L.",
-    "amount": "3.049,20"
+    "grant_title": "ACUN S.R.L.",
+    "id": "30712482385",
+    "total_amount": "3.049"
   },
   {
-    "cuil": "20235834317",
-    "businessName": "AGUILAR DANIEL ANTONIO",
-    "amount": "45,00"
+    "grant_title": "AGUILAR DANIEL ANTONIO",
+    "id": "20235834317",
+    "total_amount": "45"
   },
   {
-    "cuil": "33714182469",
-    "businessName": "AGUILAR DANIEL Y ETCHEMENDY MARIA DE LAS MERCEDES S.H.",
-    "amount": "740,60"
+    "grant_title": "AGUILAR DANIEL Y ETCHEMENDY MARIA DE LAS MERCEDES S.H.",
+    "id": "33714182469",
+    "total_amount": "740"
   },
   {
-    "cuil": "20122595863",
-    "businessName": "AGUILAR EDUARDO RAUL",
-    "amount": "4.191,00"
+    "grant_title": "AGUILAR EDUARDO RAUL",
+    "id": "20122595863",
+    "total_amount": "4.191"
   },
   {
-    "cuil": "30710208464",
-    "businessName": "AIRES FEDERALES S.R.L.",
-    "amount": "233.352,64"
+    "grant_title": "AIRES FEDERALES S.R.L.",
+    "id": "30710208464",
+    "total_amount": "233.352"
   },
   {
-    "cuil": "27171684930",
-    "businessName": "ALBA ADRIANA ARACELI",
-    "amount": "5.460,60"
+    "grant_title": "ALBA ADRIANA ARACELI",
+    "id": "27171684930",
+    "total_amount": "5.460"
   },
   {
-    "cuil": "20226165917",
-    "businessName": "ALBANESE IGNACIO",
-    "amount": "35.900,00"
+    "grant_title": "ALBANESE IGNACIO",
+    "id": "20226165917",
+    "total_amount": "35.900"
   },
   {
-    "cuil": "30708181613",
-    "businessName": "ALBIZZATTI, PABLO MARTIN Y FULINI, SERGIO RUBEN",
-    "amount": "14.537,00"
+    "grant_title": "ALBIZZATTI, PABLO MARTIN Y FULINI, SERGIO RUBEN",
+    "id": "30708181613",
+    "total_amount": "14.537"
   },
   {
-    "cuil": "30641868546",
-    "businessName": "ALERTA EMERGENCIAS CARDIOMEDICAS S.A.",
-    "amount": "56.595,00"
+    "grant_title": "ALERTA EMERGENCIAS CARDIOMEDICAS S.A.",
+    "id": "30641868546",
+    "total_amount": "56.595"
   },
   {
-    "cuil": "27203617297",
-    "businessName": "ALFIERI LILIA MARIELA",
-    "amount": "38.000,00"
+    "grant_title": "ALFIERI LILIA MARIELA",
+    "id": "27203617297",
+    "total_amount": "38.000"
   },
   {
-    "cuil": "20330252708",
-    "businessName": "ALFONSO FACUNDO ISRAEL",
-    "amount": "25.000,00"
+    "grant_title": "ALFONSO FACUNDO ISRAEL",
+    "id": "20330252708",
+    "total_amount": "25.000"
   },
   {
-    "cuil": "20117724094",
-    "businessName": "ALIPPI ALFREDO GERMAN",
-    "amount": "1.380,00"
+    "grant_title": "ALIPPI ALFREDO GERMAN",
+    "id": "20117724094",
+    "total_amount": "1.380"
   },
   {
-    "cuil": "27330787800",
-    "businessName": "ALTAMIRANO GONZALEZ RITA GABRIELA MAGALI",
-    "amount": "22.500,00"
+    "grant_title": "ALTAMIRANO GONZALEZ RITA GABRIELA MAGALI",
+    "id": "27330787800",
+    "total_amount": "22.500"
   },
   {
-    "cuil": "20269897369",
-    "businessName": "ALTAMIRANO ROBERTO CARLOS",
-    "amount": "76.265,00"
+    "grant_title": "ALTAMIRANO ROBERTO CARLOS",
+    "id": "20269897369",
+    "total_amount": "76.265"
   },
   {
-    "cuil": "27305496559",
-    "businessName": "ALTAMIRANO, LIS",
-    "amount": "29.916,86"
+    "grant_title": "ALTAMIRANO, LIS",
+    "id": "27305496559",
+    "total_amount": "29.916"
   },
   {
-    "cuil": "23250205724",
-    "businessName": "ALVAREZ MARIA SOL",
-    "amount": "10.000,00"
+    "grant_title": "ALVAREZ MARIA SOL",
+    "id": "23250205724",
+    "total_amount": "10.000"
   },
   {
-    "cuil": "27385698505",
-    "businessName": "AMATO FIORELLA MAGALI",
-    "amount": "11.685,32"
+    "grant_title": "AMATO FIORELLA MAGALI",
+    "id": "27385698505",
+    "total_amount": "11.685"
   },
   {
-    "cuil": "30663288497",
-    "businessName": "AMX ARGENTINA S.A.",
-    "amount": "158.425,59"
+    "grant_title": "AMX ARGENTINA S.A.",
+    "id": "30663288497",
+    "total_amount": "158.425"
   },
   {
-    "cuil": "30708963476",
-    "businessName": "ANALISIS S.R.L.",
-    "amount": "14.050,00"
+    "grant_title": "ANALISIS S.R.L.",
+    "id": "30708963476",
+    "total_amount": "14.050"
   },
   {
-    "cuil": "20272945706",
-    "businessName": "ANDISCO MARIO OSCAR",
-    "amount": "1.100,00"
+    "grant_title": "ANDISCO MARIO OSCAR",
+    "id": "20272945706",
+    "total_amount": "1.100"
   },
   {
-    "cuil": "30503904183",
-    "businessName": "ANDRES N. BERTOTTO S.A.I.C",
-    "amount": "95.397,74"
+    "grant_title": "ANDRES N. BERTOTTO S.A.I.C",
+    "id": "30503904183",
+    "total_amount": "95.397"
   },
   {
-    "cuil": "27203691071",
-    "businessName": "ANGIO FABIANA ALEJANDRA",
-    "amount": "432,00"
+    "grant_title": "ANGIO FABIANA ALEJANDRA",
+    "id": "27203691071",
+    "total_amount": "432"
   },
   {
-    "cuil": "27061356504",
-    "businessName": "ANSALDI MARTA CORNELIA",
-    "amount": "4.800,00"
+    "grant_title": "ANSALDI MARTA CORNELIA",
+    "id": "27061356504",
+    "total_amount": "4.800"
   },
   {
-    "cuil": "27334226056",
-    "businessName": "ANZALDI MARIA DANIELA",
-    "amount": "30.000,00"
+    "grant_title": "ANZALDI MARIA DANIELA",
+    "id": "27334226056",
+    "total_amount": "30.000"
   },
   {
-    "cuil": "20245272120",
-    "businessName": "ARDETI GUSTAVO EMANUEL",
-    "amount": "12.322,00"
+    "grant_title": "ARDETI GUSTAVO EMANUEL",
+    "id": "20245272120",
+    "total_amount": "12.322"
   },
   {
-    "cuil": "30647369983",
-    "businessName": "ARENERA DON ANTONIO S.A.",
-    "amount": "1.504.072,62"
+    "grant_title": "ARENERA DON ANTONIO S.A.",
+    "id": "30647369983",
+    "total_amount": "1.504.072"
   },
   {
-    "cuil": "30598729510",
-    "businessName": "ARES ELECTRONICA INDUSTRIAL S.A.",
-    "amount": "9.354,80"
+    "grant_title": "ARES ELECTRONICA INDUSTRIAL S.A.",
+    "id": "30598729510",
+    "total_amount": "9.354"
   },
   {
-    "cuil": "20058085562",
-    "businessName": "ARGACHA HIRINSON",
-    "amount": "11.505,00"
+    "grant_title": "ARGACHA HIRINSON",
+    "id": "20058085562",
+    "total_amount": "11.505"
   },
   {
-    "cuil": "20180719009",
-    "businessName": "ARRIGO JUAN ALEJANDRO",
-    "amount": "31.530,00"
+    "grant_title": "ARRIGO JUAN ALEJANDRO",
+    "id": "20180719009",
+    "total_amount": "31.530"
   },
   {
-    "cuil": "20221495900",
-    "businessName": "ARTUSI DIEGO MARTIN",
-    "amount": "9.900,00"
+    "grant_title": "ARTUSI DIEGO MARTIN",
+    "id": "20221495900",
+    "total_amount": "9.900"
   },
   {
-    "cuil": "27292810895",
-    "businessName": "ARZUAGA MARIA DE LAS NIEVES",
-    "amount": "380,00"
+    "grant_title": "ARZUAGA MARIA DE LAS NIEVES",
+    "id": "27292810895",
+    "total_amount": "380"
   },
   {
-    "cuil": "27172161869",
-    "businessName": "ASCAINO EMILCE LEONOR",
-    "amount": "10.500,00"
+    "grant_title": "ASCAINO EMILCE LEONOR",
+    "id": "27172161869",
+    "total_amount": "10.500"
   },
   {
-    "cuil": "30670787741",
-    "businessName": "ASOCIACION DE BOMBEROS VOLUNTARIOS  DE CONCEPCION DEL URUGUAY",
-    "amount": "43.000,00"
+    "grant_title": "ASOCIACION DE BOMBEROS VOLUNTARIOS  DE CONCEPCION DEL URUGUAY",
+    "id": "30670787741",
+    "total_amount": "43.000"
   },
   {
-    "cuil": "30641536098",
-    "businessName": "ASOCIACION MUTUAL DE BANCARIOS C. DEL URUGUAY.",
-    "amount": "86.459,89"
+    "grant_title": "ASOCIACION MUTUAL DE BANCARIOS C. DEL URUGUAY.",
+    "id": "30641536098",
+    "total_amount": "86.459"
   },
   {
-    "cuil": "20060796360",
-    "businessName": "ATENCIO MARTIN",
-    "amount": "110.520,00"
+    "grant_title": "ATENCIO MARTIN",
+    "id": "20060796360",
+    "total_amount": "110.520"
   },
   {
-    "cuil": "20147324309",
-    "businessName": "AYALA JOSE MARCELINO",
-    "amount": "18.000,00"
+    "grant_title": "AYALA JOSE MARCELINO",
+    "id": "20147324309",
+    "total_amount": "18.000"
   },
   {
-    "cuil": "20170759819",
-    "businessName": "AZARIO FABIO ALBERTO",
-    "amount": "12.000,00"
+    "grant_title": "AZARIO FABIO ALBERTO",
+    "id": "20170759819",
+    "total_amount": "12.000"
   },
   {
-    "cuil": "27236974893",
-    "businessName": "BALBUENA NATALIA ELIZABETH",
-    "amount": "2.872,50"
+    "grant_title": "BALBUENA NATALIA ELIZABETH",
+    "id": "27236974893",
+    "total_amount": "2.872"
   },
   {
-    "cuil": "27206688012",
-    "businessName": "BALTORE VIVIANA MABEL",
-    "amount": "8.660,84"
+    "grant_title": "BALTORE VIVIANA MABEL",
+    "id": "27206688012",
+    "total_amount": "8.660"
   },
   {
-    "cuil": "27285339214",
-    "businessName": "BARBARA MARIA DEL PILAR",
-    "amount": "29.916,86"
+    "grant_title": "BARBARA MARIA DEL PILAR",
+    "id": "27285339214",
+    "total_amount": "29.916"
   },
   {
-    "cuil": "20103803811",
-    "businessName": "BARBARA MIGUEL AMADEO",
-    "amount": "35.900,00"
+    "grant_title": "BARBARA MIGUEL AMADEO",
+    "id": "20103803811",
+    "total_amount": "35.900"
   },
   {
-    "cuil": "20242026188",
-    "businessName": "BARBIERI MARTIN RODOLFO",
-    "amount": "32.577,69"
+    "grant_title": "BARBIERI MARTIN RODOLFO",
+    "id": "20242026188",
+    "total_amount": "32.577"
   },
   {
-    "cuil": "20076658464",
-    "businessName": "BARBOSA ANTONIO MARTIN",
-    "amount": "1.760,00"
+    "grant_title": "BARBOSA ANTONIO MARTIN",
+    "id": "20076658464",
+    "total_amount": "1.760"
   },
   {
-    "cuil": "20203697024",
-    "businessName": "BARCOS EDUARDO ADOLFO",
-    "amount": "104.848,52"
+    "grant_title": "BARCOS EDUARDO ADOLFO",
+    "id": "20203697024",
+    "total_amount": "104.848"
   },
   {
-    "cuil": "20109495051",
-    "businessName": "BARDISA EDUARDO SUCESION",
-    "amount": "9.870,00"
+    "grant_title": "BARDISA EDUARDO SUCESION",
+    "id": "20109495051",
+    "total_amount": "9.870"
   },
   {
-    "cuil": "20141284399",
-    "businessName": "BARRETO HUGO CESAR",
-    "amount": "35.162,00"
+    "grant_title": "BARRETO HUGO CESAR",
+    "id": "20141284399",
+    "total_amount": "35.162"
   },
   {
-    "cuil": "20318740063",
-    "businessName": "BARTET ESTEBAN JOSE",
-    "amount": "2.500,00"
+    "grant_title": "BARTET ESTEBAN JOSE",
+    "id": "20318740063",
+    "total_amount": "2.500"
   },
   {
-    "cuil": "30535540353",
-    "businessName": "BAZAR EL ENTRERRIANO S.A.",
-    "amount": "11.701,00"
+    "grant_title": "BAZAR EL ENTRERRIANO S.A.",
+    "id": "30535540353",
+    "total_amount": "11.701"
   },
   {
-    "cuil": "20285339996",
-    "businessName": "BECHIR YAMIL AMAD",
-    "amount": "84.729,01"
+    "grant_title": "BECHIR YAMIL AMAD",
+    "id": "20285339996",
+    "total_amount": "84.729"
   },
   {
-    "cuil": "20272003182",
-    "businessName": "BENEDETTI MIGUEL ANGEL",
-    "amount": "59.780,00"
+    "grant_title": "BENEDETTI MIGUEL ANGEL",
+    "id": "20272003182",
+    "total_amount": "59.780"
   },
   {
-    "cuil": "20084214974",
-    "businessName": "BERBENTANA MIGUEL ANGEL",
-    "amount": "1.175,00"
+    "grant_title": "BERBENTANA MIGUEL ANGEL",
+    "id": "20084214974",
+    "total_amount": "1.175"
   },
   {
-    "cuil": "20274980126",
-    "businessName": "BERCOVICH ROMANO GERMAN",
-    "amount": "33.200,00"
+    "grant_title": "BERCOVICH ROMANO GERMAN",
+    "id": "20274980126",
+    "total_amount": "33.200"
   },
   {
-    "cuil": "30620420820",
-    "businessName": "BERGER S. A.",
-    "amount": "2.557,36"
+    "grant_title": "BERGER S. A.",
+    "id": "30620420820",
+    "total_amount": "2.557"
   },
   {
-    "cuil": "20221506775",
-    "businessName": "BESTARD OSVALDO MIGUEL",
-    "amount": "69.801,19"
+    "grant_title": "BESTARD OSVALDO MIGUEL",
+    "id": "20221506775",
+    "total_amount": "69.801"
   },
   {
-    "cuil": "30517518103",
-    "businessName": "BETA S.A.",
-    "amount": "1.118.077,50"
+    "grant_title": "BETA S.A.",
+    "id": "30517518103",
+    "total_amount": "1.118.077"
   },
   {
-    "cuil": "20229063260",
-    "businessName": "BIDAL RODOLFO CESAR",
-    "amount": "12.490,40"
+    "grant_title": "BIDAL RODOLFO CESAR",
+    "id": "20229063260",
+    "total_amount": "12.490"
   },
   {
-    "cuil": "27245274780",
-    "businessName": "BOFFELLI MARINA LUJAN",
-    "amount": "30.000,00"
+    "grant_title": "BOFFELLI MARINA LUJAN",
+    "id": "27245274780",
+    "total_amount": "30.000"
   },
   {
-    "cuil": "20168431962",
-    "businessName": "BOGATIC FLAVIO ADOLFO",
-    "amount": "31.100,00"
+    "grant_title": "BOGATIC FLAVIO ADOLFO",
+    "id": "20168431962",
+    "total_amount": "31.100"
   },
   {
-    "cuil": "30582168640",
-    "businessName": "BOIERO S.A",
-    "amount": "6.222,50"
+    "grant_title": "BOIERO S.A",
+    "id": "30582168640",
+    "total_amount": "6.222"
   },
   {
-    "cuil": "27141282943",
-    "businessName": "BONFANTINO LAURA",
-    "amount": "127.886,44"
+    "grant_title": "BONFANTINO LAURA",
+    "id": "27141282943",
+    "total_amount": "127.886"
   },
   {
-    "cuil": "20259023344",
-    "businessName": "BONNET GUSTAVO MARTIN",
-    "amount": "3.572,00"
+    "grant_title": "BONNET GUSTAVO MARTIN",
+    "id": "20259023344",
+    "total_amount": "3.572"
   },
   {
-    "cuil": "20109497178",
-    "businessName": "BONNIN ANIBAL RAMON",
-    "amount": "120.000,00"
+    "grant_title": "BONNIN ANIBAL RAMON",
+    "id": "20109497178",
+    "total_amount": "120.000"
   },
   {
-    "cuil": "23269646179",
-    "businessName": "BONNIN MARTIN  ANIBAL (NO USAR)",
-    "amount": "4.143,24"
+    "grant_title": "BONNIN MARTIN  ANIBAL (NO USAR)",
+    "id": "23269646179",
+    "total_amount": "4.143"
   },
   {
-    "cuil": "23269646179",
-    "businessName": "BONNIN MARTIN ANIBAL",
-    "amount": "136.654,00"
+    "grant_title": "BONNIN MARTIN ANIBAL",
+    "id": "23269646179",
+    "total_amount": "136.654"
   },
   {
-    "cuil": "20271398493",
-    "businessName": "BONVIN MAURO GABRIEL",
-    "amount": "13.792,00"
+    "grant_title": "BONVIN MAURO GABRIEL",
+    "id": "20271398493",
+    "total_amount": "13.792"
   },
   {
-    "cuil": "20124372128",
-    "businessName": "BOTTA JUAN CARLOS",
-    "amount": "9.500,00"
+    "grant_title": "BOTTA JUAN CARLOS",
+    "id": "20124372128",
+    "total_amount": "9.500"
   },
   {
-    "cuil": "20232754428",
-    "businessName": "BOUJON HECTOR ORLANDO",
-    "amount": "67.796,97"
+    "grant_title": "BOUJON HECTOR ORLANDO",
+    "id": "20232754428",
+    "total_amount": "67.796"
   },
   {
-    "cuil": "20236079970",
-    "businessName": "BOURLOT FERNANDO RENE",
-    "amount": "123.700,72"
+    "grant_title": "BOURLOT FERNANDO RENE",
+    "id": "20236079970",
+    "total_amount": "123.700"
   },
   {
-    "cuil": "20078868091",
-    "businessName": "BOURLOT NESTOR CONRADO",
-    "amount": "142.350,93"
+    "grant_title": "BOURLOT NESTOR CONRADO",
+    "id": "20078868091",
+    "total_amount": "142.350"
   },
   {
-    "cuil": "30670790122",
-    "businessName": "BOUVET HNOS S.R.L.",
-    "amount": "47.961,00"
+    "grant_title": "BOUVET HNOS S.R.L.",
+    "id": "30670790122",
+    "total_amount": "47.961"
   },
   {
-    "cuil": "20077094076",
-    "businessName": "BRAVIN DANIEL ROQUE",
-    "amount": "5.140,70"
+    "grant_title": "BRAVIN DANIEL ROQUE",
+    "id": "20077094076",
+    "total_amount": "5.140"
   },
   {
-    "cuil": "30709260649",
-    "businessName": "BRAVIN MELINA GUADALUPE Y BRAVIN HORACIO DANIEL S.H.",
-    "amount": "9.778,60"
+    "grant_title": "BRAVIN MELINA GUADALUPE Y BRAVIN HORACIO DANIEL S.H.",
+    "id": "30709260649",
+    "total_amount": "9.778"
   },
   {
-    "cuil": "27357145835",
-    "businessName": "BULTYNCH MARIA ANTONELLA",
-    "amount": "22.500,00"
+    "grant_title": "BULTYNCH MARIA ANTONELLA",
+    "id": "27357145835",
+    "total_amount": "22.500"
   },
   {
-    "cuil": "20242360096",
-    "businessName": "BURGOS DANIEL RAUL",
-    "amount": "190.889,29"
+    "grant_title": "BURGOS DANIEL RAUL",
+    "id": "20242360096",
+    "total_amount": "190.889"
   },
   {
-    "cuil": "27112238994",
-    "businessName": "BURGOS SUSANA LUJAN",
-    "amount": "111.329,89"
+    "grant_title": "BURGOS SUSANA LUJAN",
+    "id": "27112238994",
+    "total_amount": "111.329"
   },
   {
-    "cuil": "30573652084",
-    "businessName": "CABLEVISION S.A.",
-    "amount": "127.704,60"
+    "grant_title": "CABLEVISION S.A.",
+    "id": "30573652084",
+    "total_amount": "127.704"
   },
   {
-    "cuil": "20122700705",
-    "businessName": "CABRA RUBEN ANGEL",
-    "amount": "72.700,00"
+    "grant_title": "CABRA RUBEN ANGEL",
+    "id": "20122700705",
+    "total_amount": "72.700"
   },
   {
-    "cuil": "20325754967",
-    "businessName": "CAMBIASSO LEANDRO",
-    "amount": "32.431,62"
+    "grant_title": "CAMBIASSO LEANDRO",
+    "id": "20325754967",
+    "total_amount": "32.431"
   },
   {
-    "cuil": "30708685875",
-    "businessName": "CANTERA LA ROCA S.A.",
-    "amount": "312.180,00"
+    "grant_title": "CANTERA LA ROCA S.A.",
+    "id": "30708685875",
+    "total_amount": "312.180"
   },
   {
-    "cuil": "27180718473",
-    "businessName": "CAPURRO DIANA MONICA",
-    "amount": "4.950,00"
+    "grant_title": "CAPURRO DIANA MONICA",
+    "id": "27180718473",
+    "total_amount": "4.950"
   },
   {
-    "cuil": "20185080804",
-    "businessName": "CARBALLO RICARDO GABRIEL",
-    "amount": "27.416,86"
+    "grant_title": "CARBALLO RICARDO GABRIEL",
+    "id": "20185080804",
+    "total_amount": "27.416"
   },
   {
-    "cuil": "20200978146",
-    "businessName": "CAROTTA DARIO",
-    "amount": "6.500,00"
+    "grant_title": "CAROTTA DARIO",
+    "id": "20200978146",
+    "total_amount": "6.500"
   },
   {
-    "cuil": "30707464646",
-    "businessName": "CASA SPAIS S.A.",
-    "amount": "135.052,99"
+    "grant_title": "CASA SPAIS S.A.",
+    "id": "30707464646",
+    "total_amount": "135.052"
   },
   {
-    "cuil": "20138734685",
-    "businessName": "CASARES JOSE LUIS",
-    "amount": "34.887,76"
+    "grant_title": "CASARES JOSE LUIS",
+    "id": "20138734685",
+    "total_amount": "34.887"
   },
   {
-    "cuil": "20119110719",
-    "businessName": "CAUFERO JUAN CARLOS",
-    "amount": "12.702,00"
+    "grant_title": "CAUFERO JUAN CARLOS",
+    "id": "20119110719",
+    "total_amount": "12.702"
   },
   {
-    "cuil": "30708304758",
-    "businessName": "CENTINELA S.R.L.",
-    "amount": "31.152,00"
+    "grant_title": "CENTINELA S.R.L.",
+    "id": "30708304758",
+    "total_amount": "31.152"
   },
   {
-    "cuil": "30711603510",
-    "businessName": "CERGNEUX DANIEL FABIAN Y CERGNEUX MARIO MIGUEL S. H.",
-    "amount": "680,00"
+    "grant_title": "CERGNEUX DANIEL FABIAN Y CERGNEUX MARIO MIGUEL S. H.",
+    "id": "30711603510",
+    "total_amount": "680"
   },
   {
-    "cuil": "20229062485",
-    "businessName": "CERGNEUX JAVIER MARCELO",
-    "amount": "58.437,07"
+    "grant_title": "CERGNEUX JAVIER MARCELO",
+    "id": "20229062485",
+    "total_amount": "58.437"
   },
   {
-    "cuil": "27127811968",
-    "businessName": "CHALLIOL MARIA ELVIRA",
-    "amount": "37.380,00"
+    "grant_title": "CHALLIOL MARIA ELVIRA",
+    "id": "27127811968",
+    "total_amount": "37.380"
   },
   {
-    "cuil": "20250257962",
-    "businessName": "CHAREUN  HERNAN FABRICIO",
-    "amount": "7.794,00"
+    "grant_title": "CHAREUN  HERNAN FABRICIO",
+    "id": "20250257962",
+    "total_amount": "7.794"
   },
   {
-    "cuil": "20112354884",
-    "businessName": "CHAREUN EDUARDO ROGELIO",
-    "amount": "2.016,00"
+    "grant_title": "CHAREUN EDUARDO ROGELIO",
+    "id": "20112354884",
+    "total_amount": "2.016"
   },
   {
-    "cuil": "23170756134",
-    "businessName": "CHRISTIANSE DINA BEATRIZ",
-    "amount": "99.443,00"
+    "grant_title": "CHRISTIANSE DINA BEATRIZ",
+    "id": "23170756134",
+    "total_amount": "99.443"
   },
   {
-    "cuil": "30566589490",
-    "businessName": "CIRUGIA PARANA S.R.L.",
-    "amount": "34.735,00"
+    "grant_title": "CIRUGIA PARANA S.R.L.",
+    "id": "30566589490",
+    "total_amount": "34.735"
   },
   {
-    "cuil": "20118407254",
-    "businessName": "CIUCIO CLAUDIO ANDRES",
-    "amount": "43.926,00"
+    "grant_title": "CIUCIO CLAUDIO ANDRES",
+    "id": "20118407254",
+    "total_amount": "43.926"
   },
   {
-    "cuil": "20145715955",
-    "businessName": "COLOMBO DANIEL ROBERTO",
-    "amount": "1.870,00"
+    "grant_title": "COLOMBO DANIEL ROBERTO",
+    "id": "20145715955",
+    "total_amount": "1.870"
   },
   {
-    "cuil": "20272943134",
-    "businessName": "COLOMBO GUSTAVO NICOLAS",
-    "amount": "65.052,98"
+    "grant_title": "COLOMBO GUSTAVO NICOLAS",
+    "id": "20272943134",
+    "total_amount": "65.052"
   },
   {
-    "cuil": "30592259601",
-    "businessName": "CONHOR S.R.L.",
-    "amount": "36.981,08"
+    "grant_title": "CONHOR S.R.L.",
+    "id": "30592259601",
+    "total_amount": "36.981"
   },
   {
-    "cuil": "30585802464",
-    "businessName": "CONSTRUCTORA FERCO S.A.",
-    "amount": "175.361,68"
+    "grant_title": "CONSTRUCTORA FERCO S.A.",
+    "id": "30585802464",
+    "total_amount": "175.361"
   },
   {
-    "cuil": "30504089777",
-    "businessName": "COOP. DE PROVISION DE OBRAS Y SERVICIOS PUBLICOS URUGUAY LTDA.",
-    "amount": "149.300,20"
+    "grant_title": "COOP. DE PROVISION DE OBRAS Y SERVICIOS PUBLICOS URUGUAY LTDA.",
+    "id": "30504089777",
+    "total_amount": "149.300"
   },
   {
-    "cuil": "30712264124",
-    "businessName": "COOP. DE TRABAJO LA PORTUARIA LTDA",
-    "amount": "174.533,00"
+    "grant_title": "COOP. DE TRABAJO LA PORTUARIA LTDA",
+    "id": "30712264124",
+    "total_amount": "174.533"
   },
   {
-    "cuil": "30709705101",
-    "businessName": "COOP. DE TRABAJO LTDA. SAN JORGE",
-    "amount": "2.091.188,00"
+    "grant_title": "COOP. DE TRABAJO LTDA. SAN JORGE",
+    "id": "30709705101",
+    "total_amount": "2.091.188"
   },
   {
-    "cuil": "30571866052",
-    "businessName": "COOPERATIVA DE SERVICIOS PUBLICOS GENERAL URQUIZA LTDA",
-    "amount": "16.458,36"
+    "grant_title": "COOPERATIVA DE SERVICIOS PUBLICOS GENERAL URQUIZA LTDA",
+    "id": "30571866052",
+    "total_amount": "16.458"
   },
   {
-    "cuil": "30714228265",
-    "businessName": "COOPERATIVA DE TRABAJO 27 DE OCTUBRE LTDA.",
-    "amount": "588.600,00"
+    "grant_title": "COOPERATIVA DE TRABAJO 27 DE OCTUBRE LTDA.",
+    "id": "30714228265",
+    "total_amount": "588.600"
   },
   {
-    "cuil": "30709090379",
-    "businessName": "COOPERATIVA DE TRABAJO LA COMUNITARIA  LTDA",
-    "amount": "91.410,00"
+    "grant_title": "COOPERATIVA DE TRABAJO LA COMUNITARIA  LTDA",
+    "id": "30709090379",
+    "total_amount": "91.410"
   },
   {
-    "cuil": "30709090417",
-    "businessName": "COOPERATIVA DE TRABAJO LA HISTORICA LTDA",
-    "amount": "50.000,00"
+    "grant_title": "COOPERATIVA DE TRABAJO LA HISTORICA LTDA",
+    "id": "30709090417",
+    "total_amount": "50.000"
   },
   {
-    "cuil": "30714119482",
-    "businessName": "COOPERATIVA DE TRABAJO LA UNION C. DEL URUGUAY LTDA.",
-    "amount": "4.243.226,64"
+    "grant_title": "COOPERATIVA DE TRABAJO LA UNION C. DEL URUGUAY LTDA.",
+    "id": "30714119482",
+    "total_amount": "4.243.226"
   },
   {
-    "cuil": "30710138180",
-    "businessName": "COOPERATIVA DE TRABAJO LA VICTORIA LTDA",
-    "amount": "40.000,00"
+    "grant_title": "COOPERATIVA DE TRABAJO LA VICTORIA LTDA",
+    "id": "30710138180",
+    "total_amount": "40.000"
   },
   {
-    "cuil": "30709692840",
-    "businessName": "COOPERATIVA DE TRABAJO LUCHANDO POR NUESTROS HIJOS LTDA.",
-    "amount": "523.828,00"
+    "grant_title": "COOPERATIVA DE TRABAJO LUCHANDO POR NUESTROS HIJOS LTDA.",
+    "id": "30709692840",
+    "total_amount": "523.828"
   },
   {
-    "cuil": "30711096147",
-    "businessName": "COOPERATIVA DE TRABAJO MANUEL BELGRANO LTDA",
-    "amount": "1.727.909,84"
+    "grant_title": "COOPERATIVA DE TRABAJO MANUEL BELGRANO LTDA",
+    "id": "30711096147",
+    "total_amount": "1.727.909"
   },
   {
-    "cuil": "30709090433",
-    "businessName": "COOPERATIVA DE TRABAJO NOROESTE LTDA",
-    "amount": "8.000,00"
+    "grant_title": "COOPERATIVA DE TRABAJO NOROESTE LTDA",
+    "id": "30709090433",
+    "total_amount": "8.000"
   },
   {
-    "cuil": "33709090319",
-    "businessName": "COOPERATIVA DE TRABAJO PANCHO RAMIREZ LTDA",
-    "amount": "265.500,00"
+    "grant_title": "COOPERATIVA DE TRABAJO PANCHO RAMIREZ LTDA",
+    "id": "33709090319",
+    "total_amount": "265.500"
   },
   {
-    "cuil": "30714380113",
-    "businessName": "COOPERATIVA DE TRABAJO RIO ITAPE LIMITADA",
-    "amount": "829.063,00"
+    "grant_title": "COOPERATIVA DE TRABAJO RIO ITAPE LIMITADA",
+    "id": "30714380113",
+    "total_amount": "829.063"
   },
   {
-    "cuil": "33709090459",
-    "businessName": "COOPERATIVA DE TRABAJO SAN CAYETANO LTDA",
-    "amount": "722.608,00"
+    "grant_title": "COOPERATIVA DE TRABAJO SAN CAYETANO LTDA",
+    "id": "33709090459",
+    "total_amount": "722.608"
   },
   {
-    "cuil": "30714117609",
-    "businessName": "COOPERATIVA DE TRABAJO SAN JORGE C DEL URUGUAY LTDA.",
-    "amount": "1.858.272,96"
+    "grant_title": "COOPERATIVA DE TRABAJO SAN JORGE C DEL URUGUAY LTDA.",
+    "id": "30714117609",
+    "total_amount": "1.858.272"
   },
   {
-    "cuil": "30709713651",
-    "businessName": "COOPERATIVA DE TRABAJO URUGUAY LTDA.",
-    "amount": "2.921.900,00"
+    "grant_title": "COOPERATIVA DE TRABAJO URUGUAY LTDA.",
+    "id": "30709713651",
+    "total_amount": "2.921.900"
   },
   {
-    "cuil": "30709705047",
-    "businessName": "COOPERATIVA ELECTRO CONCEPCION LTDA.",
-    "amount": "140.420,00"
+    "grant_title": "COOPERATIVA ELECTRO CONCEPCION LTDA.",
+    "id": "30709705047",
+    "total_amount": "140.420"
   },
   {
-    "cuil": "30709704997",
-    "businessName": "COOPERATIVA JUSTO JOSE DE URQUIZA LTDA",
-    "amount": "1.606.584,00"
+    "grant_title": "COOPERATIVA JUSTO JOSE DE URQUIZA LTDA",
+    "id": "30709704997",
+    "total_amount": "1.606.584"
   },
   {
-    "cuil": "30709704938",
-    "businessName": "COOPERATIVA TOMAS DE ROCAMORA LTDA.",
-    "amount": "3.136.039,68"
+    "grant_title": "COOPERATIVA TOMAS DE ROCAMORA LTDA.",
+    "id": "30709704938",
+    "total_amount": "3.136.039"
   },
   {
-    "cuil": "30707529543",
-    "businessName": "CORAZZA DINA Y SCEVOLA ROSA",
-    "amount": "1.560,00"
+    "grant_title": "CORAZZA DINA Y SCEVOLA ROSA",
+    "id": "30707529543",
+    "total_amount": "1.560"
   },
   {
-    "cuil": "20180721755",
-    "businessName": "CORBALAN SERGIO GUSTAVO",
-    "amount": "6.750,00"
+    "grant_title": "CORBALAN SERGIO GUSTAVO",
+    "id": "20180721755",
+    "total_amount": "6.750"
   },
   {
-    "cuil": "27292812618",
-    "businessName": "CORDOBA NATALIA LUCRECIA",
-    "amount": "42.000,00"
+    "grant_title": "CORDOBA NATALIA LUCRECIA",
+    "id": "27292812618",
+    "total_amount": "42.000"
   },
   {
-    "cuil": "33623572639",
-    "businessName": "CORRALON CORMAT S.A.",
-    "amount": "5.467,46"
+    "grant_title": "CORRALON CORMAT S.A.",
+    "id": "33623572639",
+    "total_amount": "5.467"
   },
   {
-    "cuil": "20254163237",
-    "businessName": "COSSANI GERMAN AGUSTIN",
-    "amount": "159.200,00"
+    "grant_title": "COSSANI GERMAN AGUSTIN",
+    "id": "20254163237",
+    "total_amount": "159.200"
   },
   {
-    "cuil": "20124321981",
-    "businessName": "CREPY CARLOS JOSE ALFONSO",
-    "amount": "1.111.505,60"
+    "grant_title": "CREPY CARLOS JOSE ALFONSO",
+    "id": "20124321981",
+    "total_amount": "1.111.505"
   },
   {
-    "cuil": "27261303111",
-    "businessName": "CRESCENZI MARIA DE LOS ANGELES",
-    "amount": "7.333,40"
+    "grant_title": "CRESCENZI MARIA DE LOS ANGELES",
+    "id": "27261303111",
+    "total_amount": "7.333"
   },
   {
-    "cuil": "27251825802",
-    "businessName": "CRESPI MARIA EUGENIA",
-    "amount": "27.886,58"
+    "grant_title": "CRESPI MARIA EUGENIA",
+    "id": "27251825802",
+    "total_amount": "27.886"
   },
   {
-    "cuil": "30712064230",
-    "businessName": "CRUCIJUEGOS INSUMOS PUBLICOS S.R.L.",
-    "amount": "108.430,92"
+    "grant_title": "CRUCIJUEGOS INSUMOS PUBLICOS S.R.L.",
+    "id": "30712064230",
+    "total_amount": "108.430"
   },
   {
-    "cuil": "33709700109",
-    "businessName": "CRZ CONSTRUCCIONES S.R.L.",
-    "amount": "8.667.346,55"
+    "grant_title": "CRZ CONSTRUCCIONES S.R.L.",
+    "id": "33709700109",
+    "total_amount": "8.667.346"
   },
   {
-    "cuil": "30574355547",
-    "businessName": "CUPER S.C.",
-    "amount": "219.169,60"
+    "grant_title": "CUPER S.C.",
+    "id": "30574355547",
+    "total_amount": "219.169"
   },
   {
-    "cuil": "20059469364",
-    "businessName": "CZARLINSKY BERNARDO",
-    "amount": "494.750,00"
+    "grant_title": "CZARLINSKY BERNARDO",
+    "id": "20059469364",
+    "total_amount": "494.750"
   },
   {
-    "cuil": "27313953403",
-    "businessName": "D ANGELO LUCRECIA MARICEL",
-    "amount": "55.487,00"
+    "grant_title": "D ANGELO LUCRECIA MARICEL",
+    "id": "27313953403",
+    "total_amount": "55.487"
   },
   {
-    "cuil": "20263062311",
-    "businessName": "DA CAPO",
-    "amount": "780,00"
+    "grant_title": "DA CAPO",
+    "id": "20263062311",
+    "total_amount": "780"
   },
   {
-    "cuil": "20047097704",
-    "businessName": "DACUY, JUAN JOSE",
-    "amount": "108.600,00"
+    "grant_title": "DACUY, JUAN JOSE",
+    "id": "20047097704",
+    "total_amount": "108.600"
   },
   {
-    "cuil": "27259022210",
-    "businessName": "DALLAZUANA VANESA BEATRIZ",
-    "amount": "500,00"
+    "grant_title": "DALLAZUANA VANESA BEATRIZ",
+    "id": "27259022210",
+    "total_amount": "500"
   },
   {
-    "cuil": "20269647117",
-    "businessName": "DE BATTISTA HUGO GUILLERMO",
-    "amount": "83.166,00"
+    "grant_title": "DE BATTISTA HUGO GUILLERMO",
+    "id": "20269647117",
+    "total_amount": "83.166"
   },
   {
-    "cuil": "20306201752",
-    "businessName": "DE BATTISTA JOSE LUIS",
-    "amount": "2.224,00"
+    "grant_title": "DE BATTISTA JOSE LUIS",
+    "id": "20306201752",
+    "total_amount": "2.224"
   },
   {
-    "cuil": "20215960111",
-    "businessName": "DE LOS SANTOS HECTOR (ASESOR)",
-    "amount": "144.824,38"
+    "grant_title": "DE LOS SANTOS HECTOR (ASESOR)",
+    "id": "20215960111",
+    "total_amount": "144.824"
   },
   {
-    "cuil": "24054066178",
-    "businessName": "DELALOYE GERARDO JOSE MARIA",
-    "amount": "22.750,00"
+    "grant_title": "DELALOYE GERARDO JOSE MARIA",
+    "id": "24054066178",
+    "total_amount": "22.750"
   },
   {
-    "cuil": "20170757581",
-    "businessName": "DELALOYE ROBERTO PASTOR",
-    "amount": "40.550,00"
+    "grant_title": "DELALOYE ROBERTO PASTOR",
+    "id": "20170757581",
+    "total_amount": "40.550"
   },
   {
-    "cuil": "30695414141",
-    "businessName": "DEVOL S.A.",
-    "amount": "1.874.454,78"
+    "grant_title": "DEVOL S.A.",
+    "id": "30695414141",
+    "total_amount": "1.874.454"
   },
   {
-    "cuil": "20045563759",
-    "businessName": "DI MARIO JULIAN ANTONIO",
-    "amount": "3.502,80"
+    "grant_title": "DI MARIO JULIAN ANTONIO",
+    "id": "20045563759",
+    "total_amount": "3.502"
   },
   {
-    "cuil": "30693774809",
-    "businessName": "DIARIO PERFIL S.A.",
-    "amount": "9.317,00"
+    "grant_title": "DIARIO PERFIL S.A.",
+    "id": "30693774809",
+    "total_amount": "9.317"
   },
   {
-    "cuil": "30708744146",
-    "businessName": "DIESEL CONCEPCION S.A.",
-    "amount": "9.130,00"
+    "grant_title": "DIESEL CONCEPCION S.A.",
+    "id": "30708744146",
+    "total_amount": "9.130"
   },
   {
-    "cuil": "20292861436",
-    "businessName": "DIORIO FERNANDO GASTON",
-    "amount": "37.764,75"
+    "grant_title": "DIORIO FERNANDO GASTON",
+    "id": "20292861436",
+    "total_amount": "37.764"
   },
   {
-    "cuil": "30559725877",
-    "businessName": "DISTRIBUIDORA COLORADO S.R.L.",
-    "amount": "158.850,15"
+    "grant_title": "DISTRIBUIDORA COLORADO S.R.L.",
+    "id": "30559725877",
+    "total_amount": "158.850"
   },
   {
-    "cuil": "30693261852",
-    "businessName": "DISTRIBUIDORA ROCCA S.A.",
-    "amount": "497.152,97"
+    "grant_title": "DISTRIBUIDORA ROCCA S.A.",
+    "id": "30693261852",
+    "total_amount": "497.152"
   },
   {
-    "cuil": "20221509480",
-    "businessName": "DODERA, JORGE ABELARDO",
-    "amount": "2.200,00"
+    "grant_title": "DODERA, JORGE ABELARDO",
+    "id": "20221509480",
+    "total_amount": "2.200"
   },
   {
-    "cuil": "20281102622",
-    "businessName": "DRI PABLO MARTIN",
-    "amount": "34.605,96"
+    "grant_title": "DRI PABLO MARTIN",
+    "id": "20281102622",
+    "total_amount": "34.605"
   },
   {
-    "cuil": "30710757964",
-    "businessName": "DROGUERIA FB S.A.",
-    "amount": "9.064,00"
+    "grant_title": "DROGUERIA FB S.A.",
+    "id": "30710757964",
+    "total_amount": "9.064"
   },
   {
-    "cuil": "23081045569",
-    "businessName": "DUARTE EDMUNDO ALCIDES",
-    "amount": "15.407,29"
+    "grant_title": "DUARTE EDMUNDO ALCIDES",
+    "id": "23081045569",
+    "total_amount": "15.407"
   },
   {
-    "cuil": "27327298254",
-    "businessName": "DUBLIN VALERIA",
-    "amount": "8.700,00"
+    "grant_title": "DUBLIN VALERIA",
+    "id": "27327298254",
+    "total_amount": "8.700"
   },
   {
-    "cuil": "30700883007",
-    "businessName": "EFFE UFFICI S.R.L.",
-    "amount": "10.731,00"
+    "grant_title": "EFFE UFFICI S.R.L.",
+    "id": "30700883007",
+    "total_amount": "10.731"
   },
   {
-    "cuil": "20208135237",
-    "businessName": "EICHHORST ROBERTO DIONISIO",
-    "amount": "24.280,03"
+    "grant_title": "EICHHORST ROBERTO DIONISIO",
+    "id": "20208135237",
+    "total_amount": "24.280"
   },
   {
-    "cuil": "99999999999",
-    "businessName": "EJERCITO ARGENTINO - BATALLON DE INGENIEROS BLINDADO II",
-    "amount": "410.745,87"
+    "grant_title": "EJERCITO ARGENTINO - BATALLON DE INGENIEROS BLINDADO II",
+    "id": "99999999999",
+    "total_amount": "410.745"
   },
   {
-    "cuil": "30709367273",
-    "businessName": "EL BRILLO S.R.L.",
-    "amount": "2.407,50"
+    "grant_title": "EL BRILLO S.R.L.",
+    "id": "30709367273",
+    "total_amount": "2.407"
   },
   {
-    "cuil": "33612399889",
-    "businessName": "ELECTROMECANICA TACUAR S.R.L.",
-    "amount": "70.718,06"
+    "grant_title": "ELECTROMECANICA TACUAR S.R.L.",
+    "id": "33612399889",
+    "total_amount": "70.718"
   },
   {
-    "cuil": "30543659734",
-    "businessName": "ELECTRONICA MEGATONE S.A.",
-    "amount": "55.772,00"
+    "grant_title": "ELECTRONICA MEGATONE S.A.",
+    "id": "30543659734",
+    "total_amount": "55.772"
   },
   {
-    "cuil": "30708798602",
-    "businessName": "ELEMENTOS Y PROYECTOS S.A.",
-    "amount": "14.783,63"
+    "grant_title": "ELEMENTOS Y PROYECTOS S.A.",
+    "id": "30708798602",
+    "total_amount": "14.783"
   },
   {
-    "cuil": "27266107450",
-    "businessName": "ELIA RODRIGUEZ CARLA MARIA",
-    "amount": "73.012,17"
+    "grant_title": "ELIA RODRIGUEZ CARLA MARIA",
+    "id": "27266107450",
+    "total_amount": "73.012"
   },
   {
-    "cuil": "27266107469",
-    "businessName": "ELIA RODRIGUEZ MARIA GISELA",
-    "amount": "73.012,17"
+    "grant_title": "ELIA RODRIGUEZ MARIA GISELA",
+    "id": "27266107469",
+    "total_amount": "73.012"
   },
   {
-    "cuil": "33701843059",
-    "businessName": "ELIZALDE OSVALDO Y ELIZALDE JORGE",
-    "amount": "26.778,47"
+    "grant_title": "ELIZALDE OSVALDO Y ELIZALDE JORGE",
+    "id": "33701843059",
+    "total_amount": "26.778"
   },
   {
-    "cuil": "30709125881",
-    "businessName": "EMCOER S.A.",
-    "amount": "1.158.000,00"
+    "grant_title": "EMCOER S.A.",
+    "id": "30709125881",
+    "total_amount": "1.158.000"
   },
   {
-    "cuil": "33707897959",
-    "businessName": "EMECA S.A.",
-    "amount": "7.650,00"
+    "grant_title": "EMECA S.A.",
+    "id": "33707897959",
+    "total_amount": "7.650"
   },
   {
-    "cuil": "30709176672",
-    "businessName": "ENERGIA DE ENTRE RIOS S.A.",
-    "amount": "9.198.954,11"
+    "grant_title": "ENERGIA DE ENTRE RIOS S.A.",
+    "id": "30709176672",
+    "total_amount": "9.198.954"
   },
   {
-    "cuil": "30710016859",
-    "businessName": "ENLUZ S.A.",
-    "amount": "69.146,30"
+    "grant_title": "ENLUZ S.A.",
+    "id": "30710016859",
+    "total_amount": "69.146"
   },
   {
-    "cuil": "30670800098",
-    "businessName": "ENTE AUTARQUICO PUERTO DE CONCEPCION DEL URUGUAY",
-    "amount": "29.637,25"
+    "grant_title": "ENTE AUTARQUICO PUERTO DE CONCEPCION DEL URUGUAY",
+    "id": "30670800098",
+    "total_amount": "29.637"
   },
   {
-    "cuil": "20131884037",
-    "businessName": "ERRAMUSPE FERNANDO FRANCISCO",
-    "amount": "29.916,86"
+    "grant_title": "ERRAMUSPE FERNANDO FRANCISCO",
+    "id": "20131884037",
+    "total_amount": "29.916"
   },
   {
-    "cuil": "20122590551",
-    "businessName": "ESPINOSA HECTOR ANTONIO",
-    "amount": "14.450,00"
+    "grant_title": "ESPINOSA HECTOR ANTONIO",
+    "id": "20122590551",
+    "total_amount": "14.450"
   },
   {
-    "cuil": "30709000612",
-    "businessName": "F.J.M. S.A.",
-    "amount": "143.198,00"
+    "grant_title": "F.J.M. S.A.",
+    "id": "30709000612",
+    "total_amount": "143.198"
   },
   {
-    "cuil": "20215294103",
-    "businessName": "FAGUNDEZ MARCELO EDGARDO",
-    "amount": "302,40"
+    "grant_title": "FAGUNDEZ MARCELO EDGARDO",
+    "id": "20215294103",
+    "total_amount": "302"
   },
   {
-    "cuil": "20058261786",
-    "businessName": "FEDERICO, OBERTO RAUL ",
-    "amount": "145.424,38"
+    "grant_title": "FEDERICO, OBERTO RAUL ",
+    "id": "20058261786",
+    "total_amount": "145.424"
   },
   {
-    "cuil": "20263066767",
-    "businessName": "FELLAY AMILCAR HERNAN",
-    "amount": "69.135,00"
+    "grant_title": "FELLAY AMILCAR HERNAN",
+    "id": "20263066767",
+    "total_amount": "69.135"
   },
   {
-    "cuil": "27214259910",
-    "businessName": "FERNANDEZ MARIELA VIVIANA",
-    "amount": "11.480,00"
+    "grant_title": "FERNANDEZ MARIELA VIVIANA",
+    "id": "27214259910",
+    "total_amount": "11.480"
   },
   {
-    "cuil": "23166387094",
-    "businessName": "FERNANDEZ MIRIAM PATRICIA",
-    "amount": "850.040,00"
+    "grant_title": "FERNANDEZ MIRIAM PATRICIA",
+    "id": "23166387094",
+    "total_amount": "850.040"
   },
   {
-    "cuil": "20163270782",
-    "businessName": "FERNANDEZ, MARIO HUGO",
-    "amount": "15.270,11"
+    "grant_title": "FERNANDEZ, MARIO HUGO",
+    "id": "20163270782",
+    "total_amount": "15.270"
   },
   {
-    "cuil": "20185064213",
-    "businessName": "FERRAZZI FERNANDO DANIEL",
-    "amount": "39.500,00"
+    "grant_title": "FERRAZZI FERNANDO DANIEL",
+    "id": "20185064213",
+    "total_amount": "39.500"
   },
   {
-    "cuil": "20180719580",
-    "businessName": "FERREYRA EDUARDO FEDERICO",
-    "amount": "79.210,00"
+    "grant_title": "FERREYRA EDUARDO FEDERICO",
+    "id": "20180719580",
+    "total_amount": "79.210"
   },
   {
-    "cuil": "30707970738",
-    "businessName": "FIOROTTO ALBERTO M Y REY CESAR A S.R.L.",
-    "amount": "696.277,75"
+    "grant_title": "FIOROTTO ALBERTO M Y REY CESAR A S.R.L.",
+    "id": "30707970738",
+    "total_amount": "696.277"
   },
   {
-    "cuil": "30678393734",
-    "businessName": "FLEMING Y MARTOLIO S.R.L.",
-    "amount": "2.584,00"
+    "grant_title": "FLEMING Y MARTOLIO S.R.L.",
+    "id": "30678393734",
+    "total_amount": "2.584"
   },
   {
-    "cuil": "20058063070",
-    "businessName": "FORCLAZ CECILIO ISMAEL. SUCESION",
-    "amount": "920,00"
+    "grant_title": "FORCLAZ CECILIO ISMAEL. SUCESION",
+    "id": "20058063070",
+    "total_amount": "920"
   },
   {
-    "cuil": "20318915750",
-    "businessName": "FRANCESCHINI FRANCISCO MANUEL",
-    "amount": "4.827,35"
+    "grant_title": "FRANCESCHINI FRANCISCO MANUEL",
+    "id": "20318915750",
+    "total_amount": "4.827"
   },
   {
-    "cuil": "20200991401",
-    "businessName": "FRANCIA MARCELO ANIBAL",
-    "amount": "13.998,00"
+    "grant_title": "FRANCIA MARCELO ANIBAL",
+    "id": "20200991401",
+    "total_amount": "13.998"
   },
   {
-    "cuil": "30610104289",
-    "businessName": "GABIOUD HUGO ALBERTO Y EDUARDO RAUL S.H.",
-    "amount": "399.674,40"
+    "grant_title": "GABIOUD HUGO ALBERTO Y EDUARDO RAUL S.H.",
+    "id": "30610104289",
+    "total_amount": "399.674"
   },
   {
-    "cuil": "30708233451",
-    "businessName": "GALARZA HOGAR S.A.",
-    "amount": "12.977,00"
+    "grant_title": "GALARZA HOGAR S.A.",
+    "id": "30708233451",
+    "total_amount": "12.977"
   },
   {
-    "cuil": "27112881307",
-    "businessName": "GALLAY MIRTA",
-    "amount": "12.900,00"
+    "grant_title": "GALLAY MIRTA",
+    "id": "27112881307",
+    "total_amount": "12.900"
   },
   {
-    "cuil": "20206815508",
-    "businessName": "GALLICET OSCAR MARCELO",
-    "amount": "481.383,80"
+    "grant_title": "GALLICET OSCAR MARCELO",
+    "id": "20206815508",
+    "total_amount": "481.383"
   },
   {
-    "cuil": "20278335187",
-    "businessName": "GALVAN GUILLERMO ANDRES",
-    "amount": "99.176,00"
+    "grant_title": "GALVAN GUILLERMO ANDRES",
+    "id": "20278335187",
+    "total_amount": "99.176"
   },
   {
-    "cuil": "20242947860",
-    "businessName": "GAMBERINI SEBASTIAN GABRIEL",
-    "amount": "359.816,81"
+    "grant_title": "GAMBERINI SEBASTIAN GABRIEL",
+    "id": "20242947860",
+    "total_amount": "359.816"
   },
   {
-    "cuil": "27162474206",
-    "businessName": "GARCIA CLAUDIA GLORIA",
-    "amount": "3.976,00"
+    "grant_title": "GARCIA CLAUDIA GLORIA",
+    "id": "27162474206",
+    "total_amount": "3.976"
   },
   {
-    "cuil": "20160430835",
-    "businessName": "GARRIGUE JOSE LUIS",
-    "amount": "516.920,00"
+    "grant_title": "GARRIGUE JOSE LUIS",
+    "id": "20160430835",
+    "total_amount": "516.920"
   },
   {
-    "cuil": "30691210878",
-    "businessName": "GAS NEA S.A.",
-    "amount": "8.226,83"
+    "grant_title": "GAS NEA S.A.",
+    "id": "30691210878",
+    "total_amount": "8.226"
   },
   {
-    "cuil": "27283145382",
-    "businessName": "GAZALI COSTANZA",
-    "amount": "36.520,00"
+    "grant_title": "GAZALI COSTANZA",
+    "id": "27283145382",
+    "total_amount": "36.520"
   },
   {
-    "cuil": "27112316715",
-    "businessName": "GETTE, ANA MARTA",
-    "amount": "79.370,27"
+    "grant_title": "GETTE, ANA MARTA",
+    "id": "27112316715",
+    "total_amount": "79.370"
   },
   {
-    "cuil": "20221508301",
-    "businessName": "GIACOBONI VICTOR MANUEL",
-    "amount": "11.760,00"
+    "grant_title": "GIACOBONI VICTOR MANUEL",
+    "id": "20221508301",
+    "total_amount": "11.760"
   },
   {
-    "cuil": "20250257857",
-    "businessName": "GILE RICARDO MATIAS",
-    "amount": "101.977,06"
+    "grant_title": "GILE RICARDO MATIAS",
+    "id": "20250257857",
+    "total_amount": "101.977"
   },
   {
-    "cuil": "20085622901",
-    "businessName": "GIORDANENGO EDUARDO RAUL",
-    "amount": "145.424,38"
+    "grant_title": "GIORDANENGO EDUARDO RAUL",
+    "id": "20085622901",
+    "total_amount": "145.424"
   },
   {
-    "cuil": "20186649789",
-    "businessName": "GIORGI EDUARDO DANIEL",
-    "amount": "8.673,00"
+    "grant_title": "GIORGI EDUARDO DANIEL",
+    "id": "20186649789",
+    "total_amount": "8.673"
   },
   {
-    "cuil": "20250257245",
-    "businessName": "GOMEZ ALEJANDRO JUAN MARTIN",
-    "amount": "7.161,11"
+    "grant_title": "GOMEZ ALEJANDRO JUAN MARTIN",
+    "id": "20250257245",
+    "total_amount": "7.161"
   },
   {
-    "cuil": "20118244304",
-    "businessName": "GOMEZ BORDON ALCIDES OSVALDO",
-    "amount": "39.146,00"
+    "grant_title": "GOMEZ BORDON ALCIDES OSVALDO",
+    "id": "20118244304",
+    "total_amount": "39.146"
   },
   {
-    "cuil": "27121921303",
-    "businessName": "GOMEZ ROSA MABEL",
-    "amount": "3.100,00"
+    "grant_title": "GOMEZ ROSA MABEL",
+    "id": "27121921303",
+    "total_amount": "3.100"
   },
   {
-    "cuil": "20259020493",
-    "businessName": "GONZALEZ LUIS MARIA",
-    "amount": "7.000,00"
+    "grant_title": "GONZALEZ LUIS MARIA",
+    "id": "20259020493",
+    "total_amount": "7.000"
   },
   {
-    "cuil": "27272878167",
-    "businessName": "GONZALEZ NATALIA BEATRIZ",
-    "amount": "24.000,00"
+    "grant_title": "GONZALEZ NATALIA BEATRIZ",
+    "id": "27272878167",
+    "total_amount": "24.000"
   },
   {
-    "cuil": "27295980422",
-    "businessName": "GONZALEZ SABRINA SOLANGE",
-    "amount": "33.600,00"
+    "grant_title": "GONZALEZ SABRINA SOLANGE",
+    "id": "27295980422",
+    "total_amount": "33.600"
   },
   {
-    "cuil": "27214263829",
-    "businessName": "GONZALEZ SONIA MARIA",
-    "amount": "805,00"
+    "grant_title": "GONZALEZ SONIA MARIA",
+    "id": "27214263829",
+    "total_amount": "805"
   },
   {
-    "cuil": "30709870307",
-    "businessName": "GRAN REX S.R.L.",
-    "amount": "1.199.652,49"
+    "grant_title": "GRAN REX S.R.L.",
+    "id": "30709870307",
+    "total_amount": "1.199.652"
   },
   {
-    "cuil": "30660920451",
-    "businessName": "GRUAS SAN BLAS S.A.",
-    "amount": "39.418,01"
+    "grant_title": "GRUAS SAN BLAS S.A.",
+    "id": "30660920451",
+    "total_amount": "39.418"
   },
   {
-    "cuil": "30622119818",
-    "businessName": "GRUPO MARSO S.R.L.",
-    "amount": "57.545,03"
+    "grant_title": "GRUPO MARSO S.R.L.",
+    "id": "30622119818",
+    "total_amount": "57.545"
   },
   {
-    "cuil": "20324110519",
-    "businessName": "GUIDO JUAN SANTIAGO",
-    "amount": "11.933,43"
+    "grant_title": "GUIDO JUAN SANTIAGO",
+    "id": "20324110519",
+    "total_amount": "11.933"
   },
   {
-    "cuil": "20128536885",
-    "businessName": "GUILLAUME JOSE LUIS",
-    "amount": "35.200,00"
+    "grant_title": "GUILLAUME JOSE LUIS",
+    "id": "20128536885",
+    "total_amount": "35.200"
   },
   {
-    "cuil": "27321552493",
-    "businessName": "GULARTE FOURNIER VERONICA GISELLE",
-    "amount": "9.000,00"
+    "grant_title": "GULARTE FOURNIER VERONICA GISELLE",
+    "id": "27321552493",
+    "total_amount": "9.000"
   },
   {
-    "cuil": "30709611786",
-    "businessName": "HEICENREDER RAUL Y HEICENREDER RUBEN S.H.",
-    "amount": "36.000,00"
+    "grant_title": "HEICENREDER RAUL Y HEICENREDER RUBEN S.H.",
+    "id": "30709611786",
+    "total_amount": "36.000"
   },
   {
-    "cuil": "20324110179",
-    "businessName": "HILARZA ROUDE MAXIMILIANO H.",
-    "amount": "64.659,00"
+    "grant_title": "HILARZA ROUDE MAXIMILIANO H.",
+    "id": "20324110179",
+    "total_amount": "64.659"
   },
   {
-    "cuil": "27042746792",
-    "businessName": "HORISBERGER GLORIA ALCIRA",
-    "amount": "7.467,00"
+    "grant_title": "HORISBERGER GLORIA ALCIRA",
+    "id": "27042746792",
+    "total_amount": "7.467"
   },
   {
-    "cuil": "30709972592",
-    "businessName": "HOSIFA CONSTRUCTORA S.A.",
-    "amount": "12.720.850,14"
+    "grant_title": "HOSIFA CONSTRUCTORA S.A.",
+    "id": "30709972592",
+    "total_amount": "12.720.850"
   },
   {
-    "cuil": "30500055509",
-    "businessName": "I.A.P.S. SEGURO",
-    "amount": "1.517,95"
+    "grant_title": "I.A.P.S. SEGURO",
+    "id": "30500055509",
+    "total_amount": "1.517"
   },
   {
-    "cuil": "30674465757",
-    "businessName": "IANUS S.A.",
-    "amount": "17.122,25"
+    "grant_title": "IANUS S.A.",
+    "id": "30674465757",
+    "total_amount": "17.122"
   },
   {
-    "cuil": "20272944084",
-    "businessName": "IBAÑEZ RICARDO FRANCISCO",
-    "amount": "53.565,00"
+    "grant_title": "IBAÑEZ RICARDO FRANCISCO",
+    "id": "20272944084",
+    "total_amount": "53.565"
   },
   {
-    "cuil": "20351169096",
-    "businessName": "IGLESIAS JUAN JOSE",
-    "amount": "1.460,00"
+    "grant_title": "IGLESIAS JUAN JOSE",
+    "id": "20351169096",
+    "total_amount": "1.460"
   },
   {
-    "cuil": "30674553443",
-    "businessName": "IMAGEN SISTEMAS DE COPIADO S.R.L.",
-    "amount": "89.123,14"
+    "grant_title": "IMAGEN SISTEMAS DE COPIADO S.R.L.",
+    "id": "30674553443",
+    "total_amount": "89.123"
   },
   {
-    "cuil": "30563624392",
-    "businessName": "IMEL INGENIERIA Y MATERIALES ELECTRICOS S.R.L.",
-    "amount": "60.681,34"
+    "grant_title": "IMEL INGENIERIA Y MATERIALES ELECTRICOS S.R.L.",
+    "id": "30563624392",
+    "total_amount": "60.681"
   },
   {
-    "cuil": "30636046341",
-    "businessName": "INDU QUIMICA S.A.",
-    "amount": "2.200.256,42"
+    "grant_title": "INDU QUIMICA S.A.",
+    "id": "30636046341",
+    "total_amount": "2.200.256"
   },
   {
-    "cuil": "30708221089",
-    "businessName": "INDUQUIMICA ARGENTINA S.A.",
-    "amount": "603.225,47"
+    "grant_title": "INDUQUIMICA ARGENTINA S.A.",
+    "id": "30708221089",
+    "total_amount": "603.225"
   },
   {
-    "cuil": "30500055509",
-    "businessName": "INSTITUTO AUTARQUICO PROVINCIAL DEL SEGURO",
-    "amount": "639.329,31"
+    "grant_title": "INSTITUTO AUTARQUICO PROVINCIAL DEL SEGURO",
+    "id": "30500055509",
+    "total_amount": "639.329"
   },
   {
-    "cuil": "30708416114",
-    "businessName": "INTELLYMATION S.R.L.",
-    "amount": "1.180,00"
+    "grant_title": "INTELLYMATION S.R.L.",
+    "id": "30708416114",
+    "total_amount": "1.180"
   },
   {
-    "cuil": "20242167814",
-    "businessName": "IRIBARREN JAVIER MARIO",
-    "amount": "50.961,94"
+    "grant_title": "IRIBARREN JAVIER MARIO",
+    "id": "20242167814",
+    "total_amount": "50.961"
   },
   {
-    "cuil": "30563559639",
-    "businessName": "IZAGUIRRE CARLOS MARIA, MOREND MARIA ELENA Y MOREND MARIA TERESA",
-    "amount": "42.479,49"
+    "grant_title": "IZAGUIRRE CARLOS MARIA, MOREND MARIA ELENA Y MOREND MARIA TERESA",
+    "id": "30563559639",
+    "total_amount": "42.479"
   },
   {
-    "cuil": "20267399086",
-    "businessName": "IZAGUIRRE GASTON ARIEL",
-    "amount": "9.700,00"
+    "grant_title": "IZAGUIRRE GASTON ARIEL",
+    "id": "20267399086",
+    "total_amount": "9.700"
   },
   {
-    "cuil": "27311230692",
-    "businessName": "IZAGUIRRE PAOLA ANDREA",
-    "amount": "21.550,00"
+    "grant_title": "IZAGUIRRE PAOLA ANDREA",
+    "id": "27311230692",
+    "total_amount": "21.550"
   },
   {
-    "cuil": "20058271285",
-    "businessName": "IZAGUIRRE, AMERICO ANIBAL DOMINGO",
-    "amount": "45.011,06"
+    "grant_title": "IZAGUIRRE, AMERICO ANIBAL DOMINGO",
+    "id": "20058271285",
+    "total_amount": "45.011"
   },
   {
-    "cuil": "20058301397",
-    "businessName": "JAIRALA JORGE ANTONIO",
-    "amount": "11.897,19"
+    "grant_title": "JAIRALA JORGE ANTONIO",
+    "id": "20058301397",
+    "total_amount": "11.897"
   },
   {
-    "cuil": "30671198081",
-    "businessName": "JEFATURA DE POLICIA DE LA PROVINCIA DE ENTRE RIOS",
-    "amount": "324.190,36"
+    "grant_title": "JEFATURA DE POLICIA DE LA PROVINCIA DE ENTRE RIOS",
+    "id": "30671198081",
+    "total_amount": "324.190"
   },
   {
-    "cuil": "30633647697",
-    "businessName": "JORGE ALBERTO CASO S.A.",
-    "amount": "828.287,42"
+    "grant_title": "JORGE ALBERTO CASO S.A.",
+    "id": "30633647697",
+    "total_amount": "828.287"
   },
   {
-    "cuil": "30539341541",
-    "businessName": "JOSE FOLMER E HIJOS S.R.L.",
-    "amount": "31.900,00"
+    "grant_title": "JOSE FOLMER E HIJOS S.R.L.",
+    "id": "30539341541",
+    "total_amount": "31.900"
   },
   {
-    "cuil": "20200989326",
-    "businessName": "KLOSTER EDUARDO JOSE",
-    "amount": "5.500,00"
+    "grant_title": "KLOSTER EDUARDO JOSE",
+    "id": "20200989326",
+    "total_amount": "5.500"
   },
   {
-    "cuil": "23326125539",
-    "businessName": "KLOSTER LUCAS SEBASTIAN",
-    "amount": "9.000,00"
+    "grant_title": "KLOSTER LUCAS SEBASTIAN",
+    "id": "23326125539",
+    "total_amount": "9.000"
   },
   {
-    "cuil": "27180719356",
-    "businessName": "KOTLER ALEJANDRA",
-    "amount": "29.916,86"
+    "grant_title": "KOTLER ALEJANDRA",
+    "id": "27180719356",
+    "total_amount": "29.916"
   },
   {
-    "cuil": "23229252909",
-    "businessName": "KRENZ DANIEL ALFREDO",
-    "amount": "85.420,11"
+    "grant_title": "KRENZ DANIEL ALFREDO",
+    "id": "23229252909",
+    "total_amount": "85.420"
   },
   {
-    "cuil": "20083570610",
-    "businessName": "KUTTEL RAUL MIGUEL",
-    "amount": "9.564,00"
+    "grant_title": "KUTTEL RAUL MIGUEL",
+    "id": "20083570610",
+    "total_amount": "9.564"
   },
   {
-    "cuil": "23058325279",
-    "businessName": "LAMBERT CARLOS MIGUEL",
-    "amount": "188.492,99"
+    "grant_title": "LAMBERT CARLOS MIGUEL",
+    "id": "23058325279",
+    "total_amount": "188.492"
   },
   {
-    "cuil": "20050972616",
-    "businessName": "LAMBOGLIA LUIS ANTONIO",
-    "amount": "109.405,25"
+    "grant_title": "LAMBOGLIA LUIS ANTONIO",
+    "id": "20050972616",
+    "total_amount": "109.405"
   },
   {
-    "cuil": "30550097628",
-    "businessName": "LANDI YOLANDA TERESA Y LANDI JOSE OMAR S.H.",
-    "amount": "30.129,99"
+    "grant_title": "LANDI YOLANDA TERESA Y LANDI JOSE OMAR S.H.",
+    "id": "30550097628",
+    "total_amount": "30.129"
   },
   {
-    "cuil": "20268791745",
-    "businessName": "LANZA USATORRE ADOLFO",
-    "amount": "912,00"
+    "grant_title": "LANZA USATORRE ADOLFO",
+    "id": "20268791745",
+    "total_amount": "912"
   },
   {
-    "cuil": "20058271412",
-    "businessName": "LANZI ROBERTO JULIO",
-    "amount": "58.529,86"
+    "grant_title": "LANZI ROBERTO JULIO",
+    "id": "20058271412",
+    "total_amount": "58.529"
   },
   {
-    "cuil": "20263776853",
-    "businessName": "LAZZA MAURICIO RODRIGO",
-    "amount": "2.310,00"
+    "grant_title": "LAZZA MAURICIO RODRIGO",
+    "id": "20263776853",
+    "total_amount": "2.310"
   },
   {
-    "cuil": "30707325409",
-    "businessName": "LEGUIZAMON ALCIDES Y GALVARINI EDUARDO S.H.",
-    "amount": "11.327,00"
+    "grant_title": "LEGUIZAMON ALCIDES Y GALVARINI EDUARDO S.H.",
+    "id": "30707325409",
+    "total_amount": "11.327"
   },
   {
-    "cuil": "20263064462",
-    "businessName": "LEGUIZAMON IVO MARTIN",
-    "amount": "3.540,00"
+    "grant_title": "LEGUIZAMON IVO MARTIN",
+    "id": "20263064462",
+    "total_amount": "3.540"
   },
   {
-    "cuil": "30533004160",
-    "businessName": "LEMIRO PABLO PIETROBONI S.A.",
-    "amount": "3.368.689,01"
+    "grant_title": "LEMIRO PABLO PIETROBONI S.A.",
+    "id": "30533004160",
+    "total_amount": "3.368.689"
   },
   {
-    "cuil": "20085950305",
-    "businessName": "LEMOS ALFREDO GUILLERMO",
-    "amount": "80.520,00"
+    "grant_title": "LEMOS ALFREDO GUILLERMO",
+    "id": "20085950305",
+    "total_amount": "80.520"
   },
   {
-    "cuil": "30534160859",
-    "businessName": "LEON BANCHIK S.A.",
-    "amount": "330.000,00"
+    "grant_title": "LEON BANCHIK S.A.",
+    "id": "30534160859",
+    "total_amount": "330.000"
   },
   {
-    "cuil": "20218455221",
-    "businessName": "LESCANO EDUARDO JAVIER",
-    "amount": "2.535,00"
+    "grant_title": "LESCANO EDUARDO JAVIER",
+    "id": "20218455221",
+    "total_amount": "2.535"
   },
   {
-    "cuil": "20215831192",
-    "businessName": "LESCANO RICARDO ISMAEL",
-    "amount": "99.800,76"
+    "grant_title": "LESCANO RICARDO ISMAEL",
+    "id": "20215831192",
+    "total_amount": "99.800"
   },
   {
-    "cuil": "20145710368",
-    "businessName": "LEUZE EDGARDO LUJAN",
-    "amount": "13.890,00"
+    "grant_title": "LEUZE EDGARDO LUJAN",
+    "id": "20145710368",
+    "total_amount": "13.890"
   },
   {
-    "cuil": "30714224774",
-    "businessName": "LIBERTAD COOPERATIVA DE TRABAJO LIMITADA",
-    "amount": "620.038,69"
+    "grant_title": "LIBERTAD COOPERATIVA DE TRABAJO LIMITADA",
+    "id": "30714224774",
+    "total_amount": "620.038"
   },
   {
-    "cuil": "20259704538",
-    "businessName": "LOIACONO JOSE ANTONIO",
-    "amount": "45.000,00"
+    "grant_title": "LOIACONO JOSE ANTONIO",
+    "id": "20259704538",
+    "total_amount": "45.000"
   },
   {
-    "cuil": "20183281594",
-    "businessName": "LOPEZ HUGO OSCAR",
-    "amount": "25.000,00"
+    "grant_title": "LOPEZ HUGO OSCAR",
+    "id": "20183281594",
+    "total_amount": "25.000"
   },
   {
-    "cuil": "20299418651",
-    "businessName": "LOSADA SANTIAGO ARIEL",
-    "amount": "5.292,23"
+    "grant_title": "LOSADA SANTIAGO ARIEL",
+    "id": "20299418651",
+    "total_amount": "5.292"
   },
   {
-    "cuil": "20135994848",
-    "businessName": "LUGRIN ROBERTO DANIEL",
-    "amount": "9.920,00"
+    "grant_title": "LUGRIN ROBERTO DANIEL",
+    "id": "20135994848",
+    "total_amount": "9.920"
   },
   {
-    "cuil": "30709066109",
-    "businessName": "MADERERA DEL CARMEN S.R.L.",
-    "amount": "2.326,40"
+    "grant_title": "MADERERA DEL CARMEN S.R.L.",
+    "id": "30709066109",
+    "total_amount": "2.326"
   },
   {
-    "cuil": "20084203115",
-    "businessName": "MAGRI HECTOR RAMON",
-    "amount": "20.317,13"
+    "grant_title": "MAGRI HECTOR RAMON",
+    "id": "20084203115",
+    "total_amount": "20.317"
   },
   {
-    "cuil": "27103808397",
-    "businessName": "MARCLAY MARIA ALICIA",
-    "amount": "11.318,92"
+    "grant_title": "MARCLAY MARIA ALICIA",
+    "id": "27103808397",
+    "total_amount": "11.318"
   },
   {
-    "cuil": "20245909889",
-    "businessName": "MARKEL MARCOS RAUL",
-    "amount": "24.516,00"
+    "grant_title": "MARKEL MARCOS RAUL",
+    "id": "20245909889",
+    "total_amount": "24.516"
   },
   {
-    "cuil": "30707213937",
-    "businessName": "MARSICO GUILLERMO MIGUEL, MARSICO JUAN EDUARDO",
-    "amount": "38.269,60"
+    "grant_title": "MARSICO GUILLERMO MIGUEL, MARSICO JUAN EDUARDO",
+    "id": "30707213937",
+    "total_amount": "38.269"
   },
   {
-    "cuil": "30709500224",
-    "businessName": "MATELEC INGENIERIA S.R.L.",
-    "amount": "142.956,16"
+    "grant_title": "MATELEC INGENIERIA S.R.L.",
+    "id": "30709500224",
+    "total_amount": "142.956"
   },
   {
-    "cuil": "23263740939",
-    "businessName": "MATHEY DORET FABRICIO JOSE ALBERTO",
-    "amount": "3.500,00"
+    "grant_title": "MATHEY DORET FABRICIO JOSE ALBERTO",
+    "id": "23263740939",
+    "total_amount": "3.500"
   },
   {
-    "cuil": "30710719728",
-    "businessName": "MAYJO S.R.L.",
-    "amount": "343.003,35"
+    "grant_title": "MAYJO S.R.L.",
+    "id": "30710719728",
+    "total_amount": "343.003"
   },
   {
-    "cuil": "20058579298",
-    "businessName": "MEDINA ROBERTO ALBERTO",
-    "amount": "498,00"
+    "grant_title": "MEDINA ROBERTO ALBERTO",
+    "id": "20058579298",
+    "total_amount": "498"
   },
   {
-    "cuil": "30707299556",
-    "businessName": "MEDIOS DE COMUNICACION ENTRE RIOS S.A.",
-    "amount": "158.131,37"
+    "grant_title": "MEDIOS DE COMUNICACION ENTRE RIOS S.A.",
+    "id": "30707299556",
+    "total_amount": "158.131"
   },
   {
-    "cuil": "20292044527",
-    "businessName": "MENDIETA NICOLAS BERNARDO",
-    "amount": "8.217,00"
+    "grant_title": "MENDIETA NICOLAS BERNARDO",
+    "id": "20292044527",
+    "total_amount": "8.217"
   },
   {
-    "cuil": "30629448523",
-    "businessName": "MERALD S.R.L.",
-    "amount": "16.386,90"
+    "grant_title": "MERALD S.R.L.",
+    "id": "30629448523",
+    "total_amount": "16.386"
   },
   {
-    "cuil": "30708782803",
-    "businessName": "MERIANO ERNESTO Y BOFFELLI JUAN LUIS",
-    "amount": "66.319,53"
+    "grant_title": "MERIANO ERNESTO Y BOFFELLI JUAN LUIS",
+    "id": "30708782803",
+    "total_amount": "66.319"
   },
   {
-    "cuil": "30711554439",
-    "businessName": "METALURGICA EL TIGRE S.R.L.",
-    "amount": "1.980,00"
+    "grant_title": "METALURGICA EL TIGRE S.R.L.",
+    "id": "30711554439",
+    "total_amount": "1.980"
   },
   {
-    "cuil": "27122593288",
-    "businessName": "METRALLE GRISELDA BEATRIZ",
-    "amount": "25.534,29"
+    "grant_title": "METRALLE GRISELDA BEATRIZ",
+    "id": "27122593288",
+    "total_amount": "25.534"
   },
   {
-    "cuil": "27264509705",
-    "businessName": "METZLER CELIA GRACIELA",
-    "amount": "146.159,38"
+    "grant_title": "METZLER CELIA GRACIELA",
+    "id": "27264509705",
+    "total_amount": "146.159"
   },
   {
-    "cuil": "30708501510",
-    "businessName": "MINATTA CARLOS A. Y CABRERA MARCELO D.",
-    "amount": "4.690,00"
+    "grant_title": "MINATTA CARLOS A. Y CABRERA MARCELO D.",
+    "id": "30708501510",
+    "total_amount": "4.690"
   },
   {
-    "cuil": "27119113208",
-    "businessName": "MIOTTO MONICA",
-    "amount": "3.300,00"
+    "grant_title": "MIOTTO MONICA",
+    "id": "27119113208",
+    "total_amount": "3.300"
   },
   {
-    "cuil": "27103808583",
-    "businessName": "MOLINA SONIA NOEMI",
-    "amount": "19.108,18"
+    "grant_title": "MOLINA SONIA NOEMI",
+    "id": "27103808583",
+    "total_amount": "19.108"
   },
   {
-    "cuil": "27039429212",
-    "businessName": "MONTI ANGELICA MAGDALENA",
-    "amount": "1.200,00"
+    "grant_title": "MONTI ANGELICA MAGDALENA",
+    "id": "27039429212",
+    "total_amount": "1.200"
   },
   {
-    "cuil": "20203001003",
-    "businessName": "MONZON JUAN HORACIO",
-    "amount": "254.288,57"
+    "grant_title": "MONZON JUAN HORACIO",
+    "id": "20203001003",
+    "total_amount": "254.288"
   },
   {
-    "cuil": "27119542648",
-    "businessName": "MONZON STELLA MARIS",
-    "amount": "28.877,50"
+    "grant_title": "MONZON STELLA MARIS",
+    "id": "27119542648",
+    "total_amount": "28.877"
   },
   {
-    "cuil": "27322248550",
-    "businessName": "MORABES SABRINA DEL CARMEN",
-    "amount": "20.000,00"
+    "grant_title": "MORABES SABRINA DEL CARMEN",
+    "id": "27322248550",
+    "total_amount": "20.000"
   },
   {
-    "cuil": "20924077582",
-    "businessName": "MORALES GONZALEZ VITAL RAFAEL",
-    "amount": "32.700,00"
+    "grant_title": "MORALES GONZALEZ VITAL RAFAEL",
+    "id": "20924077582",
+    "total_amount": "32.700"
   },
   {
-    "cuil": "20250272880",
-    "businessName": "MORASAN MARTIN RENATO",
-    "amount": "650,00"
+    "grant_title": "MORASAN MARTIN RENATO",
+    "id": "20250272880",
+    "total_amount": "650"
   },
   {
-    "cuil": "20236970494",
-    "businessName": "MOREYRA OSCAR",
-    "amount": "74.544,03"
+    "grant_title": "MOREYRA OSCAR",
+    "id": "20236970494",
+    "total_amount": "74.544"
   },
   {
-    "cuil": "27141280452",
-    "businessName": "MOSCA OLGA RAQUEL",
-    "amount": "2.912,19"
+    "grant_title": "MOSCA OLGA RAQUEL",
+    "id": "27141280452",
+    "total_amount": "2.912"
   },
   {
-    "cuil": "27318741897",
-    "businessName": "MOSCATELLI MARIA LUCRECIA",
-    "amount": "28.000,00"
+    "grant_title": "MOSCATELLI MARIA LUCRECIA",
+    "id": "27318741897",
+    "total_amount": "28.000"
   },
   {
-    "cuil": "20274254220",
-    "businessName": "MUÑOZ LUCIANO GASTON",
-    "amount": "18.439,00"
+    "grant_title": "MUÑOZ LUCIANO GASTON",
+    "id": "20274254220",
+    "total_amount": "18.439"
   },
   {
-    "cuil": "20234740467",
-    "businessName": "MURATURE CESAR AUGUSTO",
-    "amount": "6.487,20"
+    "grant_title": "MURATURE CESAR AUGUSTO",
+    "id": "20234740467",
+    "total_amount": "6.487"
   },
   {
-    "cuil": "27163271457",
-    "businessName": "MURILLO MIRTA MARIA",
-    "amount": "35.900,00"
+    "grant_title": "MURILLO MIRTA MARIA",
+    "id": "27163271457",
+    "total_amount": "35.900"
   },
   {
-    "cuil": "30708016299",
-    "businessName": "NACION LEASING S.A.",
-    "amount": "106.522,98"
+    "grant_title": "NACION LEASING S.A.",
+    "id": "30708016299",
+    "total_amount": "106.522"
   },
   {
-    "cuil": "30697465983",
-    "businessName": "NALDO LOMBARDI  S.A.",
-    "amount": "217.382,00"
+    "grant_title": "NALDO LOMBARDI  S.A.",
+    "id": "30697465983",
+    "total_amount": "217.382"
   },
   {
-    "cuil": "30711215960",
-    "businessName": "NAUTICA COOK S.A.",
-    "amount": "2.590,00"
+    "grant_title": "NAUTICA COOK S.A.",
+    "id": "30711215960",
+    "total_amount": "2.590"
   },
   {
-    "cuil": "20225440221",
-    "businessName": "NEO COMUNICACIÓN",
-    "amount": "66.000,00"
+    "grant_title": "NEO COMUNICACIÓN",
+    "id": "20225440221",
+    "total_amount": "66.000"
   },
   {
-    "cuil": "30543107375",
-    "businessName": "NEUMATICOS SERVIS S.A.",
-    "amount": "7.712,00"
+    "grant_title": "NEUMATICOS SERVIS S.A.",
+    "id": "30543107375",
+    "total_amount": "7.712"
   },
   {
-    "cuil": "20112880330",
-    "businessName": "NEYRA, ELISEO FELIX",
-    "amount": "20.617,00"
+    "grant_title": "NEYRA, ELISEO FELIX",
+    "id": "20112880330",
+    "total_amount": "20.617"
   },
   {
-    "cuil": "20271397128",
-    "businessName": "NICHAJEW VLADIMIR ALEJANDRO",
-    "amount": "39.600,00"
+    "grant_title": "NICHAJEW VLADIMIR ALEJANDRO",
+    "id": "20271397128",
+    "total_amount": "39.600"
   },
   {
-    "cuil": "27236960175",
-    "businessName": "NICHELE VERONICA",
-    "amount": "980,00"
+    "grant_title": "NICHELE VERONICA",
+    "id": "27236960175",
+    "total_amount": "980"
   },
   {
-    "cuil": "20355589774",
-    "businessName": "NUÑEZ CARLOS ABEL",
-    "amount": "42.431,90"
+    "grant_title": "NUÑEZ CARLOS ABEL",
+    "id": "20355589774",
+    "total_amount": "42.431"
   },
   {
-    "cuil": "20229062426",
-    "businessName": "OBISPO GERMAN ARIEL",
-    "amount": "12.200,00"
+    "grant_title": "OBISPO GERMAN ARIEL",
+    "id": "20229062426",
+    "total_amount": "12.200"
   },
   {
-    "cuil": "30562020922",
-    "businessName": "OBRELECTRIC S.R.L.",
-    "amount": "132.055,50"
+    "grant_title": "OBRELECTRIC S.R.L.",
+    "id": "30562020922",
+    "total_amount": "132.055"
   },
   {
-    "cuil": "20083579766",
-    "businessName": "OCHOA PEDRO MIGUEL",
-    "amount": "136.497,69"
+    "grant_title": "OCHOA PEDRO MIGUEL",
+    "id": "20083579766",
+    "total_amount": "136.497"
   },
   {
-    "cuil": "27168431975",
-    "businessName": "OGGUIER NORMA BEATRIZ",
-    "amount": "11.900,00"
+    "grant_title": "OGGUIER NORMA BEATRIZ",
+    "id": "27168431975",
+    "total_amount": "11.900"
   },
   {
-    "cuil": "20138853803",
-    "businessName": "OLIVERA JOSE PEDRO",
-    "amount": "1.097,00"
+    "grant_title": "OLIVERA JOSE PEDRO",
+    "id": "20138853803",
+    "total_amount": "1.097"
   },
   {
-    "cuil": "20318742988",
-    "businessName": "ORCELLET EMILIANO ELBIO",
-    "amount": "829,15"
+    "grant_title": "ORCELLET EMILIANO ELBIO",
+    "id": "20318742988",
+    "total_amount": "829"
   },
   {
-    "cuil": "30546995735",
-    "businessName": "ORGANIZACION DELASOIE HNOS. S.A.",
-    "amount": "35.450,00"
+    "grant_title": "ORGANIZACION DELASOIE HNOS. S.A.",
+    "id": "30546995735",
+    "total_amount": "35.450"
   },
   {
-    "cuil": "33552498149",
-    "businessName": "OS.LO ARGENTINA S.A.",
-    "amount": "787.756,00"
+    "grant_title": "OS.LO ARGENTINA S.A.",
+    "id": "33552498149",
+    "total_amount": "787.756"
   },
   {
-    "cuil": "30708321288",
-    "businessName": "OSCAR SCORZA EQUIPOS Y SERVICIOS S.R.L.",
-    "amount": "72.504,00"
+    "grant_title": "OSCAR SCORZA EQUIPOS Y SERVICIOS S.R.L.",
+    "id": "30708321288",
+    "total_amount": "72.504"
   },
   {
-    "cuil": "30644042266",
-    "businessName": "P P M TODO PARA EL CONTROL DE PLAGAS S.R.L.",
-    "amount": "23.016,12"
+    "grant_title": "P P M TODO PARA EL CONTROL DE PLAGAS S.R.L.",
+    "id": "30644042266",
+    "total_amount": "23.016"
   },
   {
-    "cuil": "20216965230",
-    "businessName": "PALMA RODOLFO GABRIEL",
-    "amount": "127.912,55"
+    "grant_title": "PALMA RODOLFO GABRIEL",
+    "id": "20216965230",
+    "total_amount": "127.912"
   },
   {
-    "cuil": "20135996980",
-    "businessName": "PARRA HUGO ENRIQUE",
-    "amount": "8.000,00"
+    "grant_title": "PARRA HUGO ENRIQUE",
+    "id": "20135996980",
+    "total_amount": "8.000"
   },
   {
-    "cuil": "27122598166",
-    "businessName": "PAVAN NOEMI MATILDE",
-    "amount": "3.750,00"
+    "grant_title": "PAVAN NOEMI MATILDE",
+    "id": "27122598166",
+    "total_amount": "3.750"
   },
   {
-    "cuil": "20128859811",
-    "businessName": "PEREZ DANIEL RUBEN",
-    "amount": "423.246,10"
+    "grant_title": "PEREZ DANIEL RUBEN",
+    "id": "20128859811",
+    "total_amount": "423.246"
   },
   {
-    "cuil": "27045813733",
-    "businessName": "PEREZ LEONOR VICTORIA ",
-    "amount": "18.175,00"
+    "grant_title": "PEREZ LEONOR VICTORIA ",
+    "id": "27045813733",
+    "total_amount": "18.175"
   },
   {
-    "cuil": "20245883294",
-    "businessName": "PEREZ MARTINEZ PABLO JAVIER",
-    "amount": "36.200,00"
+    "grant_title": "PEREZ MARTINEZ PABLO JAVIER",
+    "id": "20245883294",
+    "total_amount": "36.200"
   },
   {
-    "cuil": "20058222349",
-    "businessName": "PEREZ RUBEN",
-    "amount": "457.161,38"
+    "grant_title": "PEREZ RUBEN",
+    "id": "20058222349",
+    "total_amount": "457.161"
   },
   {
-    "cuil": "30575313449",
-    "businessName": "PIÑEYRO Y CIA S.R.L.",
-    "amount": "100.045,50"
+    "grant_title": "PIÑEYRO Y CIA S.R.L.",
+    "id": "30575313449",
+    "total_amount": "100.045"
   },
   {
-    "cuil": "27253294316",
-    "businessName": "PINGET MARINA DE LUJAN",
-    "amount": "24.000,00"
+    "grant_title": "PINGET MARINA DE LUJAN",
+    "id": "27253294316",
+    "total_amount": "24.000"
   },
   {
-    "cuil": "20242364776",
-    "businessName": "PINO ADRIAN MATIAS",
-    "amount": "13.200,00"
+    "grant_title": "PINO ADRIAN MATIAS",
+    "id": "20242364776",
+    "total_amount": "13.200"
   },
   {
-    "cuil": "27351153976",
-    "businessName": "PITER MARIA FLORENCIA",
-    "amount": "42.600,00"
+    "grant_title": "PITER MARIA FLORENCIA",
+    "id": "27351153976",
+    "total_amount": "42.600"
   },
   {
-    "cuil": "27341101463",
-    "businessName": "PITER MARIA VIRGINIA",
-    "amount": "16.250,00"
+    "grant_title": "PITER MARIA VIRGINIA",
+    "id": "27341101463",
+    "total_amount": "16.250"
   },
   {
-    "cuil": "20184887321",
-    "businessName": "PIVAS MIGUEL HIPOLITO SUC.",
-    "amount": "82.875,00"
+    "grant_title": "PIVAS MIGUEL HIPOLITO SUC.",
+    "id": "20184887321",
+    "total_amount": "82.875"
   },
   {
-    "cuil": "20216965176",
-    "businessName": "PIZZOTTI JORGE MARCELO",
-    "amount": "14.699,05"
+    "grant_title": "PIZZOTTI JORGE MARCELO",
+    "id": "20216965176",
+    "total_amount": "14.699"
   },
   {
-    "cuil": "20236965040",
-    "businessName": "POGGIO ALBERTO JOSE",
-    "amount": "3.200,00"
+    "grant_title": "POGGIO ALBERTO JOSE",
+    "id": "20236965040",
+    "total_amount": "3.200"
   },
   {
-    "cuil": "20292812095",
-    "businessName": "POLTRONI MARTIN EXEQUIEL",
-    "amount": "96.800,00"
+    "grant_title": "POLTRONI MARTIN EXEQUIEL",
+    "id": "20292812095",
+    "total_amount": "96.800"
   },
   {
-    "cuil": "27252881587",
-    "businessName": "PONZINIBBIO LETICIA CARLA",
-    "amount": "6.700,00"
+    "grant_title": "PONZINIBBIO LETICIA CARLA",
+    "id": "27252881587",
+    "total_amount": "6.700"
   },
   {
-    "cuil": "27328785310",
-    "businessName": "POPOV LUSARDI ALDANA VICTORIA",
-    "amount": "31.500,00"
+    "grant_title": "POPOV LUSARDI ALDANA VICTORIA",
+    "id": "27328785310",
+    "total_amount": "31.500"
   },
   {
-    "cuil": "30546694719",
-    "businessName": "PREFECTURA NAVAL ARGENTINA",
-    "amount": "5.910,00"
+    "grant_title": "PREFECTURA NAVAL ARGENTINA",
+    "id": "30546694719",
+    "total_amount": "5.910"
   },
   {
-    "cuil": "27179943137",
-    "businessName": "PREISZ LUCRECIA MARGARITA",
-    "amount": "3.220,00"
+    "grant_title": "PREISZ LUCRECIA MARGARITA",
+    "id": "27179943137",
+    "total_amount": "3.220"
   },
   {
-    "cuil": "30670746425",
-    "businessName": "PROMO VENT S.R.L.",
-    "amount": "1.936,00"
+    "grant_title": "PROMO VENT S.R.L.",
+    "id": "30670746425",
+    "total_amount": "1.936"
   },
   {
-    "cuil": "20336455724",
-    "businessName": "PROPPE ISMAEL LUCIANO JESUS",
-    "amount": "10.000,00"
+    "grant_title": "PROPPE ISMAEL LUCIANO JESUS",
+    "id": "20336455724",
+    "total_amount": "10.000"
   },
   {
-    "cuil": "99999999999",
-    "businessName": "PROVEEDOR EXTERNO ",
-    "amount": "3.741.509,96"
+    "grant_title": "PROVEEDOR EXTERNO ",
+    "id": "99999999999",
+    "total_amount": "3.741.509"
   },
   {
-    "cuil": "23115422804",
-    "businessName": "PUTALLAZ ELIDA MIRTA",
-    "amount": "9.952,00"
+    "grant_title": "PUTALLAZ ELIDA MIRTA",
+    "id": "23115422804",
+    "total_amount": "9.952"
   },
   {
-    "cuil": "20208136578",
-    "businessName": "QUINTERO GUILLERMO LUIS",
-    "amount": "260,00"
+    "grant_title": "QUINTERO GUILLERMO LUIS",
+    "id": "20208136578",
+    "total_amount": "260"
   },
   {
-    "cuil": "30551590301",
-    "businessName": "RADIO LUX S.A.",
-    "amount": "158.047,56"
+    "grant_title": "RADIO LUX S.A.",
+    "id": "30551590301",
+    "total_amount": "158.047"
   },
   {
-    "cuil": "30714169706",
-    "businessName": "RADIO MECANO S.A.",
-    "amount": "73.519,71"
+    "grant_title": "RADIO MECANO S.A.",
+    "id": "30714169706",
+    "total_amount": "73.519"
   },
   {
-    "cuil": "30711247188",
-    "businessName": "RADIO Y TELEVISION ARGENTINA S.E.",
-    "amount": "60.676,07"
+    "grant_title": "RADIO Y TELEVISION ARGENTINA S.E.",
+    "id": "30711247188",
+    "total_amount": "60.676"
   },
   {
-    "cuil": "30532222407",
-    "businessName": "RAMIREZ CLAUDIA, RAMIREZ CESAR Y RAMIREZ VERONICA S.H.",
-    "amount": "99.012,37"
+    "grant_title": "RAMIREZ CLAUDIA, RAMIREZ CESAR Y RAMIREZ VERONICA S.H.",
+    "id": "30532222407",
+    "total_amount": "99.012"
   },
   {
-    "cuil": "30714114723",
-    "businessName": "RED VIAL S.A",
-    "amount": "2.616.552,19"
+    "grant_title": "RED VIAL S.A",
+    "id": "30714114723",
+    "total_amount": "2.616.552"
   },
   {
-    "cuil": "30711873798",
-    "businessName": "RENIERO ROMAN Y MANZAN HECTOR S.H.",
-    "amount": "318.435,79"
+    "grant_title": "RENIERO ROMAN Y MANZAN HECTOR S.H.",
+    "id": "30711873798",
+    "total_amount": "318.435"
   },
   {
-    "cuil": "27301667243",
-    "businessName": "RESNISKY VERONICA",
-    "amount": "19.200,00"
+    "grant_title": "RESNISKY VERONICA",
+    "id": "27301667243",
+    "total_amount": "19.200"
   },
   {
-    "cuil": "30707526420",
-    "businessName": "RETAMAL S.R.L.",
-    "amount": "910.407,75"
+    "grant_title": "RETAMAL S.R.L.",
+    "id": "30707526420",
+    "total_amount": "910.407"
   },
   {
-    "cuil": "27266109755",
-    "businessName": "REYES FLAVIA MILENA",
-    "amount": "37.791,09"
+    "grant_title": "REYES FLAVIA MILENA",
+    "id": "27266109755",
+    "total_amount": "37.791"
   },
   {
-    "cuil": "24221495884",
-    "businessName": "REYMUNDO EDUARDO JORGE",
-    "amount": "117.960,21"
+    "grant_title": "REYMUNDO EDUARDO JORGE",
+    "id": "24221495884",
+    "total_amount": "117.960"
   },
   {
-    "cuil": "23245272944",
-    "businessName": "RICCOTTI, MARIANA EDITH",
-    "amount": "10.000,00"
+    "grant_title": "RICCOTTI, MARIANA EDITH",
+    "id": "23245272944",
+    "total_amount": "10.000"
   },
   {
-    "cuil": "20185068146",
-    "businessName": "RIGADA ALEJANDRO J.",
-    "amount": "1.650,00"
+    "grant_title": "RIGADA ALEJANDRO J.",
+    "id": "20185068146",
+    "total_amount": "1.650"
   },
   {
-    "cuil": "27039239669",
-    "businessName": "RIVERA TERESITA OFELIA",
-    "amount": "24.234,00"
+    "grant_title": "RIVERA TERESITA OFELIA",
+    "id": "27039239669",
+    "total_amount": "24.234"
   },
   {
-    "cuil": "23306203819",
-    "businessName": "RODE NELSON FEDERICO",
-    "amount": "20.253,00"
+    "grant_title": "RODE NELSON FEDERICO",
+    "id": "23306203819",
+    "total_amount": "20.253"
   },
   {
-    "cuil": "23305499749",
-    "businessName": "RODE PABLO DANIEL",
-    "amount": "22.190,00"
+    "grant_title": "RODE PABLO DANIEL",
+    "id": "23305499749",
+    "total_amount": "22.190"
   },
   {
-    "cuil": "27351152538",
-    "businessName": "RODRIGUEZ KAREN AILIN",
-    "amount": "14.080,00"
+    "grant_title": "RODRIGUEZ KAREN AILIN",
+    "id": "27351152538",
+    "total_amount": "14.080"
   },
   {
-    "cuil": "27295981496",
-    "businessName": "RODRIGUEZ VALERIA MARIA CELESTE",
-    "amount": "16.800,00"
+    "grant_title": "RODRIGUEZ VALERIA MARIA CELESTE",
+    "id": "27295981496",
+    "total_amount": "16.800"
   },
   {
-    "cuil": "20145719713",
-    "businessName": "ROUGIER VICTOR JORGE",
-    "amount": "5.580,00"
+    "grant_title": "ROUGIER VICTOR JORGE",
+    "id": "20145719713",
+    "total_amount": "5.580"
   },
   {
-    "cuil": "20208138147",
-    "businessName": "ROUSSEAUX MARTIN ANDRES",
-    "amount": "375.775,12"
+    "grant_title": "ROUSSEAUX MARTIN ANDRES",
+    "id": "20208138147",
+    "total_amount": "375.775"
   },
   {
-    "cuil": "20274252449",
-    "businessName": "RUIZ DIAZ MAURO JESUS",
-    "amount": "44.398,00"
+    "grant_title": "RUIZ DIAZ MAURO JESUS",
+    "id": "20274252449",
+    "total_amount": "44.398"
   },
   {
-    "cuil": "23187944309",
-    "businessName": "RUIZ ECHENIQUE, MARCELO RAFAEL",
-    "amount": "37.440,00"
+    "grant_title": "RUIZ ECHENIQUE, MARCELO RAFAEL",
+    "id": "23187944309",
+    "total_amount": "37.440"
   },
   {
-    "cuil": "30521191070",
-    "businessName": "RULEMANES LITORAL S.R.L.",
-    "amount": "13.216,03"
+    "grant_title": "RULEMANES LITORAL S.R.L.",
+    "id": "30521191070",
+    "total_amount": "13.216"
   },
   {
-    "cuil": "20206562057",
-    "businessName": "SAGARNA GUILLERMO HECTOR",
-    "amount": "24.200,00"
+    "grant_title": "SAGARNA GUILLERMO HECTOR",
+    "id": "20206562057",
+    "total_amount": "24.200"
   },
   {
-    "cuil": "27170755125",
-    "businessName": "SANTAMARIA, VIVIANA GABRIELA",
-    "amount": "73.012,17"
+    "grant_title": "SANTAMARIA, VIVIANA GABRIELA",
+    "id": "27170755125",
+    "total_amount": "73.012"
   },
   {
-    "cuil": "20170759029",
-    "businessName": "SANTANGELO ABELARDO RAUL",
-    "amount": "27.700,00"
+    "grant_title": "SANTANGELO ABELARDO RAUL",
+    "id": "20170759029",
+    "total_amount": "27.700"
   },
   {
-    "cuil": "27272944658",
-    "businessName": "SANZ MARIA FLORENCIA",
-    "amount": "69.583,43"
+    "grant_title": "SANZ MARIA FLORENCIA",
+    "id": "27272944658",
+    "total_amount": "69.583"
   },
   {
-    "cuil": "23245273479",
-    "businessName": "SARJANOVICH ANDRES",
-    "amount": "15.259,96"
+    "grant_title": "SARJANOVICH ANDRES",
+    "id": "23245273479",
+    "total_amount": "15.259"
   },
   {
-    "cuil": "27254163886",
-    "businessName": "SATTO GISELA MARTA",
-    "amount": "2.512,00"
+    "grant_title": "SATTO GISELA MARTA",
+    "id": "27254163886",
+    "total_amount": "2.512"
   },
   {
-    "cuil": "20225442380",
-    "businessName": "SCELZI ALBERTO MARTIN",
-    "amount": "126.899,95"
+    "grant_title": "SCELZI ALBERTO MARTIN",
+    "id": "20225442380",
+    "total_amount": "126.899"
   },
   {
-    "cuil": "20177756661",
-    "businessName": "SCEVOLA FABIAN RICARDO",
-    "amount": "2.803,00"
+    "grant_title": "SCEVOLA FABIAN RICARDO",
+    "id": "20177756661",
+    "total_amount": "2.803"
   },
   {
-    "cuil": "20168432462",
-    "businessName": "SCEVOLA RUBEN ALCIDES",
-    "amount": "4.500,00"
+    "grant_title": "SCEVOLA RUBEN ALCIDES",
+    "id": "20168432462",
+    "total_amount": "4.500"
   },
   {
-    "cuil": "33711382769",
-    "businessName": "SCHAB DARIO, PEROTTI XAVIER, BENINCA MATIAS S.H.",
-    "amount": "120.038,00"
+    "grant_title": "SCHAB DARIO, PEROTTI XAVIER, BENINCA MATIAS S.H.",
+    "id": "33711382769",
+    "total_amount": "120.038"
   },
   {
-    "cuil": "27127269888",
-    "businessName": "SCHIERLOH STELLA MARIS",
-    "amount": "3.243,00"
+    "grant_title": "SCHIERLOH STELLA MARIS",
+    "id": "27127269888",
+    "total_amount": "3.243"
   },
   {
-    "cuil": "30701839826",
-    "businessName": "SERCONFI S.R.L.",
-    "amount": "470,45"
+    "grant_title": "SERCONFI S.R.L.",
+    "id": "30701839826",
+    "total_amount": "470"
   },
   {
-    "cuil": "30711730784",
-    "businessName": "SERVICER S.A.",
-    "amount": "150.323,83"
+    "grant_title": "SERVICER S.A.",
+    "id": "30711730784",
+    "total_amount": "150.323"
   },
   {
-    "cuil": "30663197971",
-    "businessName": "SIAFA S.R.L.",
-    "amount": "9.935,30"
+    "grant_title": "SIAFA S.R.L.",
+    "id": "30663197971",
+    "total_amount": "9.935"
   },
   {
-    "cuil": "20276795962",
-    "businessName": "SILVA, JOSE MANUEL",
-    "amount": "89.645,33"
+    "grant_title": "SILVA, JOSE MANUEL",
+    "id": "20276795962",
+    "total_amount": "89.645"
   },
   {
-    "cuil": "23305271799",
-    "businessName": "SIRIMARCO FEDERICO",
-    "amount": "23.578,43"
+    "grant_title": "SIRIMARCO FEDERICO",
+    "id": "23305271799",
+    "total_amount": "23.578"
   },
   {
-    "cuil": "30710848331",
-    "businessName": "SISTEMAS URBANOS S.A.",
-    "amount": "211.000,00"
+    "grant_title": "SISTEMAS URBANOS S.A.",
+    "id": "30710848331",
+    "total_amount": "211.000"
   },
   {
-    "cuil": "20058183815",
-    "businessName": "SITO, PEDRO VICENTE",
-    "amount": "104.848,52"
+    "grant_title": "SITO, PEDRO VICENTE",
+    "id": "20058183815",
+    "total_amount": "104.848"
   },
   {
-    "cuil": "30607763301",
-    "businessName": "SODA MAIPU S.A.",
-    "amount": "25.678,00"
+    "grant_title": "SODA MAIPU S.A.",
+    "id": "30607763301",
+    "total_amount": "25.678"
   },
   {
-    "cuil": "20179547644",
-    "businessName": "SOTTO NESTOR SANTIAGO",
-    "amount": "5.500,00"
+    "grant_title": "SOTTO NESTOR SANTIAGO",
+    "id": "20179547644",
+    "total_amount": "5.500"
   },
   {
-    "cuil": "20289592416",
-    "businessName": "SPIROPULO ALEXIS YAMIL",
-    "amount": "6.800,00"
+    "grant_title": "SPIROPULO ALEXIS YAMIL",
+    "id": "20289592416",
+    "total_amount": "6.800"
   },
   {
-    "cuil": "27214263993",
-    "businessName": "STECKLEIN MARIA RAQUEL",
-    "amount": "51.786,60"
+    "grant_title": "STECKLEIN MARIA RAQUEL",
+    "id": "27214263993",
+    "total_amount": "51.786"
   },
   {
-    "cuil": "27301665593",
-    "businessName": "SUAREZ STELLA MARIS NOEMI",
-    "amount": "5.500,00"
+    "grant_title": "SUAREZ STELLA MARIS NOEMI",
+    "id": "27301665593",
+    "total_amount": "5.500"
   },
   {
-    "cuil": "23141281259",
-    "businessName": "SYLVESTRE CARLOS OMAR",
-    "amount": "19.695,30"
+    "grant_title": "SYLVESTRE CARLOS OMAR",
+    "id": "23141281259",
+    "total_amount": "19.695"
   },
   {
-    "cuil": "27301667200",
-    "businessName": "TABORDA NADIA PAOLA",
-    "amount": "18.000,00"
+    "grant_title": "TABORDA NADIA PAOLA",
+    "id": "27301667200",
+    "total_amount": "18.000"
   },
   {
-    "cuil": "20357148406",
-    "businessName": "TABORDA, EDGARDO DAMIAN",
-    "amount": "37.440,00"
+    "grant_title": "TABORDA, EDGARDO DAMIAN",
+    "id": "20357148406",
+    "total_amount": "37.440"
   },
   {
-    "cuil": "27323375599",
-    "businessName": "TANARRO CANDELA",
-    "amount": "36.000,00"
+    "grant_title": "TANARRO CANDELA",
+    "id": "27323375599",
+    "total_amount": "36.000"
   },
   {
-    "cuil": "30670803445",
-    "businessName": "TANGO TOUR S.R.L.",
-    "amount": "8.800,00"
+    "grant_title": "TANGO TOUR S.R.L.",
+    "id": "30670803445",
+    "total_amount": "8.800"
   },
   {
-    "cuil": "30708507241",
-    "businessName": "TAYRETA S.A.",
-    "amount": "819.780,00"
+    "grant_title": "TAYRETA S.A.",
+    "id": "30708507241",
+    "total_amount": "819.780"
   },
   {
-    "cuil": "30710989814",
-    "businessName": "TECBUS S.A.",
-    "amount": "43.200,00"
+    "grant_title": "TECBUS S.A.",
+    "id": "30710989814",
+    "total_amount": "43.200"
   },
   {
-    "cuil": "30654405170",
-    "businessName": "TECNOTRANS S.R.L.",
-    "amount": "265.311,90"
+    "grant_title": "TECNOTRANS S.R.L.",
+    "id": "30654405170",
+    "total_amount": "265.311"
   },
   {
-    "cuil": "30639453738",
-    "businessName": "TELECOM ARGENTINA S.A.",
-    "amount": "137.725,20"
+    "grant_title": "TELECOM ARGENTINA S.A.",
+    "id": "30639453738",
+    "total_amount": "137.725"
   },
   {
-    "cuil": "23115420089",
-    "businessName": "THEA RUBEN JESUS",
-    "amount": "30.042,19"
+    "grant_title": "THEA RUBEN JESUS",
+    "id": "23115420089",
+    "total_amount": "30.042"
   },
   {
-    "cuil": "20132457442",
-    "businessName": "TOFALO ROMAN HECTOR E.",
-    "amount": "6.000,00"
+    "grant_title": "TOFALO ROMAN HECTOR E.",
+    "id": "20132457442",
+    "total_amount": "6.000"
   },
   {
-    "cuil": "33711619289",
-    "businessName": "TOMBA HERMANOS S.R.L.",
-    "amount": "26.218,00"
+    "grant_title": "TOMBA HERMANOS S.R.L.",
+    "id": "33711619289",
+    "total_amount": "26.218"
   },
   {
-    "cuil": "27114259778",
-    "businessName": "TOME SARA EVA GRACIELA",
-    "amount": "243.235,68"
+    "grant_title": "TOME SARA EVA GRACIELA",
+    "id": "27114259778",
+    "total_amount": "243.235"
   },
   {
-    "cuil": "20172793917",
-    "businessName": "TOMMASI FABIAN",
-    "amount": "41.708,00"
+    "grant_title": "TOMMASI FABIAN",
+    "id": "20172793917",
+    "total_amount": "41.708"
   },
   {
-    "cuil": "20183407237",
-    "businessName": "TORTAROLO WALTER OSVALDO",
-    "amount": "5.200,00"
+    "grant_title": "TORTAROLO WALTER OSVALDO",
+    "id": "20183407237",
+    "total_amount": "5.200"
   },
   {
-    "cuil": "20164733794",
-    "businessName": "TORTORELLA RUBEN OMAR",
-    "amount": "10.570,56"
+    "grant_title": "TORTORELLA RUBEN OMAR",
+    "id": "20164733794",
+    "total_amount": "10.570"
   },
   {
-    "cuil": "20273101161",
-    "businessName": "TOSCANO ANDRES JORGE",
-    "amount": "29.299,22"
+    "grant_title": "TOSCANO ANDRES JORGE",
+    "id": "20273101161",
+    "total_amount": "29.299"
   },
   {
-    "cuil": "20232755378",
-    "businessName": "TOSO SERGIO JAVIER",
-    "amount": "17.160,00"
+    "grant_title": "TOSO SERGIO JAVIER",
+    "id": "20232755378",
+    "total_amount": "17.160"
   },
   {
-    "cuil": "27039305068",
-    "businessName": "TOURFINI INES TERESITA",
-    "amount": "9.030,00"
+    "grant_title": "TOURFINI INES TERESITA",
+    "id": "27039305068",
+    "total_amount": "9.030"
   },
   {
-    "cuil": "20315374627",
-    "businessName": "TOURNOUD GERARDO MARIA",
-    "amount": "14.000,00"
+    "grant_title": "TOURNOUD GERARDO MARIA",
+    "id": "20315374627",
+    "total_amount": "14.000"
   },
   {
-    "cuil": "30712045570",
-    "businessName": "TRABICHET MARIA, VERGARA ADEL Y OTRA",
-    "amount": "11.052,69"
+    "grant_title": "TRABICHET MARIA, VERGARA ADEL Y OTRA",
+    "id": "30712045570",
+    "total_amount": "11.052"
   },
   {
-    "cuil": "30708488891",
-    "businessName": "TRANSPORTE IBARRA HNOS S.A.",
-    "amount": "1.851.000,00"
+    "grant_title": "TRANSPORTE IBARRA HNOS S.A.",
+    "id": "30708488891",
+    "total_amount": "1.851.000"
   },
   {
-    "cuil": "30708409886",
-    "businessName": "TRAZA S.A.",
-    "amount": "668.751,74"
+    "grant_title": "TRAZA S.A.",
+    "id": "30708409886",
+    "total_amount": "668.751"
   },
   {
-    "cuil": "30712297154",
-    "businessName": "TRI-VIAL TECH S.A.",
-    "amount": "1.152.682,00"
+    "grant_title": "TRI-VIAL TECH S.A.",
+    "id": "30712297154",
+    "total_amount": "1.152.682"
   },
   {
-    "cuil": "20112354949",
-    "businessName": "TURIN ALBERTO JOSE",
-    "amount": "65.741,87"
+    "grant_title": "TURIN ALBERTO JOSE",
+    "id": "20112354949",
+    "total_amount": "65.741"
   },
   {
-    "cuil": "30678815965",
-    "businessName": "TUTHILL CORPORATION SUCURSAL ARGENTINA",
-    "amount": "72.360,00"
+    "grant_title": "TUTHILL CORPORATION SUCURSAL ARGENTINA",
+    "id": "30678815965",
+    "total_amount": "72.360"
   },
   {
-    "cuil": "30641734728",
-    "businessName": "TUTTO CONFORE S.R.L.",
-    "amount": "2.716,00"
+    "grant_title": "TUTTO CONFORE S.R.L.",
+    "id": "30641734728",
+    "total_amount": "2.716"
   },
   {
-    "cuil": "27128858941",
-    "businessName": "UDRIZARD ESTELA MARIA",
-    "amount": "1.160,00"
+    "grant_title": "UDRIZARD ESTELA MARIA",
+    "id": "27128858941",
+    "total_amount": "1.160"
   },
   {
-    "cuil": "20221509928",
-    "businessName": "URANGA GUILLERMO JESUS",
-    "amount": "14.928,02"
+    "grant_title": "URANGA GUILLERMO JESUS",
+    "id": "20221509928",
+    "total_amount": "14.928"
   },
   {
-    "cuil": "30712259554",
-    "businessName": "URBANO CONSTRUCTORA S.R.L.",
-    "amount": "2.733.459,76"
+    "grant_title": "URBANO CONSTRUCTORA S.R.L.",
+    "id": "30712259554",
+    "total_amount": "2.733.459"
   },
   {
-    "cuil": "33710196139",
-    "businessName": "URUNET S.R.L.",
-    "amount": "77.770,97"
+    "grant_title": "URUNET S.R.L.",
+    "id": "33710196139",
+    "total_amount": "77.770"
   },
   {
-    "cuil": "30612903073",
-    "businessName": "V.E.M. S.A.",
-    "amount": "8.200,00"
+    "grant_title": "V.E.M. S.A.",
+    "id": "30612903073",
+    "total_amount": "8.200"
   },
   {
-    "cuil": "20284106041",
-    "businessName": "VACCALLUZZO JUAN MANUEL",
-    "amount": "700,00"
+    "grant_title": "VACCALLUZZO JUAN MANUEL",
+    "id": "20284106041",
+    "total_amount": "700"
   },
   {
-    "cuil": "20058243990",
-    "businessName": "VALDUNCIEL RODOLFO RENE",
-    "amount": "258.698,26"
+    "grant_title": "VALDUNCIEL RODOLFO RENE",
+    "id": "20058243990",
+    "total_amount": "258.698"
   },
   {
-    "cuil": "20208131835",
-    "businessName": "VALENZUELA NESTOR GABRIEL",
-    "amount": "15.860,00"
+    "grant_title": "VALENZUELA NESTOR GABRIEL",
+    "id": "20208131835",
+    "total_amount": "15.860"
   },
   {
-    "cuil": "23162172689",
-    "businessName": "VALORI GUILLERMO MIGUEL",
-    "amount": "6.822,00"
+    "grant_title": "VALORI GUILLERMO MIGUEL",
+    "id": "23162172689",
+    "total_amount": "6.822"
   },
   {
-    "cuil": "30707452575",
-    "businessName": "VALVTRONIC S.A.",
-    "amount": "126.155,63"
+    "grant_title": "VALVTRONIC S.A.",
+    "id": "30707452575",
+    "total_amount": "126.155"
   },
   {
-    "cuil": "20226604333",
-    "businessName": "VARELA RAFAEL ENRIQUE",
-    "amount": "21.103,17"
+    "grant_title": "VARELA RAFAEL ENRIQUE",
+    "id": "20226604333",
+    "total_amount": "21.103"
   },
   {
-    "cuil": "27210358019",
-    "businessName": "VERGARA, CLAUDIA MARCELA",
-    "amount": "34.240,00"
+    "grant_title": "VERGARA, CLAUDIA MARCELA",
+    "id": "27210358019",
+    "total_amount": "34.240"
   },
   {
-    "cuil": "27039304282",
-    "businessName": "VERNAZ JOSEFINA ELENA",
-    "amount": "198,00"
+    "grant_title": "VERNAZ JOSEFINA ELENA",
+    "id": "27039304282",
+    "total_amount": "198"
   },
   {
-    "cuil": "27182157606",
-    "businessName": "VERON SONIA GRACIELA",
-    "amount": "10.600,00"
+    "grant_title": "VERON SONIA GRACIELA",
+    "id": "27182157606",
+    "total_amount": "10.600"
   },
   {
-    "cuil": "30601466186",
-    "businessName": "VIAL PARK S.R.L.",
-    "amount": "33.500,00"
+    "grant_title": "VIAL PARK S.R.L.",
+    "id": "30601466186",
+    "total_amount": "33.500"
   },
   {
-    "cuil": "20177756955",
-    "businessName": "VIDAL GABRIEL OSCAR",
-    "amount": "29.559,82"
+    "grant_title": "VIDAL GABRIEL OSCAR",
+    "id": "20177756955",
+    "total_amount": "29.559"
   },
   {
-    "cuil": "30708641142",
-    "businessName": "VILLAVICENCIO HUGO Y RONCONI MARCELO S.H.",
-    "amount": "1.500,00"
+    "grant_title": "VILLAVICENCIO HUGO Y RONCONI MARCELO S.H.",
+    "id": "30708641142",
+    "total_amount": "1.500"
   },
   {
-    "cuil": "33710360079",
-    "businessName": "VIVESCAS S.R.L.",
-    "amount": "128.266,40"
+    "grant_title": "VIVESCAS S.R.L.",
+    "id": "33710360079",
+    "total_amount": "128.266"
   },
   {
-    "cuil": "20330251558",
-    "businessName": "WEBER LEONARDO JUAN MANUEL",
-    "amount": "10.220,00"
+    "grant_title": "WEBER LEONARDO JUAN MANUEL",
+    "id": "20330251558",
+    "total_amount": "10.220"
   },
   {
-    "cuil": "20160430525",
-    "businessName": "WEIGANDT GERARDO ARTURO",
-    "amount": "6.750,61"
+    "grant_title": "WEIGANDT GERARDO ARTURO",
+    "id": "20160430525",
+    "total_amount": "6.750"
   },
   {
-    "cuil": "27214275274",
-    "businessName": "WILHELM MARTA RAQUEL",
-    "amount": "276.388,00"
+    "grant_title": "WILHELM MARTA RAQUEL",
+    "id": "27214275274",
+    "total_amount": "276.388"
   },
   {
-    "cuil": "30546689979",
-    "businessName": "Y.P.F S.A.",
-    "amount": "4.422.643,64"
+    "grant_title": "Y.P.F S.A.",
+    "id": "30546689979",
+    "total_amount": "4.422.643"
   },
   {
-    "cuil": "30708415487",
-    "businessName": "YLUM S.A.",
-    "amount": "317.409,20"
+    "grant_title": "YLUM S.A.",
+    "id": "30708415487",
+    "total_amount": "317.409"
   },
   {
-    "cuil": "20126481811",
-    "businessName": "ZALAZAR DIONISIO RUBEN DARIO",
-    "amount": "15.600,00"
+    "grant_title": "ZALAZAR DIONISIO RUBEN DARIO",
+    "id": "20126481811",
+    "total_amount": "15.600"
   },
   {
-    "cuil": "20208135776",
-    "businessName": "ZAPATA MARIO FABIAN",
-    "amount": "24.500,00"
+    "grant_title": "ZAPATA MARIO FABIAN",
+    "id": "20208135776",
+    "total_amount": "24.500"
   },
   {
-    "cuil": "20135992020",
-    "businessName": "ZIEGLER HUGO EDUARDO",
-    "amount": "127.640,00"
+    "grant_title": "ZIEGLER HUGO EDUARDO",
+    "id": "20135992020",
+    "total_amount": "127.640"
   },
   {
-    "cuil": "20119114919",
-    "businessName": "ZIEGLER LUIS ORLANDO",
-    "amount": "293.200,00"
+    "grant_title": "ZIEGLER LUIS ORLANDO",
+    "id": "20119114919",
+    "total_amount": "293.200"
   }
 ]
