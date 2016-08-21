@@ -23,7 +23,7 @@ function bubbleChart() {
 
   // Constants for sizing
   var width = 940;
-  var height = 600;
+  var height = 700;
 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('gates_tooltip', 240);
@@ -86,7 +86,8 @@ function bubbleChart() {
 
   // Sizes bubbles based on their area instead of raw radius
   var radiusScale = d3.scale.pow()
-    .exponent(0.5)
+    // .exponent(0.5)
+    .exponent(0.6)
     .range([2, 85]);
 
   /*
@@ -109,7 +110,6 @@ function bubbleChart() {
       // console.log(d.total_amount);
       // d.total_amount = d.total_amount.split(',')[0];
       // console.log(d.total_amount);
-      console.log(uid());
       return {
         id: d.id,
         radius: radiusScale(+d.total_amount),
@@ -299,15 +299,16 @@ function bubbleChart() {
     // change outline to indicate hover state.
     d3.select(this).attr('stroke', 'black');
 
-    var content = '<span class="name">Title: </span><span class="value">' +
+    var content = '<span class="name">Proveedor: </span><span class="value">' +
                   d.name +
                   '</span><br/>' +
-                  '<span class="name">Amount: </span><span class="value">$' +
-                  addCommas(d.value) +
-                  '</span><br/>' +
-                  '<span class="name">Year: </span><span class="value">' +
-                  d.year +
-                  '</span>';
+                  '<span class="name">Monto: </span><span class="value">$' +
+                  addCommas(d.value)
+                  // addCommas(d.value) +
+                  // '</span><br/>' +
+                  // '<span class="name">Year: </span><span class="value">' +
+                  // d.year +
+                  // '</span>';
     tooltip.showTooltip(content, d3.event);
   }
 
@@ -405,6 +406,6 @@ function addCommas(nStr) {
 // Load the data.
 // d3.csv('../gates_money-2.csv', display);
 // d3.csv('../jsons/yearProvider/providers_2016.csv', display);
-d3.json('../jsons/yearProvider/providers_2016-alt.json',display);
+d3.json('../jsons/yearProvider/providers_2016.json',display);
 // setup the buttons.
 setupButtons();
