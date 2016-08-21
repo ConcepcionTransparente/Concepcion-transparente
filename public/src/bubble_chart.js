@@ -403,7 +403,8 @@ function addCommas(nStr) {
 }
 
 // Load the data.
-// d3.csv('../gates_money.csv', display);
+// d3.csv('../gates_money-2.csv', display);
+// d3.csv('../jsons/yearProvider/providers_2016.csv', display);
 d3.json('../jsons/yearProvider/providers_2016.json',display);
 // setup the buttons.
 setupButtons();
