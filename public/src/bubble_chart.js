@@ -108,6 +108,13 @@ function bubbleChart() {
     .exponent(0.7)
     .range([2, 85]);
 
+  if(width < 500){
+    var radiusScale = d3.scale.pow()
+      // .exponent(0.5)
+      .exponent(0.9)
+      .range([2, 85]);
+  }
+
   /*
    * This data manipulation function takes the raw data from
    * the CSV file and converts it into an array of node objects.
