@@ -8,22 +8,40 @@
  * https://bost.ocks.org/mike/chart/
  *
  */
- var uid = (function(){
-   var id=0;
-   return function(){
-     if(arguments[0]===0)
-      id=0;
-    return id++;
-  }
-})();
-
-
+//  var uid = (function(){
+//    var id=0;
+//    return function(){
+//      if(arguments[0]===0)
+//       id=0;
+//     return id++;
+//   }
+// })();
+window.onresize = bubbleChart;
 
 function bubbleChart() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementById('vis'),
+      width = w.innerWidth || e.clientWidth || g.clientWidth,
+      height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      console.log(width);
+      console.log(height);
+      console.log(g);
+
+
+      // function updateWindow(){
+      //     width = w.innerWidth || e.clientWidth || g.clientWidth;
+      //     height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      //
+      //     svg.attr("width", width).attr("height", height);
+      //     console.log(width);
+      // }
+      // svg.attr("width", x).attr("height", y);
 
   // Constants for sizing
-  var width = 940;
-  var height = 700;
+  // var width = x;
+  // var height = y;
 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('gates_tooltip', 240);
@@ -87,7 +105,7 @@ function bubbleChart() {
   // Sizes bubbles based on their area instead of raw radius
   var radiusScale = d3.scale.pow()
     // .exponent(0.5)
-    .exponent(0.6)
+    .exponent(0.7)
     .range([2, 85]);
 
   /*
@@ -155,6 +173,10 @@ function bubbleChart() {
 
     // Create a SVG element inside the provided selector
     // with desired size.
+    // svg = d3.select(selector)
+    //   .append('svg')
+    //   .attr('width', width)
+    //   .attr('height', height);
     svg = d3.select(selector)
       .append('svg')
       .attr('width', width)
