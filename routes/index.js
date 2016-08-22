@@ -9,9 +9,11 @@ var router = express.Router();
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'Express' });
 // });
-
 router.get('/', function(req, res,next) {
     res.sendfile('views/index.html');
+});
+router.get('/demo', function(req, res,next) {
+    res.sendfile('views/demo.html');
 });
 
 module.exports = router;
