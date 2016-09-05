@@ -3,240 +3,240 @@
     "category": "ALOJ",
     "categotyName": "ALOJAMIENTO",
     "numberOfVendors": "1",
-    "amount": "16.899,00"
+    "amount": "16899"
   },
   {
     "category": "CANT",
     "categotyName": "CANTERA",
     "numberOfVendors": "2",
-    "amount": "15.952,60"
+    "amount": "15952"
   },
   {
     "category": "COMB",
     "categotyName": "COMBUSTIBLE",
     "numberOfVendors": "58",
-    "amount": "171.111,43"
+    "amount": "171111"
   },
   {
     "category": "COME",
     "categotyName": "COMESTIBLES",
     "numberOfVendors": "25",
-    "amount": "29.687,64"
+    "amount": "29687"
   },
   {
     "category": "COMU",
     "categotyName": "COMUNICACION",
     "numberOfVendors": "138",
-    "amount": "16.427,44"
+    "amount": "16427"
   },
   {
     "category": "COHO",
     "categotyName": "CORTESIA Y HOMENAJE",
     "numberOfVendors": "3",
-    "amount": "3.870,00"
+    "amount": "3870"
   },
   {
     "category": "COTI",
     "categotyName": "COTILLON",
     "numberOfVendors": "1",
-    "amount": "20,70"
+    "amount": "20"
   },
   {
     "category": "ELEC",
     "categotyName": "ELECTRICIDAD",
     "numberOfVendors": "86",
-    "amount": "64.846,11"
+    "amount": "64846"
   },
   {
     "category": "ELED",
     "categotyName": "ELECTRODOMÉSTICO",
     "numberOfVendors": "3",
-    "amount": "10.912,53"
+    "amount": "10912"
   },
   {
     "category": "FECO",
     "categotyName": "FERRETERIA/CORRALON",
     "numberOfVendors": "127",
-    "amount": "1.109.262,48"
+    "amount": "1109262"
   },
   {
     "category": "GASE",
     "categotyName": "GAS ENVASADO/NATURAL",
     "numberOfVendors": "6",
-    "amount": "982,28"
+    "amount": "982"
   },
   {
     "category": "GOME",
     "categotyName": "GOMERIA",
     "numberOfVendors": "2",
-    "amount": "53.460,00"
+    "amount": "53460"
   },
   {
     "category": "HERR",
     "categotyName": "HERRAMIENTAS",
     "numberOfVendors": "15",
-    "amount": "13.007,05"
+    "amount": "13007"
   },
   {
     "category": "IMPR",
     "categotyName": "IMPRENTA",
     "numberOfVendors": "5",
-    "amount": "9.135,75"
+    "amount": "9135"
   },
   {
     "category": "INDU",
     "categotyName": "INDUMENTARIA",
     "numberOfVendors": "3",
-    "amount": "5.135,50"
+    "amount": "5135"
   },
   {
     "category": "INFO",
     "categotyName": "INFORMATICA",
     "numberOfVendors": "27",
-    "amount": "12.874,88"
+    "amount": "12874"
   },
   {
     "category": "USIN",
     "categotyName": "INSUMOS DE USO INTERNO",
     "numberOfVendors": "10",
-    "amount": "238.331,57"
+    "amount": "238331"
   },
   {
     "category": "INHO",
     "categotyName": "INSUMOS HOSPITALARIOS",
     "numberOfVendors": "2",
-    "amount": "367,42"
+    "amount": "367"
   },
   {
     "category": "LIBR",
     "categotyName": "LIBRERIA",
     "numberOfVendors": "21",
-    "amount": "4.826,36"
+    "amount": "4826"
   },
   {
     "category": "LIMP",
     "categotyName": "LIMPIEZA",
     "numberOfVendors": "39",
-    "amount": "6.030,24"
+    "amount": "6030"
   },
   {
     "category": "LUBR",
     "categotyName": "LUBRICANTES",
     "numberOfVendors": "4",
-    "amount": "2.812,83"
+    "amount": "2812"
   },
   {
     "category": "META",
     "categotyName": "METALURGICA",
     "numberOfVendors": "2",
-    "amount": "450,00"
+    "amount": "450"
   },
   {
     "category": "MOBI",
     "categotyName": "MOBILIARIOS",
     "numberOfVendors": "1",
-    "amount": "6.800,00"
+    "amount": "6800"
   },
   {
     "category": "NEUM",
     "categotyName": "NEUMATICOS",
     "numberOfVendors": "10",
-    "amount": "51.904,00"
+    "amount": "51904"
   },
   {
     "category": "OREV",
     "categotyName": "ORGANIZACION DE EVENTOS",
     "numberOfVendors": "18",
-    "amount": "127.050,00"
+    "amount": "127050"
   },
   {
     "category": "PINT",
     "categotyName": "PINTURERIA",
     "numberOfVendors": "38",
-    "amount": "17.379,70"
+    "amount": "17379"
   },
   {
     "category": "PROF",
     "categotyName": "PROFESIONALES",
     "numberOfVendors": "3",
-    "amount": "37.125,94"
+    "amount": "37125"
   },
   {
     "category": "PUBL",
     "categotyName": "PUBLICIDAD",
     "numberOfVendors": "45",
-    "amount": "55.966,87"
+    "amount": "55966"
   },
   {
     "category": "REIN",
     "categotyName": "REPARACION INFORMATICA",
     "numberOfVendors": "2",
-    "amount": "190,00"
+    "amount": "190"
   },
   {
     "category": "REVE",
     "categotyName": "REPARACION VEHICULAR",
     "numberOfVendors": "7",
-    "amount": "24.420,00"
+    "amount": "24420"
   },
   {
     "category": "REPU",
     "categotyName": "REPUESTOS",
     "numberOfVendors": "77",
-    "amount": "67.411,24"
+    "amount": "67411"
   },
   {
     "category": "SLAB",
     "categotyName": "SEGURIDAD INDUSTRIAL",
     "numberOfVendors": "15",
-    "amount": "27.113,74"
+    "amount": "27113"
   },
   {
     "category": "SECO",
     "categotyName": "SEGUROS Y COMISIONES",
     "numberOfVendors": "6",
-    "amount": "2.630,95"
+    "amount": "2630"
   },
   {
     "category": "DESA",
     "categotyName": "SERVICIO DESAGOTE",
     "numberOfVendors": "1",
-    "amount": "6.500,00"
+    "amount": "6500"
   },
   {
     "category": "SELE",
     "categotyName": "SERVICIO ELECTRICO",
     "numberOfVendors": "9",
-    "amount": "33.358,00"
+    "amount": "33358"
   },
   {
     "category": "SOPU",
     "categotyName": "SERVICIO OBRA PUBLICA",
     "numberOfVendors": "15",
-    "amount": "1.283.763,35"
+    "amount": "1283763"
   },
   {
     "category": "SEPE",
     "categotyName": "SERVICIO SEPELIO",
     "numberOfVendors": "3",
-    "amount": "14.850,00"
+    "amount": "14850"
   },
   {
     "category": "SSEG",
     "categotyName": "SISTEMA DE SEGURIDAD",
     "numberOfVendors": "1",
-    "amount": "12.769,00"
+    "amount": "12769"
   },
   {
     "category": "TRPA",
     "categotyName": "TRANSPORTE",
     "numberOfVendors": "1",
-    "amount": "1.200,00"
+    "amount": "1200"
   },
   {
     "category": "VIDR",
     "categotyName": "VIDRIERIA",
     "numberOfVendors": "2",
-    "amount": "2.050,00"
+    "amount": "2050"
   }
 ]

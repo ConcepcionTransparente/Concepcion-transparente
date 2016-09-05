@@ -2,61 +2,61 @@
   {
     "month": "Enero",
     "numberOfVendors": "1163",
-    "amount": "1.522.534,30"
+    "amount": "1522534"
   },
   {
     "month": "Febrero",
     "numberOfVendors": "864",
-    "amount": "1.273.152,76"
+    "amount": "1273152"
   },
   {
     "month": "Marzo",
     "numberOfVendors": "1313",
-    "amount": "1.430.120,63"
+    "amount": "1430120"
   },
   {
     "month": "Abril",
     "numberOfVendors": "1352",
-    "amount": "2.479.650,87"
+    "amount": "2479650"
   },
   {
     "month": "Mayo",
     "numberOfVendors": "1210",
-    "amount": "1.297.916,50"
+    "amount": "1297916"
   },
   {
     "month": "Junio",
     "numberOfVendors": "1039",
-    "amount": "1.238.785,65"
+    "amount": "1238785"
   },
   {
     "month": "Julio",
     "numberOfVendors": "1158",
-    "amount": "1.291.729,83"
+    "amount": "1291729"
   },
   {
     "month": "Agosto",
     "numberOfVendors": "560",
-    "amount": "1.560.143,28"
+    "amount": "1560143"
   },
   {
     "month": "Septiembre",
     "numberOfVendors": "1163",
-    "amount": "2.301.058,31"
+    "amount": "2301058"
   },
   {
     "month": "Octubre",
     "numberOfVendors": "821",
-    "amount": "937.621,94"
+    "amount": "937621"
   },
   {
     "month": "Noviembre",
     "numberOfVendors": "792",
-    "amount": "2.110.183,96"
+    "amount": "2110183"
   },
   {
     "month": "Diciembre",
     "numberOfVendors": "657",
-    "amount": "1.583.091,36"
+    "amount": "1583091"
   }
 ]

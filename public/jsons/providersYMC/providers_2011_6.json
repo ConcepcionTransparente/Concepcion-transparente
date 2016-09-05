@@ -3,240 +3,240 @@
     "category": "BAZA",
     "categotyName": "BAZAR",
     "numberOfVendors": "1",
-    "amount": "405,00"
+    "amount": "405"
   },
   {
     "category": "CANT",
     "categotyName": "CANTERA",
     "numberOfVendors": "1",
-    "amount": "95,00"
+    "amount": "95"
   },
   {
     "category": "CARP",
     "categotyName": "CARPINTERIA",
     "numberOfVendors": "1",
-    "amount": "1.600,00"
+    "amount": "1600"
   },
   {
     "category": "COMB",
     "categotyName": "COMBUSTIBLE",
     "numberOfVendors": "84",
-    "amount": "117.966,19"
+    "amount": "117966"
   },
   {
     "category": "COME",
     "categotyName": "COMESTIBLES",
     "numberOfVendors": "11",
-    "amount": "2.704,00"
+    "amount": "2704"
   },
   {
     "category": "COMU",
     "categotyName": "COMUNICACION",
     "numberOfVendors": "111",
-    "amount": "25.598,97"
+    "amount": "25598"
   },
   {
     "category": "COHO",
     "categotyName": "CORTESIA Y HOMENAJE",
     "numberOfVendors": "5",
-    "amount": "3.360,00"
+    "amount": "3360"
   },
   {
     "category": "ELEC",
     "categotyName": "ELECTRICIDAD",
     "numberOfVendors": "73",
-    "amount": "163.821,10"
+    "amount": "163821"
   },
   {
     "category": "ELED",
     "categotyName": "ELECTRODOMÉSTICO",
     "numberOfVendors": "1",
-    "amount": "1.097,00"
+    "amount": "1097"
   },
   {
     "category": "EQUI",
     "categotyName": "EQUIPOS DE SONIDO IMAGEN E ILUMINACION",
     "numberOfVendors": "1",
-    "amount": "2.377,00"
+    "amount": "2377"
   },
   {
     "category": "FECO",
     "categotyName": "FERRETERIA/CORRALON",
     "numberOfVendors": "83",
-    "amount": "25.485,87"
+    "amount": "25485"
   },
   {
     "category": "GASE",
     "categotyName": "GAS ENVASADO/NATURAL",
     "numberOfVendors": "11",
-    "amount": "554,14"
+    "amount": "554"
   },
   {
     "category": "GAST",
     "categotyName": "GASTRONOMIA",
     "numberOfVendors": "1",
-    "amount": "4.485,00"
+    "amount": "4485"
   },
   {
     "category": "GOME",
     "categotyName": "GOMERIA",
     "numberOfVendors": "3",
-    "amount": "22.760,00"
+    "amount": "22760"
   },
   {
     "category": "HERR",
     "categotyName": "HERRAMIENTAS",
     "numberOfVendors": "9",
-    "amount": "18.603,69"
+    "amount": "18603"
   },
   {
     "category": "IMPR",
     "categotyName": "IMPRENTA",
     "numberOfVendors": "24",
-    "amount": "134.801,15"
+    "amount": "134801"
   },
   {
     "category": "INDU",
     "categotyName": "INDUMENTARIA",
     "numberOfVendors": "35",
-    "amount": "53.448,40"
+    "amount": "53448"
   },
   {
     "category": "INFO",
     "categotyName": "INFORMATICA",
     "numberOfVendors": "7",
-    "amount": "2.286,87"
+    "amount": "2286"
   },
   {
     "category": "USIN",
     "categotyName": "INSUMOS DE USO INTERNO",
     "numberOfVendors": "6",
-    "amount": "110.675,74"
+    "amount": "110675"
   },
   {
     "category": "INHO",
     "categotyName": "INSUMOS HOSPITALARIOS",
     "numberOfVendors": "26",
-    "amount": "20.534,07"
+    "amount": "20534"
   },
   {
     "category": "LIBR",
     "categotyName": "LIBRERIA",
     "numberOfVendors": "20",
-    "amount": "1.741,60"
+    "amount": "1741"
   },
   {
     "category": "LIMP",
     "categotyName": "LIMPIEZA",
     "numberOfVendors": "35",
-    "amount": "14.807,80"
+    "amount": "14807"
   },
   {
     "category": "LUBR",
     "categotyName": "LUBRICANTES",
     "numberOfVendors": "9",
-    "amount": "12.409,12"
+    "amount": "12409"
   },
   {
     "category": "MOBI",
     "categotyName": "MOBILIARIOS",
     "numberOfVendors": "3",
-    "amount": "20.703,48"
+    "amount": "20703"
   },
   {
     "category": "NEUM",
     "categotyName": "NEUMATICOS",
     "numberOfVendors": "5",
-    "amount": "24.175,00"
+    "amount": "24175"
   },
   {
     "category": "OREV",
     "categotyName": "ORGANIZACION DE EVENTOS",
     "numberOfVendors": "7",
-    "amount": "136.715,00"
+    "amount": "136715"
   },
   {
     "category": "PINT",
     "categotyName": "PINTURERIA",
     "numberOfVendors": "4",
-    "amount": "180,00"
+    "amount": "180"
   },
   {
     "category": "POTA",
     "categotyName": "POTABILIZACION",
     "numberOfVendors": "2",
-    "amount": "1.185.000,00"
+    "amount": "1185000"
   },
   {
     "category": "PROF",
     "categotyName": "PROFESIONALES",
     "numberOfVendors": "6",
-    "amount": "14.350,00"
+    "amount": "14350"
   },
   {
     "category": "PUBL",
     "categotyName": "PUBLICIDAD",
     "numberOfVendors": "79",
-    "amount": "130.822,45"
+    "amount": "130822"
   },
   {
     "category": "REIN",
     "categotyName": "REPARACION INFORMATICA",
     "numberOfVendors": "8",
-    "amount": "1.198,36"
+    "amount": "1198"
   },
   {
     "category": "REVE",
     "categotyName": "REPARACION VEHICULAR",
     "numberOfVendors": "3",
-    "amount": "185,69"
+    "amount": "185"
   },
   {
     "category": "REPU",
     "categotyName": "REPUESTOS",
     "numberOfVendors": "33",
-    "amount": "11.514,17"
+    "amount": "11514"
   },
   {
     "category": "SLAB",
     "categotyName": "SEGURIDAD INDUSTRIAL",
     "numberOfVendors": "39",
-    "amount": "57.588,00"
+    "amount": "57588"
   },
   {
     "category": "SECO",
     "categotyName": "SEGUROS Y COMISIONES",
     "numberOfVendors": "1",
-    "amount": "3.234,83"
+    "amount": "3234"
   },
   {
     "category": "DESA",
     "categotyName": "SERVICIO DESAGOTE",
     "numberOfVendors": "1",
-    "amount": "210,00"
+    "amount": "210"
   },
   {
     "category": "SELE",
     "categotyName": "SERVICIO ELECTRICO",
     "numberOfVendors": "145",
-    "amount": "873.103,86"
+    "amount": "873103"
   },
   {
     "category": "SOPU",
     "categotyName": "SERVICIO OBRA PUBLICA",
     "numberOfVendors": "18",
-    "amount": "1.542.809,00"
+    "amount": "1542809"
   },
   {
     "category": "SEPE",
     "categotyName": "SERVICIO SEPELIO",
     "numberOfVendors": "2",
-    "amount": "6.700,00"
+    "amount": "6700"
   },
   {
     "category": "TRPA",
     "categotyName": "TRANSPORTE",
     "numberOfVendors": "3",
-    "amount": "7.902,00"
+    "amount": "7902"
   }
 ]
