@@ -85,111 +85,111 @@ app.use(function(err, req, res, next) {
 
 
 
-//Scraper
-
-//Reporte: Proveedores Contratados (por año)
-function year(val){
-  var url='http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php';
-  x( url , 'body tr.textoTabla', [{
-          year: 'td',
-          numberOfVendors: 'td:nth-of-type(2)',
-          totalAmount: 'td:nth-of-type(4) | nopoint | nocomma'
-      }])
-      .write('public/jsons/year/years.json');
-};
-
-time.tic();
- for (var i = 0; i < 1; i++) {
-     year(i);
- }
-time.toc();
-
-
-//Reporte: Proveedores Contratados Por Año Y Mes
-function yearMonth(val) {
-  var date = new Date();
-  for(i = 2009 ; i <= date.getFullYear(); i++){
-     var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAM.php?anio="+i;
-    x( url , 'body tr.textoTabla', [{
-            month: 'td',
-            numberOfVendors: 'td:nth-of-type(2)',
-            amount: 'td:nth-of-type(4) | nopoint | nocomma'
-        }])
-        .write('public/jsons/XanioXmes/providers_'+i+'.json');
-  }
-};
-time.tic();
- for (var i = 0; i < 1; i++) {
-     yearMonth(i);
- }
-time.toc();
-
-//Reporte: Proveedores Contratados Por Año Y Rubro
-function yearCategory(val) {
-  var date = new Date();
-  for(i = 2009 ; i <= date.getFullYear(); i++){
-     var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAR.php?anio="+i;
-    x( url , 'body tr.textoTabla', [{
-            category: 'td',
-            nameCategory: 'td:nth-of-type(2)',
-            numberOfVendors: 'td:nth-of-type(3)',
-            amount: 'td:nth-of-type(5) | nopoint | nocomma'
-        }])
-        .write('public/jsons/XanioXrubro/providers_'+i+'.json');
-  }
-};
-time.tic();
- for (var i = 0; i < 1; i++) {
-     yearCategory(i);
- }
-time.toc();
-
-
-
-//Reporte: Proveedores Contratados Por Año Y Proveedor
-function yearProvider(val) {
-  var date = new Date();
-  for(i = 2009 ; i <= date.getFullYear(); i++){
-    var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio="+i;
-    x( url , 'body tr.textoTabla', [{
-            grant_title: 'td:nth-of-type(2)',
-            id: 'td' ,
-            total_amount: 'td:nth-of-type(6) | nopoint | nocomma'
-
-        }])
-        .write('public/jsons/yearProvider/providers_'+i+'.json');
-  }
-};
-time.tic();
- for (var i = 0; i < 1; i++) {
-     yearProvider(i);
- }
-time.toc();
-
-
-//Reporte: Proveedores Contratados Por Año, Mes Y Rubro
-
-function providersYMC(val) {
-  var date = new Date();
-    for(i = 2009 ; i <= date.getFullYear(); i++){
-      for(j = 1; j<=12 ;j++){
-        var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAMR.php?anio="+i+"&mes="+j;
-        x( url , 'body tr.textoTabla', [{
-                category: 'td',
-                categotyName: 'td:nth-of-type(2)',
-                numberOfVendors:'td:nth-of-type(3)',
-                amount: 'td:nth-of-type(5) | nopoint | nocomma'
-            }])
-            .write('public/jsons/providersYMC/providers_'+i+'_'+j+'.json');
-      }
-  }
-};
-time.tic();
- for (var i = 0; i < 1; i++) {
-     providersYMC(i);
- }
-time.toc();
-
+// //Scraper
+//
+// //Reporte: Proveedores Contratados (por año)
+// function year(val){
+//   var url='http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php';
+//   x( url , 'body tr.textoTabla', [{
+//           year: 'td',
+//           numberOfVendors: 'td:nth-of-type(2)',
+//           totalAmount: 'td:nth-of-type(4) | nopoint | nocomma'
+//       }])
+//       .write('public/jsons/year/years.json');
+// };
+//
+// time.tic();
+//  for (var i = 0; i < 1; i++) {
+//      year(i);
+//  }
+// time.toc();
+//
+//
+// //Reporte: Proveedores Contratados Por Año Y Mes
+// function yearMonth(val) {
+//   var date = new Date();
+//   for(i = 2009 ; i <= date.getFullYear(); i++){
+//      var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAM.php?anio="+i;
+//     x( url , 'body tr.textoTabla', [{
+//             month: 'td',
+//             numberOfVendors: 'td:nth-of-type(2)',
+//             amount: 'td:nth-of-type(4) | nopoint | nocomma'
+//         }])
+//         .write('public/jsons/XanioXmes/providers_'+i+'.json');
+//   }
+// };
+// time.tic();
+//  for (var i = 0; i < 1; i++) {
+//      yearMonth(i);
+//  }
+// time.toc();
+//
+// //Reporte: Proveedores Contratados Por Año Y Rubro
+// function yearCategory(val) {
+//   var date = new Date();
+//   for(i = 2009 ; i <= date.getFullYear(); i++){
+//      var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAR.php?anio="+i;
+//     x( url , 'body tr.textoTabla', [{
+//             category: 'td',
+//             nameCategory: 'td:nth-of-type(2)',
+//             numberOfVendors: 'td:nth-of-type(3)',
+//             amount: 'td:nth-of-type(5) | nopoint | nocomma'
+//         }])
+//         .write('public/jsons/XanioXrubro/providers_'+i+'.json');
+//   }
+// };
+// time.tic();
+//  for (var i = 0; i < 1; i++) {
+//      yearCategory(i);
+//  }
+// time.toc();
+//
+//
+//
+// //Reporte: Proveedores Contratados Por Año Y Proveedor
+// function yearProvider(val) {
+//   var date = new Date();
+//   for(i = 2009 ; i <= date.getFullYear(); i++){
+//     var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio="+i;
+//     x( url , 'body tr.textoTabla', [{
+//             grant_title: 'td:nth-of-type(2)',
+//             id: 'td' ,
+//             total_amount: 'td:nth-of-type(6) | nopoint | nocomma'
+//
+//         }])
+//         .write('public/jsons/yearProvider/providers_'+i+'.json');
+//   }
+// };
+// time.tic();
+//  for (var i = 0; i < 1; i++) {
+//      yearProvider(i);
+//  }
+// time.toc();
+//
+//
+// //Reporte: Proveedores Contratados Por Año, Mes Y Rubro
+//
+// function providersYMC(val) {
+//   var date = new Date();
+//     for(i = 2009 ; i <= date.getFullYear(); i++){
+//       for(j = 1; j<=12 ;j++){
+//         var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAMR.php?anio="+i+"&mes="+j;
+//         x( url , 'body tr.textoTabla', [{
+//                 category: 'td',
+//                 categotyName: 'td:nth-of-type(2)',
+//                 numberOfVendors:'td:nth-of-type(3)',
+//                 amount: 'td:nth-of-type(5) | nopoint | nocomma'
+//             }])
+//             .write('public/jsons/providersYMC/providers_'+i+'_'+j+'.json');
+//       }
+//   }
+// };
+// time.tic();
+//  for (var i = 0; i < 1; i++) {
+//      providersYMC(i);
+//  }
+// time.toc();
+//
 
 
 
