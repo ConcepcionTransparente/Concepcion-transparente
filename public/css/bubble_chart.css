@@ -1,12 +1,10 @@
 a, a:visited, a:active {
   color: #444;
 }
-
 .container {
-  max-width: 900px;
+  /*max-width: 900px;*/
   margin: auto;
 }
-
 .button {
   min-width: 130px;
   padding: 4px 5px;
@@ -16,20 +14,31 @@ a, a:visited, a:active {
   border: 1px solid #e0e0e0;
   text-decoration: none;
 }
-
 .button.active {
   background: #000;
   color: #fff;
 }
-
-
-#vis {
+/*#vis {
   width: 940px;
   height: 600px;
   clear: both;
   margin-bottom: 10px;
+}*/
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%; /* radio de aspecto wisth/height */
+    vertical-align: top;
+    overflow: hidden;
 }
-
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 #toolbar {
   margin-top: 10px;
 }
@@ -39,7 +48,6 @@ a, a:visited, a:active {
   fill: #aaa;
   cursor: default;
 }
-
 .tooltip {
 	position: absolute;
 	top: 100px;
@@ -55,15 +63,13 @@ a, a:visited, a:active {
 	font-size: 12px;
 	z-index: 10;
 }
-
 .tooltip .title {
 	font-size: 13px;
 }
-
 .tooltip .name {
   font-weight:bold;
 }
-
+/*
 .footer {
   text-align: center;
-}
+}*/

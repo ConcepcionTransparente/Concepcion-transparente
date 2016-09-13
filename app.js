@@ -143,10 +143,10 @@ app.use(function(err, req, res, next) {
 //      yearCategory(i);
 //  }
 // time.toc();
-//
-//
-//
-// //Reporte: Proveedores Contratados Por Año Y Proveedor
+
+
+
+//Reporte: Proveedores Contratados Por Año Y Proveedor
 // function yearProvider(val) {
 //   var date = new Date();
 //   for(i = 2009 ; i <= date.getFullYear(); i++){
@@ -154,7 +154,11 @@ app.use(function(err, req, res, next) {
 //     x( url , 'body tr.textoTabla', [{
 //             grant_title: 'td:nth-of-type(2)',
 //             id: 'td' ,
-//             total_amount: 'td:nth-of-type(6) | nopoint | nocomma'
+//             total_amount: 'td:nth-of-type(6) | nopoint | nocomma',
+//             link: 'td:nth-of-type(8) a@href',
+//             detail: x('td:nth-of-type(8) a@href','body tr.textoTabla',[{
+//               rubro: 'td:nth-of-type(2)'
+//             }])
 //
 //         }])
 //         .write('public/jsons/yearProvider/providers_'+i+'.json');
@@ -165,8 +169,8 @@ app.use(function(err, req, res, next) {
 //      yearProvider(i);
 //  }
 // time.toc();
-//
-//
+
+
 // //Reporte: Proveedores Contratados Por Año, Mes Y Rubro
 //
 // function providersYMC(val) {
@@ -189,7 +193,7 @@ app.use(function(err, req, res, next) {
 //      providersYMC(i);
 //  }
 // time.toc();
-//
+
 
 
 

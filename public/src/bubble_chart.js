@@ -25,9 +25,9 @@ function bubbleChart() {
       g = d.getElementById('vis'),
       width = w.innerWidth || e.clientWidth || g.clientWidth,
       height = w.innerHeight|| e.clientHeight|| g.clientHeight;
-      console.log(width);
-      console.log(height);
-      console.log(g);
+      // console.log(width);
+      // console.log(height);
+      // console.log(g);
 
 
       // function updateWindow(){
@@ -185,9 +185,16 @@ function bubbleChart() {
     //   .attr('width', width)
     //   .attr('height', height);
     svg = d3.select(selector)
-      .append('svg')
-      .attr('width', width)
-      .attr('height', height);
+      //.append('svg')
+      //.attr('width', width)
+      //.attr('height', height);
+      .classed("svg-container", true) //container class to make it responsive
+      .append("svg")
+      //responsive SVG needs these 2 attributes and no width and height attr
+      .attr("preserveAspectRatio", "xMidYMin meet")
+      .attr("viewBox", "0 0 1200 760")
+      //class to make it responsive
+       .classed("svg-content-responsive", true);
 
     // Bind nodes data to what will become DOM elements to represent them.
     bubbles = svg.selectAll('.bubble')
