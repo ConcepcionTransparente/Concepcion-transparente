@@ -211,6 +211,7 @@ function bubbleChart() {
       .attr('stroke-width', 2)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
+      
 
     // Fancy transition to make bubbles appear, ending with the
     // correct radius
