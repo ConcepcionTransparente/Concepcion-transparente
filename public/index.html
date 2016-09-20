@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="dcuApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -19,6 +19,8 @@
     <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
     <script src="../lib/d3.js"></script>
     <script src="/lib/c3/htdocs/js/c3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
   </head>
 
 
@@ -38,8 +40,32 @@
           </script>
         </div>
       </header>
-
       <div class="divider"></div>
+
+
+      <div class="row general-data" ng-controller="yearController">
+        <h3>En 2016 la municipalidad de Concepción del Uruguay brinda:</h3>
+        <div class="col s12 m3 border-right">
+          <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>{{data[0].total_amount | currency}}</span></p>
+        </div>
+        <div class="col s12 m3 border-right">
+          <p>PROMEDIO DE GASTO MENSUAL:<br><br><br><span>{{data[0].promedio | currency}}</span></p>
+        </div>
+        <div class="col s12 m3 border-right">
+          <p>CANTIDAD DE PROVEEDORES:<br><br><br><br><span>{{data.cantidad}}</span></p>
+        </div>
+        <div class="col s12 m3">
+          <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>{{data[0].numberOfContracts}}</span></p>
+        </div>
+      <div class="divider"></div>
+      <br>
+    </div>
+    <div class="row">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida.</p>
+      <br>
+    </div>
+    <br>
+    <div class="divider"></div>
 
       <h3>Total de proveedores 2016:</h3>
   <!-- <div class="container"> -->
@@ -50,7 +76,7 @@
       <div class="row">
         <div id="vis"></div>
         <br>
-        <div class="divider"></div>        
+        <div class="divider"></div>
       </div>
 
       <div class="row">
@@ -60,6 +86,29 @@
         </div>
         <br>
       </div>
+      <div class="divider"></div>
+
+
+      <div class="row" ng-controller="yearProviderController">
+        <h3>Ranking de proveedores</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Proveedor</th>
+              <th>CUIL</th>
+              <th>Monto total</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="x in data">
+                <td>{{ x.grant_title }}</td>
+                <td>{{ x.cuil }}</td>
+                <td>{{x.total_amount | currency}}</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+
       <footer>
         <div class="divider"></div>
         <p>
@@ -68,11 +117,22 @@
       </footer>
     </div>
 
+
+
+
+
+
+
+
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../bower_components/materialize/dist/materialize.min.js"></script>
     <script src="../bower_components/materialize/dist/js/init.js"></script>
+    <!-- ANGULAR AND FRONTEND -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
+    <script src="app.js"></script>
+    <!-- D3 AND PAINT SCRIPTS -->
     <script src="../lib/d3.js"></script>
     <script src="../src/tooltip.js"></script>
     <script src="../src/bubble_chart.js"></script>

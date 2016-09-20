@@ -805,13 +805,6 @@
     "detail": []
   },
   {
-    "grant_title": "FONTANINI LUCIO Y FONTANINI ALFREDO",
-    "id": "30709309877",
-    "total_amount": "384989",
-    "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2012&proveedor=555",
-    "detail": []
-  },
-  {
     "grant_title": "FORCLAZ CECILIO ISMAEL. SUCESION",
     "id": "20058063070",
     "total_amount": "3752",
@@ -1530,6 +1523,13 @@
     "id": "30670746425",
     "total_amount": "724",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2012&proveedor=829",
+    "detail": []
+  },
+  {
+    "grant_title": "PROVEEDOR EXTERNO-",
+    "id": "30708056983",
+    "total_amount": "384989",
+    "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2012&proveedor=555",
     "detail": []
   },
   {

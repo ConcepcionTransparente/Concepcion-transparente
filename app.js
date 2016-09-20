@@ -92,7 +92,7 @@ app.use(function(err, req, res, next) {
 //   var url='http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php';
 //   x( url , 'body tr.textoTabla', [{
 //           year: 'td',
-//           numberOfVendors: 'td:nth-of-type(2)',
+//           numberOfContracts: 'td:nth-of-type(2)',
 //           totalAmount: 'td:nth-of-type(4) | nopoint | nocomma'
 //       }])
 //       .write('public/jsons/year/years.json');
@@ -146,7 +146,7 @@ app.use(function(err, req, res, next) {
 
 
 
-//Reporte: Proveedores Contratados Por Año Y Proveedor
+// Reporte: Proveedores Contratados Por Año Y Proveedor
 // function yearProvider(val) {
 //   var date = new Date();
 //   for(i = 2009 ; i <= date.getFullYear(); i++){
