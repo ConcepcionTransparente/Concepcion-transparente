@@ -136,7 +136,7 @@ function bubbleChart() {
       // d.total_amount = d.total_amount.split(',')[0];
       // console.log(d.total_amount);
       return {
-        id: d.id,
+        id: d.cuil,
         radius: radiusScale(+d.total_amount),
         value: d.total_amount,
         name: d.grant_title,
@@ -211,7 +211,7 @@ function bubbleChart() {
       .attr('stroke-width', 2)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
-      
+
 
     // Fancy transition to make bubbles appear, ending with the
     // correct radius

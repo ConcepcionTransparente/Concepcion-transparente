@@ -153,7 +153,7 @@ app.use(function(err, req, res, next) {
 //     var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio="+i;
 //     x( url , 'body tr.textoTabla', [{
 //             grant_title: 'td:nth-of-type(2)',
-//             id: 'td' ,
+//             cuil: 'td' ,
 //             total_amount: 'td:nth-of-type(6) | nopoint | nocomma',
 //             link: 'td:nth-of-type(8) a@href',
 //             detail: x('td:nth-of-type(8) a@href','body tr.textoTabla',[{

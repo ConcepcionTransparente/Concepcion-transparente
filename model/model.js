@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
 
 var provider = new mongoose.Schema({
-  cuil: Number,
   grant_title: String,
-  total_amount: Number
+  cuil: Number,
+  total_amount: Number,
+  link: String,
+  detail: String
 });
 mongoose.model('yearProvider', provider);
 
