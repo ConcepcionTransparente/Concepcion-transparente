@@ -4,6 +4,7 @@ var provider = new mongoose.Schema({
   grant_title: String,
   cuil: Number,
   total_amount: Number,
+  total_contrats: Number,
   link: String,
   detail: String
 });

@@ -1,1919 +1,2193 @@
 [
   {
     "grant_title": "2D S.A.",
-    "id": "30710068212",
+    "cuil": "30710068212",
     "total_amount": "240",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=745",
     "detail": []
   },
   {
     "grant_title": "A. ROPELATO S.R.L.",
-    "id": "30579843531",
+    "cuil": "30579843531",
     "total_amount": "198235",
+    "total_contrats": "373",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=264",
     "detail": []
   },
   {
     "grant_title": "ACEVEDO SILVIA RAQUEL",
-    "id": "27128858267",
+    "cuil": "27128858267",
     "total_amount": "3801",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=32",
     "detail": []
   },
   {
     "grant_title": "AGGUIAR NANCY RAQUEL",
-    "id": "27225440714",
+    "cuil": "27225440714",
     "total_amount": "292473",
+    "total_contrats": "45",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=12",
     "detail": []
   },
   {
     "grant_title": "AGUET LEONARDO FABIO",
-    "id": "20204212032",
+    "cuil": "20204212032",
     "total_amount": "20340",
+    "total_contrats": "8",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=805",
     "detail": []
   },
   {
     "grant_title": "AGUILAR EDUARDO RAUL",
-    "id": "20122595863",
+    "cuil": "20122595863",
     "total_amount": "546",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=884",
     "detail": []
   },
   {
     "grant_title": "AIRES FEDERALES S.R.L.",
-    "id": "30710208464",
+    "cuil": "30710208464",
     "total_amount": "18150",
+    "total_contrats": "20",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=4",
     "detail": []
   },
   {
     "grant_title": "ALALUF LUCAS AGUSTIN",
-    "id": "20271397950",
+    "cuil": "20271397950",
     "total_amount": "1800",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=38",
     "detail": []
   },
   {
     "grant_title": "ALBA OMAR MARIA",
-    "id": "20082975390",
+    "cuil": "20082975390",
     "total_amount": "1667",
+    "total_contrats": "16",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=33",
     "detail": []
   },
   {
     "grant_title": "ALBERTO OSCAR ARNOLDO",
-    "id": "20058067017",
+    "cuil": "20058067017",
     "total_amount": "225",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=31",
     "detail": []
   },
   {
     "grant_title": "ALERTA EMERGENCIAS CARDIOMEDICAS S.A.",
-    "id": "30641868546",
+    "cuil": "30641868546",
     "total_amount": "6900",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=34",
     "detail": []
   },
   {
     "grant_title": "ALFIERI JOSE FABIAN",
-    "id": "20167617531",
+    "cuil": "20167617531",
     "total_amount": "21832",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=40",
     "detail": []
   },
   {
     "grant_title": "ALFIERI LILIA MARIELA",
-    "id": "27203617297",
+    "cuil": "27203617297",
     "total_amount": "7200",
+    "total_contrats": "8",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=841",
     "detail": []
   },
   {
     "grant_title": "ALLASSIA LUCIANO EZEQUIEL",
-    "id": "20250259590",
+    "cuil": "20250259590",
     "total_amount": "38",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=11",
     "detail": []
   },
   {
     "grant_title": "ALMARA ROBERTO ALMILCAR",
-    "id": "20138144756",
+    "cuil": "20138144756",
     "total_amount": "2301",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=29",
     "detail": []
   },
   {
     "grant_title": "ALONSO LUIS PABLO",
-    "id": "20169808776",
+    "cuil": "20169808776",
     "total_amount": "13630",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=541",
     "detail": []
   },
   {
     "grant_title": "ALTAMIRANO ROBERTO CARLOS",
-    "id": "20269897369",
+    "cuil": "20269897369",
     "total_amount": "18048",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=881",
     "detail": []
   },
   {
     "grant_title": "ALUMBRAR PATAGONICA S.R.L.",
-    "id": "30709766429",
+    "cuil": "30709766429",
     "total_amount": "5809",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=535",
     "detail": []
   },
   {
     "grant_title": "ALVAREZ OSCAR ALFREDO",
-    "id": "20100721202",
+    "cuil": "20100721202",
     "total_amount": "7970",
+    "total_contrats": "16",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=10",
     "detail": []
   },
   {
     "grant_title": "AMED CAMIL",
-    "id": "20059377583",
+    "cuil": "20059377583",
     "total_amount": "1624",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=35",
     "detail": []
   },
   {
     "grant_title": "AMX ARGENTINA S.A.",
-    "id": "30663288497",
+    "cuil": "30663288497",
     "total_amount": "74695",
+    "total_contrats": "279",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=79",
     "detail": []
   },
   {
     "grant_title": "ANALISIS S.R.L.",
-    "id": "30708963476",
+    "cuil": "30708963476",
     "total_amount": "8600",
+    "total_contrats": "17",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=42",
     "detail": []
   },
   {
     "grant_title": "ANDISCO MARIO OSCAR",
-    "id": "20272945706",
+    "cuil": "20272945706",
     "total_amount": "21240",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=746",
     "detail": []
   },
   {
     "grant_title": "ANGELINI MARTIN ROSENDO",
-    "id": "20263063105",
+    "cuil": "20263063105",
     "total_amount": "1200",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=338",
     "detail": []
   },
   {
     "grant_title": "ARDETI GUSTAVO EMANUEL",
-    "id": "20245272120",
+    "cuil": "20245272120",
     "total_amount": "29559",
+    "total_contrats": "109",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=18",
     "detail": []
   },
   {
     "grant_title": "ARENERA DON ANTONIO S.A.",
-    "id": "30647369983",
+    "cuil": "30647369983",
     "total_amount": "73818",
+    "total_contrats": "33",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=6",
     "detail": []
   },
   {
     "grant_title": "ARGACHA HIRINSON",
-    "id": "20058085562",
+    "cuil": "20058085562",
     "total_amount": "10239",
+    "total_contrats": "11",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=9",
     "detail": []
   },
   {
     "grant_title": "AROCENA LUIS OSCAR",
-    "id": "20106857807",
+    "cuil": "20106857807",
     "total_amount": "13124",
+    "total_contrats": "14",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=781",
     "detail": []
   },
   {
     "grant_title": "ARRIGO JUAN ALEJANDRO",
-    "id": "20180719009",
+    "cuil": "20180719009",
     "total_amount": "2000",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=5",
     "detail": []
   },
   {
     "grant_title": "ARTES GRAFICAS YUSTY S.R.L.",
-    "id": "30651509994",
+    "cuil": "30651509994",
     "total_amount": "8286",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=28",
     "detail": []
   },
   {
     "grant_title": "ASOCIACION AMIGOS DE MUSEOS MUNICIPALES",
-    "id": "30708217618",
+    "cuil": "30708217618",
     "total_amount": "300",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=15",
     "detail": []
   },
   {
     "grant_title": "ASOCIACION DE BOMBEROS VOLUNTARIOS  DE CONCEPCION DEL URUGUAY",
-    "id": "30670787741",
+    "cuil": "30670787741",
     "total_amount": "94640",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=556",
     "detail": []
   },
   {
     "grant_title": "AYALA JOSE MARCELINO",
-    "id": "20147324309",
+    "cuil": "20147324309",
     "total_amount": "3500",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=862",
     "detail": []
   },
   {
     "grant_title": "BALBUENA NATALIA ELIZABETH",
-    "id": "27236974893",
+    "cuil": "27236974893",
     "total_amount": "965",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=67",
     "detail": []
   },
   {
     "grant_title": "BALLESTRINI MARIELA PAOLA",
-    "id": "27250256936",
+    "cuil": "27250256936",
     "total_amount": "854",
+    "total_contrats": "14",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=64",
     "detail": []
   },
   {
     "grant_title": "BALORI MIGUEL ANGEL",
-    "id": "20046158734",
+    "cuil": "20046158734",
     "total_amount": "1400",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=65",
     "detail": []
   },
   {
     "grant_title": "BALTORE VIVIANA MABEL",
-    "id": "27206688012",
+    "cuil": "27206688012",
     "total_amount": "2472",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=63",
     "detail": []
   },
   {
     "grant_title": "BARCOS LUIS ALEJANDRO Y BARCOS EDUARDO",
-    "id": "30710506805",
+    "cuil": "30710506805",
     "total_amount": "5000",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=539",
     "detail": []
   },
   {
     "grant_title": "BARDISA EDUARDO SUCESION",
-    "id": "20109495051",
+    "cuil": "20109495051",
     "total_amount": "5951",
+    "total_contrats": "12",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=48",
     "detail": []
   },
   {
     "grant_title": "BARRETO HUGO CESAR",
-    "id": "20141284399",
+    "cuil": "20141284399",
     "total_amount": "8600",
+    "total_contrats": "17",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=22",
     "detail": []
   },
   {
     "grant_title": "BARSOTTI WALTER DARIO",
-    "id": "20225440663",
+    "cuil": "20225440663",
     "total_amount": "1600",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=50",
     "detail": []
   },
   {
     "grant_title": "BAXTER JESICA VALERIA",
-    "id": "27301665194",
+    "cuil": "27301665194",
     "total_amount": "150",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=61",
     "detail": []
   },
   {
     "grant_title": "BESEL LAURA VANESA",
-    "id": "27291921103",
+    "cuil": "27291921103",
     "total_amount": "5600",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=690",
     "detail": []
   },
   {
     "grant_title": "BIDAL GUSTAVO ALFONSO",
-    "id": "20180720104",
+    "cuil": "20180720104",
     "total_amount": "484",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=24",
     "detail": []
   },
   {
     "grant_title": "BIDAL RODOLFO CESAR",
-    "id": "20229063260",
+    "cuil": "20229063260",
     "total_amount": "1975",
+    "total_contrats": "24",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=55",
     "detail": []
   },
   {
     "grant_title": "BOFFELLI MARIA INES",
-    "id": "27135347928",
+    "cuil": "27135347928",
     "total_amount": "62513",
+    "total_contrats": "15",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=788",
     "detail": []
   },
   {
     "grant_title": "BOGATIC FLAVIO ADOLFO",
-    "id": "20168431962",
+    "cuil": "20168431962",
     "total_amount": "3960",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=56",
     "detail": []
   },
   {
     "grant_title": "BONNET GUSTAVO MARTIN",
-    "id": "20259023344",
+    "cuil": "20259023344",
     "total_amount": "1858",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=25",
     "detail": []
   },
   {
     "grant_title": "BONNIN MARTIN ANIBAL",
-    "id": "23269646179",
+    "cuil": "23269646179",
     "total_amount": "1778",
+    "total_contrats": "8",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=819",
     "detail": []
   },
   {
     "grant_title": "BONVIN MAURO GABRIEL",
-    "id": "20271398493",
+    "cuil": "20271398493",
     "total_amount": "28208",
+    "total_contrats": "9",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=569",
     "detail": []
   },
   {
     "grant_title": "BORDET ELEAZAR EDGARDO",
-    "id": "20162172922",
+    "cuil": "20162172922",
     "total_amount": "450",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=47",
     "detail": []
   },
   {
     "grant_title": "BOURLOT NESTOR CONRADO",
-    "id": "20078868091",
+    "cuil": "20078868091",
     "total_amount": "45768",
+    "total_contrats": "213",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=122",
     "detail": []
   },
   {
     "grant_title": "BOUVET HNOS S.R.L.",
-    "id": "30670790122",
+    "cuil": "30670790122",
     "total_amount": "14048",
+    "total_contrats": "15",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=59",
     "detail": []
   },
   {
     "grant_title": "BOUZENARD EDUARDO ABEL",
-    "id": "20149368737",
+    "cuil": "20149368737",
     "total_amount": "2300",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=807",
     "detail": []
   },
   {
     "grant_title": "BOZZI GUSTAVO LEONARDO",
-    "id": "20183791924",
+    "cuil": "20183791924",
     "total_amount": "18586",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=525",
     "detail": []
   },
   {
     "grant_title": "BRAVIN DANIEL ROQUE",
-    "id": "20077094076",
+    "cuil": "20077094076",
     "total_amount": "916",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=545",
     "detail": []
   },
   {
     "grant_title": "BURGOS DANIEL RAUL",
-    "id": "20242360096",
+    "cuil": "20242360096",
     "total_amount": "36596",
+    "total_contrats": "504",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=453",
     "detail": []
   },
   {
     "grant_title": "CABLEVISION S.A.",
-    "id": "30573652084",
+    "cuil": "30573652084",
     "total_amount": "30331",
+    "total_contrats": "18",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=116",
     "detail": []
   },
   {
     "grant_title": "CAPURRO DIANA MONICA",
-    "id": "27180718473",
+    "cuil": "27180718473",
     "total_amount": "1990",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=73",
     "detail": []
   },
   {
     "grant_title": "CASA SPAIS S.A.",
-    "id": "30707464646",
+    "cuil": "30707464646",
     "total_amount": "95206",
+    "total_contrats": "646",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=115",
     "detail": []
   },
   {
     "grant_title": "CASARES JOSE LUIS",
-    "id": "20138734685",
+    "cuil": "20138734685",
     "total_amount": "83625",
+    "total_contrats": "115",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=74",
     "detail": []
   },
   {
     "grant_title": "CAUFERO JUAN CARLOS",
-    "id": "20119110719",
+    "cuil": "20119110719",
     "total_amount": "1910",
+    "total_contrats": "14",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=574",
     "detail": []
   },
   {
     "grant_title": "CERGNEUX JAVIER MARCELO",
-    "id": "20229062485",
+    "cuil": "20229062485",
     "total_amount": "56278",
+    "total_contrats": "110",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=112",
     "detail": []
   },
   {
     "grant_title": "CHAREUN  HERNAN FABRICIO",
-    "id": "20250257962",
+    "cuil": "20250257962",
     "total_amount": "165",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=111",
     "detail": []
   },
   {
     "grant_title": "CHARRIERE MARY MABEL",
-    "id": "27044175075",
+    "cuil": "27044175075",
     "total_amount": "3660",
+    "total_contrats": "12",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=161",
     "detail": []
   },
   {
     "grant_title": "CIRUGIA PARANA S.R.L.",
-    "id": "30566589490",
+    "cuil": "30566589490",
     "total_amount": "500",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=344",
     "detail": []
   },
   {
     "grant_title": "CIUCIO CLAUDIO ANDRES",
-    "id": "20118407254",
+    "cuil": "20118407254",
     "total_amount": "17704",
+    "total_contrats": "18",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=78",
     "detail": []
   },
   {
     "grant_title": "CIVITAS S.A.",
-    "id": "30708370963",
+    "cuil": "30708370963",
     "total_amount": "32941",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=82",
     "detail": []
   },
   {
     "grant_title": "COLOMBO GUSTAVO NICOLAS",
-    "id": "20272943134",
+    "cuil": "20272943134",
     "total_amount": "392",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=455",
     "detail": []
   },
   {
     "grant_title": "COMBUSTIBLES LITORAL S.A.",
-    "id": "30701841146",
+    "cuil": "30701841146",
     "total_amount": "69929",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=80",
     "detail": []
   },
   {
     "grant_title": "COMTE HUGO JORGEY MARASSI JULIO CESAR",
-    "id": "30653277551",
+    "cuil": "30653277551",
     "total_amount": "80",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=87",
     "detail": []
   },
   {
     "grant_title": "CONCEPCION MATERIALES S.A.",
-    "id": "30707436316",
+    "cuil": "30707436316",
     "total_amount": "42721",
+    "total_contrats": "59",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=77",
     "detail": []
   },
   {
     "grant_title": "CONHOR S.R.L.",
-    "id": "30592259601",
+    "cuil": "30592259601",
     "total_amount": "505",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=95",
     "detail": []
   },
   {
     "grant_title": "CONSTRUCTORA FERCO S.A.",
-    "id": "30585802464",
+    "cuil": "30585802464",
     "total_amount": "10260",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=84",
     "detail": []
   },
   {
     "grant_title": "COOPERATIVA DE SERVICIOS PUBLICOS GENERAL URQUIZA LTDA",
-    "id": "30571866052",
+    "cuil": "30571866052",
     "total_amount": "6110",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=85",
     "detail": []
   },
   {
     "grant_title": "CORAZZA DINA Y SCEVOLA ROSA",
-    "id": "30707529543",
+    "cuil": "30707529543",
     "total_amount": "5526",
+    "total_contrats": "15",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=71",
     "detail": []
   },
   {
     "grant_title": "CORIPA S.A",
-    "id": "30575009804",
+    "cuil": "30575009804",
     "total_amount": "112317",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=840",
     "detail": []
   },
   {
     "grant_title": "CORONEL SERGIO EVARISTO",
-    "id": "20259024944",
+    "cuil": "20259024944",
     "total_amount": "5138",
+    "total_contrats": "28",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=532",
     "detail": []
   },
   {
     "grant_title": "CORRALON CORMAT S.A.",
-    "id": "33623572639",
+    "cuil": "33623572639",
     "total_amount": "4038",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=94",
     "detail": []
   },
   {
     "grant_title": "COSSANI ROBERTO DANIEL",
-    "id": "20066103871",
+    "cuil": "20066103871",
     "total_amount": "3600",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=570",
     "detail": []
   },
   {
     "grant_title": "CUPALEN S.R.L.",
-    "id": "30710405693",
+    "cuil": "30710405693",
     "total_amount": "2107",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=676",
     "detail": []
   },
   {
     "grant_title": "CUPER S.C.",
-    "id": "30574355547",
+    "cuil": "30574355547",
     "total_amount": "274900",
+    "total_contrats": "725",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=93",
     "detail": []
   },
   {
     "grant_title": "CZARLINSKY BERNARDO",
-    "id": "20059469364",
+    "cuil": "20059469364",
     "total_amount": "28038",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=69",
     "detail": []
   },
   {
     "grant_title": "DA CAPO",
-    "id": "20263062311",
+    "cuil": "20263062311",
     "total_amount": "1790",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=438",
     "detail": []
   },
   {
     "grant_title": "DE BATTISTA HUGO GUILLERMO",
-    "id": "20269647117",
+    "cuil": "20269647117",
     "total_amount": "10061",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=164",
     "detail": []
   },
   {
     "grant_title": "DE BATTISTA HUGO RICARDO",
-    "id": "20058343324",
+    "cuil": "20058343324",
     "total_amount": "12976",
+    "total_contrats": "33",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=166",
     "detail": []
   },
   {
     "grant_title": "DE LA CRUZ RAUL AGUSTIN",
-    "id": "20115424662",
+    "cuil": "20115424662",
     "total_amount": "3580",
+    "total_contrats": "8",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=355",
     "detail": []
   },
   {
     "grant_title": "DE LOS SANTOS HECTOR MIGUEL ALFREDO",
-    "id": "20215960111",
+    "cuil": "20215960111",
     "total_amount": "3750",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=104",
     "detail": []
   },
   {
     "grant_title": "DEL RIO ANALIA NOEMI",
-    "id": "27180991455",
+    "cuil": "27180991455",
     "total_amount": "4410",
+    "total_contrats": "109",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=798",
     "detail": []
   },
   {
     "grant_title": "DELALOYE FEDERICO ANDRES",
-    "id": "20248972069",
+    "cuil": "20248972069",
     "total_amount": "93",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=165",
     "detail": []
   },
   {
     "grant_title": "DELALOYE GERARDO JOSE MARIA",
-    "id": "24054066178",
+    "cuil": "24054066178",
     "total_amount": "6250",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=167",
     "detail": []
   },
   {
     "grant_title": "DELALOYE ROBERTO PASTOR",
-    "id": "20170757581",
+    "cuil": "20170757581",
     "total_amount": "4700",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=456",
     "detail": []
   },
   {
     "grant_title": "DIARIO PERFIL S.A.",
-    "id": "30693774809",
+    "cuil": "30693774809",
     "total_amount": "9317",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=845",
     "detail": []
   },
   {
     "grant_title": "DIAZ JULIA Y DUARTE LAUTARO",
-    "id": "30670818973",
+    "cuil": "30670818973",
     "total_amount": "25101",
+    "total_contrats": "142",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=106",
     "detail": []
   },
   {
     "grant_title": "DISTRIBUIDORA ROCCA S.A.",
-    "id": "30693261852",
+    "cuil": "30693261852",
     "total_amount": "33783",
+    "total_contrats": "17",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=172",
     "detail": []
   },
   {
     "grant_title": "DONNET HUMBERTO AMADOR",
-    "id": "20057938928",
+    "cuil": "20057938928",
     "total_amount": "18730",
+    "total_contrats": "12",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=880",
     "detail": []
   },
   {
     "grant_title": "DROGUERIA CENTRO S.R.L.",
-    "id": "30709747432",
+    "cuil": "30709747432",
     "total_amount": "409",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=803",
     "detail": []
   },
   {
     "grant_title": "DROGUERIA FB S.A.",
-    "id": "30710757964",
+    "cuil": "30710757964",
     "total_amount": "7247",
+    "total_contrats": "35",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=809",
     "detail": []
   },
   {
     "grant_title": "DUARTE EDMUNDO ALCIDES",
-    "id": "23081045569",
+    "cuil": "23081045569",
     "total_amount": "178",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=890",
     "detail": []
   },
   {
     "grant_title": "EDITORIAL EL DIA S.R.L.",
-    "id": "30610509343",
+    "cuil": "30610509343",
     "total_amount": "6010",
+    "total_contrats": "16",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=178",
     "detail": []
   },
   {
     "grant_title": "EDITORIAL PERFIL S.A.",
-    "id": "30560956904",
+    "cuil": "30560956904",
     "total_amount": "19360",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=661",
     "detail": []
   },
   {
     "grant_title": "ELIZALDE OSVALDO Y ELIZALDE JORGE",
-    "id": "33701843059",
+    "cuil": "33701843059",
     "total_amount": "531",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=639",
     "detail": []
   },
   {
     "grant_title": "EMPRESA SAN JOSE S.A.",
-    "id": "30546258404",
+    "cuil": "30546258404",
     "total_amount": "42",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=173",
     "detail": []
   },
   {
     "grant_title": "ENERGIA DE ENTRE RIOS S.A.",
-    "id": "30709176672",
+    "cuil": "30709176672",
     "total_amount": "4734806",
+    "total_contrats": "946",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=180",
     "detail": []
   },
   {
     "grant_title": "ENLUZ S.A.",
-    "id": "30710016859",
+    "cuil": "30710016859",
     "total_amount": "24616",
+    "total_contrats": "8",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=369",
     "detail": []
   },
   {
     "grant_title": "ENTE AUTARQUICO PUERTO DE CONCEPCION DEL URUGUAY",
-    "id": "30670800098",
+    "cuil": "30670800098",
     "total_amount": "5881",
+    "total_contrats": "23",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=142",
     "detail": []
   },
   {
     "grant_title": "F.J.M. S.A.",
-    "id": "30709000612",
+    "cuil": "30709000612",
     "total_amount": "55623",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=105",
     "detail": []
   },
   {
     "grant_title": "FELLAY AMILCAR HERNAN",
-    "id": "20263066767",
+    "cuil": "20263066767",
     "total_amount": "21470",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=457",
     "detail": []
   },
   {
     "grant_title": "FERNANDEZ MARIELA VIVIANA",
-    "id": "27214259910",
+    "cuil": "27214259910",
     "total_amount": "11768",
+    "total_contrats": "16",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=99",
     "detail": []
   },
   {
     "grant_title": "FERNANDEZ MARIO H, GALLICET OSCAR M",
-    "id": "30670752565",
+    "cuil": "30670752565",
     "total_amount": "46500",
+    "total_contrats": "44",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=183",
     "detail": []
   },
   {
     "grant_title": "FIOROTTO ALBERTO M Y REY CESAR A S.R.L.",
-    "id": "30707970738",
+    "cuil": "30707970738",
     "total_amount": "64757",
+    "total_contrats": "247",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=181",
     "detail": []
   },
   {
     "grant_title": "FLEMING Y MARTOLIO S.R.L.",
-    "id": "30678393734",
+    "cuil": "30678393734",
     "total_amount": "789",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=179",
     "detail": []
   },
   {
     "grant_title": "FOLLONIER CLAUDIO R. Y COCARO JULIO G. S.H.",
-    "id": "30708631759",
+    "cuil": "30708631759",
     "total_amount": "2082",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=472",
     "detail": []
   },
   {
     "grant_title": "FOLMER Y GOETTE S.R.L.",
-    "id": "30594702308",
+    "cuil": "30594702308",
     "total_amount": "1757",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=98",
     "detail": []
   },
   {
     "grant_title": "FORCLAZ CECILIO ISMAEL. SUCESION",
-    "id": "20058063070",
+    "cuil": "20058063070",
     "total_amount": "1604",
+    "total_contrats": "16",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=119",
     "detail": []
   },
   {
     "grant_title": "FORNES DARIO A. Y FORNES CARLOS A. S.H.",
-    "id": "30708765372",
+    "cuil": "30708765372",
     "total_amount": "20969",
+    "total_contrats": "21",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=366",
     "detail": []
   },
   {
     "grant_title": "FRATTINI NORMA ELOISA",
-    "id": "27216834459",
+    "cuil": "27216834459",
     "total_amount": "2492",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=176",
     "detail": []
   },
   {
     "grant_title": "GABIOUD HUGO ALBERTO Y EDUARDO RAUL S.H.",
-    "id": "30610104289",
+    "cuil": "30610104289",
     "total_amount": "158823",
+    "total_contrats": "125",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=185",
     "detail": []
   },
   {
     "grant_title": "GALARZA HOGAR S.A.",
-    "id": "30708233451",
+    "cuil": "30708233451",
     "total_amount": "4285",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=186",
     "detail": []
   },
   {
     "grant_title": "GALLAY ALBERTO VALERIO",
-    "id": "20106030600",
+    "cuil": "20106030600",
     "total_amount": "24288",
+    "total_contrats": "103",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=101",
     "detail": []
   },
   {
     "grant_title": "GALLEGOS OSCAR RAUL",
-    "id": "20085591313",
+    "cuil": "20085591313",
     "total_amount": "32688",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=190",
     "detail": []
   },
   {
     "grant_title": "GALVAN GUILLERMO ANDRES",
-    "id": "20278335187",
+    "cuil": "20278335187",
     "total_amount": "3213",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=808",
     "detail": []
   },
   {
     "grant_title": "GARNIER OSCAR MARCELO",
-    "id": "20058274357",
+    "cuil": "20058274357",
     "total_amount": "15212",
+    "total_contrats": "30",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=200",
     "detail": []
   },
   {
     "grant_title": "GARRIGUE JOSE LUIS",
-    "id": "20160430835",
+    "cuil": "20160430835",
     "total_amount": "110800",
+    "total_contrats": "24",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=832",
     "detail": []
   },
   {
     "grant_title": "GAS NEA S.A.",
-    "id": "30691210878",
+    "cuil": "30691210878",
     "total_amount": "1110",
+    "total_contrats": "9",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=866",
     "detail": []
   },
   {
     "grant_title": "GAY CLAUDIA ESTEFANIA",
-    "id": "27318591151",
+    "cuil": "27318591151",
     "total_amount": "300",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=518",
     "detail": []
   },
   {
     "grant_title": "GEORGE JUAN MANUEL",
-    "id": "20351153459",
+    "cuil": "20351153459",
     "total_amount": "20000",
+    "total_contrats": "15",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=882",
     "detail": []
   },
   {
     "grant_title": "GIRE S.A.",
-    "id": "30643990632",
+    "cuil": "30643990632",
     "total_amount": "5792",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=198",
     "detail": []
   },
   {
     "grant_title": "GOMEZ ROSA MABEL",
-    "id": "27121921303",
+    "cuil": "27121921303",
     "total_amount": "760",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=538",
     "detail": []
   },
   {
     "grant_title": "GONZALEZ BRIGIDA PATRICIA",
-    "id": "27145711954",
+    "cuil": "27145711954",
     "total_amount": "555",
+    "total_contrats": "11",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=381",
     "detail": []
   },
   {
     "grant_title": "GONZALEZ JUAN CARLOS",
-    "id": "20085927141",
+    "cuil": "20085927141",
     "total_amount": "640",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=454",
     "detail": []
   },
   {
     "grant_title": "GRAN REX S.R.L.",
-    "id": "30709870307",
+    "cuil": "30709870307",
     "total_amount": "45799",
+    "total_contrats": "163",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=451",
     "detail": []
   },
   {
     "grant_title": "GRAND HOTEL S.R.L.",
-    "id": "30708118083",
+    "cuil": "30708118083",
     "total_amount": "2590",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=100",
     "detail": []
   },
   {
     "grant_title": "GROSJEAN LAURA INES",
-    "id": "27100714898",
+    "cuil": "27100714898",
     "total_amount": "7650",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=863",
     "detail": []
   },
   {
     "grant_title": "GRUPO MARSO S.R.L.",
-    "id": "30622119818",
+    "cuil": "30622119818",
     "total_amount": "10592",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=228",
     "detail": []
   },
   {
     "grant_title": "GRUPO QUALITY S.A.",
-    "id": "30708487305",
+    "cuil": "30708487305",
     "total_amount": "6584",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=213",
     "detail": []
   },
   {
     "grant_title": "GUILLAUME JOSE LUIS",
-    "id": "20128536885",
+    "cuil": "20128536885",
     "total_amount": "34648",
+    "total_contrats": "13",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=199",
     "detail": []
   },
   {
     "grant_title": "HERMANN CARLOS AURELIO",
-    "id": "20173298057",
+    "cuil": "20173298057",
     "total_amount": "25512",
+    "total_contrats": "49",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=128",
     "detail": []
   },
   {
     "grant_title": "HORISBERGER GLORIA ALCIRA",
-    "id": "27042746792",
+    "cuil": "27042746792",
     "total_amount": "3353",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=150",
     "detail": []
   },
   {
     "grant_title": "HOSIFA CONSTRUCTORA S.A.",
-    "id": "30709972592",
+    "cuil": "30709972592",
     "total_amount": "1981922",
+    "total_contrats": "38",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=202",
     "detail": []
   },
   {
     "grant_title": "IGLESIAS JOSE FABIAN",
-    "id": "20141287584",
+    "cuil": "20141287584",
     "total_amount": "12687",
+    "total_contrats": "11",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=138",
     "detail": []
   },
   {
     "grant_title": "IMEL INGENIERIA Y MATERIALES ELECTRICOS S.R.L.",
-    "id": "30563624392",
+    "cuil": "30563624392",
     "total_amount": "14981",
+    "total_contrats": "78",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=147",
     "detail": []
   },
   {
     "grant_title": "INDU QUIMICA S.A.",
-    "id": "30636046341",
+    "cuil": "30636046341",
     "total_amount": "1044388",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=211",
     "detail": []
   },
   {
     "grant_title": "INGANI ALBERTO RAMON",
-    "id": "23058744719",
+    "cuil": "23058744719",
     "total_amount": "39640",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=205",
     "detail": []
   },
   {
     "grant_title": "INSTITUTO AUTARQUICO PROVINCIAL DEL SEGURO",
-    "id": "30500055509",
+    "cuil": "30500055509",
     "total_amount": "163872",
+    "total_contrats": "418",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=137",
     "detail": []
   },
   {
     "grant_title": "IRIGOITIA JORGE Y VERNAZ JOSEFINA",
-    "id": "30670737310",
+    "cuil": "30670737310",
     "total_amount": "466",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=207",
     "detail": []
   },
   {
     "grant_title": "IZAGUIRRE CARLOS MARIA, MOREND MARIA ELENA Y MOREND MARIA TERESA",
-    "id": "30563559639",
+    "cuil": "30563559639",
     "total_amount": "26520",
+    "total_contrats": "95",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=135",
     "detail": []
   },
   {
     "grant_title": "IZAGUIRRE GASTON ARIEL",
-    "id": "20267399086",
+    "cuil": "20267399086",
     "total_amount": "2850",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=208",
     "detail": []
   },
   {
     "grant_title": "JACOBI SERGIO JAVIER",
-    "id": "20273464388",
+    "cuil": "20273464388",
     "total_amount": "10001",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=384",
     "detail": []
   },
   {
     "grant_title": "JEFATURA DE POLICIA DE LA PROVINCIA DE ENTRE RIOS",
-    "id": "30671198081",
+    "cuil": "30671198081",
     "total_amount": "78084",
+    "total_contrats": "12",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=559",
     "detail": []
   },
   {
     "grant_title": "JORGE ALBERTO CASO S.A.",
-    "id": "30633647697",
+    "cuil": "30633647697",
     "total_amount": "439918",
+    "total_contrats": "30",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=209",
     "detail": []
   },
   {
     "grant_title": "JOSE FOLMER E HIJOS S.R.L.",
-    "id": "30539341541",
+    "cuil": "30539341541",
     "total_amount": "149250",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=787",
     "detail": []
   },
   {
     "grant_title": "JOVI BUS S.R.L.",
-    "id": "33671062979",
+    "cuil": "33671062979",
     "total_amount": "56",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=743",
     "detail": []
   },
   {
     "grant_title": "JUSID NICOLAS",
-    "id": "20266109211",
+    "cuil": "20266109211",
     "total_amount": "865",
+    "total_contrats": "57",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=143",
     "detail": []
   },
   {
     "grant_title": "KLOSTER EDUARDO JOSE",
-    "id": "20200989326",
+    "cuil": "20200989326",
     "total_amount": "1500",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=212",
     "detail": []
   },
   {
     "grant_title": "KRENZ DANIEL ALFREDO",
-    "id": "23229252909",
+    "cuil": "23229252909",
     "total_amount": "32265",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=833",
     "detail": []
   },
   {
     "grant_title": "LAMBOGLIA LUIS ANTONIO",
-    "id": "20050972616",
+    "cuil": "20050972616",
     "total_amount": "13404",
+    "total_contrats": "20",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=214",
     "detail": []
   },
   {
     "grant_title": "LAMOUROUX ROQUE ANTONIO",
-    "id": "23109499919",
+    "cuil": "23109499919",
     "total_amount": "950",
+    "total_contrats": "8",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=864",
     "detail": []
   },
   {
     "grant_title": "LANDI YOLANDA TERESA Y LANDI JOSE OMAR S.H.",
-    "id": "30550097628",
+    "cuil": "30550097628",
     "total_amount": "6605",
+    "total_contrats": "103",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=127",
     "detail": []
   },
   {
     "grant_title": "LANGONI JAVIER JOSE",
-    "id": "20250259760",
+    "cuil": "20250259760",
     "total_amount": "2375",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=543",
     "detail": []
   },
   {
     "grant_title": "LANZA USATORRE ADOLFO",
-    "id": "20268791745",
+    "cuil": "20268791745",
     "total_amount": "3318",
+    "total_contrats": "12",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=785",
     "detail": []
   },
   {
     "grant_title": "LEGENDRE OSCAR AMARANTO",
-    "id": "20084197263",
+    "cuil": "20084197263",
     "total_amount": "3494",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=400",
     "detail": []
   },
   {
     "grant_title": "LEIVA GISELA NOEMI",
-    "id": "27250256553",
+    "cuil": "27250256553",
     "total_amount": "4343",
+    "total_contrats": "19",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=537",
     "detail": []
   },
   {
     "grant_title": "LEMIRO PABLO PIETROBONI S.A.",
-    "id": "30533004160",
+    "cuil": "30533004160",
     "total_amount": "3531219",
+    "total_contrats": "22",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=146",
     "detail": []
   },
   {
     "grant_title": "LEMOS ALFREDO GUILLERMO",
-    "id": "20085950305",
+    "cuil": "20085950305",
     "total_amount": "31890",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=315",
     "detail": []
   },
   {
     "grant_title": "LEON BANCHIK S.A.",
-    "id": "30534160859",
+    "cuil": "30534160859",
     "total_amount": "913",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=52",
     "detail": []
   },
   {
     "grant_title": "LESCANO EDUARDO JAVIER",
-    "id": "20218455221",
+    "cuil": "20218455221",
     "total_amount": "1245",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=215",
     "detail": []
   },
   {
     "grant_title": "LEUZE EDGARDO LUJAN",
-    "id": "20145710368",
+    "cuil": "20145710368",
     "total_amount": "2025",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=125",
     "detail": []
   },
   {
     "grant_title": "LOPEZ HUGO OSCAR",
-    "id": "20183281594",
+    "cuil": "20183281594",
     "total_amount": "2420",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=129",
     "detail": []
   },
   {
     "grant_title": "LT 11 RADIO GENERAL FRANCISCO RAMIREZ",
-    "id": "30500500170",
+    "cuil": "30500500170",
     "total_amount": "12746",
+    "total_contrats": "43",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=155",
     "detail": []
   },
   {
     "grant_title": "MADERERA DEL CARMEN S.R.L.",
-    "id": "30709066109",
+    "cuil": "30709066109",
     "total_amount": "1999",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=217",
     "detail": []
   },
   {
     "grant_title": "MAGRI HECTOR RAMON",
-    "id": "20084203115",
+    "cuil": "20084203115",
     "total_amount": "5655",
+    "total_contrats": "49",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=218",
     "detail": []
   },
   {
     "grant_title": "MALPASSI MARTHA ESTELA",
-    "id": "27057894917",
+    "cuil": "27057894917",
     "total_amount": "12000",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=145",
     "detail": []
   },
   {
     "grant_title": "MANZAN DIEGO MARTIN",
-    "id": "20245271892",
+    "cuil": "20245271892",
     "total_amount": "464",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=839",
     "detail": []
   },
   {
     "grant_title": "MARSICO GUILLERMO MIGUEL, MARSICO JUAN EDUARDO",
-    "id": "30707213937",
+    "cuil": "30707213937",
     "total_amount": "18348",
+    "total_contrats": "52",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=141",
     "detail": []
   },
   {
     "grant_title": "MATELEC INGENIERIA S.R.L.",
-    "id": "30709500224",
+    "cuil": "30709500224",
     "total_amount": "42443",
+    "total_contrats": "23",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=220",
     "detail": []
   },
   {
     "grant_title": "MATHEY DORET FABRICIO JOSE ALBERTO",
-    "id": "23263740939",
+    "cuil": "23263740939",
     "total_amount": "1600",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=842",
     "detail": []
   },
   {
     "grant_title": "MEDIOS DE COMUNICACION ENTRE RIOS S.A.",
-    "id": "30707299556",
+    "cuil": "30707299556",
     "total_amount": "62164",
+    "total_contrats": "41",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=227",
     "detail": []
   },
   {
     "grant_title": "MEGA ANA MARIA",
-    "id": "27062389651",
+    "cuil": "27062389651",
     "total_amount": "2639",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=838",
     "detail": []
   },
   {
     "grant_title": "MERALD S.R.L.",
-    "id": "30629448523",
+    "cuil": "30629448523",
     "total_amount": "6483",
+    "total_contrats": "12",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=767",
     "detail": []
   },
   {
     "grant_title": "MERIANO ERNESTO Y BOFFELLI JUAN LUIS",
-    "id": "30708782803",
+    "cuil": "30708782803",
     "total_amount": "40638",
+    "total_contrats": "91",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=860",
     "detail": []
   },
   {
     "grant_title": "METRALLE GRISELDA BEATRIZ",
-    "id": "27122593288",
+    "cuil": "27122593288",
     "total_amount": "21123",
+    "total_contrats": "232",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=130",
     "detail": []
   },
   {
     "grant_title": "MINATTA CARLOS A. Y CABRERA MARCELO D.",
-    "id": "30708501510",
+    "cuil": "30708501510",
     "total_amount": "72",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=389",
     "detail": []
   },
   {
     "grant_title": "MIOTTO MONICA",
-    "id": "27119113208",
+    "cuil": "27119113208",
     "total_amount": "6730",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=139",
     "detail": []
   },
   {
     "grant_title": "MOLINA SONIA NOEMI",
-    "id": "27103808583",
+    "cuil": "27103808583",
     "total_amount": "60835",
+    "total_contrats": "102",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=154",
     "detail": []
   },
   {
     "grant_title": "MONTAÑ?NA JORGE CESAR",
-    "id": "20202557245",
+    "cuil": "20202557245",
     "total_amount": "30585",
+    "total_contrats": "24",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=134",
     "detail": []
   },
   {
     "grant_title": "MONTAÑANA WALTER OMAR",
-    "id": "20216967241",
+    "cuil": "20216967241",
     "total_amount": "27193",
+    "total_contrats": "13",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=822",
     "detail": []
   },
   {
     "grant_title": "MOSCA OLGA RAQUEL",
-    "id": "27141280452",
+    "cuil": "27141280452",
     "total_amount": "85278",
+    "total_contrats": "130",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=224",
     "detail": []
   },
   {
     "grant_title": "MUGHERLI PABLO MARCELO",
-    "id": "20249700526",
+    "cuil": "20249700526",
     "total_amount": "9931",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=836",
     "detail": []
   },
   {
     "grant_title": "MUÑOZ LUCIANO GASTON",
-    "id": "20274254220",
+    "cuil": "20274254220",
     "total_amount": "8650",
+    "total_contrats": "9",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=459",
     "detail": []
   },
   {
     "grant_title": "MUZZIO CARLOS HUMBERTO",
-    "id": "23185738949",
+    "cuil": "23185738949",
     "total_amount": "10945",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=153",
     "detail": []
   },
   {
     "grant_title": "NAUTICA COOK S.A.",
-    "id": "30711215960",
+    "cuil": "30711215960",
     "total_amount": "1645",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=835",
     "detail": []
   },
   {
     "grant_title": "NESTOR EUGENIO FERNANDEZ S.R.L.",
-    "id": "30709223336",
+    "cuil": "30709223336",
     "total_amount": "3025",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=802",
     "detail": []
   },
   {
     "grant_title": "NICHAJEW VLADIMIR ALEJANDRO",
-    "id": "20271397128",
+    "cuil": "20271397128",
     "total_amount": "3350",
+    "total_contrats": "9",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=458",
     "detail": []
   },
   {
     "grant_title": "NICHELE VERONICA",
-    "id": "27236960175",
+    "cuil": "27236960175",
     "total_amount": "300",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=334",
     "detail": []
   },
   {
     "grant_title": "NOIMAN EDUARDO TEODORO",
-    "id": "20057984776",
+    "cuil": "20057984776",
     "total_amount": "2680",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=239",
     "detail": []
   },
   {
     "grant_title": "NUÑEZ PEDRO ANTONIO",
-    "id": "20128528939",
+    "cuil": "20128528939",
     "total_amount": "1000",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=237",
     "detail": []
   },
   {
     "grant_title": "OBHOLZ FLORENTINA DE BEILMAN",
-    "id": "27058002319",
+    "cuil": "27058002319",
     "total_amount": "540",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=883",
     "detail": []
   },
   {
     "grant_title": "OBRAS Y CAMINOS S.A.",
-    "id": "30709626732",
+    "cuil": "30709626732",
     "total_amount": "389000",
+    "total_contrats": "9",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=449",
     "detail": []
   },
   {
     "grant_title": "OCHOA PEDRO MIGUEL",
-    "id": "20083579766",
+    "cuil": "20083579766",
     "total_amount": "870",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=598",
     "detail": []
   },
   {
     "grant_title": "OGGUIER NORMA BEATRIZ",
-    "id": "27168431975",
+    "cuil": "27168431975",
     "total_amount": "6800",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=160",
     "detail": []
   },
   {
     "grant_title": "OLIVERA JOSE PEDRO",
-    "id": "20138853803",
+    "cuil": "20138853803",
     "total_amount": "4255",
+    "total_contrats": "38",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=236",
     "detail": []
   },
   {
     "grant_title": "ORGANIZACION DELASOIE HNOS. S.A.",
-    "id": "30546995735",
+    "cuil": "30546995735",
     "total_amount": "111470",
+    "total_contrats": "43",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=159",
     "detail": []
   },
   {
     "grant_title": "OSCAR J. LOPEZ S.A.",
-    "id": "33552498149",
+    "cuil": "33552498149",
     "total_amount": "18604",
+    "total_contrats": "19",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=336",
     "detail": []
   },
   {
     "grant_title": "PALAZZI CLAUDIA LETICIA",
-    "id": "27216966355",
+    "cuil": "27216966355",
     "total_amount": "600",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=234",
     "detail": []
   },
   {
     "grant_title": "PALMA RODOLFO GABRIEL Y SUC. DE PALMA SERGIO S.H.",
-    "id": "30709710059",
+    "cuil": "30709710059",
     "total_amount": "11440",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=235",
     "detail": []
   },
   {
     "grant_title": "PEREZ DANIEL RUBEN",
-    "id": "20128859811",
+    "cuil": "20128859811",
     "total_amount": "962",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=242",
     "detail": []
   },
   {
     "grant_title": "PEREZ RUBEN",
-    "id": "20058222349",
+    "cuil": "20058222349",
     "total_amount": "59019",
+    "total_contrats": "156",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=241",
     "detail": []
   },
   {
     "grant_title": "PIÑEYRO Y CIA S.R.L.",
-    "id": "30575313449",
+    "cuil": "30575313449",
     "total_amount": "5108",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=682",
     "detail": []
   },
   {
     "grant_title": "PINO ADRIAN MATIAS",
-    "id": "20242364776",
+    "cuil": "20242364776",
     "total_amount": "3970",
+    "total_contrats": "14",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=243",
     "detail": []
   },
   {
     "grant_title": "PITTER ROLANDO L.J, CERGNEUX MARIO M. Y CERGNEUX DANIEL F.  S.H.",
-    "id": "30670784602",
+    "cuil": "30670784602",
     "total_amount": "3740",
+    "total_contrats": "48",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=230",
     "detail": []
   },
   {
     "grant_title": "POGGIO ALBERTO JOSE",
-    "id": "20236965040",
+    "cuil": "20236965040",
     "total_amount": "1434",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=244",
     "detail": []
   },
   {
     "grant_title": "PONCE DE LEON JOSE DAVID RAMON",
-    "id": "20297942736",
+    "cuil": "20297942736",
     "total_amount": "400",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=876",
     "detail": []
   },
   {
     "grant_title": "PREISZ LUCRECIA MARGARITA",
-    "id": "27179943137",
+    "cuil": "27179943137",
     "total_amount": "150",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=246",
     "detail": []
   },
   {
     "grant_title": "PREVEDEL HORACIO VIRGILIO",
-    "id": "20059092562",
+    "cuil": "20059092562",
     "total_amount": "26920",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=254",
     "detail": []
   },
   {
     "grant_title": "PREVISION CASA CEVEY S.R.L.",
-    "id": "30531149722",
+    "cuil": "30531149722",
     "total_amount": "14150",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=157",
     "detail": []
   },
   {
     "grant_title": "PROMO VENT S.R.L.",
-    "id": "30670746425",
+    "cuil": "30670746425",
     "total_amount": "802",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=829",
     "detail": []
   },
   {
     "grant_title": "PROVEEDOR EXTERNO-",
-    "id": "30708056983",
+    "cuil": "30708056983",
     "total_amount": "367040",
+    "total_contrats": "86",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=555",
     "detail": []
   },
   {
     "grant_title": "QUINTERO GUILLERMO LUIS",
-    "id": "20208136578",
+    "cuil": "20208136578",
     "total_amount": "413",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=248",
     "detail": []
   },
   {
     "grant_title": "QUINTERO JUAN CARLOS HECTOR",
-    "id": "20058285685",
+    "cuil": "20058285685",
     "total_amount": "11526",
+    "total_contrats": "59",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=152",
     "detail": []
   },
   {
     "grant_title": "REMEDI ADRIAN DARIO AUGUSTO",
-    "id": "23166085349",
+    "cuil": "23166085349",
     "total_amount": "20000",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=792",
     "detail": []
   },
   {
     "grant_title": "REPSOL YPF GAS S.A.",
-    "id": "30515488479",
+    "cuil": "30515488479",
     "total_amount": "3192",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=416",
     "detail": []
   },
   {
     "grant_title": "RETAMAR JOSE LUIS",
-    "id": "23141287249",
+    "cuil": "23141287249",
     "total_amount": "39741",
+    "total_contrats": "32",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=158",
     "detail": []
   },
   {
     "grant_title": "REYES FLAVIA MILENA",
-    "id": "27266109755",
+    "cuil": "27266109755",
     "total_amount": "37367",
+    "total_contrats": "59",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=268",
     "detail": []
   },
   {
     "grant_title": "RICCOTTI, MARIANA EDITH",
-    "id": "23245272944",
+    "cuil": "23245272944",
     "total_amount": "29484",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=269",
     "detail": []
   },
   {
     "grant_title": "RICHARD ALEJANDRO GERMAN",
-    "id": "20176789450",
+    "cuil": "20176789450",
     "total_amount": "6500",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=170",
     "detail": []
   },
   {
     "grant_title": "RIVERA TERESITA OFELIA",
-    "id": "27039239669",
+    "cuil": "27039239669",
     "total_amount": "3384",
+    "total_contrats": "11",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=310",
     "detail": []
   },
   {
     "grant_title": "ROCHAS RAQUEL NILDA",
-    "id": "24043778648",
+    "cuil": "24043778648",
     "total_amount": "3289",
+    "total_contrats": "14",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=266",
     "detail": []
   },
   {
     "grant_title": "RODE PABLO DANIEL",
-    "id": "23305499749",
+    "cuil": "23305499749",
     "total_amount": "6589",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=261",
     "detail": []
   },
   {
     "grant_title": "ROMEAU SILVIO FABIAN",
-    "id": "23182157449",
+    "cuil": "23182157449",
     "total_amount": "1000",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=782",
     "detail": []
   },
   {
     "grant_title": "ROUDE SILVIA RAQUEL",
-    "id": "27127269756",
+    "cuil": "27127269756",
     "total_amount": "1800",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=262",
     "detail": []
   },
   {
     "grant_title": "ROUGIER VICTOR JORGE",
-    "id": "20145719713",
+    "cuil": "20145719713",
     "total_amount": "5288",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=256",
     "detail": []
   },
   {
     "grant_title": "ROUSSEAUX MARTIN ANDRES",
-    "id": "20208138147",
+    "cuil": "20208138147",
     "total_amount": "2076",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=259",
     "detail": []
   },
   {
     "grant_title": "RULEMANES LITORAL S.R.L.",
-    "id": "30521191070",
+    "cuil": "30521191070",
     "total_amount": "3361",
+    "total_contrats": "12",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=255",
     "detail": []
   },
   {
     "grant_title": "S.A ENTRE RIOS",
-    "id": "30500092315",
+    "cuil": "30500092315",
     "total_amount": "884",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=683",
     "detail": []
   },
   {
     "grant_title": "SAGARNA GUILLERMO HECTOR",
-    "id": "20206562057",
+    "cuil": "20206562057",
     "total_amount": "4500",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=422",
     "detail": []
   },
   {
     "grant_title": "SANTANGELO ABELARDO RAUL",
-    "id": "20170759029",
+    "cuil": "20170759029",
     "total_amount": "10070",
+    "total_contrats": "42",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=564",
     "detail": []
   },
   {
     "grant_title": "SAUL ALBERTO SALOMON",
-    "id": "23066103919",
+    "cuil": "23066103919",
     "total_amount": "193",
+    "total_contrats": "4",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=284",
     "detail": []
   },
   {
     "grant_title": "SCEVOLA FABIAN RICARDO",
-    "id": "20177756661",
+    "cuil": "20177756661",
     "total_amount": "913",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=420",
     "detail": []
   },
   {
     "grant_title": "SCHIERLOH STELLA MARIS",
-    "id": "27127269888",
+    "cuil": "27127269888",
     "total_amount": "2234",
+    "total_contrats": "24",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=273",
     "detail": []
   },
   {
     "grant_title": "SIAFA S.R.L.",
-    "id": "30663197971",
+    "cuil": "30663197971",
     "total_amount": "399",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=660",
     "detail": []
   },
   {
     "grant_title": "SORIA SILVINA BEATRIZ",
-    "id": "23214251914",
+    "cuil": "23214251914",
     "total_amount": "108",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=685",
     "detail": []
   },
   {
     "grant_title": "SPIROPULO MIGUEL ANGEL",
-    "id": "20058311406",
+    "cuil": "20058311406",
     "total_amount": "1560",
+    "total_contrats": "13",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=279",
     "detail": []
   },
   {
     "grant_title": "STECKLEIN MARIA RAQUEL",
-    "id": "27214263993",
+    "cuil": "27214263993",
     "total_amount": "14717",
+    "total_contrats": "40",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=289",
     "detail": []
   },
   {
     "grant_title": "SYLVESTRE CARLOS OMAR",
-    "id": "23141281259",
+    "cuil": "23141281259",
     "total_amount": "29119",
+    "total_contrats": "338",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=294",
     "detail": []
   },
   {
     "grant_title": "TANGO TOUR S.R.L.",
-    "id": "30670803445",
+    "cuil": "30670803445",
     "total_amount": "7050",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=291",
     "detail": []
   },
   {
     "grant_title": "TECMAVI S.R.L.",
-    "id": "30558678743",
+    "cuil": "30558678743",
     "total_amount": "675",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=431",
     "detail": []
   },
   {
     "grant_title": "TELECOM ARGENTINA S.A.",
-    "id": "30639453738",
+    "cuil": "30639453738",
     "total_amount": "82793",
+    "total_contrats": "865",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=293",
     "detail": []
   },
   {
     "grant_title": "TESTA CARLOS ALBERTO",
-    "id": "20173216557",
+    "cuil": "20173216557",
     "total_amount": "900",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=436",
     "detail": []
   },
   {
     "grant_title": "THEA RUBEN JESUS",
-    "id": "23115420089",
+    "cuil": "23115420089",
     "total_amount": "53932",
+    "total_contrats": "350",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=295",
     "detail": []
   },
   {
     "grant_title": "TOME SARA EVA GRACIELA",
-    "id": "27114259778",
+    "cuil": "27114259778",
     "total_amount": "160983",
+    "total_contrats": "13",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=311",
     "detail": []
   },
   {
     "grant_title": "TORTAROLO WALTER OSVALDO",
-    "id": "20183407237",
+    "cuil": "20183407237",
     "total_amount": "3450",
+    "total_contrats": "10",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=304",
     "detail": []
   },
   {
     "grant_title": "TOSCANO JORGE OSCAR",
-    "id": "20045568998",
+    "cuil": "20045568998",
     "total_amount": "16432",
+    "total_contrats": "145",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=296",
     "detail": []
   },
   {
     "grant_title": "TOURFINI INES TERESITA",
-    "id": "27039305068",
+    "cuil": "27039305068",
     "total_amount": "80",
+    "total_contrats": "1",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=298",
     "detail": []
   },
   {
     "grant_title": "TRES LINEAS S.A.",
-    "id": "30710395841",
+    "cuil": "30710395841",
     "total_amount": "25000",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=844",
     "detail": []
   },
   {
     "grant_title": "TURIN MARIA DE LOS ANGELES",
-    "id": "27281904529",
+    "cuil": "27281904529",
     "total_amount": "4298",
+    "total_contrats": "30",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=290",
     "detail": []
   },
   {
     "grant_title": "TUTTO CONFORE S.R.L.",
-    "id": "30641734728",
+    "cuil": "30641734728",
     "total_amount": "11539",
+    "total_contrats": "23",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=297",
     "detail": []
   },
   {
     "grant_title": "V.E.M. S.A.",
-    "id": "30612903073",
+    "cuil": "30612903073",
     "total_amount": "7387",
+    "total_contrats": "7",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=328",
     "detail": []
   },
   {
     "grant_title": "VALDUNCIEL RODOLFO RENE",
-    "id": "20058243990",
+    "cuil": "20058243990",
     "total_amount": "1959",
+    "total_contrats": "11",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=313",
     "detail": []
   },
   {
     "grant_title": "VALENZUELA NESTOR GABRIEL",
-    "id": "20208131835",
+    "cuil": "20208131835",
     "total_amount": "9652",
+    "total_contrats": "13",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=314",
     "detail": []
   },
   {
     "grant_title": "VALORI GUILLERMO MIGUEL",
-    "id": "23162172689",
+    "cuil": "23162172689",
     "total_amount": "2268",
+    "total_contrats": "8",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=316",
     "detail": []
   },
   {
     "grant_title": "VIAL PARK S.R.L.",
-    "id": "30601466186",
+    "cuil": "30601466186",
     "total_amount": "4550",
+    "total_contrats": "5",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=504",
     "detail": []
   },
   {
     "grant_title": "VIALE MIGUEL ENRIQUE",
-    "id": "20224574259",
+    "cuil": "20224574259",
     "total_amount": "6754",
+    "total_contrats": "14",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=320",
     "detail": []
   },
   {
     "grant_title": "VIDAL GABRIEL OSCAR",
-    "id": "20177756955",
+    "cuil": "20177756955",
     "total_amount": "4530",
+    "total_contrats": "3",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=823",
     "detail": []
   },
   {
     "grant_title": "VILLAMEA JACINTO R. Y VILLAMEA SERGIO A.",
-    "id": "30670762803",
+    "cuil": "30670762803",
     "total_amount": "11627",
+    "total_contrats": "128",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=319",
     "detail": []
   },
   {
     "grant_title": "VIVESCAS S.R.L.",
-    "id": "33710360079",
+    "cuil": "33710360079",
     "total_amount": "113799",
+    "total_contrats": "42",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=443",
     "detail": []
   },
   {
     "grant_title": "WEIGANDT GERARDO ARTURO",
-    "id": "20160430525",
+    "cuil": "20160430525",
     "total_amount": "570",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=324",
     "detail": []
   },
   {
     "grant_title": "WILHELM MARTA RAQUEL",
-    "id": "27214275274",
+    "cuil": "27214275274",
     "total_amount": "4742",
+    "total_contrats": "15",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=321",
     "detail": []
   },
   {
     "grant_title": "Y.P.F S.A.",
-    "id": "30546689979",
+    "cuil": "30546689979",
     "total_amount": "1006594",
+    "total_contrats": "1101",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=670",
     "detail": []
   },
   {
     "grant_title": "YADANZA HECTOR",
-    "id": "20060582875",
+    "cuil": "20060582875",
     "total_amount": "213089",
+    "total_contrats": "140",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=335",
     "detail": []
   },
   {
     "grant_title": "YLUM S.A.",
-    "id": "30708415487",
+    "cuil": "30708415487",
     "total_amount": "100952",
+    "total_contrats": "89",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=333",
     "detail": []
   },
   {
     "grant_title": "ZALAZAR HECTOR FABIAN",
-    "id": "20172645004",
+    "cuil": "20172645004",
     "total_amount": "7385",
+    "total_contrats": "6",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=529",
     "detail": []
   },
   {
     "grant_title": "ZAPATA MARIO FABIAN",
-    "id": "20208135776",
+    "cuil": "20208135776",
     "total_amount": "6282",
+    "total_contrats": "2",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=330",
     "detail": []
   },
   {
     "grant_title": "ZIEGLER HUGO EDUARDO",
-    "id": "20135992020",
+    "cuil": "20135992020",
     "total_amount": "21035",
+    "total_contrats": "16",
     "link": "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAPR.php?anio=2010&proveedor=329",
     "detail": []
   }

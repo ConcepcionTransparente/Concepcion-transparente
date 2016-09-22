@@ -155,6 +155,7 @@ app.use(function(err, req, res, next) {
 //             grant_title: 'td:nth-of-type(2)',
 //             cuil: 'td' ,
 //             total_amount: 'td:nth-of-type(6) | nopoint | nocomma',
+//             total_contrats: 'td:nth-of-type(4) | nopoint',
 //             link: 'td:nth-of-type(8) a@href',
 //             detail: x('td:nth-of-type(8) a@href','body tr.textoTabla',[{
 //               rubro: 'td:nth-of-type(2)'

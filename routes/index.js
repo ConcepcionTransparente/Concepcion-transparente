@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var db = require('../model/db');
 var model = require('../model/model');
 var fs = require('fs');
+var async = require('async');
 
 //var xrayController = require('../Controllers/xrayController');
 
@@ -21,7 +22,6 @@ router.get('/demo', function(req, res,next) {
 
 //CONTROLLERS
 // GET YEARPROVIDERS, ME SIRVE PARA LA TABLA
-// POST YEARPROVIDERS, ME SIRVE PARA LA TABLA
 router.post('/api/post-yearprovider',function(req,res,next){
   fs.readFile('./public/jsons/yearProvider/providers_2016.json', 'utf8', function (err, data) {
     if (err){return console.log(err);};
@@ -38,7 +38,9 @@ router.post('/api/post-yearprovider',function(req,res,next){
     });
   });
 });
+
 router.get('/api/get-yearprovider',function(req,res,next){
+
   mongoose.model('yearProvider').find({},function(err,provider){
     if(err){
       console.log('mongoose error find()');
@@ -47,15 +49,13 @@ router.get('/api/get-yearprovider',function(req,res,next){
     }else{
       res.json(provider);
     }
-  });
+  }).sort({ 'total_amount': 'descending' }).limit(10);
 });
 
 
+//------------------------------------------------------------------------------
 
-
-
-
-// GET YEAR, ME SIRVE PARA CONSULTAS GENERALES
+// POST YEAR, ME SIRVE PARA CONSULTAS GENERALES
 router.post('/api/post-year',function(req,res,next){
   //luego muevo esto a las tareas que se realizan durante la noche
   fs.readFile('./public/jsons/year/years.json', 'utf8', function (err, data) {
@@ -73,43 +73,19 @@ router.post('/api/post-year',function(req,res,next){
     });
   });
 });
+
+
 // GET YEAR, ME SIRVE PARA CONSULTAS GENERALES
 router.get('/api/get-year',function(req,res,next){
   mongoose.model('year').find({},function(err,year){
     if(err){
       console.log('mongoose ---> /api/get-year BACKEND error find()');
-      // return console.log(err);
+      return console.log(err);
     }else{
       res.json(year);
     }
-  });
+  }).limit(1); //solo obtengo año 2016
 });
-
-// POST YEAR
-// router.post('/api/post-year',function(req,res,next){
-//   var year = req.body.year;
-//   var numberOfContracts = req.body.numberOfContracts;
-//   var total_amount = req.body.total_amount;
-//   var obj = {
-//     year: year,
-//     numberOfContracts: numberOfContracts,
-//     total_amount: total_amount
-//   };
-//   mongoose.model('year').create( obj , function(err,year){
-//     if(err){
-//       console.log('mongoose error create()');
-//       return console.log(err);
-//     }else{
-//       console.log('mongoose create YEAR is OK!');
-//       console.log(year);
-//       res.send(year);
-//     }
-//   });
-// });
-
-
-
-
 
 // GET CANTIDAD DE PROVEEDORES
 router.get('/api/get-totalproviders',function(req,res,next){
@@ -119,9 +95,28 @@ router.get('/api/get-totalproviders',function(req,res,next){
       return console.log(err);
     }else{
       res.json(c);
-      //console.log(c);
+      // console.log("Cantidad de PROVEEDORES: " + c);
     }
   });
 });
+
+// CANTIDAD DE ORDENES DE COMPRAS
+router.get('/api/get-totalorders',function(req,res,next){
+  mongoose.model('yearProvider').aggregate([
+          { $group: {
+            _id : null,
+            sumatoria: { $sum: "$total_contrats"  }
+          }}
+      ], function (err, result) {
+          if (err) {
+              return console.log(err);;
+          }
+          // console.log(result);
+          res.json(result);
+      });
+});
+
+
+
 
 module.exports = router;
