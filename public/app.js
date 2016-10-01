@@ -83,7 +83,62 @@ dcuApp.controller('yearController', ['$scope', '$http', '$q', function($scope, $
     //   });
     //console.debug("Ya hice mi peticion...");
 
+}]);
 
 
+//yearProviderController ME SIRVE PARA EL LINECHART
+dcuApp.controller('linechart',['$scope','$http',function($scope,$http){
+  $http.get('/api/get-linechart').then(
+    function(response){
+      //console.debug('Mi peticion ya contesto');
+      $scope.data=response.data;
+      console.log("SE RECIBIO EL LINECHART  A FRONTEND");
+      console.log($scope.data);
+
+      var linechart = c3.generate({
+          bindto: '#lineschart',
+          data: {
+            // url: 'example.json', //la carpeta raiz de busqueda es /public/
+            json: $scope.data,
+            mimeType: 'json',
+            keys: {
+                x: 'year', // it's possible to specify 'x' when category axis
+                value: ['total_amount'],
+            },
+            names: {
+              amount: 'Evolución del gasto'
+            }
+          },
+          axis: {
+              x: {
+                type: 'category'
+              },
+              y : {
+                tick: {
+                  format: d3.format("$,")
+                }
+              }
+          },
+          grid: {
+            x: {
+              show: true
+            },
+            y: {
+              show: true
+            }
+          },
+          tooltip: {
+        format: {
+          name: function (name, ratio, id, index) { return 'Monto'; }
+        }
+      }
+        });
+      //   setTimeout(function () {
+      //     linechart.transform('bar', 'amount');
+      // }, 2000);
+
+    },function(response){
+      console.debug('Error --> ' + response);
+    });
 
 }]);

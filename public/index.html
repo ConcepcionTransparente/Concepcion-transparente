@@ -73,16 +73,18 @@
         <a href="#" id="all" class="button active">All Grants</a>
         <a href="#" id="year" class="button">Grants By Year</a>
       </div> -->
-      <div class="row">
-        <div id="vis"></div>
-        <br>
-        <div class="divider"></div>
+
+      <!-- BUBBLE CHART -->
+      <div id="bubbleChartFather" class="row" >
+        <div id="bubbleChart" class="svg-container" ></div>
       </div>
+      <br>
+      <div class="divider"></div>
 
       <div class="row">
         <div class="article">
           <h3>Evolución del gasto durante el año 2016: </h3>
-          <div id="lineschart" class=""></div>
+          <div id="lineschart" ng-controller="linechart"></div>
         </div>
         <br>
       </div>

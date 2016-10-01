@@ -8,40 +8,20 @@
  * https://bost.ocks.org/mike/chart/
  *
  */
-//  var uid = (function(){
-//    var id=0;
-//    return function(){
-//      if(arguments[0]===0)
-//       id=0;
-//     return id++;
-//   }
-// })();
-window.onresize = bubbleChart;
 
 function bubbleChart() {
   var w = window,
       d = document,
       e = d.documentElement,
-      g = d.getElementById('vis'),
-      width = w.innerWidth || e.clientWidth || g.clientWidth,
+      g = d.getElementById('bubbleChartFather'),
+      // width = w.innerWidth || e.clientWidth || g.clientWidth,
+      width = g.clientWidth,
       height = w.innerHeight|| e.clientHeight|| g.clientHeight;
-      // console.log(width);
-      // console.log(height);
-      // console.log(g);
+      console.log("ANCHO DE WIDTH"+ width);
+      console.log("ANCHO DE bubbleChartFather"+g.clientWidth);
+      console.log(height);
+      console.log(g);
 
-
-      // function updateWindow(){
-      //     width = w.innerWidth || e.clientWidth || g.clientWidth;
-      //     height = w.innerHeight|| e.clientHeight|| g.clientHeight;
-      //
-      //     svg.attr("width", width).attr("height", height);
-      //     console.log(width);
-      // }
-      // svg.attr("width", x).attr("height", y);
-
-  // Constants for sizing
-  // var width = x;
-  // var height = y;
 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('gates_tooltip', 240);
@@ -180,6 +160,7 @@ function bubbleChart() {
 
     // Create a SVG element inside the provided selector
     // with desired size.
+    //000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     // svg = d3.select(selector)
     //   .append('svg')
     //   .attr('width', width)
@@ -191,8 +172,8 @@ function bubbleChart() {
       .classed("svg-container", true) //container class to make it responsive
       .append("svg")
       //responsive SVG needs these 2 attributes and no width and height attr
-      .attr("preserveAspectRatio", "xMidYMin meet")
-      .attr("viewBox", "0 0 1200 760")
+      .attr("preserveAspectRatio", "xMidYMid meet")
+      .attr("viewBox", "0 0 1200 800")
       //class to make it responsive
        .classed("svg-content-responsive", true);
 
@@ -396,8 +377,10 @@ function display(error, data) {
     console.log(error);
   }
 
-  myBubbleChart('#vis', data);
+  myBubbleChart('#bubbleChart', data);
 }
+
+//????????????????????????????????????????????????????????????????????????????????
 
 /*
  * Sets up the layout buttons to allow for toggling between view modes.

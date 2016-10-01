@@ -86,8 +86,8 @@ app.use(function(err, req, res, next) {
 
 
 // //Scraper
-//
-// //Reporte: Proveedores Contratados (por año)
+
+//Reporte: Proveedores Contratados (por año)
 // function year(val){
 //   var url='http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php';
 //   x( url , 'body tr.textoTabla', [{
@@ -115,7 +115,7 @@ app.use(function(err, req, res, next) {
 //             numberOfVendors: 'td:nth-of-type(2)',
 //             amount: 'td:nth-of-type(4) | nopoint | nocomma'
 //         }])
-//         .write('public/jsons/XanioXmes/providers_'+i+'.json');
+//         .write('public/jsons/yearMonth/providers_'+i+'.json');
 //   }
 // };
 // time.tic();
@@ -133,9 +133,9 @@ app.use(function(err, req, res, next) {
 //             category: 'td',
 //             nameCategory: 'td:nth-of-type(2)',
 //             numberOfVendors: 'td:nth-of-type(3)',
-//             amount: 'td:nth-of-type(5) | nopoint | nocomma'
+//             total_amount: 'td:nth-of-type(5) | nopoint | nocomma'
 //         }])
-//         .write('public/jsons/XanioXrubro/providers_'+i+'.json');
+//         .write('public/jsons/yearCategory/providers_'+i+'.json');
 //   }
 // };
 // time.tic();
@@ -143,9 +143,9 @@ app.use(function(err, req, res, next) {
 //      yearCategory(i);
 //  }
 // time.toc();
-
-
-
+//
+//
+//
 // Reporte: Proveedores Contratados Por Año Y Proveedor
 // function yearProvider(val) {
 //   var date = new Date();
@@ -170,8 +170,8 @@ app.use(function(err, req, res, next) {
 //      yearProvider(i);
 //  }
 // time.toc();
-
-
+//
+//
 // //Reporte: Proveedores Contratados Por Año, Mes Y Rubro
 //
 // function providersYMC(val) {

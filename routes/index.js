@@ -117,6 +117,17 @@ router.get('/api/get-totalorders',function(req,res,next){
 });
 
 
-
+// GET YEAR, ME SIRVE PARA CONSULTAS GENERALES
+router.get('/api/get-linechart',function(req,res,next){
+  mongoose.model('year').find({},function(err,linechart){
+    if(err){
+      console.log('mongoose ---> /api/get-year BACKEND error find() LINE CHART');
+      return console.log(err);
+    }else{
+      console.log("SE ENVIO DESDE BACKEND EL LINECHART A FRONTEND");
+      res.json(linechart);
+    }
+  });
+});
 
 module.exports = router;
