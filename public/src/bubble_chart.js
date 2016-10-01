@@ -25,23 +25,7 @@ function bubbleChart() {
       g = d.getElementById('vis'),
       width = w.innerWidth || e.clientWidth || g.clientWidth,
       height = w.innerHeight|| e.clientHeight|| g.clientHeight;
-      // console.log(width);
-      // console.log(height);
-      // console.log(g);
 
-
-      // function updateWindow(){
-      //     width = w.innerWidth || e.clientWidth || g.clientWidth;
-      //     height = w.innerHeight|| e.clientHeight|| g.clientHeight;
-      //
-      //     svg.attr("width", width).attr("height", height);
-      //     console.log(width);
-      // }
-      // svg.attr("width", x).attr("height", y);
-
-  // Constants for sizing
-  // var width = x;
-  // var height = y;
 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('gates_tooltip', 240);

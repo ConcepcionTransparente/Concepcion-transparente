@@ -51,21 +51,6 @@ dcuApp.controller('yearController', ['$scope', '$http', '$q', function($scope, $
             console.log(error);
         });
 
-
-
-    // $http.post('/api/post-year').then(
-    //   function(response){
-    //     console.debug(response);
-    // },function(response){
-    //   console.debug(response);
-    // });
-
-
-
-
-
-
-
     // GET CANTIDAD DE PROVEEDORES
     // $http.get('/api/get-totalproviders').then(
     //   function(response){

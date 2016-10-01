@@ -7,15 +7,15 @@ var bodyParser = require('body-parser');
 var Xray = require('x-ray');
 var time = require('node-tictoc');
 
-var x= Xray({
-  filters: {
-    nocomma: function (value) {
-      return typeof value === 'string' ? value.split(',')[0] : value
-    },
-    nopoint: function (value) {
-      return typeof value === 'string' ? value.replace(/\./g,'') : value
+var x = Xray({
+    filters: {
+        nocomma: function(value) {
+            return typeof value === 'string' ? value.split(',')[0] : value
+        },
+        nopoint: function(value) {
+            return typeof value === 'string' ? value.replace(/\./g, '') : value
+        }
     }
-  }
 });
 
 var routes = require('./routes/index');
@@ -24,11 +24,11 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
- app.set('views', path.join(__dirname, 'views'));
- app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 //
- app.use(express.static(__dirname + '/public'));
- app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/views');
 // app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'html');
 // view engine setup
@@ -44,7 +44,9 @@ var app = express();
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -53,9 +55,9 @@ app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -63,23 +65,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 
@@ -147,29 +149,58 @@ app.use(function(err, req, res, next) {
 
 
 // Reporte: Proveedores Contratados Por Año Y Proveedor
-// function yearProvider(val) {
-//   var date = new Date();
-//   for(i = 2009 ; i <= date.getFullYear(); i++){
-//     var url="http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio="+i;
-//     x( url , 'body tr.textoTabla', [{
-//             grant_title: 'td:nth-of-type(2)',
-//             cuil: 'td' ,
-//             total_amount: 'td:nth-of-type(6) | nopoint | nocomma',
-//             total_contrats: 'td:nth-of-type(4) | nopoint',
-//             link: 'td:nth-of-type(8) a@href',
-//             detail: x('td:nth-of-type(8) a@href','body tr.textoTabla',[{
-//               rubro: 'td:nth-of-type(2)'
-//             }])
-//
-//         }])
-//         .write('public/jsons/yearProvider/providers_'+i+'.json');
-//   }
-// };
-// time.tic();
-//  for (var i = 0; i < 1; i++) {
-//      yearProvider(i);
-//  }
-// time.toc();
+function yearProvider(val) {
+    var date = new Date();
+    // for(i = 2009 ; i <= date.getFullYear(); i++){
+    var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio=" + date.getFullYear();
+    x(url, 'body tr.textoTabla', [{
+            cuil: 'td',
+            grant_title: 'td:nth-of-type(2)',
+            total_amount: 'td:nth-of-type(6) | nopoint | nocomma',
+            total_contrats: 'td:nth-of-type(4) | nopoint',
+            href: 'td:nth-of-type(8) a@href'
+        }])(function(err, wrapperObj) {
+            wrapperObj.map(wrapperMap);
+        })
+        // .write('public/jsons/yearProvider/providers_' + i + '.json');
+        // }
+
+    function wrapperMap(mappedObject) {
+        x(mappedObject.href, 'body tr.textoTabla', [{
+            cuil: mappedObject.cuil,
+            grant_title: mappedObject.grant_title,
+            total_amount: mappedObject.total_amount,
+            total_contrats: mappedObject.total_contrats,
+            cod: 'td',
+            rubro: 'td:nth-of-type(2)',
+            href: 'td:nth-of-type(7) a@href'
+        }])([function(err, innerWrapperObject) {
+            innerWrapperObject.map(innerWrapperMap);
+        }, mappedObject])
+    };
+
+    function innerWrapperMap(innerMappedObject) {
+        x(innerMappedObject.href, 'body tr.textoTabla', [{
+            cuil: innerMappedObject.cuil,
+            grant_title: innerMappedObject.grant_title,
+            total_amount: innerMappedObject.total_amount,
+            total_contrats: innerMappedObject.total_contrats,
+            cod: innerMappedObject.cod,
+            rubro: innerMappedObject.rubro,
+            mes: 'td',
+            importe: 'td:nth-of-type(4)'
+        }])(function(err, finalObject) {
+            console.log("Inner Inner Wrapper");
+            console.log(finalObject);
+        })
+    };
+};
+
+time.tic();
+// for (var i = 0; i < 1; i++) {
+yearProvider(0);
+// }
+time.toc();
 
 
 // //Reporte: Proveedores Contratados Por Año, Mes Y Rubro
