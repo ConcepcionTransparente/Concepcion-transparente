@@ -17,10 +17,13 @@ function bubbleChart() {
       // width = w.innerWidth || e.clientWidth || g.clientWidth,
       width = g.clientWidth,
       height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+<<<<<<< HEAD
       console.log("ANCHO DE WIDTH"+ width);
       console.log("ANCHO DE bubbleChartFather"+g.clientWidth);
       console.log(height);
       console.log(g);
+=======
+>>>>>>> resize
 
 
   // tooltip for mouseover functionality
