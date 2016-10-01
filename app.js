@@ -154,46 +154,60 @@ function yearProvider(val) {
     // for(i = 2009 ; i <= date.getFullYear(); i++){
     var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio=" + date.getFullYear();
     x(url, 'body tr.textoTabla', [{
-            cuil: 'td',
-            grant_title: 'td:nth-of-type(2)',
-            total_amount: 'td:nth-of-type(6) | nopoint | nocomma',
-            total_contrats: 'td:nth-of-type(4) | nopoint',
-            href: 'td:nth-of-type(8) a@href'
-        }])(function(err, wrapperObj) {
-            wrapperObj.map(wrapperMap);
-        })
-        // .write('public/jsons/yearProvider/providers_' + i + '.json');
-        // }
+        cuil: 'td',
+        grant_title: 'td:nth-of-type(2)',
+        total_amount: 'td:nth-of-type(6) | nopoint | nocomma',
+        total_contrats: 'td:nth-of-type(4) | nopoint',
+        href: 'td:nth-of-type(8) a@href'
+    }])(function(err, wrapperObj) {
+        wrapperObj.map(wrapperMap, wrapperObj);
+    })
 
     function wrapperMap(mappedObject) {
+        var parentObject = this;
         x(mappedObject.href, 'body tr.textoTabla', [{
-            cuil: mappedObject.cuil,
-            grant_title: mappedObject.grant_title,
-            total_amount: mappedObject.total_amount,
-            total_contrats: mappedObject.total_contrats,
             cod: 'td',
-            rubro: 'td:nth-of-type(2)',
+            category: 'td:nth-of-type(2)',
             href: 'td:nth-of-type(7) a@href'
-        }])([function(err, innerWrapperObject) {
-            innerWrapperObject.map(innerWrapperMap);
-        }, mappedObject])
+        }])(function(err, innerWrapperObject) {
+            innerWrapperObject.map(innerWrapperMap, {
+                provider: mappedObject
+            });
+        })
     };
 
     function innerWrapperMap(innerMappedObject) {
+        var parentObject = this;
         x(innerMappedObject.href, 'body tr.textoTabla', [{
-            cuil: innerMappedObject.cuil,
-            grant_title: innerMappedObject.grant_title,
-            total_amount: innerMappedObject.total_amount,
-            total_contrats: innerMappedObject.total_contrats,
-            cod: innerMappedObject.cod,
-            rubro: innerMappedObject.rubro,
-            mes: 'td',
-            importe: 'td:nth-of-type(4)'
+            month: 'td',
+            import: 'td:nth-of-type(4)'
         }])(function(err, finalObject) {
-            console.log("Inner Inner Wrapper");
-            console.log(finalObject);
+            finalObject.map(normalize, {
+                category: innerMappedObject,
+                provider: parentObject.provider
+            });
         })
     };
+
+    function normalize(o) {
+        var parentObject = this;
+        // var childObject = {
+        //     amount: o,
+        //     category: parentObject.category,
+        //     provider: parentObject.provider
+        // }
+        var childObject = {
+            cuil: parentObject.provider.cuil,
+            grant_title: parentObject.provider.grant_title,
+            total_amount: parentObject.provider.total_amount,
+            total_contrats: parentObject.provider.total_contrats,
+            cod: parentObject.category.cod,
+            category: parentObject.category.category,
+            month: o.month,
+            import: o.import
+        }
+        console.log(childObject);
+    }
 };
 
 time.tic();
