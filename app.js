@@ -176,10 +176,10 @@ app.use(function(err, req, res, next) {
 //
 //
 
-function yearProvider(val) {
+function yearProvider() {
     var date = new Date();
-    // for(i = 2009 ; i <= date.getFullYear(); i++){
-    var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio=" + date.getFullYear();
+    for(i = 2009 ; i <= date.getFullYear(); i++){
+    var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio=" + i;
     x(url, 'body tr.textoTabla', [{
         cuil: 'td',
         grant_title: 'td:nth-of-type(2)',
@@ -237,11 +237,9 @@ function yearProvider(val) {
     }
 };
 
-time.tic();
-// for (var i = 0; i < 1; i++) {
-yearProvider(0);
-// }
-time.toc();
+// time.tic();
+// yearProvider();
+// time.toc();
 
 
 // //Reporte: Proveedores Contratados Por Año, Mes Y Rubro
