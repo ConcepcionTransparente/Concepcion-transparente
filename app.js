@@ -188,7 +188,8 @@ function yearProvider() {
         href: 'td:nth-of-type(8) a@href'
     }])(function(err, wrapperObj) {
         wrapperObj.map(wrapperMap, wrapperObj);
-    })
+    });
+  }
 
     function wrapperMap(mappedObject) {
         var parentObject = this;
@@ -234,7 +235,7 @@ function yearProvider() {
             import: o.import
         }
         console.log(childObject);
-    }
+    };
 };
 
 // time.tic();
