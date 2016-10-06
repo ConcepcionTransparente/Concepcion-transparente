@@ -95,29 +95,37 @@ app.use(function(err, req, res, next) {
 /////////////////////////////////////////////////////////////////////////////////////
 
 function yearProvider() {
-    var date = new Date();
-   for (i = 2009; i <= date.getFullYear(); i++) {
-
-    var error_innerWrapperObject = [];
-    var error_finalObject = [];
-    console.log('Year ' + i);
-
-    var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratadosAP.php?anio=" + i;
+    var error = [];
+    console.log("Year provider...");
+    var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php";
     x(url, 'body tr.textoTabla', [{
+            year: 'td',
+            href: 'td:nth-of-type(8) a@href'
+        }])
+        (function(err, wrapperObj) {
+            wrapperObj.map(outerWrapperMap);
+        });
+
+    function outerWrapperMap(mappedObject) {
+        x(mappedObject.href, 'body tr.textoTabla', [{
             cuil: 'td',
             grant_title: 'td:nth-of-type(2)',
             total_amount: 'td:nth-of-type(6) | nopoint | nocomma',
             total_contrats: 'td:nth-of-type(4) | nopoint',
             href: 'td:nth-of-type(8) a@href' //a@href a RUBROS
-        }])
-        (function(err, wrapperObj,i) {
-            // console.log('wrapperObj ' + JSON.stringify(wrapperObj));
-            wrapperObj.map(wrapperMap, wrapperObj);
-            console.log("------ANIO: ------"+i);
-        });
-     } //end/ for////////////////////////////////////////////////////////////////////
+        }])(function(err, wrapperObj) {
+            if (wrapperObj == null) {
+                error.push(wrapperObj);
+            } else {
+                wrapperObj.map(wrapperMap, {
+                    year: mappedObject.year
+                });
+            }
+        })
+    }
 
     function wrapperMap(mappedObject) {
+        // console.log(mappedObject);
         var parentObject = this;
         x(mappedObject.href, 'body tr.textoTabla', [{
             cod: 'td',
@@ -126,44 +134,39 @@ function yearProvider() {
         }])(function(err, innerWrapperObject) {
             // console.log('innerWrapperObject ' + JSON.stringify(innerWrapperObject));
             if (innerWrapperObject == null) {
-                error_innerWrapperObject.push(innerWrapperObject);
+                error.push(innerWrapperObject);
             } else {
                 innerWrapperObject.map(innerWrapperMap, {
-                    provider: mappedObject
+                    provider: mappedObject,
+                    year: parentObject.year
                 });
             }
         })
     };
 
-    function innerWrapperMap(innerMappedObject) {
+    function innerWrapperMap(mappedObject) {
         var parentObject = this;
-        x(innerMappedObject.href, 'body tr.textoTabla', [{
+        x(mappedObject.href, 'body tr.textoTabla', [{
             month: 'td',
             numberOfContracts: 'td:nth-of-type(2)',
             import: 'td:nth-of-type(4)'
         }])(function(err, finalObject) {
-            // console.log('finalObject ' + JSON.stringify(finalObject));
             if (finalObject == null) {
-                error_finalObject.push(finalObject);
+                error.push(finalObject);
             } else {
-            finalObject.map(normalize, {
-                category: innerMappedObject,
-                provider: parentObject.provider
-            });
-          }
-
+                finalObject.map(normalize, {
+                    category: mappedObject,
+                    provider: parentObject.provider,
+                    year: parentObject.year
+                });
+            }
         })
     };
 
     function normalize(o) {
         var parentObject = this;
-        // var childObject = {
-        //     amount: o,
-        //     category: parentObject.category,
-        //     provider: parentObject.provider
-        // }
         var childObject = {
-            year: parentObject.provider.year, //year proveedor
+            year: parentObject.year, //year proveedor
             cuil: parentObject.provider.cuil, //proveedor
             grant_title: parentObject.provider.grant_title, //proveedor
             total_amount: parentObject.provider.total_amount, //por ahora no sirve, se puede calcular
@@ -174,8 +177,6 @@ function yearProvider() {
             numberOfContracts: o.numberOfContracts,
             import: o.import //importe TRANSFORMAR A NUMBER
         };
-
-        console.log("ANIO: ---->"+childObject.year);
         console.log(JSON.stringify(childObject));
         console.log("---------------------------------------------------------");
         ////////////////////////////////////////////////////////////////////////
@@ -183,11 +184,20 @@ function yearProvider() {
         ////////////////////////////////////////////////////////////////////////
 
         //PROVIDER//////////////////////////////////////////////////////////////
-        var update = { cuil: childObject.cuil,grant_title:childObject.grant_title },
-            options = { upsert: true, new: true, setDefaultsOnInsert: true };
+        var update = {
+                cuil: childObject.cuil,
+                grant_title: childObject.grant_title
+            },
+            options = {
+                upsert: true,
+                new: true,
+                setDefaultsOnInsert: true
+            };
 
         // Find the document
-        mongoose.model('Provider').findOneAndUpdate({cuil:childObject.cuil}, update, options, function(error, result) {
+        mongoose.model('Provider').findOneAndUpdate({
+            cuil: childObject.cuil
+        }, update, options, function(error, result) {
             if (error) return;
             console.log("UPDATEANDO PROVIDER -------------------------------------------");
             return;
@@ -195,28 +205,40 @@ function yearProvider() {
         });
 
         // //CATEGORY /////////////////////////////////////////////////////////////
-        update = { cod: childObject.cod,category:childObject.category },
-        options = { upsert: true, new: true, setDefaultsOnInsert: true };
+        update = {
+                cod: childObject.cod,
+                category: childObject.category
+            },
+            options = {
+                upsert: true,
+                new: true,
+                setDefaultsOnInsert: true
+            };
 
         // Find the document
-        mongoose.model('Category').findOneAndUpdate({cod:childObject.cod,category:childObject.category}, update, options, function(error, result) {
+        mongoose.model('Category').findOneAndUpdate({
+            cod: childObject.cod,
+            category: childObject.category
+        }, update, options, function(error, result) {
             if (error) return;
             console.log("UPDATEANDO CATEGORY *******************************************");
             return;
         });
 
         // //PURCHASE-ORDER////////////////////////////////////////////////////////
-        var obj={
-          year: childObject.year,
-          month: childObject.month,
-          numberOfContracts: childObject.numberOfContracts,
-          import: childObject.import,
-          cuil: childObject.cuil, //cambiar por fk_Provider
-          category: childObject.category //cambiar por fk_Category
+        var obj = {
+            year: childObject.year,
+            month: childObject.month,
+            numberOfContracts: childObject.numberOfContracts,
+            import: childObject.import,
+            cuil: childObject.cuil, //cambiar por fk_Provider
+            category: childObject.category //cambiar por fk_Category
         }
-        mongoose.model('PurchaseOrder').create(obj,function(err,purchase){
-          if(err){return console.log(err);}
-          return console.log("NUEVA INSERCION: "+ purchase);
+        mongoose.model('PurchaseOrder').create(obj, function(err, purchase) {
+            if (err) {
+                return console.log(err);
+            }
+            return console.log("NUEVA INSERCION: " + purchase);
 
         });
 
@@ -234,22 +256,21 @@ time.toc();
 ///////////////////////////////////////////////////////////////////////////////////
 
 // Reporte: Proveedores Contratados (por año)
-function year(val){
-  var url='http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php';
-  x( url , 'body tr.textoTabla', [{
-          year: 'td',
-          numberOfContracts: 'td:nth-of-type(2)',
-          totalAmount: 'td:nth-of-type(4) | nopoint | nocomma'
-      }])
-      .write('public/jsons/year/years.json');
-};
-
-time.tic();
- for (var i = 0; i < 1; i++) {
-     year(i);
- }
-time.toc();
-
+// function year(val) {
+//     var url = 'http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php';
+//     x(url, 'body tr.textoTabla', [{
+//             year: 'td',
+//             numberOfContracts: 'td:nth-of-type(2)',
+//             totalAmount: 'td:nth-of-type(4) | nopoint | nocomma'
+//         }])
+//         .write('public/jsons/year/years.json');
+// };
+//
+// time.tic();
+// for (var i = 0; i < 1; i++) {
+//     year(i);
+// }
+// time.toc();
 
 
 
