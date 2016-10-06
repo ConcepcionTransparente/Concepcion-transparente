@@ -43,19 +43,27 @@
       <div class="divider"></div>
 
 
-      <div class="row general-data" ng-controller="yearController">
-        <h3>En {{data[0].year}} la municipalidad de Concepción del Uruguay brinda:</h3>
+      <div class="row general-data" ng-controller="generalController">
+        <h3>En
+          {{data[0].year}}
+          la municipalidad de Concepción del Uruguay brinda:</h3>
         <div class="col s12 m3 border-right">
-          <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>{{data[0].total_amount|currency}}</span></p>
+          <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
+            {{data[0].totalAmount|currency}}
+          </span></p>
         </div>
         <div class="col s12 m3 border-right">
           <p>PROMEDIO DE GASTO MENSUAL:<br><br><br><span>need filters</span></p>
         </div>
         <div class="col s12 m3 border-right">
-          <p>CANTIDAD DE PROVEEDORES:<br><br><br><br><span>{{data.cantidad}}</span></p>
+          <p>CANTIDAD DE PROVEEDORES:<br><br><br><br><span>
+            <!-- {{data.cantidad}} -->
+          </span></p>
         </div>
         <div class="col s12 m3">
-          <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>{{data.totalCompras[0].sumatoria}}</span></p>
+          <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>
+            {{data[0].numberOfContracts}}
+          </span></p>
         </div>
       <div class="divider"></div>
       <br>
@@ -76,13 +84,11 @@
 
       <!-- BUBBLE CHART -->
       <div id="bubbleChartFather" class="row" >
-        <div class="row">
           <div class="col m4 s12"></div>
           <div class="col m8 s12">
             <div id="bubbleChart" class="svg-container" ></div>
             <div id="vis"></div>
           </div>
-        </div>
       </div>
 
       <br>
@@ -98,7 +104,7 @@
       <div class="divider"></div>
 
 
-      <div class="row" ng-controller="yearProviderController">
+      <!-- <div class="row" ng-controller="rankingController">
         <h3>Ranking de proveedores</h3>
         <table>
           <thead>
@@ -110,13 +116,13 @@
             </thead>
             <tbody>
               <tr ng-repeat="x in data">
-                <td>{{ x.grant_title }}</td>
                 <td>{{ x.cuil }}</td>
-                <td>{{x.total_amount | currency}}</td>
+                <td>{{ x.cuil }}</td>
+                <td>{{x.category | currency}}</td>
               </tr>
             </tbody>
         </table>
-      </div>
+      </div> -->
 
       <footer>
         <div class="divider"></div>
@@ -145,7 +151,7 @@
     <script src="../lib/d3.js"></script>
     <script src="../src/tooltip.js"></script>
     <script src="../src/bubble_chart.js"></script>
-    <script src="../src/line_chart.js"></script>
+    <!-- <script src="../src/line_chart.js"></script> -->
 
   </body>
 </html>
