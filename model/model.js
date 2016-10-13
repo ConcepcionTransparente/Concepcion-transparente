@@ -19,8 +19,6 @@ var yearSchema = new mongoose.Schema({
   year: Number,
   numberOfContracts: Number,
   totalAmount: String
-},{
-   timestamps: true
 });
 mongoose.model('Year',yearSchema);
 
@@ -28,16 +26,12 @@ mongoose.model('Year',yearSchema);
 var providerSchema = new Schema({
   cuil: Number,
   grant_title: String
-}),{
-   timestamps: true
-};
+});
 mongoose.model('Provider',providerSchema);
 
 var categorySchema = new Schema({
   cod : String,
   category: String //reparticion
-},{
-   timestamps: true
 });
 mongoose.model('Category',categorySchema);
 
@@ -48,7 +42,5 @@ var purchaseOrderSchema = new Schema({ //orden de compra
   import: String,//importe
   fk_Provider: {type: Schema.ObjectId, ref: "Provider"},
   fk_Category: {type: Schema.ObjectId, ref: "Category"}
-},{
-   timestamps: true
 });
 mongoose.model('PurchaseOrder',purchaseOrderSchema);

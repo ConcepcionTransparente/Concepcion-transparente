@@ -23,18 +23,31 @@ router.get('/demo', function(req, res, next) {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-router.get("/api/get-ranking", function(req, res) {
-    mongoose.model('PurchaseOrder').find({}, function(err, purchases) {
-      // console.log(purchases);
-        mongoose.model('Provider').populate(purchases, {path: "fk_Provider"},function(err, provider){
-            // console.log(provider);
-            res.status(200).send(provider);
-        });
-    })
-    .sort({'year': 'ascending'})
-    .limit(10);
-});
+// router.get("/api/get-ranking", function(req, res) {
+//     mongoose.model('PurchaseOrder').find({}, function(err, purchases) {
+//       // console.log(purchases);
+//         mongoose.model('Provider').populate(purchases, {path: "fk_Provider"},function(err, provider){
+//             // console.log(provider);
+//             res.status(200).send(provider);
+//         });
+//     })
+//     .sort({'import': 'descending'})
+//     .limit(10);
+// });
 
+router.get("/api/get-ranking",function(req,res){
+  mongoose.model('PurchaseOrder').find()
+  .sort({import: -1})
+  .limit(10)
+  .populate('fk_Provider')
+  .exec(function(err,post){
+    if(err){console.log(err);}
+    else{
+      console.log(post);
+      res.send(post);
+    }
+  });
+});
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -63,42 +76,23 @@ router.get("/api/get-ranking", function(req, res) {
 ////////////////////////////////////////////////////////////////////////////////
 // CANTIDAD DE ORDENES DE COMPRAS
 router.get('/api/get-totalorders',function(req,res,next){
-  mongoose.model('PurchaseOrder').aggregate([
-        { $group: {
-            _id: "null",
-            total: { $sum: "$import"}
-        }}
-    ], function (err, results) {
-        if (err) {
-            console.error(err);
-        } else {
-            console.log(results.total);
-            res.send(results.total);
-        }
+  mongoose.model('PurchaseOrder').aggregate(
+   [
+    {
+      $group : {
+         _id : "null",
+         totaldocs: { $sum: { $ifNull: ["$PurchaseOrder.price", 0] } }, // for your case use local.user_totaldocs
+         count: { $sum: 1 } // for no. of documents count
+      }
     }
-   );
+  ],function(err,result){
+    if(err){console.log(err);}
+    else{
+      console.log("------------"+result[0]);
+    }
+  });
 });
 
-// { $group: {
-//   _id: 'null',
-//   sumatory: { $sum: '$import' }
-// }
-// }, // 'group' goes first!
-// { $project: {
-//   _id: 1,
-//   sumatory: 1
-// }
-router.get('/api/get-total', function(req, res, next) {
-    mongoose.model('PurchaseOrder').find({}, function(err, result) {
-        if (err) {
-            return console.log(err);
-        } else {
-          console.log(result);
-            res.json(result);
-        }
-    })
-    .sort({'year': 'ascending'});
-});
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -116,7 +110,6 @@ router.get('/api/get-linechart', function(req, res, next) {
     .limit(10);
 });
 
-
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -124,22 +117,38 @@ router.get('/api/get-linechart', function(req, res, next) {
 // Reparticion - Proveedor - Detalle
 
 router.get("/api/get-purchase", function(req, res) {
-    mongoose.model('PurchaseOrder').find({}, function(err, purchases) {
-      if(err){return console.log(err);}
+    // mongoose.model('PurchaseOrder').find({}, function(err, purchases) {
+    //   if(err){return console.log(err);}
+    //   else{
+    //     mongoose.model('Category').populate(purchases, {path: "fk_Category"},function(err, category){
+    //         if(err){return console.log(err);}
+    //         else{
+    //           // console.log(category);
+    //           res.status(200).send(category);
+    //         }
+    //     });
+    //   }
+    // })
+    // .sort({'year': 'ascending'})
+    // .limit(5);
+    mongoose.model('PurchaseOrder').find()
+    .sort({import: -1})
+    .limit(5)
+    .populate('fk_Category')
+    .populate('fk_Provider')
+    .exec(function(err,post){
+      if(err){console.log(err);}
       else{
-        mongoose.model('Category').populate(purchases, {path: "fk_Category"},function(err, category){
-            if(err){return console.log(err);}
-            else{
-              // console.log(category);
-              res.status(200).send(category);
-            }
-        });
+        console.log(post);
+        res.send(post);
       }
     })
-    .sort({'year': 'ascending'})
-    .limit(5);
 });
 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// CONTRATOS DE OBRAS PUBLICAS Y SERVICIOS (DETALLE DE CADA PROVEEDOR)
 
 
 router.get("/:id", function(req,res){
@@ -153,22 +162,6 @@ router.get("/:id", function(req,res){
     }
   });
 })
-// router.get("/:id", function(req, res) {
-//     // console.log("golalslasalssalals");
-//     console.log("req.id: "+ req.params.id);
-//     // res.send("holaaa vengo desde backend");
-//     mongoose.model('PurchaseOrder').find({'fk_Provider': req.params.id},function(err,result){
-//       if(err){
-//         console.log(err);
-//         return;
-//       }else{
-//         console.log(result);
-//         res.render('index.html');
-//         res.status(200).send(result);
-//       }
-//     });
-// });
-
 
 
 // router.get('/api/get-purchase', function(req, res, next) {

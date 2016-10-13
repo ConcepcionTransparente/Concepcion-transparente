@@ -19,7 +19,7 @@ var x = Xray({
             return typeof value === 'string' ? value.replace(/\./g, '') : value
         }
     }
-}).throttle(10,1000);
+}).throttle(100,1000);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -309,7 +309,7 @@ function scraping() {
     }; //end normalize
     return;
 }; //end scraping()////////////////////////////////////////////////////////////////////
-
+// 
 // time.tic();
 // scraping();
 // time.toc();

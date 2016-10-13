@@ -31,7 +31,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http',  function($scope, $h
   $scope.searchPurchase   = '';     // set the default search/filter term
   $http.get('/api/get-purchase').then(function(response) {
           $scope.data = response.data;
-          console.log($scope.data);
+          // console.log($scope.data);
       }),
       function(response) {
           console.debug('Error:' + response);
@@ -107,7 +107,7 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     $http.get('/api/get-totalorders').then(function(response) {
       console.log("response: "+ response);
             $scope.data.totalCompras = response.data;
-            // console.log($scope.data);
+            console.log($scope.data);
         }),
         function(response) {
             console.debug('Error:' + response);

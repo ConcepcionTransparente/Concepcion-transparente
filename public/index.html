@@ -175,7 +175,7 @@
           <tbody>
             <tr ng-repeat="x in data | orderBy:sortType:sortReverse | filter:searchPurchase">
               <td>{{ x.fk_Category.category }}</td>
-              <td>{{ x.fk_Provider }}</td>
+              <td>{{ x.fk_Provider.grant_title }}</td>
               <td>{{x.import | currency}}</td>
               <td><a href="/{{x.fk_Provider}}">Ver detalle</a></td>
               <td style="display:none;">{{ x.year}}</td>
