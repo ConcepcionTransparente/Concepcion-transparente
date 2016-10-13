@@ -52,6 +52,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 p.fixedprice{
   font-size: 2em;
   font-weight: bold;
+  color: gray;
 }
 p.fixedprice span{
   font-size: 1.5em;
