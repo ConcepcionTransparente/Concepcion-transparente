@@ -49,6 +49,23 @@ router.get("/api/get-ranking",function(req,res){
   });
 });
 
+// router.get('/api/get-ranking',function(err,res){
+//   mongoose.model('PurchaseOrder')
+//   .aggregate(
+//     {$group:
+//       {_id:"NOMBRE",
+//       suma: {$sum: "import"}
+//     }
+//     }
+//   )
+//   .exec(function(err,result){
+//     populate(result,{path:'fk_Provider'},function(err,populatedresult){
+//       populate(populatedresult,{path: 'fk_Category'},function(err,finalresult){
+//         res.send(finalresult);
+//       })
+//     });
+//   });
+// });
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

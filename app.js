@@ -223,8 +223,18 @@ function scraping() {
         var z = nuevoImporte(childObject.total_amount);
         var partialImport = parseFloat(w);//importe de un proveedor en un cierto mes
         var totalImport = parseFloat(z);//importe total para el años correspondiente a esta fila
-
-
+        ///////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
+        //CONVERT MONTH AND YEAR IN DATE
+        // function stringToDate(month,year){
+        //   var d = Date.parse(year+'-'+month+'01T00:00:00');
+        //   return d;
+        // }
+        // var newDate = stringToDate(childObject.month,childObject.year);
+        ///////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
 
         var updateProvider = {
                 cuil: childObject.cuil,
@@ -309,7 +319,7 @@ function scraping() {
     }; //end normalize
     return;
 }; //end scraping()////////////////////////////////////////////////////////////////////
-// 
+//
 // time.tic();
 // scraping();
 // time.toc();
