@@ -216,6 +216,7 @@ function scraping() {
         function nuevoImporte(m){
           // console.log("NUMERO DEL SCRAPER ---> "+m);
           var y = m.replace(/\./g,'').replace(/\,/g,'.');
+              y = parseFloat(y);
           // console.log("NUMERO CONVERTIDO PERO STRING ---> " + y);
           return y;
         }

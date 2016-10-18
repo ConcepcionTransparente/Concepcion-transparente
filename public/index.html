@@ -28,8 +28,8 @@
     <div class="container">
       <header class="row">
         <div class="col s12 m8 border-right">
-          <h1>CONCEPCIÓN DEL URUGUAY</h1>
-          <h3>Visualización de datos publicos</h3>
+          <h1>CONCEPCIÓN TRANSPARENTE</h1>
+          <h3>Portal de visualización y apertura de datos de la Municipalidad de Concepción del Uruguay</h3>
         </div>
         <div class="col s12 m4 date">
           <script>
@@ -45,13 +45,14 @@
     ////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////// -->
       <div class="divider"></div>
-      <div class="row general-data" ng-controller="generalController">
+      <div class="row general-data" ng-cloak ng-controller="generalController">
         <h3>En
           <!-- {{data[0].year}} -->
           la municipalidad de Concepción del Uruguay brinda:</h3>
         <div class="col s12 m3 border-right">
           <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
-           <!-- {{data[0].totalAmount|currency}} -->
+           <!-- {{totalorders.data[0]|currency}} -->
+           {{totalorders.data[0].import |currency}}
           </span></p>
         </div>
         <div class="col s12 m3 border-right">
@@ -59,12 +60,12 @@
         </div>
         <div class="col s12 m3 border-right">
           <p>CANTIDAD DE PROVEEDORES:<br><br><br><br><span>
-             <!-- {{data.cantidad}} -->
+             {{totalproviders.data}}
           </span></p>
         </div>
         <div class="col s12 m3">
           <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>
-            <!-- {{data[0].numberOfContracts}} -->
+            {{orders.data}}
           </span></p>
         </div>
     </div>
@@ -86,7 +87,7 @@
 
     <!-- ////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////// -->  
+        //////////////////////////////////////////////////////////////////////////////// -->
       <h3>Total de proveedores 2016:</h3>
   <!-- <div class="container"> -->
       <!-- <div id="toolbar">
@@ -134,10 +135,10 @@
             </thead>
             <tbody>
               <tr ng-repeat="x in data">
-                <td>{{ x.fk_Provider.grant_title }}</td>
-                <td>{{ x.fk_Provider.cuil }}</td>
-                <td>{{ x.import }}</td>
-                <td><a href="/{{x.fk_Provider._id}}">Ver detalle</a></td>
+                <td>{{ x._id.grant_title }}</td>
+                <td>{{ x._id.cuil }}</td>
+                <td>{{ x.import | currency}}</td>
+                <td><a href="/{{x._id._id}}">Ver detalle</a></td>
               </tr>
             </tbody>
         </table>
@@ -182,7 +183,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="x in data | orderBy:sortType:sortReverse | filter:searchPurchase">
+            <tr ng-repeat="x in data | orderBy:sortType:sortReverse | filter:searchPurchase | limitTo: paginationLimit()">
               <td>{{ x.fk_Category.category }}</td>
               <td>{{ x.fk_Provider.grant_title }}</td>
               <td>{{x.import | currency}}</td>
@@ -191,6 +192,8 @@
             </tr>
           </tbody>
         </table>
+        <button class="show-more-btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Show more</button>
+
       </div>
       <!-- ////////////////////////////////////////////////////////////////////////////////
           ////////////////////////////////////////////////////////////////////////////////
