@@ -22,7 +22,7 @@ router.get('/demo', function(req, res, next) {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 //example de como obtener el total para cada uno de los PROVEEDORES
-router.get('/api/get-example',function(req,res,next){
+router.get('/api/get-bubblechart',function(req,res,next){
   mongoose.model('PurchaseOrder')
   .aggregate(
     [
@@ -38,6 +38,7 @@ router.get('/api/get-example',function(req,res,next){
   .exec(function(err,result){
     mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
        // Your populated translactions are inside populatedTransactions
+      //  console.log(result);
        res.send(result);
     });
   // res.send(result);
@@ -65,7 +66,7 @@ router.get('/api/get-totalorders',function(req,res,next){
    }
  }
 ],function(err,importe){
-    console.log(importe);
+    // console.log(importe);
     res.send(importe);
   });
 });
@@ -76,7 +77,7 @@ router.get('/api/get-totalproviders',function(req,res,next){
     if (err) {
         return console.log(err);
     } else {
-      console.log("Cantidad de proveedores: "+ result);
+      // console.log("Cantidad de proveedores: "+ result);
         res.json(result);
     }
   })
@@ -104,7 +105,7 @@ router.get('/api/get-orders',function(req,res,next){
     if (err) {
         return console.log(err);
     } else {
-      console.log("Cantidad de ordenes de compra: "+ result);
+      // console.log("Cantidad de ordenes de compra: "+ result);
         res.json(result);
     }
   })
@@ -133,7 +134,7 @@ router.get('/api/get-linechart',function(req,res,next){
  { "$sort": { "_id": 1 } }
 
 ],function(err,importe){
-    console.log(importe);
+    // console.log(importe);
     res.send(importe);
   });
 });
@@ -221,15 +222,19 @@ router.get("/api/get-purchase", function(req, res) {
 ////////////////////////////////////////////////////////////////////////////////
 // CONTRATOS DE OBRAS PUBLICAS Y SERVICIOS (DETALLE DE CADA PROVEEDOR)
 router.get("/:id", function(req,res){
-  console.log("fk_Provider: "+ req.params.id);
-  mongoose.model('PurchaseOrder').find({'fk_Provider' : req.params.id}, function(err,result){
-    if (err) {
-      console.log(err);
-    }else {
-      // console.log("el resultado es: "+ result);
-      res.status(200).send(result);
+  console.log("fk_Provider---->: "+ req.params.id);
+  mongoose.model('PurchaseOrder').find({'fk_Provider' : req.params.id})
+  .sort({year: 1})
+  // .limit(5)
+  .populate('fk_Category')
+  .populate('fk_Provider')
+  .exec(function(err,post){
+    if(err){console.log(err);}
+    else{
+      // console.log(post);
+      res.send(post);
     }
-  });
+  })
 })
 
 // router.get('/api/get-purchase', function(req, res, next) {

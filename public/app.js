@@ -1,8 +1,51 @@
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////ANGULAR JS////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-var dcuApp = angular.module('dcuApp', []);
+var dcuApp = angular.module('dcuApp', ['ui.router']);
+dcuApp.config(
+  ["$stateProvider", "$urlRouterProvider",
+    function($stateProvider, $urlRouterProvider) {
 
+      $urlRouterProvider.otherwise("/");
+
+      $stateProvider
+        .state('home',{
+          url:'/',
+          views: {
+            'General': {
+              templateUrl: './views/general.html',
+              controller: 'generalController'
+            },
+            'Bubblechart': {
+              templateUrl: './views/bubblechart.html',
+              controller: 'bubblechartController'
+            },
+            'Linechart': {
+              templateUrl: './views/linechart.html',
+              controller: 'linechartController'
+            },
+            'Ranking': {
+              templateUrl: './views/ranking.html',
+              controller: 'rankingController'
+            },
+            'Purchases': {
+              templateUrl: './views/purchaseorder.html',
+              controller: 'purchaseController'
+            }
+          }
+        })
+        .state('Detail',{
+          url:'/:id',
+          views:{
+            'Detail':{
+              templateUrl: './views/detail.html',
+              controller: 'detailController'
+            }
+          }
+        })
+
+    }
+  ]);
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -28,22 +71,21 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     //       $scope.data.totalproviders = response.data;
     //     })
     $http.get('/api/get-totalorders').then(function(response) {
-      // console.log(response);
       $scope.totalorders=response;
-      console.log($scope.totalorders.data);
+      // console.log($scope.totalorders.data);
       return $http.get('/api/get-totalproviders');
 
     })
         .then(function(response) {
             $scope.totalproviders = response;
-            console.log($scope.totalproviders.data);
-            console.debug("2nd callback...");
+            // console.log($scope.totalproviders.data);
+            // console.debug("2nd callback...");
             return $http.get('/api/get-orders');
         })
         .then(function(response) {
             $scope.orders = response;
-            console.log($scope.orders.data);
-            console.debug("3nd callback...");
+            // console.log($scope.orders.data);
+            // console.debug("3nd callback...");
           })
         .catch(function(error){
             console.warn("ERROR...");
@@ -106,14 +148,29 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     //console.debug("Ya hice mi peticion...");
 
  }]);
+ ////////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////////
+ //BUBBLE CHART
+ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, $http) {
 
+     $http.get('/api/get-bubblechart').then(function(response) {
+             $scope.data = response.data;
+            //  console.log($scope.data);
+
+         },
+         function(response) {
+             console.debug('Error:' + response);
+         });
+
+ }]);
  ////////////////////////////////////////////////////////////////////////////////
  ////////////////////////////////////////////////////////////////////////////////
  ////////////////////////////////////////////////////////////////////////////////
  dcuApp.controller('linechartController',['$scope','$http', function($scope, $http){
    $http.get('/api/get-linechart').then(function(response){
      $scope.data = response.data;
-     console.log($scope.data);
+    //  console.log($scope.data);
      var linechart = c3.generate({
          bindto: '#lineschart',
          data: {
@@ -171,7 +228,7 @@ dcuApp.controller('rankingController', ['$scope', '$http', function($scope, $htt
 
     $http.get('/api/get-ranking').then(function(response) {
             $scope.data = response.data;
-            console.log($scope.data);
+            console.log("RANKING: "+$scope.data);
         },
         function(response) {
             console.debug('Error:' + response);
@@ -189,7 +246,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http',  function($scope, $h
   $scope.searchPurchase   = '';     // set the default search/filter term
   $http.get('/api/get-purchase').then(function(response) {
           $scope.data = response.data;
-          // console.log($scope.data);
+          console.log("PURCHASES: "+$scope.data);
           //show more functionality
           var pagesShown = 1;
           var pageSize = 5;
@@ -212,3 +269,72 @@ dcuApp.controller('purchaseController', ['$scope', '$http',  function($scope, $h
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+dcuApp.controller('detailController', ['$scope', '$http','$stateParams',  function($scope, $http,$stateParams) {
+    $scope.sortType     = ''; // set the default sort type
+    $scope.sortReverse  = false;  // set the default sort order
+    $scope.searchPurchase   = '';     // set the default search/filter term
+    $http.get('/'+$stateParams.id).then(function(result){
+      $scope.detail = result.data;
+      console.log($scope.detail);
+
+      var pagesShown = 1;
+      var pageSize = 5;
+      $scope.paginationLimit = function(data) {
+         return pageSize * pagesShown;
+      };
+      $scope.hasMoreItemsToShow = function() {
+         return pagesShown < ($scope.detail.length / pageSize);
+      };
+      $scope.showMoreItems = function() {
+         pagesShown = pagesShown + 1;
+      };
+
+      var linechart = c3.generate({
+          bindto: '#lineschart-detail',
+          data: {
+            // url: 'example.json', //la carpeta raiz de busqueda es /public/
+            json: $scope.detail,
+            mimeType: 'month',
+            keys: {
+                value: ['import']
+            },
+            names: {
+              amount: 'Evolución del gasto'
+              }
+            },
+            color: {
+            pattern: ['#4db6ac']
+            },
+            axis: {
+                x: {
+                  type: 'category'
+                },
+                y : {
+                  tick: {
+                    format: d3.format("$,")
+                  }
+                }
+            },
+            grid: {
+              x: {
+                show: true
+              },
+              y: {
+                show: true
+              }
+            },
+            tooltip: {
+              format: {
+                name: function (name, ratio, id, index) { return 'Monto'; }
+              }
+            }
+          })
+
+
+    })
+    ,
+    function(response) {
+        console.debug('Error:' + response);
+    };
+
+}]);

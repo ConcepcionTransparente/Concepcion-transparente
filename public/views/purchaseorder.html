@@ -1,0 +1,48 @@
+<br><div class="divider"></div>
+
+<div>
+  <h3>Contratos de obra pública y servicios</h3>
+  <form>
+    <input type="text" placeholder="Filtrar Categoria / Proveedor / Importe / Año" ng-model="searchPurchase">
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <a href="" ng-click="sortType = 'fk_Category.category'; sortReverse = !sortReverse">
+            REPARTICIÓN
+            <span ng-show="sortType == 'fk_Category.category' && !sortReverse"></span>
+            <span ng-show="sortType == 'fk_Category.category' && sortReverse"></span>
+          </a>
+        </th>
+        <th>
+          <a href="" ng-click="sortType = 'fk_Provider'; sortReverse = !sortReverse">
+            PROVEEDOR
+            <span ng-show="sortType == 'fk_Provider' && !sortReverse"></span>
+            <span ng-show="sortType == 'fk_Provider' && sortReverse"></span>
+          </a>
+        </th>
+        <th>
+          <a href="" ng-click="sortType = 'import'; sortReverse = !sortReverse">
+            IMPORTE
+            <span ng-show="sortType == 'import' && !sortReverse"></span>
+            <span ng-show="sortType == 'import' && sortReverse"></span>
+          </a>
+        </th>
+        <th>
+          DETALLE
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in data | orderBy:sortType:sortReverse | filter:searchPurchase | limitTo: paginationLimit()">
+        <td>{{ x.fk_Category.category }}</td>
+        <td>{{ x.fk_Provider.grant_title }}</td>
+        <td>{{x.import | currency}}</td>
+        <td><a ui-sref="Detail({id: x.fk_Provider._id})">Ver detalle</a></td>
+        <td style="display:none;">{{ x.year}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="show-more-btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Show more</button>
+</div>

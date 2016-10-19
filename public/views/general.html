@@ -1,0 +1,26 @@
+<br><div class="divider"></div>
+
+<div class="general-data" ng-cloak>
+  <h3>
+    <!-- {{data[0].year}} -->
+    La municipalidad de Concepción del Uruguay brinda:</h3>
+  <div class="col s12 m3 border-right">
+    <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
+     <!-- {{totalorders.data[0]|currency}} -->
+     {{totalorders.data[0].import |currency}}
+    </span></p>
+  </div>
+  <div class="col s12 m3 border-right">
+    <p>PROMEDIO DE GASTO MENSUAL:<br><br><br><span>need filters</span></p>
+  </div>
+  <div class="col s12 m3 border-right">
+    <p>CANTIDAD DE PROVEEDORES:<br><br><br><br><span>
+       {{totalproviders.data}}
+    </span></p>
+  </div>
+  <div class="col s12 m3">
+    <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>
+      {{orders.data}}
+    </span></p>
+  </div>
+</div>

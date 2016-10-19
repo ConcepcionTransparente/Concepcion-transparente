@@ -1,0 +1,23 @@
+<br><div class="divider"></div>
+
+<div>
+  <h3>Ranking de proveedores</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>PROVEEDOR</th>
+        <th>CUIL</th>
+        <th>IMPORTE TOTAL</th>
+        <th>DETALLE</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="x in data">
+          <td>{{ x._id.grant_title }}</td>
+          <td>{{ x._id.cuil }}</td>
+          <td>{{ x.import | currency}}</td>
+          <td><a ui-sref="Detail({id: x._id._id})">Ver detalle</a></td>
+        </tr>
+      </tbody>
+  </table>
+</div>

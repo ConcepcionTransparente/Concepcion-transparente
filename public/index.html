@@ -20,6 +20,8 @@
     <script src="../lib/d3.js"></script>
     <script src="/lib/c3/htdocs/js/c3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+
 
   </head>
 
@@ -41,35 +43,6 @@
         </div>
       </header>
 
-<!-- ////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////// -->
-      <div class="divider"></div>
-      <div class="row general-data" ng-cloak ng-controller="generalController">
-        <h3>En
-          <!-- {{data[0].year}} -->
-          la municipalidad de Concepción del Uruguay brinda:</h3>
-        <div class="col s12 m3 border-right">
-          <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
-           <!-- {{totalorders.data[0]|currency}} -->
-           {{totalorders.data[0].import |currency}}
-          </span></p>
-        </div>
-        <div class="col s12 m3 border-right">
-          <p>PROMEDIO DE GASTO MENSUAL:<br><br><br><span>need filters</span></p>
-        </div>
-        <div class="col s12 m3 border-right">
-          <p>CANTIDAD DE PROVEEDORES:<br><br><br><br><span>
-             {{totalproviders.data}}
-          </span></p>
-        </div>
-        <div class="col s12 m3">
-          <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>
-            {{orders.data}}
-          </span></p>
-        </div>
-    </div>
-
     <!-- ////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////// -->
@@ -80,127 +53,22 @@
         <h4>Filtros</h4>
         <br>
       </div>
-
     </div>
-    <br>
-    <div class="divider"></div>
+
+    <div ui-view="General" class="row" ></div>
+    <div ui-view="Bubblechart" class="row" ></div>
+    <div ui-view="Linechart" class="row" ></div>
+    <div ui-view="Ranking" class="row" ></div>
+    <div ui-view="Purchases" class="row" ></div>
+    <div ui-view="Detail" class="row" ></div>
 
     <!-- ////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////// -->
-      <h3>Total de proveedores 2016:</h3>
-  <!-- <div class="container"> -->
-      <!-- <div id="toolbar">
-        <a href="#" id="all" class="button active">All Grants</a>
-        <a href="#" id="year" class="button">Grants By Year</a>
-      </div> -->
 
-      <!-- BUBBLE CHART -->
-      <div id="bubbleChartFather" class="row" >
-          <div class="col m3 s12">
-          </div>
-          <div class="col m9 s12">
-            <div id="bubbleChart" class="svg-container" ></div>
-            <div id="vis"></div>
-          </div>
-      </div>
-
-      <!-- ////////////////////////////////////////////////////////////////////////////////
-          ////////////////////////////////////////////////////////////////////////////////
-          //////////////////////////////////////////////////////////////////////////////// -->
-      <br>
-      <div class="divider"></div>
-      <div class="row">
-        <div class="article">
-          <h3>Evolución del gasto durante el año 2016: </h3>
-          <div id="lineschart" ng-controller="linechartController"></div>
-        </div>
-        <br>
-      </div>
-
-  <!-- ////////////////////////////////////////////////////////////////////////////////
-      ////////////////////////////////////////////////////////////////////////////////
-      //////////////////////////////////////////////////////////////////////////////// -->
-      <div class="divider"></div>
-      <div class="row" ng-controller="rankingController">
-        <h3>Ranking de proveedores</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>PROVEEDOR</th>
-              <th>CUIL</th>
-              <th>IMPORTE TOTAL</th>
-              <th>DETALLE</th>
-            </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="x in data">
-                <td>{{ x._id.grant_title }}</td>
-                <td>{{ x._id.cuil }}</td>
-                <td>{{ x.import | currency}}</td>
-                <td><a href="/{{x._id._id}}">Ver detalle</a></td>
-              </tr>
-            </tbody>
-        </table>
-      </div>
-  <!-- ////////////////////////////////////////////////////////////////////////////////
-      ////////////////////////////////////////////////////////////////////////////////
-      //////////////////////////////////////////////////////////////////////////////// -->
-      <div class="divider"></div>
-      <br><br>
-      <div class="row" ng-controller="purchaseController">
-        <h3>Contratos de obra pública y servicios</h3>
-        <form>
-          <input type="text" placeholder="Filtrar Categoria / Proveedor / Importe / Año" ng-model="searchPurchase">
-        </form>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                <a href="" ng-click="sortType = 'fk_Category.category'; sortReverse = !sortReverse">
-                  REPARTICIÓN
-                  <span ng-show="sortType == 'fk_Category.category' && !sortReverse"></span>
-                  <span ng-show="sortType == 'fk_Category.category' && sortReverse"></span>
-                </a>
-              </th>
-              <th>
-                <a href="" ng-click="sortType = 'fk_Provider'; sortReverse = !sortReverse">
-                  PROVEEDOR
-                  <span ng-show="sortType == 'fk_Provider' && !sortReverse"></span>
-                  <span ng-show="sortType == 'fk_Provider' && sortReverse"></span>
-                </a>
-              </th>
-              <th>
-                <a href="" ng-click="sortType = 'import'; sortReverse = !sortReverse">
-                  IMPORTE
-                  <span ng-show="sortType == 'import' && !sortReverse"></span>
-                  <span ng-show="sortType == 'import' && sortReverse"></span>
-                </a>
-              </th>
-              <th>
-                DETALLE
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="x in data | orderBy:sortType:sortReverse | filter:searchPurchase | limitTo: paginationLimit()">
-              <td>{{ x.fk_Category.category }}</td>
-              <td>{{ x.fk_Provider.grant_title }}</td>
-              <td>{{x.import | currency}}</td>
-              <td><a href="/{{x.fk_Provider}}">Ver detalle</a></td>
-              <td style="display:none;">{{ x.year}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <button class="show-more-btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Show more</button>
-
-      </div>
-      <!-- ////////////////////////////////////////////////////////////////////////////////
-          ////////////////////////////////////////////////////////////////////////////////
-          //////////////////////////////////////////////////////////////////////////////// -->
 
           <!--   Icon Section   -->
-            <div class="row">
+            <!-- <div class="row">
               <div class="col s12 m12">
                 <h3>Presupuesto del año 2015:</h3>
               </div>
@@ -231,26 +99,25 @@
                   </p>
                 </div>
               </div>
-            </div> <!-- end row -->
+            </div>  -->
+
+<!-- ////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////// -->
+
+ <footer>
+  <p>Gasto Público de Concepción del Uruguay - <span>Copyright (c) 2016 Copyright All Rights Reserved.</span></p>
+</footer>
+<!-- ////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////// -->
+</div>
 
 
-            <!-- ////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////
-                //////////////////////////////////////////////////////////////////////////////// -->
-
-            <footer>
-              <div class="divider"></div>
-              <p>
-              Gasto Público de Concepción del Uruguay - <span>Copyright (c) 2016 Copyright All Rights Reserved.</span>
-              </p>
-            </footer>
-            <!-- ////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////
-                //////////////////////////////////////////////////////////////////////////////// -->
 
     <!-- ANGULAR AND FRONTEND -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
 
     <!--Import jQuery before materialize.js-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -262,7 +129,7 @@
     <script src="../lib/d3.js"></script>
     <script src="../src/tooltip.js"></script>
     <script src="../src/bubble_chart.js"></script>
-    <!-- <script src="../src/line_chart.js"></script> -->
+    <!-- <script src="../src/line_chart.js"></script>
 
   </body>
 </html>
