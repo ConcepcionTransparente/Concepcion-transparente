@@ -651,7 +651,7 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                         value: ['import'],
                     },
                     names: {
-                        amount: 'Evolución del gasto'
+                        import: 'Evolución del gasto'
                     }
                 },
                 color: {
@@ -659,7 +659,8 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                 },
                 axis: {
                     x: {
-                        type: 'category'
+                        type: 'category',
+                        text: 'sasaddasd'
                     },
                     y: {
                         tick: {
