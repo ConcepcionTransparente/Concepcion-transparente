@@ -46,5 +46,4 @@ var purchaseOrderSchema = new Schema({ //orden de compra
   fk_Provider: {type: Schema.ObjectId, ref: "Provider"},
   fk_Category: {type: Schema.ObjectId, ref: "Category"}
 });
-purchaseOrderSchema.plugin(mongoose_csv);
 mongoose.model('PurchaseOrder',purchaseOrderSchema);
