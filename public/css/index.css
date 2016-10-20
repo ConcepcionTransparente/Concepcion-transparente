@@ -1,13 +1,14 @@
 body {
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: left;
 }
 a {color: #00B7FF;}
 h1{font-size: 2.5em;font-family: 'Open Sans', sans-serif;padding: 0 !important;}
 h2{font-size: 2em;}
-h3{font-size: 1.5em;font-family: 'Open Sans', sans-serif; font-weight: 400;font-style: italic;}
+h3{font-size: 1.5em;font-family: 'Roboto', sans-serif; font-weight: 300;font-style: italic;}
 h4{font-size: 1em;}
+h3.links{font-style: normal !important;}
 tr:nth-child(even){background-color: #f2f2f2}
 
 
@@ -36,6 +37,23 @@ tr:nth-child(even){background-color: #f2f2f2}
   font-weight: bold;
 }
 
+.button-div{
+  margin-top: 3em;
+  width: 100%;
+}
+.show-more-btn{
+  background: #F2F2F2;
+  width: 10em;
+  height: 2em;
+  border: none;
+  margin: 0 auto;
+  display: block;
+}
+.show-more-btn:active, .show-more-btn:hover{
+  background: #F2F2F2;
+  border: none;
+
+}
 /*------------pie chart row------------------*/
 #pie-info article p{
   font-size: 2em;

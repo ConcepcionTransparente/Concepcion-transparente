@@ -31,6 +31,9 @@ dcuApp.config(
                         'Purchases': {
                             templateUrl: './views/purchaseorder.html',
                             controller: 'purchaseController'
+                        },
+                        'Static2015': {
+                            templateUrl: './views/static2015.html',
                         }
                     }
                 })
@@ -160,7 +163,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             console.log($scope.data);
 
             //  $scope.data = '../jsons/yearProvider/providers_2015.json';
-            console.log($scope.data);
+            // console.log($scope.data);
 
 
             function bubbleChart() {
@@ -174,8 +177,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                 //ACA ESTA EL PROBLEMA DEL RESIZE - EL CENTRO LO CALCULA MAL
                 console.log("Bubblechart WIDTH: " + width);
                 console.log("Bubblechart HEIGHT: " + height);
-                height = height / 2;
-
+                if(width < 600){ width += 500}
 
                 // tooltip for mouseover functionality
                 var tooltip = floatingTooltip('gates_tooltip', 240);
@@ -288,7 +290,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                             id: d.total_amount,
                             radius: radiusScale(+d.total_amount),
                             value: d.total_amount,
-                            // name: d.grant_title,
+                            name: d._id.grant_title,
                             // org: d.organization,
                             // group: d.group,
                             // year: d.start_year,

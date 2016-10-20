@@ -8,6 +8,8 @@ var db = require('../model/db');
 var model = require('../model/model');
 var fs = require('fs');
 var async = require('async');
+// mongoose.model('PurchaseOrder').plugin(mongoose_csv);
+
 
 
 
@@ -18,9 +20,11 @@ router.get('/', function(req, res, next) {
 router.get('/demo', function(req, res, next) {
     res.sendfile('views/demo.html');
 });
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
 //example de como obtener el total para cada uno de los PROVEEDORES
 router.get('/api/get-bubblechart',function(req,res,next){
   mongoose.model('PurchaseOrder')
