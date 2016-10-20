@@ -29,7 +29,7 @@ router.get('/api/get-bubblechart',function(req,res,next){
      {
        $group : {
           _id : "$fk_Provider",
-          import: { $sum: "$import" }, // for your case use local.user_totalthings
+          total_amount: { $sum: "$import" }, // for your case use local.user_totalthings
           // count: { $sum: 1 } // for no. of documents count
        }
      },
@@ -39,7 +39,7 @@ router.get('/api/get-bubblechart',function(req,res,next){
     mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
        // Your populated translactions are inside populatedTransactions
       //  console.log(result);
-       res.send(result);
+       res.json(populatedTransactions);
     });
   // res.send(result);
   });

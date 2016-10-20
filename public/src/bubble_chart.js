@@ -14,9 +14,12 @@ function bubbleChart() {
       d = document,
       e = d.documentElement,
       g = d.getElementById('bubbleChartFather'),
-      // width = w.innerWidth || e.clientWidth || g.clientWidth,
-      width = g.clientWidth,
+      width = w.innerWidth || e.clientWidth || g.clientWidth,
+      // width = g.clientWidth,
       height = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      //ACA ESTA EL PROBLEMA DEL RESIZE - EL CENTRO LO CALCULA MAL
+      console.log("Bubblechart WIDTH: "+width);
+      console.log("Bubblechart HEIGHT: "+height);
 
 
 
@@ -26,6 +29,9 @@ function bubbleChart() {
   // Locations to move bubbles towards, depending
   // on which view mode is selected.
   var center = { x: width / 2, y: height / 2 };
+  console.log("Bubblechart CENTER.x: "+center.x);
+  console.log("Bubblechart CENTER.y: "+center.y);
+
 
   var yearCenters = {
     2008: { x: width / 3, y: height / 2 },

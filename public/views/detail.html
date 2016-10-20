@@ -1,10 +1,12 @@
 <div ng-cloak>
+  <h1>{{detail[0].fk_Provider.grant_title}}</h1>
+  <h3>Cuil:{{detail[0].fk_Provider.cuil}}</h3>
+  <br><div class="divider"></div><br>
   <h3>Evolución del gasto: </h3>
   <div id="lineschart-detail" ></div>
+  <br><div class="divider"></div>
   <br>
-  <div class="divider"></div>
-  <br>
-  <h3>Contratos de obra pública y servicios para el proveedor: <br> {{detail[0].fk_Provider.grant_title}}</h3>
+  <h3>Contratos de obra pública y servicios para el proveedor</h3>
   <form>
     <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
   </form>
