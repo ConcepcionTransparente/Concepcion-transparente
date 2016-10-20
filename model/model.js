@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var Float = require('mongoose-float').loadType(mongoose,2);
 var Schema = mongoose.Schema;
-var mongoose_csv = require('mongoose-csv');
 
 
 // var provider = new mongoose.Schema({
