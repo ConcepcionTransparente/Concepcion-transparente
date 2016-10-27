@@ -163,37 +163,78 @@ router.post('/api/post-totalorders',function(req,res,next){
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 //BUBBLE CHART
-router.get('/api/get-bubblechart',function(req,res,next){
-  var start=new Date(2009,00,01);
+router.post('/api/post-bubblechart',function(req,res,next){
+  var start=new Date(req.body.valorini);
   // console.log(start);
-  var end=new Date(2016,09,27);
+  var end=new Date(req.body.valorfin);
   // console.log(end);
-  mongoose.model('PurchaseOrder')
-  .aggregate(
-    [
-      {
-        "$match": {
-          date: {$gte:start, $lte:end}
+  var hoy=new Date();
+  end.setHours(0,0,0,0);
+  hoy.setHours(0,0,0,0);
+  // console.log(end);
+  console.log("CATEGORY BACKEND: "+req.body.category);
+  if(!req.body.category){
+    console.log("TODAS LAS CATEGORIAS: " + req.body.category);
+    mongoose.model('PurchaseOrder')
+    .aggregate(
+      [
+        {
+          "$match": {
+            date: {$gte:start, $lte:end}
+          }
         }
-      }
-      ,
-     {
-       $group : {
-          _id : "$fk_Provider",
-          total_amount: { $sum: "$import" }, // for your case use local.user_totalthings
-          // count: { $sum: 1 } // for no. of documents count
-       }
-     },
-     { "$sort": { import: 1 } }
-   ])
-  .exec(function(err,result){
-    mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
-       // Your populated translactions are inside populatedTransactions
-      //  console.log(result);
-       res.json(populatedTransactions);
+        ,
+       {
+         $group : {
+            _id : "$fk_Provider",
+            total_amount: { $sum: "$import" } // for your case use local.user_totalthings
+            // count: { $sum: 1 } // for no. of documents count
+         }
+       },
+       { "$sort": { import: 1 } }
+     ])
+    .exec(function(err,result){
+      mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+         // Your populated translactions are inside populatedTransactions
+        //  console.log("BUBBLECHART: "+result);
+         res.json(populatedTransactions);
+      });
+    // res.send(result);
     });
-  // res.send(result);
-  });
+  }
+  else
+  {
+    var Category = mongoose.Types.ObjectId(req.body.category);
+    console.log("ALGUNA CATEGORIA: "+ Category);
+    mongoose.model('PurchaseOrder')
+    .aggregate(
+      [
+        {
+          "$match": {
+            date: {$gte:start, $lte:end},
+            fk_Category:Category
+          }
+        }
+        ,
+       {
+         $group : {
+            _id : "$fk_Provider",
+            total_amount: { $sum: "$import" } // for your case use local.user_totalthings
+            // count: { $sum: 1 } // for no. of documents count
+         }
+       },
+       { "$sort": { import: 1 } }
+     ])
+    .exec(function(err,result){
+      mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+         // Your populated translactions are inside populatedTransactions
+        //  console.log("BUBBLECHART: "+result);
+         res.json(populatedTransactions);
+      });
+    // res.send(result);
+    });
+  }
+
 });
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -202,12 +243,12 @@ router.get('/api/get-bubblechart',function(req,res,next){
 router.post('/api/post-linechart',function(req,res,next){
   var start=new Date(req.body.valorini);
   var startyear = start.getFullYear();
-  console.log("holaaaa");
-  console.log(startyear);
+  // console.log("holaaaa");
+  // console.log(startyear);
   var end=new Date(req.body.valorfin);
-  console.log(end);
+  // console.log(end);
   var endyear = end.getFullYear();
-  console.log(endyear);
+  // console.log(endyear);
 
   // mongoose.model('PurchaseOrder').aggregate(
   //   [
@@ -234,7 +275,7 @@ router.post('/api/post-linechart',function(req,res,next){
   .exec(function(err,post){
     if(err){console.log(err);}
     else{
-      console.log(post);
+      // console.log(post);
       res.send(post);
     }
   })});
@@ -313,7 +354,7 @@ router.post("/api/post-purchase", function(req, res) {
 ////////////////////////////////////////////////////////////////////////////////
 // CONTRATOS DE OBRAS PUBLICAS Y SERVICIOS (DETALLE DE CADA PROVEEDOR)
 router.get("/:id", function(req,res){
-  console.log("fk_Provider---->: "+ req.params.id);
+  // console.log("fk_Provider---->: "+ req.params.id);
   mongoose.model('PurchaseOrder').find({'fk_Provider' : req.params.id})
   .sort({year: -1})
   // .limit(5)
@@ -332,69 +373,26 @@ router.get("/:id", function(req,res){
 ////////////////////////////////////////////////////////////////////////////////
 router.get('/api/get-categories',function(req,res){
   mongoose.model('Category').distinct('category', function(error, response) {
+      // console.log(response);
       res.send(response);
   });
 });
 
+router.post('/api/post-categoryID',function(req,res){
+  mongoose.model('Category')
+  .find({"category":req.body.categorySelect})
+  .exec(function(err,response){
+    if(err){res.send(err);}
+    else{
+      console.log("CATEGORIA ENCONTRADA: "+response);
+      res.send(response);
+    }
+
+  });
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-// RANKING DE PROVEEDORES
-// router.get("/api/get-ranking",function(req,res){
-//   mongoose.model('PurchaseOrder').find()
-//   .sort({import: -1})
-//   .limit(10)
-//   .populate('fk_Provider')
-//   .exec(function(err,post){
-//     if(err){console.log(err);}
-//     else{
-//       // console.log(post);
-//       res.send(post);
-//     }
-//   });
-// });
 
-
-
-// router.get('/api/get-purchase', function(req, res, next) {
-//     // mongoose.model('PurchaseOrder').find({},function(err,purchase){
-//     //   if(err) return console.log(err);
-//     //   res.json(purchase);
-//     // }).limit(30).sort({'year': 'descending'});
-//     mongoose.model('PurchaseOrder').find({}, function(err, purchases) {
-//         var purchasesCuils;
-//         if (err) {
-//             console.log(err);
-//             return;
-//         }
-//         purchasesCuils = purchases.map(function(purchase) {
-//             return purchase.cuil;
-//         });
-//         // console.log("hasta aca hemos llegado");
-//         console.log(purchasesCuils);
-//
-//         mongoose.model('Provider').find({
-//             cuil: {
-//                 "$in": purchasesCuils
-//             }
-//         }, function(err, providers) {
-//             if (err) {
-//                 console.log(err);
-//                 return;
-//             }
-//
-//             var _purchases=JSON.parse(JSON.stringify(purchases));
-//             _purchases.forEach(function(purchase) {
-//                 var _providers = providers.filter(function(provider) {
-//                     return provider.cuil === this.cuil;
-//                 }, purchase);
-//                 purchase.provider = providers[0].grant_title;
-//             });
-//
-//             console.log(_purchases);
-//             res.send(_purchases);
-//         });
-//     }).limit(3);
-// });
 module.exports = router;

@@ -1,24 +1,5 @@
 <br><div class="divider"></div>
 
-<form ng-submit="submit()" data-ng-init="submit()">
-  <div class="row">
-    <div class="col s12 m4">
-      <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
-        <input ng-model="rankingFilterini" type="text" class="angular-datepicker-input"/>
-      </datepicker>
-    </div>
-    <div class="col s12 m4">
-      <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
-        <input ng-model="rankingFilterfin" type="text" class="angular-datepicker-input"/>
-      </datepicker>
-    </div>
-    <div class="col s12 m4">
-      <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
-    </div>
-  </div>
-</form>
-
-
 <!-- <div input-field>
     <select class="" ng-model="category" >
         <option ng-repeat="value in categories">{{value}}</option>
@@ -26,7 +7,24 @@
 </div> -->
 <div>
   <h3>Ranking de proveedores</h3>
-  <!-- <button type="button" ng-csv="getArray" filename="test.csv">Export</button> -->
+  <form ng-submit="submit()" data-ng-init="submit()">
+    <div class="row">
+      <div class="col s12 m4">
+        <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
+          <input ng-model="rankingFilterini" type="text" class="angular-datepicker-input"/>
+        </datepicker>
+      </div>
+      <div class="col s12 m4">
+        <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+          <input ng-model="rankingFilterfin" type="text" class="angular-datepicker-input"/>
+        </datepicker>
+      </div>
+      <div class="col s12 m4">
+        <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
+      </div>
+    </div>
+  </form>
+  
   <table>
     <thead>
       <tr>
@@ -44,5 +42,7 @@
           <td><a  ui-sref="Detail({id: x._id._id})">Ver detalle</a></td>
         </tr>
       </tbody>
+      <button type="button" ng-csv="data"  filename="RANKING.csv">Export</button>
+
   </table>
 </div>

@@ -1,23 +1,5 @@
 <br><div class="divider"></div>
 
-<form ng-submit="submit()" data-ng-init="submit()">
-  <div class="row">
-    <div class="col s12 m4">
-      <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
-        <input ng-model="generalfilterini" type="text" class="angular-datepicker-input"/>
-      </datepicker>
-    </div>
-    <div class="col s12 m4">
-      <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
-        <input ng-model="generalfilterfin" type="text" class="angular-datepicker-input"/>
-      </datepicker>
-    </div>
-    <div class="col s12 m4">
-      <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
-    </div>
-  </div>
-</form>
-
 <!-- <div class="general-data" ng-cloak>
   <h3>
     La municipalidad de Concepción del Uruguay brinda:</h3>
@@ -43,6 +25,23 @@
 
 <div class="general-data" ng-cloak>
   <h3>Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio:</h3>
+  <form ng-submit="submit()" data-ng-init="submit()">
+    <div class="row">
+      <div class="col s12 m4">
+        <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
+          <input ng-model="generalfilterini" type="text" class="angular-datepicker-input"/>
+        </datepicker>
+      </div>
+      <div class="col s12 m4">
+        <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+          <input ng-model="generalfilterfin" type="text" class="angular-datepicker-input"/>
+        </datepicker>
+      </div>
+      <div class="col s12 m4">
+        <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
+      </div>
+    </div>
+  </form>
   <div class="col s12 m4 border-right">
     <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
      {{totalimport.data[0].import |currency}}
