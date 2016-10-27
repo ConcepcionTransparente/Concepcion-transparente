@@ -61,25 +61,25 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     $scope.generalfilterfin = new Date();
 
     $scope.submit = function(){
-      console.log($scope.generalfilterini);
-      console.log($scope.generalfilterfin);
+      // console.log($scope.generalfilterini);
+      // console.log($scope.generalfilterfin);
       $http.post('/api/post-totalimport',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin})
       .then(function(response) {
               $scope.totalimport = response;
               // console.log($scope.totalimport.data);
-              console.debug("1st callback...");
+              // console.debug("1st callback...");
               return $http.post('/api/post-totalproviders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin});
           })
       .then(function(response) {
           $scope.totalproviders = response.data;
           // console.log($scope.totalproviders.length);
-          console.debug("2nd callback...");
+          // console.debug("2nd callback...");
           return $http.post('/api/post-totalorders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin});
       })
       .then(function(response) {
           $scope.totalorders = response;
           // console.log($scope.totalorders.data);
-          console.debug("3nd callback...");
+          // console.debug("3nd callback...");
       })
       .catch(function(error) {
           console.warn("ERROR...");
@@ -94,11 +94,13 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
 dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, $http) {
   $scope.bubblefilterini = new Date(2009,00,01);
   $scope.bubblefilterfin = new Date();
-  $scope.searchPurchase = "PROFESIONALES";
+  $scope.searchPurchase = "undefined";
+
   $http.get('/api/get-categories').then(function(response){
     $scope.categories = response.data;
-    // console.log($scope.categories);
+    console.log("CATEGORIA: "+$scope.searchPurchase);
   });
+
   $scope.submit = function(){
 
     var svg = d3.select("#bubbleChart");
@@ -576,23 +578,39 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             //    display(error,json);
             // });
 
-            $http.post('/api/post-categoryID',{categorySelect:$scope.searchPurchase})
-            .then(function(response) {
-                // console.log(response);
-                // console.log(response.data[0]._id);
-                $scope.bubbleCategory = response.data[0]._id;
+            //COMPARA SI LA CATEGORIA ES UNA EN PARTICULAR O UNDEFINED(TODAS)
+            //SI ES UNDEFINED LLAMA A /api/post-bubblechart SIN CATEGORIA ALGUNA
+            //SI ES DISTINTO DE UNDEFINED (ALGUNA CATEGORIA EN PARTICULAR) LLAMA AL POST PASANDOLE DICHA CATEGORIA.
+            var compare=$scope.searchPurchase.localeCompare('undefined');
+            console.log("COMPARACION:  "+compare);
+            if(compare == 0){
+              d3.json('/api/post-bubblechart',function(error, data) {
+                // console.log("RESULTADOOOOO:"+ data);
                 console.log("CATEGORIA: "+$scope.searchPurchase);
-                d3.json('/api/post-bubblechart',function(error, data) {
-                  // console.log("RESULTADOOOOO:"+ data);
+                display(error,data);
+                })
+               .header("Content-Type","application/json")
+               .send("POST", JSON.stringify({"valorini": $scope.bubblefilterini, "valorfin": $scope.bubblefilterfin,"category":""}));
+
+            }else{
+              $http.post('/api/post-categoryID',{categorySelect:$scope.searchPurchase})
+              .then(function(response) {
+                  $scope.bubbleCategory = response.data[0]._id;
                   console.log("CATEGORIA: "+$scope.searchPurchase);
-                  display(error,data);
-                  })
-                 .header("Content-Type","application/json")
-                 .send("POST", JSON.stringify({"valorini": $scope.bubblefilterini, "valorfin": $scope.bubblefilterfin,"category":$scope.bubbleCategory}));
-                    },
-            function(response) {
-                console.debug('Error:' + response);
-            });
+                  d3.json('/api/post-bubblechart',function(error, data) {
+                    // console.log("RESULTADOOOOO:"+ data);
+                    console.log("CATEGORIA: "+$scope.searchPurchase);
+                    display(error,data);
+                    })
+                   .header("Content-Type","application/json")
+                   .send("POST", JSON.stringify({"valorini": $scope.bubblefilterini, "valorfin": $scope.bubblefilterfin,"category":$scope.bubbleCategory}));
+                      },
+              function(response) {
+                  console.debug('Error:' + response);
+              });
+            };
+
+
 
 
 
@@ -622,7 +640,7 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
     "valorfin":$scope.rankingFilterfin})
     .then(function(response) {
           $scope.linechart = response.data;
-          console.log($scope.linechart);
+          // console.log($scope.linechart);
             var linechart = c3.generate({
                 bindto: '#lineschart',
                 data: {
