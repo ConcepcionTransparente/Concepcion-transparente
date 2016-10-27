@@ -20,7 +20,8 @@ var Schema = mongoose.Schema;
 var yearSchema = new mongoose.Schema({
   year: Number,
   numberOfContracts: Number,
-  totalAmount: { type: Float }
+  totalAmount: { type: Float },
+  budget: {type: Float }
 });
 mongoose.model('Year',yearSchema);
 

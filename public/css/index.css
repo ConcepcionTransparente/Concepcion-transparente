@@ -87,3 +87,28 @@ footer span{
   color: lightgray;
   font-size: .8em;
 }
+.select{
+  width: 100%;
+  height: 26px;
+  outline: none;
+  border: none;
+  margin-top: 12px;
+  background-color: #f2f2f2;
+  border-radius: 0 !important;
+
+}
+.select:focus{
+  outline: none;
+  border: none;
+}
+
+.footer{
+  background-color: #f2f2f2;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: .4rem;
+}
+
+.presupuestos img{
+  max-width: 100%;
+}

@@ -1,13 +1,29 @@
 <br><div class="divider"></div>
 
-<div class="general-data" ng-cloak>
+<form ng-submit="submit()" data-ng-init="submit()">
+  <div class="row">
+    <div class="col s12 m4">
+      <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
+        <input ng-model="generalfilterini" type="text" class="angular-datepicker-input"/>
+      </datepicker>
+    </div>
+    <div class="col s12 m4">
+      <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+        <input ng-model="generalfilterfin" type="text" class="angular-datepicker-input"/>
+      </datepicker>
+    </div>
+    <div class="col s12 m4">
+      <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
+    </div>
+  </div>
+</form>
+
+<!-- <div class="general-data" ng-cloak>
   <h3>
-    <!-- {{data[0].year}} -->
     La municipalidad de Concepción del Uruguay brinda:</h3>
   <div class="col s12 m3 border-right">
     <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
-     <!-- {{totalorders.data[0]|currency}} -->
-     {{totalorders.data[0].import |currency}}
+     {{totalimport.data[0].import |currency}}
     </span></p>
   </div>
   <div class="col s12 m3 border-right">
@@ -15,12 +31,31 @@
   </div>
   <div class="col s12 m3 border-right">
     <p>CANTIDAD DE PROVEEDORES:<br><br><br><span>
-       {{totalproviders.data}}
+       {{totalproviders.length}}
     </span></p>
   </div>
   <div class="col s12 m3">
     <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>
-      {{orders.data}}
+      {{totalorders.data}}
+    </span></p>
+  </div>
+</div> -->
+
+<div class="general-data" ng-cloak>
+  <h3>Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio:</h3>
+  <div class="col s12 m4 border-right">
+    <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
+     {{totalimport.data[0].import |currency}}
+    </span></p>
+  </div>
+  <div class="col s12 m4 border-right">
+    <p>CANTIDAD DE PROVEEDORES:<br><br><br><span>
+       {{totalproviders.length}}
+    </span></p>
+  </div>
+  <div class="col s12 m4">
+    <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>
+      {{totalorders.data}}
     </span></p>
   </div>
 </div>

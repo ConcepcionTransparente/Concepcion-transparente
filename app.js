@@ -19,7 +19,7 @@ var x = Xray({
             return typeof value === 'string' ? value.replace(/\./g, '') : value
         }
     }
-}).throttle(100,1000);
+}).throttle(10,1000);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -191,23 +191,37 @@ function scraping() {
         ///////////////////////////////////////////////////////////////////
         //MONTH STRING TO MONTH NUMBER
         function nuevoMes(m){
-          if(m == "Enero"){ return 1;}
-          else if (m == "Febrero") { return 2;}
-          else if (m == "Marzo") { return 3;}
-          else if (m == "Abril") { return 4;}
-          else if (m == "Mayo") { return 5;}
-          else if (m == "Junio") { return 6;}
-          else if (m == "Julio") { return 7;}
-          else if (m == "Agosto") { return 8;}
-          else if (m == "Septiembre") { return 9;}
-          else if (m == "Octubre") { return 10;}
-          else if (m == "Noviembre") { return 11;}
-          else if (m == "Diciembre") { return 12;}
+          if(m == "Enero"){ return 00;}
+          else if (m == "Febrero") { return 01;}
+          else if (m == "Marzo") { return 02;}
+          else if (m == "Abril") { return 03;}
+          else if (m == "Mayo") { return 04;}
+          else if (m == "Junio") { return 05;}
+          else if (m == "Julio") { return 06;}
+          else if (m == "Agosto") { return 07;}
+          else if (m == "Septiembre") { return 08;}
+          else if (m == "Octubre") { return 19;}
+          else if (m == "Noviembre") { return 10;}
+          else if (m == "Diciembre") { return 11;}
           else  { return 13;}
         }
         var monthNumber = nuevoMes(childObject.month);
         //  console.log("MESSSS STRING: ---> "+ childObject.month);
         //  console.log("MESSSS NUMBER: ---> "+ monthNumber);
+        ///////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
+        // CONVERT MONTH AND YEAR IN DATE
+        function stringToDate(month,year){
+
+          var d = new Date(year,month,01);
+          console.log("fechaaaaaaaaa---------->: "+d);
+          return d;
+        }
+        var newDate = stringToDate(monthNumber,childObject.year);
+        ///////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////
 
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
@@ -224,18 +238,7 @@ function scraping() {
         var z = nuevoImporte(childObject.total_amount);
         var partialImport = parseFloat(w);//importe de un proveedor en un cierto mes
         var totalImport = parseFloat(z);//importe total para el años correspondiente a esta fila
-        ///////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////
-        //CONVERT MONTH AND YEAR IN DATE
-        // function stringToDate(month,year){
-        //   var d = Date.parse(year+'-'+month+'01T00:00:00');
-        //   return d;
-        // }
-        // var newDate = stringToDate(childObject.month,childObject.year);
-        ///////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////
+
 
         var updateProvider = {
                 cuil: childObject.cuil,
@@ -278,6 +281,7 @@ function scraping() {
                 var Purchase = {
                     year: childObject.year,
                     month: monthNumber,
+                    date: newDate,
                     numberOfContracts: childObject.numberOfContracts,
                     import: partialImport,
                     fk_Provider: result1._id,

@@ -2446,8 +2446,12 @@ samp {
 button,
 input,
 optgroup,
-select,
 textarea {
+  background: #F2F2F2;
+  border: none;
+  width: 100%;
+  vertical-align: bottom;
+  text-align: center;
   color: inherit;
   /* 1 */
   font: inherit;
@@ -2461,6 +2465,8 @@ textarea {
  */
 button {
   overflow: visible;
+  display: block;
+  margin-top: 7%;
 }
 
 /**
@@ -2469,8 +2475,7 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-button,
-select {
+button {
   text-transform: none;
 }
 
@@ -5585,13 +5590,10 @@ button.btn-floating {
   -webkit-font-smoothing: antialiased;
 }
 
-select:focus {
-  outline: 1px solid #c9f3ef;
-}
+
 
 button:focus {
   outline: none;
-  background-color: #2ab7a9;
 }
 
 label {
@@ -6459,22 +6461,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
 
 /* Select Field
    ========================================================================== */
-select {
-  display: none;
-}
 
-select.browser-default {
-  display: block;
-}
-
-select {
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #f2f2f2;
-  border-radius: 2px;
-  height: 3rem;
-}
 
 .select-label {
   position: absolute;
@@ -6518,9 +6505,7 @@ select {
   font-size: 0.8rem;
 }
 
-select:disabled {
-  color: rgba(0, 0, 0, 0.3);
-}
+
 
 .select-wrapper input.select-dropdown:disabled {
   color: rgba(0, 0, 0, 0.3);

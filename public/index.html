@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>Datos abiertos</title>
+    <title>Concepción transparente</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <!-- CSS  -->
-    <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">    <!--Import materialize.css-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/bubble_chart.css">
-
+    <link type="text/css" rel="stylesheet" href="../css/bubble_chart.css">
+    <link href="../bower_components/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
     <!-- Load c3.css -->
     <link href="/lib/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
     <!-- Load d3.js and c3.js -->
@@ -20,71 +21,77 @@
     <script src="/lib/c3/htdocs/js/c3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.6/ng-csv.js"></script>
 
   </head>
 
 
   <body>
     <div class="container">
-      <header class="row">
-        <div class="col s12 m8 border-right">
-          <h1>CONCEPCIÓN TRANSPARENTE</h1>
-          <h3>Portal de visualización y apertura de datos de la Municipalidad de Concepción del Uruguay</h3>
+      <header>
+        <div class="row">
+          <div class="col s12 m8 border-right">
+            <h1>CONCEPCIÓN TRANSPARENTE</h1>
+            <h3>Portal de visualización y apertura de datos de la Municipalidad de Concepción del Uruguay</h3>
+          </div>
+          <div class="col s12 m4 date">
+            <script>
+            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+            var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+            var f=new Date();
+            document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+            </script>
+          </div>
         </div>
-        <div class="col s12 m4 date">
-          <script>
-          var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-          var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-          var f=new Date();
-          document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
-          </script>
+        <div class="row">
+          <p>
+            Este sitio web busca reflejar de manera fácil y comprensible el detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay.
+            <br>
+            Este proyecto de Datos Concepción busca dotar a la ciudadanía de una herramienta de acceso público para ejercer el control de las políticas públicas a través del detalle de gastos y contrataciones.
+          </p>
         </div>
       </header>
+
+
 
     <!-- ////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////// -->
-    <div class="row">
-      <a href="./Propuesta2016.xls" download="Propuesta modificación presupuesto 2016"><h3 class="links">Descargar Propuesta modificación presupuesto 2016</h3></a>
-      <a href="./Presupuesto2016.pdf" download="Proyecto modificación presupuesto 2016"><h3 class="links">Descargar Proyecto modificación presupuesto 2016</h3></a>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida.</p>
-      <br>
-      <div class="col s12" style="background:rgba(230,230,230,0.4)">
-        <h4>Filtros</h4>
-        <br>
-      </div>
-    </div>
-    <br><div class="divider"></div>
-
-
     <div ng-cloak ui-view="General" class="row" ></div>
     <div ui-view="Bubblechart" class="row" ></div>
     <div ui-view="Linechart" class="row" ></div>
     <div ui-view="Ranking" class="row" ></div>
     <div ui-view="Purchases" class="row" ></div>
     <div ui-view="Detail" class="row" ></div>
-    <div ui-view="Static2015" class="row" ></div>
+    <!-- <div ui-view="Static2015" class="row" ></div> -->
 
 
 
 <!-- ////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////// -->
+    <br><div class="divider"></div>
+    <div class="row presupuestos">
+      <div class="col s12 m6">
+        <a href="./Propuesta2016.xls" download="Propuesta modificación presupuesto 2016"><h3 class="links">
+          <img src="./propuesta2016image.png" alt="" /><br><br>
+          Descargar Propuesta modificación presupuesto 2016</h3></a>
+      </div>
+      <div class="col s12 m6">
+        <a href="./Presupuesto2016.pdf" download="Proyecto modificación presupuesto 2016"><h3 class="links">
+          <img src="./presupuesto2016image.png" alt="" /><br><br>
+          Descargar Proyecto modificación presupuesto 2016</h3></a>
+      </div>
+    </div>
 
- <footer>
-   <div class="divider">
-
-   </div>
-
-   <p>2016 - Un proyecto de <a target="_blank" href="http://datosconcepcion.com.ar/">Datos Concepción</a> - Desarrollado por <a target="_blank" href="http://genosha.com.ar">GENOSHA</a> -      <a href="#">Github</a>
-</p>
-</footer>
+   <footer class="footer">
+     <div class="divider"></div>
+     <p>2016 - Un proyecto de <a target="_blank" href="http://datosconcepcion.com.ar/">Datos Concepción</a><br><br> Desarrollado por <a target="_blank" href="http://genosha.com.ar">GENOSHA</a> -      <a href="#">Github</a></p>
+  </footer>
 <!-- ////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////// -->
-</div>
+</div> <!-- end container -->
 
 
 
@@ -96,15 +103,20 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../bower_components/materialize/dist//js/materialize.min.js"></script>
     <script src="../bower_components/materialize/dist/js/init.js"></script>
-
+    <script type="text/javascript">
+       $(document).ready(function() {
+          $('select').material_select();
+      });
+    </script>
     <!-- D3 AND PAINT SCRIPTS -->
     <script src="../lib/d3.js"></script>
     <script src="../src/tooltip.js"></script>
     <!-- <script src="../src/bubble_chart.js"></script> -->
-
     <!-- <script src="../src/line_chart.js"></script>-->
-
     <script src="app.js"></script>
+    <script src="../bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+
+
 
 
   </body>

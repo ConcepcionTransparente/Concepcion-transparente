@@ -1,8 +1,24 @@
 <br><div class="divider"></div>
-
+<form ng-submit="submit()" data-ng-init="submit()">
+  <div class="row">
+    <div class="col s12 m4">
+      <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
+        <input ng-model="rankingFilterini" type="text" class="angular-datepicker-input"/>
+      </datepicker>
+    </div>
+    <div class="col s12 m4">
+      <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+        <input ng-model="rankingFilterfin" type="text" class="angular-datepicker-input"/>
+      </datepicker>
+    </div>
+    <div class="col s12 m4">
+      <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
+    </div>
+  </div>
+</form>
 <div>
   <div class="article">
-    <h3>Evolución del gasto durante el año 2016: </h3>
+    <h3>Evolución del gasto en proveedores:</h3>
     <div id="lineschart"></div>
   </div>
   <br>
