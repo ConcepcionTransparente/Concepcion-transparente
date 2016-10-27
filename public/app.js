@@ -298,7 +298,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                         .append("svg")
                         //responsive SVG needs these 2 attributes and no width and height attr
                         .attr("preserveAspectRatio", "xMidYMid meet")
-                        .attr("viewBox", "0 0 1200 800")
+                        .attr("viewBox", "0 0 1200 900")
                         //class to make it responsive
                         .classed("svg-content-responsive", true);
 
