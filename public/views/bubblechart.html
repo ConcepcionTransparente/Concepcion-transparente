@@ -22,7 +22,7 @@
     <div class="col s12 m3">
       <div input-field>
           <select class="select" ng-model="searchPurchase" >
-              <option value="undefined">TODAS LAS CATEGORÍAS</option>
+              <option value="undefined">TODOS LOS RUBROS</option>
               <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
           </select>
       </div>
@@ -36,5 +36,23 @@
 <div>
   <div id="bubbleChartFather">
     <div id="bubbleChart" class="svg-container" ></div>
+  </div>
+  <div>
+    <!-- <button class="btn btn-medium"
+    socialshare
+    socialshare-url="http://dcu.herokuapp.com"
+    socialshare-redirect-uri="http://facebook.com"
+    socialshare-provider="facebook"
+    socialshare-type="feed"
+    socialshare-via="180018385783180"
+    socialshare-text="PAGO A PROVEEDORES"
+    socialshare-description="Este es el pago a proveedores del sitio web Concepcion Transparente.Se pueden distinguir los proveedores por diferentes burbujas."
+    socialshare-media="http://docs.bigobject.io/img/Line.png"
+    socialshare-caption="Pago a proveedores de Concepción Transparente"
+    socialshare-popup-height="300"
+    socialshare-popup-width="400"
+    socialshare-trigger="click"
+    <i class="fa fa-facebook"></i> Share on Facebook (sharer)
+    </button> -->
   </div>
 </div>

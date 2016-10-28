@@ -1,7 +1,7 @@
 <br><div class="divider"></div>
 
 <div>
-  <h3>Principales contratistas de Obra Pública: </h3>
+  <h3>Total de ordenes de compra: </h3>
   <form ng-submit="submit()" data-ng-init="submit()">
     <div class="row">
       <div class="col s12 m3">
@@ -17,16 +17,16 @@
       </div>
 
       <div class="col s12 m3">
-        <div input-field>
-            <select class="select" ng-model="searchPurchase" >
-                <option value="">TODAS LAS CATEGORÍAS</option>
-                <option ng-repeat="value in categories">{{value}}</option>
-            </select>
-        </div>
+        <button type="submit" id="ranking_filter" value="add a new filter">Filtrar fecha</button>
       </div>
 
       <div class="col s12 m3">
-        <button type="submit" id="ranking_filter" value="add a new filter">Filtrar fecha</button>
+        <div input-field>
+            <select class="select" ng-model="searchPurchase" >
+                <option value="">TODOS LOS RUBROS</option>
+                <option ng-repeat="value in categories">{{value}}</option>
+            </select>
+        </div>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
   <table>
     <thead>
       <tr>
-        <th>
+        <!-- <th>
           <a href="" ng-click="sortType = 'fk_Provider'; sortReverse = !sortReverse">
             PROVEEDOR
             <span ng-show="sortType == 'fk_Provider' && !sortReverse"></span>
@@ -48,8 +48,8 @@
         <th>
           <a href="" ng-click="sortType = 'fk_Category.category'; sortReverse = !sortReverse">
             REPARTICIÓN
-            <span ng-show="sortType == 'fk_Category.category' && !sortReverse"></span>
             <span ng-show="sortType == 'fk_Category.category' && sortReverse"></span>
+            <span ng-show="sortType == 'fk_Category.category' && !sortReverse"></span>
           </a>
         </th>
         <th>
@@ -58,6 +58,15 @@
             <span ng-show="sortType == 'import' && !sortReverse"></span>
             <span ng-show="sortType == 'import' && sortReverse"></span>
           </a>
+        </th> -->
+        <th>
+          PROVEEDOR
+        </th>
+        <th>
+          REPARTICIÓN
+        </th>
+        <th>
+          IMPORTE
         </th>
         <th>
           DETALLE
@@ -76,5 +85,24 @@
   </table>
   <div class="button-div">
     <button class="show-more-btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Ver más</button>
+  </div>
+
+  <div>
+    <!-- <button class="btn btn-medium"
+    socialshare
+    socialshare-url="http://dcu.herokuapp.com"
+    socialshare-redirect-uri="http://facebook.com"
+    socialshare-provider="facebook"
+    socialshare-type="feed"
+    socialshare-via="180018385783180"
+    socialshare-text="PRINCIPALES CONTRATISTAS DE OBRAS PÚBLICAS"
+    socialshare-description="Los principales contratistas de obras públicas del sitio web Concepcion Transparente"
+    socialshare-media="http://docs.bigobject.io/img/Line.png"
+    socialshare-caption="Obras públicas de Concepción Transparente"
+    socialshare-popup-height="300"
+    socialshare-popup-width="400"
+    socialshare-trigger="click"
+    <i class="fa fa-facebook"></i> Share on Facebook (sharer)
+    </button> -->
   </div>
 </div>

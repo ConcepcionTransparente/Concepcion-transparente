@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "materialize": "^0.97.7"
+    "materialize": "^0.97.7",
+    "angular-socialshare": "angularjs-socialshare#^2.3.3"
   }
 }
