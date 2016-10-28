@@ -10,7 +10,6 @@ var fs = require('fs');
 var async = require('async');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override'); //used to manipulate POST
-var json2csv = require('json2csv');
 
 
 router.use(bodyParser.urlencoded({ extended: true }))
@@ -313,14 +312,7 @@ router.post('/api/post-ranking',function(req,res,next){
       //  console.log("RESULTADO: "+populatedTransactions);
        res.send(populatedTransactions);
     });
-    var fields = ['importe'];
 
-    var csv = json2csv({ data: result, fields: fields });
-
-    fs.writeFile('manuelEjemplo.csv', csv, function(err) {
-      if (err) throw err;
-      console.log('file saved');
-    });
   // res.send(result);
   });
 });
@@ -394,5 +386,58 @@ router.post('/api/post-categoryID',function(req,res){
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+//RANKING OBRA PUBLICAS
+  router.post('/api/post-rankingObraPublica',function(req,res){
+    // var start=new Date(req.body.valorini);
+    // var end=new Date(req.body.valorfin);
+    var start=new Date(req.body.valorini);
+    console.log(start);
+    var end=new Date(req.body.valorfin);
+    console.log(end);
+    mongoose.model('Category')
+    .find({"category":"SERVICIO OBRA PUBLICA"})
+    .exec(function(err,categoryID){
+      if(err){res.send(err);}
+      else{
 
-module.exports = router;
+        console.log("CATEGORIA ENCONTRADA: "+categoryID);
+        var newId = new mongoose.mongo.ObjectId('580be5dddf50704715ece3cd');
+        ////////////////////
+        mongoose.model('PurchaseOrder')
+        .aggregate(
+          [
+           {
+             "$match": {
+               date: {$gte:start, $lte:end},
+               fk_Category:newId //ID DE LA CATEGORIA SERVICIO OBRA PUBLICA
+             }
+           },
+           {"$group" : {
+              _id : "$fk_Provider",
+              import: { $sum: "$import" }
+              }
+          },
+           { "$sort": { import: -1 } },
+           { "$limit": 10}
+         ])
+        .exec(function(err,result){
+          mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+              console.log("PROVEEDORES:"+populatedTransactions);
+             res.send(populatedTransactions);
+          });
+        });
+        ////////////////////
+      }//end else
+
+    });//end exec principal
+  });//end route.post
+
+
+
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
+  module.exports = router;

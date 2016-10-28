@@ -16,8 +16,9 @@
   ],
   "dependencies": {
     "angular-resource": "^1.5.8",
-    "datepicker": "^2.1.6",
-    "ng-csv":"*",
-    "ngSanitize":"*"
+    "datepicker": "*",
+    "ng-csv": "*",
+    "ngSanitize": "*",
+    "angular-socialshare":"*"
   }
 }

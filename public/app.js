@@ -28,6 +28,10 @@ dcuApp.config(
                             templateUrl: './views/ranking.html',
                             controller: 'rankingController'
                         },
+                        'RankingObraPublica': {
+                            templateUrl: './views/RankingObrapublica.html',
+                            controller: 'rankingObraPublicaController'
+                        },
                         'Purchases': {
                             templateUrl: './views/purchaseorder.html',
                             controller: 'purchaseController'
@@ -831,5 +835,24 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
         function(response) {
             console.debug('Error:' + response);
         };
+
+}]);
+
+dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval', function($scope, $http,$interval) {
+
+  $scope.obrapublicaFilterini = new Date(2009,00,01);
+  $scope.obrapublicaFilterfin = new Date();
+  $scope.submit = function(){
+
+    $http.post('/api/post-rankingObraPublica',
+    {"valorini":$scope.obrapublicaFilterini,
+    "valorfin":$scope.obrapublicaFilterfin})
+    .then(function(response) {
+            $scope.data = response.data;
+        },
+        function(response) {
+            console.debug('Error:' + response);
+        });
+  };
 
 }]);
