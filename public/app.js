@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////ANGULAR JS////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-var dcuApp = angular.module('dcuApp', ['ui.router','720kb.datepicker','720kb.socialshare','ngSanitize', 'ngCsv']);
+var dcuApp = angular.module('dcuApp', ['ui.router','720kb.datepicker','720kb.socialshare']);
 dcuApp.config(
     ["$stateProvider", "$urlRouterProvider",
         function($stateProvider, $urlRouterProvider) {
@@ -460,6 +460,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                  * Function called on mouseover to display the
                  * details of a bubble in the tooltip.
                  */
+
                 function showDetail(d) {
                     // change outline to indicate hover state.
                     d3.select(this).attr('stroke', 'black');
@@ -468,7 +469,11 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                         d.name +
                         '</span><br/>' +
                         '<span class="name">Monto: </span><span class="value">$' +
-                        addCommas(d.value)
+
+                        // addCommas(d.value)
+                        d.value.format(2)
+
+
                         // addCommas(d.value) +
                         // '</span><br/>' +
                         // '<span class="name">Year: </span><span class="value">' +
@@ -557,6 +562,12 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
              * Helper function to convert a number into a string
              * and add commas to it to improve presentation.
              */
+             //option 1
+             Number.prototype.format = function(n, x) {
+                var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+                return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+            };
+            //option 2
             function addCommas(nStr) {
                 nStr += '';
                 var x = nStr.split('.');
@@ -566,8 +577,9 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                 while (rgx.test(x1)) {
                     x1 = x1.replace(rgx, '$1' + ',' + '$2');
                 }
+                var number = x1+x2;
+                return number;
 
-                return x1 + x2;
             }
 
             // Load the data.
@@ -667,7 +679,7 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                     },
                     y: {
                         tick: {
-                            format: d3.format("$,")
+                            format: d3.format("$,.2f")
                         }
                     }
                 },
@@ -809,7 +821,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
                     y: {
                         tick: {
-                            format: d3.format("$,")
+                            format: d3.format("$,.2f")
                         }
                     }
                 },
@@ -854,5 +866,7 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval'
             console.debug('Error:' + response);
         });
   };
+
+
 
 }]);

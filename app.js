@@ -342,7 +342,17 @@ console.log("Si llegamos hasta aca, termino de escrapear bien y continua la app"
 
 
 
-
+// var now = new Date();
+// var esecuteScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
+// if (esecuteScraper < 0) {
+//      esecuteScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
+// }
+// setTimeout(function(){
+// //AQUI COMIENZA EL SCRAPER
+// console.log("COMIENZA EL SCRAPER");
+// scraping();
+// //AQUI TERMINA EL SCRAPER
+// }, esecuteScraper);
 
 
 

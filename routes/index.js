@@ -388,6 +388,7 @@ router.post('/api/post-categoryID',function(req,res){
 ////////////////////////////////////////////////////////////////////////////////
 //RANKING OBRA PUBLICAS
   router.post('/api/post-rankingObraPublica',function(req,res){
+
     // var start=new Date(req.body.valorini);
     // var end=new Date(req.body.valorfin);
     var start=new Date(req.body.valorini);
@@ -430,10 +431,8 @@ router.post('/api/post-categoryID',function(req,res){
       }//end else
 
     });//end exec principal
+
   });//end route.post
-
-
-
 
 
 

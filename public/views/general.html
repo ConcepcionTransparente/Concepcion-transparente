@@ -27,12 +27,12 @@
   <h3>Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio:</h3>
   <form ng-submit="submit()" data-ng-init="submit()">
     <div class="row">
-      <div class="col s12 m4">
-        <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
+      <div class="col s12 m4">Desde:
+        <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
           <input ng-model="generalfilterini" type="text" class="angular-datepicker-input"/>
         </datepicker>
       </div>
-      <div class="col s12 m4">
+      <div class="col s12 m4">Hasta:
         <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
           <input ng-model="generalfilterfin" type="text" class="angular-datepicker-input"/>
         </datepicker>
