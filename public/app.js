@@ -29,7 +29,7 @@ dcuApp.config(
                             controller: 'rankingController'
                         },
                         'RankingObraPublica': {
-                            templateUrl: './views/RankingObrapublica.html',
+                            templateUrl: './views/rankingobra.html',
                             controller: 'rankingObraPublicaController'
                         },
                         'Purchases': {
