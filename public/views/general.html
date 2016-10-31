@@ -5,22 +5,26 @@
   </div>
   <div class="row">
     <form ng-submit="submit()" data-ng-init="submit()">
-        <div class="col s12 m4">Desde:
-          <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
-            <input ng-model="generalfilterini" type="text" class="angular-datepicker-input"/>
-          </datepicker>
+        <div class="col s12 m4" style="text-align:left;">
+          Desde:
+          <input type="date" name="name" ng-model="generalfilterini">
+
+
         </div>
-        <div class="col s12 m4">Hasta:
-          <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
-            <input ng-model="generalfilterfin" type="text" class="angular-datepicker-input"/>
-          </datepicker>
+        <div class="col s12 m4" style="text-align:left;">
+          Hasta:
+          <input type="date" name="name" ng-model="generalfilterfin">
+          <!-- <datepicker ng-submit="submit()" >
+            <input ng-model="generalfilterfin" type="text" class="angular-datepicker-input" />
+          </datepicker> -->
+
         </div>
-        <div class="col s12 m2">
+        <div class="col s12 m4">
           <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
         </div>
-        <div class="col s12 m2">
-          <!-- <button type="button" ng-csv="csv" filename="Datos-generales.csv">Exportar datos</button> -->
-        </div>
+        <!-- <div class="col s12 m2">
+          <button type="button" ng-csv="csv" filename="Datos-generales.csv">Exportar datos</button>
+        </div> -->
     </form>
   </div>
   <div class="row">
@@ -48,20 +52,26 @@
     </div>
   </div>
 
-    <!-- <button class="btn btn-medium"
-    socialshare
-    socialshare-url="http://dcu.herokuapp.com"
-    socialshare-redirect-uri="http://facebook.com"
-    socialshare-provider="facebook"
-    socialshare-type="feed"
-    socialshare-via="180018385783180"
-    socialshare-text="A MUNISIPALIDAD DE CONCEPCIÓN DEL URUGUAY INFORMA"
-    socialshare-description="Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio los siguientes datos"
-    socialshare-media="http://docs.bigobject.io/img/Line.png"
-    socialshare-caption="Información general de Concepción Transparente"
-    socialshare-popup-height="300"
-    socialshare-popup-width="400"
-    socialshare-trigger="click"
-    <i class="fa fa-facebook"></i> Share on Facebook (sharer)
-    </button> -->
+  </div>
+
+
+  <div class="row">
+    <a class="resp-sharing-button__link" style="float:right;margin:none" aria-label="Share on Facebook"
+     socialshare
+     socialshare-url="http://dcu.herokuapp.com"
+     socialshare-redirect-uri="http://facebook.com"
+     socialshare-provider="facebook"
+     socialshare-type="feed"
+     socialshare-via="180018385783180"
+     socialshare-text="LA MUNISIPALIDAD DE CONCEPCIÓN DEL URUGUAY INFORMA
+ entre {{generalfilterini | date: 'dd-MM-yyyy'}} y {{generalfilterfin | date: 'dd-MM-yyyy'}}"
+ socialshare-description="Total de ordenes de compra por: {{totalimport.import |currency}}, Cantidad de proveedores: {{totalproviders.length}}, Cantidad de ordenes de compra: {{totalorders}}"
+
+     socialshare-popup-height="300"
+     socialshare-popup-width="800"
+     socialshare-trigger="click">
+     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large">
+       <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+     </div>Compartir en Facebook</div>
+   </a>
   </div>

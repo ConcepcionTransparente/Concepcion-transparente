@@ -61,33 +61,24 @@ dcuApp.config(
 dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope, $http, $q) {
     $scope.generalfilterini = new Date(2009,00,01);
     $scope.generalfilterfin = new Date();
-    $scope.csv=[];
+
 
     $scope.submit = function(){
-      // console.log($scope.generalfilterini);
-      // console.log($scope.generalfilterfin);
       $http.post('/api/post-totalimport',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin})
       .then(function(response) {
+              console.log($scope.generalfilterini);
+              console.log($scope.generalfilterfin);
               $scope.totalimport = response.data[0];
-              $scope.csv.push($scope.totalimport.import);
-              console.log($scope.csv);
-              // console.log($scope.totalimport.data);
               // console.debug("1st callback...");
               return $http.post('/api/post-totalproviders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin});
           })
       .then(function(response) {
           $scope.totalproviders = response.data;
-          $scope.csv.push($scope.totalproviders.length);
-          console.log($scope.csv);
-          // console.log($scope.totalproviders.length);
           // console.debug("2nd callback...");
           return $http.post('/api/post-totalorders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin});
       })
       .then(function(response) {
           $scope.totalorders = response.data;
-          $scope.csv.push($scope.totalorders);
-          console.log($scope.csv);
-          // console.log($scope.totalorders.data);
           // console.debug("3nd callback...");
       })
       .catch(function(error) {
@@ -107,7 +98,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
   $http.get('/api/get-categories').then(function(response){
     $scope.categories = response.data;
-    console.log("CATEGORIA: "+$scope.searchPurchase);
   });
 
   $scope.submit = function(){
@@ -603,11 +593,8 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             //SI ES UNDEFINED LLAMA A /api/post-bubblechart SIN CATEGORIA ALGUNA
             //SI ES DISTINTO DE UNDEFINED (ALGUNA CATEGORIA EN PARTICULAR) LLAMA AL POST PASANDOLE DICHA CATEGORIA.
             var compare=$scope.searchPurchase.localeCompare('undefined');
-            console.log("COMPARACION:  "+compare);
             if(compare == 0){
               d3.json('/api/post-bubblechart',function(error, data) {
-                // console.log("RESULTADOOOOO:"+ data);
-                console.log("CATEGORIA: "+$scope.searchPurchase);
                 display(error,data);
                 })
                .header("Content-Type","application/json")
@@ -617,10 +604,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
               $http.post('/api/post-categoryID',{categorySelect:$scope.searchPurchase})
               .then(function(response) {
                   $scope.bubbleCategory = response.data[0]._id;
-                  console.log("CATEGORIA: "+$scope.searchPurchase);
                   d3.json('/api/post-bubblechart',function(error, data) {
-                    // console.log("RESULTADOOOOO:"+ data);
-                    console.log("CATEGORIA: "+$scope.searchPurchase);
                     display(error,data);
                     })
                    .header("Content-Type","application/json")
@@ -658,7 +642,6 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
     "valorfin":$scope.rankingFilterfin})
     .then(function(response) {
           $scope.linechart = response.data;
-          // console.log($scope.linechart);
             var linechart = c3.generate({
                 bindto: '#lineschart',
                 data: {
@@ -717,10 +700,13 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
 ////////////////////////////////////////////////////////////////////////////////
 // Ranking de proveedores
 dcuApp.controller('rankingController', ['$scope', '$http','$interval', function($scope, $http,$interval) {
-
-
   $scope.rankingFilterini = new Date(2009,00,01);
   $scope.rankingFilterfin = new Date();
+  //csv config
+  $scope.getHeader = function(){
+    return ["PROVEEDOR","CUIT","IMPORTE"]
+  }
+  //
   $scope.submit = function(){
     // $scope.getHeader = function(){
     //   return ["A"];
@@ -748,6 +734,11 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval'
 
   $scope.obrapublicaFilterini = new Date(2009,00,01);
   $scope.obrapublicaFilterfin = new Date();
+  //csv config
+  $scope.getHeader = function(){
+    return ["PROVEEDOR","CUIT","IMPORTE"]
+  }
+  //
   $scope.submit = function(){
 
     $http.post('/api/post-rankingObraPublica',
@@ -756,7 +747,6 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval'
     .then(function(response) {
 
             $scope.getArrayOP = response.data;
-            console.log("getARRAY: "+$scope.getArrayOP);
         },
         function(response) {
             console.debug('Error:' + response);
@@ -772,43 +762,80 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
     $scope.sortReverse = false; // set the default sort order
     $scope.purchasefilterini =  new Date(2009,00,01);
     $scope.purchasefilterfin = new Date();
-
+    $scope.searchPurchase = "undefined";
+    //csv config
+    $scope.getHeader = function(){
+      return ["AÑO","MES","PROVEEDOR","RUBRO","IMPORTE"]
+    }
+    //
     $http.get('/api/get-categories').then(function(response){
       $scope.categories = response.data;
-      console.log("CATEGORIA: "+$scope.searchPurchase);
     });
+
+
       $scope.submit = function(){
-        $http.post('/api/post-purchases',
-        {"valorini":$scope.purchasefilterini,
-        "valorfin":$scope.purchasefilterfin})
-        .then(function(response) {
-                $scope.getArrayPU = response.data;
-                $scope.getArrayPUcsv = response.data;
+        var compare=$scope.searchPurchase.localeCompare('undefined');
 
-                // console.log("getARRAY: "+$scope.getArrayOP);
-                //show more functionality
-                var pagesShown = 1;
-                var pageSize = 5;
+        if(compare == 0){
+          $http.post('/api/post-purchases',
+          {"valorini":$scope.purchasefilterini,
+          "valorfin":$scope.purchasefilterfin,"category":""})
+          .then(function(response) {
+                  $scope.getArrayPU = response.data;
+                  $scope.getArrayPUcsv = response.data;
 
-                $scope.paginationLimit = function(data) {
-                    return pageSize * pagesShown;
-                };
-                $scope.hasMoreItemsToShow = function() {
-                    return pagesShown < ($scope.getArrayPU.length / pageSize);
-                };
-                $scope.showMoreItems = function() {
-                    pagesShown = pagesShown + 1;
-                };
+                  // console.log("getARRAY: "+$scope.getArrayOP);
+                  //show more functionality
+                  var pagesShown = 1;
+                  var pageSize = 5;
 
-            },
-            function(response) {
-                console.debug('Error:' + response);
-            });
+                  $scope.paginationLimit = function(data) {
+                      return pageSize * pagesShown;
+                  };
+                  $scope.hasMoreItemsToShow = function() {
+                      return pagesShown < ($scope.getArrayPU.length / pageSize);
+                  };
+                  $scope.showMoreItems = function() {
+                      pagesShown = pagesShown + 1;
+                  };
+
+              },
+              function(response) {
+                  console.debug('Error:' + response);
+              });
+          }else{
+            $http.post('/api/post-categoryID',{categorySelect:$scope.searchPurchase})
+            .then(function(response) {
+                $scope.category = response.data[0]._id;
+                $http.post('/api/post-purchases',
+                {"valorini":$scope.purchasefilterini,
+                "valorfin":$scope.purchasefilterfin,"category":$scope.category})
+                .then(function(response) {
+                        $scope.getArrayPU = response.data;
+                        $scope.getArrayPUcsv = response.data;
+
+                        // console.log("getARRAY: "+$scope.getArrayOP);
+                        //show more functionality
+                        var pagesShown = 1;
+                        var pageSize = 5;
+
+                        $scope.paginationLimit = function(data) {
+                            return pageSize * pagesShown;
+                        };
+                        $scope.hasMoreItemsToShow = function() {
+                            return pagesShown < ($scope.getArrayPU.length / pageSize);
+                        };
+                        $scope.showMoreItems = function() {
+                            pagesShown = pagesShown + 1;
+                        };
+
+                    },
+                    function(response) {
+                        console.debug('Error:' + response);
+                    });
+              });
+          };
       }
-
-
-
-
 
 }]);
 
@@ -824,10 +851,9 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             $scope.detail = response.data;
             //Export CSV config
             $scope.getHeader = function(){
-              return ["Fecha","Nombre","Cuit","Reparticion","Importe"]
+              return ["Nombre","Cuit","Reparticion","Importe","Fecha"]
             }
             //
-            console.log($scope.detail);
             //
             var pagesShown = 1;
             var pageSize = 5;

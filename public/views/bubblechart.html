@@ -10,14 +10,17 @@
 <form ng-submit="submit()" data-ng-init="submit()">
   <div class="row">
     <div class="col s12 m3">
-      <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+      <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
         <input ng-model="bubblefilterini" type="text" class="angular-datepicker-input"/>
-      </datepicker>
+      </datepicker> -->
+      <input type="date" name="name" ng-model="bubblefilterini">
     </div>
     <div class="col s12 m3">
-      <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+      <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
         <input ng-model="bubblefilterfin" type="text" class="angular-datepicker-input"/>
-      </datepicker>
+      </datepicker> -->
+      <input type="date" name="name" ng-model="bubblefilterfin">
+
     </div>
     <div class="col s12 m3">
       <div input-field>

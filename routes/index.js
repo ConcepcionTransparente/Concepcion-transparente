@@ -41,9 +41,9 @@ router.get('/', function(req, res, next) {
 // CANTIDAD DE ORDENES DE COMPRAS
 router.post('/api/post-totalimport',function(req,res,next){
   var start=new Date(req.body.valorini);
-  // console.log("START: "+start);
+  console.log("START: "+start);
   var end=new Date(req.body.valorfin);
-  // console.log("END: "+end);
+  console.log("END: "+end);
   var hoy=new Date();
   end.setHours(0,0,0,0);
   hoy.setHours(0,0,0,0);
@@ -334,9 +334,35 @@ router.post('/api/post-ranking',function(req,res,next){
 router.post("/api/post-purchases", function(req, res) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
+  console.log("REQ.BODY.CATEGORY: "+ req.body.category);
 
+  if(!req.body.category){
     mongoose.model('PurchaseOrder')
     .find({"date": {"$gte": start, "$lte": end}})
+    .sort({import: -1})
+    .populate('fk_Category')
+    .populate('fk_Provider')
+    .exec(function(err,populatedTransactions){
+      if(err){console.log(err);}
+      else{
+        // console.log(result);
+        docs=populatedTransactions.map(function(result){
+          return {
+            "anio":result.year,
+            "mes":result.month,
+            "nombre":result.fk_Provider.grant_title,
+            "reparticion":result.fk_Category.category,
+            "importe":result.import,
+            "id":result.fk_Provider._id
+          }
+        });
+        res.send(docs);
+      }
+    })
+  }
+  else{
+    mongoose.model('PurchaseOrder')
+    .find({"date": {"$gte": start, "$lte": end},"fk_Category":req.body.category})
     .sort({import: -1})
     .populate('fk_Category')
     .populate('fk_Provider')
@@ -356,6 +382,7 @@ router.post("/api/post-purchases", function(req, res) {
         res.send(docs);
       }
     })
+  }
 
 
 
@@ -375,11 +402,11 @@ router.get("/:id", function(req,res){
     else{
       docs=populatedTransactions.map(function(result){
         return {
-          "fecha":result.date,
           "nombre":result.fk_Provider.grant_title,
           "cuit":result.fk_Provider.cuil,
           "reparticion":result.fk_Category.category,
-          "importe":result.import
+          "importe":result.import,
+          "fecha":result.date
         }
       });
       console.log(docs);

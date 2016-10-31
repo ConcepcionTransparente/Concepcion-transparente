@@ -4,20 +4,24 @@
   <h3>Ranking de Servicio Obra publica</h3>
   <form ng-submit="submit()" data-ng-init="submit()">
       <div class="col s12 m4">Desde:
-        <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
+        <!-- <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
           <input ng-model="obrapublicaFilterini" type="text" class="angular-datepicker-input"/>
-        </datepicker>
+        </datepicker> -->
+        <input type="date" name="name" ng-model="obrapublicaFilterini">
+
       </div>
       <div class="col s12 m4">Hasta:
-        <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+        <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
           <input ng-model="obrapublicaFilterfin" type="text" class="angular-datepicker-input"/>
-        </datepicker>
+        </datepicker> -->
+        <input type="date" name="name" ng-model="obrapublicaFilterfin">
+
       </div>
       <div class="col s12 m2">
         <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
       </div>
       <div class="col s12 m2">
-        <button type="button" ng-csv="getArrayOP" filename="ObraPublica.csv">Export</button>
+        <button type="button" ng-csv="getArrayOP" csv-header="getHeader()" filename="ObraPublica.csv">Exportar datos</button>
       </div>
   </form>
 </div>
@@ -41,4 +45,30 @@
         </tr>
       </tbody>
   </table>
+</div>
+
+<div class="row">
+  <!-- Sharingbutton Facebook -->
+ <a class="resp-sharing-button__link" style="float:right;margin:none" aria-label="Share on Facebook"
+  socialshare
+  socialshare-url="http://dcu.herokuapp.com"
+  socialshare-redirect-uri="http://facebook.com"
+  socialshare-provider="facebook"
+  socialshare-type="feed"
+  socialshare-via="180018385783180"
+  socialshare-text="RANKING DE SERVICIO OBRA PÚBLICA entre {{obrapublicaFilterini | date: 'dd-MM-yyyy'}} y {{obrapublicaFilterfin | date: 'dd-MM-yyyy'}}"
+  socialshare-description="1){{getArrayOP[0].nombre}} ({{getArrayOP[0].importe | currency}}),
+  2){{getArrayOP[1].nombre}} ({{getArrayOP[1].importe | currency}}),
+  3){{getArrayOP[2].nombre}} ({{getArrayOP[2].importe | currency}}),
+  4){{getArrayOP[3].nombre}} ({{getArrayOP[3].importe | currency}})
+  3){{getArrayOP[4].nombre}} ({{getArrayOP[4].importe | currency}}),
+  3){{getArrayOP[5].nombre}} ({{getArrayOP[5].importe | currency}}),
+  3){{getArrayOP[6].nombre}} ({{getArrayOP[6].importe | currency}}),"
+  socialshare-popup-height="300"
+  socialshare-popup-width="400"
+  socialshare-trigger="click">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+  </div>Compartir en Facebook</div>
+</a>
 </div>

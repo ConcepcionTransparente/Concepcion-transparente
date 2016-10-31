@@ -5,29 +5,33 @@
   <div class="row">
   <form ng-submit="submit()" data-ng-init="submit()">
       <div class="col s12 m3">
-        <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+        <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
           <input ng-model="purchasefilterini" type="text" class="angular-datepicker-input"/>
-        </datepicker>
+        </datepicker> -->
+        <input type="date" name="name" ng-model="purchasefilterini">
+
       </div>
 
       <div class="col s12 m3">
-        <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
+        <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
           <input ng-model="purchasefilterfin" type="text" class="angular-datepicker-input"/>
-        </datepicker>
-      </div>
+        </datepicker> -->
+        <input type="date" name="name" ng-model="purchasefilterfin">
 
-      <div class="col s12 m3">
-        <button type="submit" id="ranking_filter" value="add a new filter">Filtrar fecha</button>
       </div>
-
       <div class="col s12 m3">
         <div input-field>
             <select class="select" ng-model="searchPurchase" >
-                <option value="">TODOS LOS RUBROS</option>
+                <option value="undefined">TODOS LOS RUBROS</option>
                 <option ng-repeat="value in categories">{{value}}</option>
             </select>
         </div>
       </div>
+      <div class="col s12 m3">
+        <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
+      </div>
+
+
     </form>
   </div>
 
@@ -36,7 +40,7 @@
 
     </div>
     <div class="col s12 m2">
-      <button type="button" ng-csv="getArrayPU" filename="Ordenes-Compra.csv">Export</button>
+      <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv">Exportar datos</button>
     </div>
   </div>
 
@@ -80,7 +84,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="x in getArrayPU | orderBy:sortType:sortReverse | filter:searchPurchase | limitTo: paginationLimit()">
+      <tr ng-repeat="x in getArrayPU | orderBy:sortType:sortReverse  | limitTo: paginationLimit()">
         <td>{{ x.nombre }}</td>
         <td>{{ x.reparticion }}</td>
         <td>{{x.importe | currency}}</td>
@@ -94,7 +98,7 @@
   </div>
 </div>
 
-  <div>
+  <div class="row">
     <!-- <button class="btn btn-medium"
     socialshare
     socialshare-url="http://dcu.herokuapp.com"
@@ -111,5 +115,27 @@
     socialshare-trigger="click"
     <i class="fa fa-facebook"></i> Share on Facebook (sharer)
     </button> -->
+    <a class="resp-sharing-button__link" style="float:right;margin:none" aria-label="Share on Facebook"
+     socialshare
+     socialshare-url="http://dcu.herokuapp.com"
+     socialshare-redirect-uri="http://facebook.com"
+     socialshare-provider="facebook"
+     socialshare-type="feed"
+     socialshare-via="180018385783180"
+     socialshare-text="PRINCIPALES CONTRATISTAS DE OBRAS PÚBLICAS entre {{purchasefilterini | date: 'dd-MM-yyyy'}} y {{purchasefilterini | date: 'dd-MM-yyyy'}}"
+     socialshare-description="1){{getArrayPU[0].nombre}} ({{getArrayPU[0].importe | currency}}),
+     2){{getArrayPU[1].nombre}} ({{getArrayPU[1].importe | currency}}),
+     3){{getArrayPU[2].nombre}} ({{getArrayPU[2].importe | currency}}),
+     4){{getArrayPU[3].nombre}} ({{getArrayPU[3].importe | currency}})
+     3){{getArrayPU[4].nombre}} ({{getArrayPU[4].importe | currency}}),
+     3){{getArrayPU[5].nombre}} ({{getArrayPU[5].importe | currency}}),
+     3){{getArrayPU[6].nombre}} ({{getArrayPU[6].importe | currency}}),"
+     socialshare-popup-height="300"
+     socialshare-popup-width="400"
+     socialshare-trigger="click">
+     <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large">
+       <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solidcircle">
+     </div>Compartir en Facebook</div>
+   </a>
   </div>
 </div>
