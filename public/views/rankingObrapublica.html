@@ -1,30 +1,28 @@
-<br><div class="divider"></div>
-
-<!-- <div input-field>
-    <select class="" ng-model="category" >
-        <option ng-repeat="value in categories">{{value}}</option>
-    </select>
-</div> -->
-<div>
+<br><br>
+<div class="row">
+  <div class="divider"></div>
   <h3>Ranking de Servicio Obra publica</h3>
   <form ng-submit="submit()" data-ng-init="submit()">
-    <div class="row">
-      <div class="col s12 m4">
+      <div class="col s12 m4">Desde:
         <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
           <input ng-model="obrapublicaFilterini" type="text" class="angular-datepicker-input"/>
         </datepicker>
       </div>
-      <div class="col s12 m4">
+      <div class="col s12 m4">Hasta:
         <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
           <input ng-model="obrapublicaFilterfin" type="text" class="angular-datepicker-input"/>
         </datepicker>
       </div>
-      <div class="col s12 m4">
+      <div class="col s12 m2">
         <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
       </div>
-    </div>
+      <div class="col s12 m2">
+        <button type="button" ng-csv="getArrayOP" filename="ObraPublica.csv">Export</button>
+      </div>
   </form>
+</div>
 
+<div class="row">
   <table>
     <thead>
       <tr>
@@ -35,11 +33,11 @@
       </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="x in data">
-          <td>{{ x._id.grant_title }}</td>
-          <td>{{ x._id.cuil }}</td>
-          <td>{{ x.import | currency}}</td>
-          <td><a  ui-sref="Detail({id: x._id._id})">Ver detalle</a></td>
+        <tr ng-repeat="x in getArrayOP">
+          <td>{{ x.nombre }}</td>
+          <td>{{ x.cuit }}</td>
+          <td>{{ x.importe | currency}}</td>
+          <td><a  ui-sref="Detail({id: x.id})">Ver detalle</a></td>
         </tr>
       </tbody>
   </table>

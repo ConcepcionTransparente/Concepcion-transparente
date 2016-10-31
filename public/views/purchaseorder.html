@@ -1,9 +1,9 @@
-<br><div class="divider"></div>
-
-<div>
-  <h3>Total de ordenes de compra: </h3>
+  <div class="row">
+    <br><div class="divider"></div>
+    <h3>Total de ordenes de compra: </h3>
+  </div>
+  <div class="row">
   <form ng-submit="submit()" data-ng-init="submit()">
-    <div class="row">
       <div class="col s12 m3">
         <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
           <input ng-model="purchasefilterini" type="text" class="angular-datepicker-input"/>
@@ -28,13 +28,19 @@
             </select>
         </div>
       </div>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m10">
+
     </div>
+    <div class="col s12 m2">
+      <button type="button" ng-csv="getArrayPU" filename="Ordenes-Compra.csv">Export</button>
+    </div>
+  </div>
 
-
-
-  </form>
-
-
+<div class="row">
   <table>
     <thead>
       <tr>
@@ -74,18 +80,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="x in data | orderBy:sortType:sortReverse | filter:searchPurchase | limitTo: paginationLimit()">
-        <td>{{ x.fk_Provider.grant_title }}</td>
-        <td>{{ x.fk_Category.category }}</td>
-        <td>{{x.import | currency}}</td>
-        <td><a ui-sref="Detail({id: x.fk_Provider._id})">Ver detalle</a></td>
-        <td style="display:none;">{{ x.year}}</td>
+      <tr ng-repeat="x in getArrayPU | orderBy:sortType:sortReverse | filter:searchPurchase | limitTo: paginationLimit()">
+        <td>{{ x.nombre }}</td>
+        <td>{{ x.reparticion }}</td>
+        <td>{{x.importe | currency}}</td>
+        <td><a ui-sref="Detail({id: x.id})">Ver detalle</a></td>
+        <td style="display:none;">{{ x.anio}}</td>
       </tr>
     </tbody>
   </table>
   <div class="button-div">
     <button class="show-more-btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Ver más</button>
   </div>
+</div>
 
   <div>
     <!-- <button class="btn btn-medium"

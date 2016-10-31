@@ -1,6 +1,6 @@
 <div ng-cloak>
-  <h1>{{detail[0].fk_Provider.grant_title}}</h1>
-  <h3>Cuil:{{detail[0].fk_Provider.cuil}}</h3>
+  <h1>{{detail[0].nombre}}</h1>
+  <h3>Cuit: {{detail[0].cuit}}</h3>
   <br><div class="divider"></div><br>
   <h3>Evolución del gasto: </h3>
   <div id="lineschart-detail" ></div>
@@ -8,12 +8,13 @@
   <br>
   <h3>Contratos de obra pública y servicios para el proveedor</h3>
   <form>
-    <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
+    <!-- <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase"> -->
+    <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv">Export</button>
   </form>
   <table>
     <thead>
       <tr>
-        <th>
+        <!-- <th>
           <a href="" ng-click="sortType = 'fk_Category.category'; sortReverse = !sortReverse">
             REPARTICIÓN
             <span ng-show="sortType == 'fk_Category.category' && !sortReverse"></span>
@@ -34,14 +35,18 @@
             <span ng-show="sortType == 'import' && sortReverse"></span>
           </a>
         </th>
-      </tr>
+      </tr> -->
+      <th>FECHA</th>
+      <th>REPARTICIÓN</th>
+      <th>PROVEEDOR</th>
+      <th>IMPORTE</th>
     </thead>
     <tbody>
-      <tr ng-repeat="x in detail | orderBy:sortType:sortReverse | filter:searchPurchase | limitTo: paginationLimit()">
-        <td>{{ x.fk_Category.category }}</td>
-        <td>{{ x.fk_Provider.grant_title }}</td>
-        <td>{{x.import | currency}}</td>
-        <td>{{ x.year}}</td>
+      <tr ng-repeat="x in detail | filter:searchPurchase | limitTo: paginationLimit()">
+        <td>{{ x.fecha | date:'MM/yyyy' }}</td>
+        <td>{{ x.reparticion }}</td>
+        <td>{{ x.nombre }}</td>
+        <td>{{x.importe | currency}}</td>
       </tr>
     </tbody>
   </table>

@@ -305,12 +305,22 @@ router.post('/api/post-ranking',function(req,res,next){
      { "$sort": { import: -1 } },
      { "$limit": 10}
    ])
-  .exec(function(err,result){
+   .exec(function(err,result){
     // console.log(result);
     mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
        // Your populated translactions are inside populatedTransactions
       //  console.log("RESULTADO: "+populatedTransactions);
-       res.send(populatedTransactions);
+      docs=populatedTransactions.map(function(result){
+        return {
+          "nombre":result._id.grant_title,
+          "cuit":result._id.cuil,
+          "importe":result.import,
+          "id":result._id._id
+        }
+      });
+      res.send(docs);
+      // console.log(docs);
+      //  res.json(populatedTransactions);
     });
 
   // res.send(result);
@@ -321,22 +331,30 @@ router.post('/api/post-ranking',function(req,res,next){
 ////////////////////////////////////////////////////////////////////////////////
 // CONTRATOS DE OBRAS PUBLICAS Y SERVICIOS
 // Reparticion - Proveedor - Detalle
-router.post("/api/post-purchase", function(req, res) {
+router.post("/api/post-purchases", function(req, res) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   // console.log(start);
   // console.log(end);
-
-  mongoose.model('PurchaseOrder').find({"date": {"$gte": start, "$lte": end}})
+  mongoose.model('PurchaseOrder')
+  .find({"date": {"$gte": start, "$lte": end}})
   .sort({import: -1})
-  // .limit(5)
   .populate('fk_Category')
   .populate('fk_Provider')
-  .exec(function(err,post){
+  .exec(function(err,populatedTransactions){
     if(err){console.log(err);}
     else{
-      // console.log(post);
-      res.send(post);
+      // console.log(result);
+      docs=populatedTransactions.map(function(result){
+        return {
+          "anio":result.year,
+          "nombre":result.fk_Provider.grant_title,
+          "reparticion":result.fk_Category.category,
+          "importe":result.import,
+          "id":result.fk_Provider._id
+        }
+      });
+      res.send(docs);
     }
   })
 
@@ -348,15 +366,23 @@ router.post("/api/post-purchase", function(req, res) {
 router.get("/:id", function(req,res){
   // console.log("fk_Provider---->: "+ req.params.id);
   mongoose.model('PurchaseOrder').find({'fk_Provider' : req.params.id})
-  .sort({year: -1})
-  // .limit(5)
+  .sort({date: -1})
   .populate('fk_Category')
   .populate('fk_Provider')
-  .exec(function(err,post){
+  .exec(function(err,populatedTransactions){
     if(err){console.log(err);}
     else{
-      // console.log(post);
-      res.send(post);
+      docs=populatedTransactions.map(function(result){
+        return {
+          "fecha":result.date,
+          "nombre":result.fk_Provider.grant_title,
+          "cuit":result.fk_Provider.cuil,
+          "reparticion":result.fk_Category.category,
+          "importe":result.import
+        }
+      });
+      console.log(docs);
+      res.send(docs);
     }
   })
 });
@@ -388,19 +414,13 @@ router.post('/api/post-categoryID',function(req,res){
 ////////////////////////////////////////////////////////////////////////////////
 //RANKING OBRA PUBLICAS
   router.post('/api/post-rankingObraPublica',function(req,res){
-
-    // var start=new Date(req.body.valorini);
-    // var end=new Date(req.body.valorfin);
     var start=new Date(req.body.valorini);
-    console.log(start);
     var end=new Date(req.body.valorfin);
-    console.log(end);
     mongoose.model('Category')
     .find({"category":"SERVICIO OBRA PUBLICA"})
     .exec(function(err,categoryID){
       if(err){res.send(err);}
       else{
-
         console.log("CATEGORIA ENCONTRADA: "+categoryID);
         var newId = new mongoose.mongo.ObjectId('580be5dddf50704715ece3cd');
         ////////////////////
@@ -424,18 +444,21 @@ router.post('/api/post-categoryID',function(req,res){
         .exec(function(err,result){
           mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
               console.log("PROVEEDORES:"+populatedTransactions);
-             res.send(populatedTransactions);
+              result=populatedTransactions.map(function(result){
+                return {
+                  "nombre":result._id.grant_title,
+                  "cuit":result._id.cuil,
+                  "importe":result.import,
+                  "id":result._id._id
+                }
+              });
+              console.log(result);
+             res.send(result);
           });
         });
-        ////////////////////
       }//end else
-
     });//end exec principal
-
   });//end route.post
-
-
-
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////

@@ -10,16 +10,7 @@ var mongoose = require('mongoose');
 var db = require('./model/db');
 var model = require('./model/model');
 
-var x = Xray({
-    filters: {
-        nocomma: function(value) {
-            return typeof value === 'string' ? value.split(',')[0] : value
-        },
-        nopoint: function(value) {
-            return typeof value === 'string' ? value.replace(/\./g, '') : value
-        }
-    }
-}).throttle(10,1000);
+var x = Xray().throttle(10,1000);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -99,6 +90,7 @@ function scraping() {
     var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php";
     x(url, 'body tr.textoTabla', [{
             year: 'td', //año
+            total_amount: 'td:nth-of-type(4)', //importe de ese proveedor en ese año
             href: 'td:nth-of-type(8) a@href' //a@href a VER POR PROVEEDORES
         }])
         (function(err, wrapperObj) {
@@ -109,15 +101,15 @@ function scraping() {
         x(mappedObject.href, 'body tr.textoTabla', [{
             cuil: 'td', //cuil proveedor
             grant_title: 'td:nth-of-type(2)', //nombre de fantasia del proveedor
-            total_amount: 'td:nth-of-type(6)', //importe de ese proveedor en ese año
-            total_contrats: 'td:nth-of-type(4) | nopoint', //cantidad de contrataciones en ese año
+            total_contrats: 'td:nth-of-type(4)', //cantidad de contrataciones en ese año
             href: 'td:nth-of-type(8) a@href' //a@href a VER POR RUBROS
         }])(function(err, wrapperObj) {
             if (wrapperObj == null) {
                 error.push(wrapperObj);
             } else {
                 wrapperObj.map(wrapperMap, {
-                    year: mappedObject.year
+                    year: mappedObject.year,
+                    total_amount:mappedObject.total_amount
                 });
             }
         })
@@ -137,7 +129,8 @@ function scraping() {
             } else {
                 innerWrapperObject.map(innerWrapperMap, {
                     provider: mappedObject,
-                    year: parentObject.year
+                    year: parentObject.year,
+                    total_amount:parentObject.total_amount
                 });
             }
         })
@@ -156,7 +149,8 @@ function scraping() {
                 finalObject.map(normalize, {
                     category: mappedObject,
                     provider: parentObject.provider,
-                    year: parentObject.year
+                    year: parentObject.year,
+                    total_amount:parentObject.total_amount
                 });
             }
         })
@@ -164,13 +158,13 @@ function scraping() {
 
     function normalize(o) {
         var parentObject = this;
-        var year= parseInt(parentObject.year); //ño
+        var year= parseInt(parentObject.year); //año
 
         var childObject = {
             year: year, //year
             cuil: parentObject.provider.cuil, //proveedor
             grant_title: parentObject.provider.grant_title, //proveedor
-            total_amount: parentObject.provider.total_amount, //importe de ese proveedor en UN AÑO
+            total_amount: parentObject.total_amount, //importe de ese proveedor en UN AÑO
             total_contrats: parentObject.provider.total_contrats, //cantidas de contrataciones en UN AÑO
             cod: parentObject.category.cod, //codigo del rubro
             category: parentObject.category.category, //nombre del rubro (reparticion)
@@ -287,7 +281,15 @@ function scraping() {
                     fk_Provider: result1._id,
                     fk_Category: result2._id
                 };
-                mongoose.model('PurchaseOrder').create(Purchase, function(err, purchase) {
+                mongoose.model('PurchaseOrder').findOneAndUpdate({
+                  year: childObject.year,
+                  month: monthNumber,
+                  date: newDate,
+                  numberOfContracts: childObject.numberOfContracts,
+                  import: partialImport,
+                  fk_Provider: result1._id,
+                  fk_Category: result2._id
+                },Purchase,options, function(err, purchase) {
                     if (err) {
                         console.log(err);
                         return;

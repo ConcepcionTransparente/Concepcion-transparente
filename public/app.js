@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////ANGULAR JS////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-var dcuApp = angular.module('dcuApp', ['ui.router','720kb.datepicker','720kb.socialshare']);
+var dcuApp = angular.module('dcuApp', ['ui.router','720kb.datepicker','720kb.socialshare','ngSanitize', 'ngCsv']);
 dcuApp.config(
     ["$stateProvider", "$urlRouterProvider",
         function($stateProvider, $urlRouterProvider) {
@@ -61,25 +61,32 @@ dcuApp.config(
 dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope, $http, $q) {
     $scope.generalfilterini = new Date(2009,00,01);
     $scope.generalfilterfin = new Date();
+    $scope.csv=[];
 
     $scope.submit = function(){
       // console.log($scope.generalfilterini);
       // console.log($scope.generalfilterfin);
       $http.post('/api/post-totalimport',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin})
       .then(function(response) {
-              $scope.totalimport = response;
+              $scope.totalimport = response.data[0];
+              $scope.csv.push($scope.totalimport.import);
+              console.log($scope.csv);
               // console.log($scope.totalimport.data);
               // console.debug("1st callback...");
               return $http.post('/api/post-totalproviders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin});
           })
       .then(function(response) {
           $scope.totalproviders = response.data;
+          $scope.csv.push($scope.totalproviders.length);
+          console.log($scope.csv);
           // console.log($scope.totalproviders.length);
           // console.debug("2nd callback...");
           return $http.post('/api/post-totalorders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin});
       })
       .then(function(response) {
-          $scope.totalorders = response;
+          $scope.totalorders = response.data;
+          $scope.csv.push($scope.totalorders);
+          console.log($scope.csv);
           // console.log($scope.totalorders.data);
           // console.debug("3nd callback...");
       })
@@ -636,10 +643,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         //     console.debug('Error:' + response);
         // });
 
-};
-
-
-
+      };
 }]);
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -718,18 +722,46 @@ dcuApp.controller('rankingController', ['$scope', '$http','$interval', function(
   $scope.rankingFilterini = new Date(2009,00,01);
   $scope.rankingFilterfin = new Date();
   $scope.submit = function(){
+    // $scope.getHeader = function(){
+    //   return ["A"];
+    // }
+    // $scope.getArray = [
+    //   {a:100,b:200,c:"hola"},
+    //   {a:100.2,b:200.23,c:"chau"},
+    // ]
     $http.post('/api/post-ranking',
     {"valorini":$scope.rankingFilterini,
     "valorfin":$scope.rankingFilterfin})
     .then(function(response) {
-            $scope.data = response.data;
-            // console.log($scope.data);
+            $scope.getArray = response.data;
         },
         function(response) {
             console.debug('Error:' + response);
         });
   };
 
+}]);
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval', function($scope, $http,$interval) {
+
+  $scope.obrapublicaFilterini = new Date(2009,00,01);
+  $scope.obrapublicaFilterfin = new Date();
+  $scope.submit = function(){
+
+    $http.post('/api/post-rankingObraPublica',
+    {"valorini":$scope.obrapublicaFilterini,
+    "valorfin":$scope.obrapublicaFilterfin})
+    .then(function(response) {
+
+            $scope.getArrayOP = response.data;
+            console.log("getARRAY: "+$scope.getArrayOP);
+        },
+        function(response) {
+            console.debug('Error:' + response);
+        });
+  };
 }]);
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -748,12 +780,14 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
     });
 
     $scope.submit = function(){
-      $http.post('/api/post-purchase',
+      $http.post('/api/post-purchases',
       {"valorini":$scope.purchasefilterini,
       "valorfin":$scope.purchasefilterfin})
       .then(function(response) {
-              $scope.data = response.data;
-              // console.log("PURCHASES: "+$scope.data);
+              $scope.getArrayPU = response.data;
+              $scope.getArrayPUcsv = response.data;
+
+              // console.log("getARRAY: "+$scope.getArrayOP);
               //show more functionality
               var pagesShown = 1;
               var pageSize = 5;
@@ -762,7 +796,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
                   return pageSize * pagesShown;
               };
               $scope.hasMoreItemsToShow = function() {
-                  return pagesShown < ($scope.data.length / pageSize);
+                  return pagesShown < ($scope.getArrayPU.length / pageSize);
               };
               $scope.showMoreItems = function() {
                   pagesShown = pagesShown + 1;
@@ -777,6 +811,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
 
 
 }]);
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -785,10 +820,15 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
     $scope.sortType = ''; // set the default sort type
     $scope.sortReverse = false; // set the default sort order
     $scope.searchPurchase = ''; // set the default search/filter term
-    $http.get('/' + $stateParams.id).then(function(result) {
-            $scope.detail = result.data;
-            // console.log($scope.detail);
-
+    $http.get('/' + $stateParams.id).then(function(response) {
+            $scope.detail = response.data;
+            //Export CSV config
+            $scope.getHeader = function(){
+              return ["Fecha","Nombre","Cuit","Reparticion","Importe"]
+            }
+            //
+            console.log($scope.detail);
+            //
             var pagesShown = 1;
             var pageSize = 5;
             $scope.paginationLimit = function(data) {
@@ -800,15 +840,15 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             $scope.showMoreItems = function() {
                 pagesShown = pagesShown + 1;
             };
-
+            //
             var linechart = c3.generate({
                 bindto: '#lineschart-detail',
                 data: {
                     // url: 'example.json', //la carpeta raiz de busqueda es /public/
                     json: $scope.detail,
-                    mimeType: 'month',
+                    mimeType: 'json',
                     keys: {
-                        value: ['import']
+                        value: ['importe']
                     },
                     names: {
                         import: 'Evolución del gasto'
@@ -847,26 +887,5 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
         function(response) {
             console.debug('Error:' + response);
         };
-
-}]);
-
-dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval', function($scope, $http,$interval) {
-
-  $scope.obrapublicaFilterini = new Date(2009,00,01);
-  $scope.obrapublicaFilterfin = new Date();
-  $scope.submit = function(){
-
-    $http.post('/api/post-rankingObraPublica',
-    {"valorini":$scope.obrapublicaFilterini,
-    "valorfin":$scope.obrapublicaFilterfin})
-    .then(function(response) {
-            $scope.data = response.data;
-        },
-        function(response) {
-            console.debug('Error:' + response);
-        });
-  };
-
-
 
 }]);
