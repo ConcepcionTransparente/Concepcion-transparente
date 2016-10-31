@@ -171,7 +171,7 @@ router.post('/api/post-bubblechart',function(req,res,next){
   end.setHours(0,0,0,0);
   hoy.setHours(0,0,0,0);
   // console.log(end);
-  console.log("CATEGORY BACKEND: "+req.body.category);
+  // console.log("CATEGORY BACKEND: "+req.body.category);
   if(!req.body.category){
     console.log("TODAS LAS CATEGORIAS: " + req.body.category);
     mongoose.model('PurchaseOrder')
@@ -334,29 +334,30 @@ router.post('/api/post-ranking',function(req,res,next){
 router.post("/api/post-purchases", function(req, res) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
-  // console.log(start);
-  // console.log(end);
-  mongoose.model('PurchaseOrder')
-  .find({"date": {"$gte": start, "$lte": end}})
-  .sort({import: -1})
-  .populate('fk_Category')
-  .populate('fk_Provider')
-  .exec(function(err,populatedTransactions){
-    if(err){console.log(err);}
-    else{
-      // console.log(result);
-      docs=populatedTransactions.map(function(result){
-        return {
-          "anio":result.year,
-          "nombre":result.fk_Provider.grant_title,
-          "reparticion":result.fk_Category.category,
-          "importe":result.import,
-          "id":result.fk_Provider._id
-        }
-      });
-      res.send(docs);
-    }
-  })
+
+    mongoose.model('PurchaseOrder')
+    .find({"date": {"$gte": start, "$lte": end}})
+    .sort({import: -1})
+    .populate('fk_Category')
+    .populate('fk_Provider')
+    .exec(function(err,populatedTransactions){
+      if(err){console.log(err);}
+      else{
+        // console.log(result);
+        docs=populatedTransactions.map(function(result){
+          return {
+            "anio":result.year,
+            "nombre":result.fk_Provider.grant_title,
+            "reparticion":result.fk_Category.category,
+            "importe":result.import,
+            "id":result.fk_Provider._id
+          }
+        });
+        res.send(docs);
+      }
+    })
+
+
 
 });
 ////////////////////////////////////////////////////////////////////////////////

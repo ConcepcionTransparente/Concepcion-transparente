@@ -770,43 +770,43 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval'
 dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function($scope, $http) {
     $scope.sortType = ''; // set the default sort type
     $scope.sortReverse = false; // set the default sort order
-    $scope.searchPurchase = ''; // set the default search/filter term
     $scope.purchasefilterini =  new Date(2009,00,01);
     $scope.purchasefilterfin = new Date();
 
     $http.get('/api/get-categories').then(function(response){
       $scope.categories = response.data;
-      // console.log($scope.categories);
+      console.log("CATEGORIA: "+$scope.searchPurchase);
     });
+      $scope.submit = function(){
+        $http.post('/api/post-purchases',
+        {"valorini":$scope.purchasefilterini,
+        "valorfin":$scope.purchasefilterfin})
+        .then(function(response) {
+                $scope.getArrayPU = response.data;
+                $scope.getArrayPUcsv = response.data;
 
-    $scope.submit = function(){
-      $http.post('/api/post-purchases',
-      {"valorini":$scope.purchasefilterini,
-      "valorfin":$scope.purchasefilterfin})
-      .then(function(response) {
-              $scope.getArrayPU = response.data;
-              $scope.getArrayPUcsv = response.data;
+                // console.log("getARRAY: "+$scope.getArrayOP);
+                //show more functionality
+                var pagesShown = 1;
+                var pageSize = 5;
 
-              // console.log("getARRAY: "+$scope.getArrayOP);
-              //show more functionality
-              var pagesShown = 1;
-              var pageSize = 5;
+                $scope.paginationLimit = function(data) {
+                    return pageSize * pagesShown;
+                };
+                $scope.hasMoreItemsToShow = function() {
+                    return pagesShown < ($scope.getArrayPU.length / pageSize);
+                };
+                $scope.showMoreItems = function() {
+                    pagesShown = pagesShown + 1;
+                };
 
-              $scope.paginationLimit = function(data) {
-                  return pageSize * pagesShown;
-              };
-              $scope.hasMoreItemsToShow = function() {
-                  return pagesShown < ($scope.getArrayPU.length / pageSize);
-              };
-              $scope.showMoreItems = function() {
-                  pagesShown = pagesShown + 1;
-              };
+            },
+            function(response) {
+                console.debug('Error:' + response);
+            });
+      }
 
-          },
-          function(response) {
-              console.debug('Error:' + response);
-          });
-    }
+
 
 
 
