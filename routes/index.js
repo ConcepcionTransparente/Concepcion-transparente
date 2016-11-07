@@ -38,6 +38,51 @@ router.get('/', function(req, res, next) {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+router.get('/api/get-importHistory',function(req,res,next){
+
+  mongoose.model('PurchaseOrder').aggregate(
+    [
+     {
+       $group : {
+          "_id" : null,
+          "import": { $sum: "$import" }, // for your case use local.user_totalthings
+          // count: { $sum: 1 } // for no. of documents count
+       }
+     }
+    ],function(err,importe){
+        console.log("HISTORY IMPORT: "+importe[0].data);
+        res.send(importe);
+  });
+});
+
+router.get('/api/get-providersHistory',function(req,res,next){
+  mongoose.model('PurchaseOrder')
+  .find()
+  .distinct('fk_Provider', function(error, response) {
+    console.log("HISTORY PROVIDERS: "+response);
+      res.send(response);
+  });
+
+});
+
+router.get('/api/get-ordersHistory',function(req,res,next){
+  mongoose.model('PurchaseOrder')
+  .find()
+  .distinct('fk_Provider')
+  .count(function (err, result) {
+      if (err) {
+          return console.log(err);
+      } else {
+          console.log("HISTORY ORDERS: "+result);
+          res.json(result);
+      }
+  });
+
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 // CANTIDAD DE ORDENES DE COMPRAS
 router.post('/api/post-totalimport',function(req,res,next){
   var start=new Date(req.body.valorini);
@@ -49,38 +94,22 @@ router.post('/api/post-totalimport',function(req,res,next){
   hoy.setHours(0,0,0,0);
   // console.log("HOY:"+ hoy);
   // console.log("END:"+ end);
-  if (+end === +hoy) {
-    // console.log("SON IGUALESSSSSSS!!!!!");
-    mongoose.model('PurchaseOrder').aggregate(
-       {
-         $group : {
-            "_id" : null,
-            "import": { $sum: "$import" }, // for your case use local.user_totalthings
-            // count: { $sum: 1 } // for no. of documents count
-         }
+  mongoose.model('PurchaseOrder').aggregate(
+    [
+      {"$match": {date: {$gte:start, $lte:end}}},
+     {
+       $group : {
+          "_id" : null,
+          "import": { $sum: "$import" }, // for your case use local.user_totalthings
+          // count: { $sum: 1 } // for no. of documents count
        }
-      ,function(err,importe){
-          // console.log("IMPORTEEEE: "+importe[0].data);
-          res.send(importe);
-        });
-  }else{
-    mongoose.model('PurchaseOrder').aggregate(
-      [
-        {"$match": {date: {$gte:start, $lte:end}}},
-       {
-         $group : {
-            "_id" : null,
-            "import": { $sum: "$import" }, // for your case use local.user_totalthings
-            // count: { $sum: 1 } // for no. of documents count
-         }
-       }
-      ],function(err,importe){
-          // console.log("IMPORTEEEE: "+importe[0].data);
-          res.send(importe);
-        });
-  }
+     }
+    ],function(err,importe){
+        // console.log("IMPORTEEEE: "+importe[0].data);
+        res.send(importe);
+  });
 
-    });
+});
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -95,25 +124,12 @@ router.post('/api/post-totalproviders',function(req,res,next){
   hoy.setHours(0,0,0,0);
   // console.log("HOY:"+ hoy);
   // console.log("END:"+ end);
-  if (+end === +hoy) {
-    // console.log("SON IGUALES!!");
-    mongoose.model('PurchaseOrder')
-    .find()
-    .distinct('fk_Provider', function(error, response) {
-      // console.log("TOTAL DE PROVEEDORES: "+response);
-        res.send(response);
-    });
-  }else{
-    mongoose.model('PurchaseOrder')
-    .find({"date": {"$gte": start, "$lte": end}})
-    .distinct('fk_Provider', function(error, response) {
-      // console.log("TOTAL DE PROVEEDORES: "+response);
-        res.send(response);
-    });
-  }
-
-
-
+  mongoose.model('PurchaseOrder')
+  .find({"date": {"$gte": start, "$lte": end}})
+  .distinct('fk_Provider', function(error, response) {
+    // console.log("TOTAL DE PROVEEDORES: "+response);
+      res.send(response);
+  });
 
 });
 ////////////////////////////////////////////////////////////////////////////////
@@ -129,34 +145,19 @@ router.post('/api/post-totalorders',function(req,res,next){
   hoy.setHours(0,0,0,0);
   // console.log("HOY:"+ hoy);
   // console.log("END:"+ end);
-  if (+end === +hoy) {
-          // console.log("SON IGUALES1!!!!");
-          mongoose.model('PurchaseOrder')
-          .find()
-          .distinct('fk_Provider')
-          .count(function (err, result) {
-              if (err) {
-                  return console.log(err);
-              } else {
-                  // console.log("CANTIDAD DE ORDENES DE COMPRA: "+result);
-                  res.json(result);
-              }
-          });
-  }
-  else{
-    mongoose.model('PurchaseOrder')
-    .find({"date": {"$gte": start, "$lte": end}})
-    .distinct('fk_Provider')
-    .count(function (err, result) {
-        if (err) {
-            return console.log(err);
-        } else {
-            // console.log("CANTIDAD DE ORDENES DE COMPRA: "+result);
-            res.json(result);
-        }
-    });
-  };
-  // console.log("END: "+end);
+
+  mongoose.model('PurchaseOrder')
+  .find({"date": {"$gte": start, "$lte": end}})
+  .distinct('fk_Provider')
+  .count(function (err, result) {
+      if (err) {
+          return console.log(err);
+      } else {
+          // console.log("CANTIDAD DE ORDENES DE COMPRA: "+result);
+          res.json(result);
+      }
+  });
+
 });
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -248,27 +249,6 @@ router.post('/api/post-linechart',function(req,res,next){
   // console.log(end);
   var endyear = end.getFullYear();
   // console.log(endyear);
-
-  // mongoose.model('PurchaseOrder').aggregate(
-  //   [
-  //     {
-  //       "$match": {
-  //         date: {$gte:start, $lte:end}
-  //       }
-  //     },
-  //    {
-  //      $group : {
-  //         _id : "$year",
-  //         import: { $sum: "$import" } // for your case use local.user_totalthings
-  //         // count: { $sum: 1 } // for no. of documents count
-  //      }
-  //    },
-  //    { "$sort": { "_id": 1 } }
-  //
-  //   ],function(err,importe){
-  //       // console.log(importe);
-  //       res.send(importe);
-  // });
   mongoose.model('Year').find({"year": {"$gte": startyear, "$lte": endyear}})
   .sort({year: 1})
   .exec(function(err,post){
@@ -277,7 +257,9 @@ router.post('/api/post-linechart',function(req,res,next){
       // console.log(post);
       res.send(post);
     }
-  })});
+  })
+
+});
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -286,7 +268,6 @@ router.post('/api/post-ranking',function(req,res,next){
   // console.log(start);
   var end=new Date(req.body.valorfin);
   // console.log(end);
-
   mongoose.model('PurchaseOrder')
   .aggregate(
     [
@@ -322,9 +303,9 @@ router.post('/api/post-ranking',function(req,res,next){
       // console.log(docs);
       //  res.json(populatedTransactions);
     });
-
   // res.send(result);
   });
+
 });
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -383,8 +364,6 @@ router.post("/api/post-purchases", function(req, res) {
       }
     })
   }
-
-
 
 });
 ////////////////////////////////////////////////////////////////////////////////

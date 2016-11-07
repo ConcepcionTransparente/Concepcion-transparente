@@ -1,0 +1,20 @@
+<div class="row" style="text-align:center">
+  <div class="row">
+    <h3>Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio (toda la base de datos):</h3>
+  </div>
+  <div class="col s12 m4 border-right">
+    <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
+     {{importHistory.import |currency}}
+    </span></p>
+  </div>
+  <div class="col s12 m4 border-right">
+    <p>CANTIDAD DE PROVEEDORES:<br><br><br><span>
+       {{providersHistory.length}}
+    </span></p>
+  </div>
+  <div class="col s12 m4">
+    <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>
+      {{ordersHistory}}
+    </span></p>
+  </div>
+</div>
