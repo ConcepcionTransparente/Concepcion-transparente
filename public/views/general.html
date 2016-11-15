@@ -5,59 +5,61 @@
   </div>
   <div class="row">
     <form ng-submit="submit()" data-ng-init="submit()">
-     <!--  <div class="dropdown">
-                     <div class="medium btn primary icon-left entypo icon-calendar no-print 
-                     dropdown-toggle" id="dd1" role="button" data-toggle="dropdown">
-                        <a href="">Desde</a>
-                     </div>
-               
-                    <ul class="dropdown-menu" role="menu">
-                         <datetimepicker data-ng-model="from" 
-                         data-datetimepicker-config="{ 
-                        
-                         dropdownSelector: '#dd1' }"/>
-                    </ul>
-                    <p>{{from | amDateFormat:'dddd, MMMM Do YYYY, HH:mm:ss '}}</p>
-                </div>
-               </div>
-        </div> -->
+    
         <div class="col s12 m4" style="text-align:left;">
           Desde:
-          <input type="date" name="name" ng-model="generalfilterini">
+           <div class="dropdown">
+  <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
+    <div class="input-group">
+
+      <p type="text" class="form-control" data-ng-model="generalfilterini">
+       {{generalfilterini | amDateFormat:'dddd, MMMM Do YYYY'}} </p>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    </div>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <datetimepicker data-ng-model="generalfilterini" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' , startView:'day', minView:'day'}"/>
+  </ul>
+</div>
 
 
         </div>
         <div class="col s12 m4" style="text-align:left;">
           Hasta:
-          <input type="date" name="name" ng-model="generalfilterfin">
-          <!-- <datepicker ng-submit="submit()" >
-            <input ng-model="generalfilterfin" type="text" class="angular-datepicker-input" />
-          </datepicker> -->
-
+         <div class="dropdown">
+  <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+    <div class="input-group">  <p type="text" class="form-control" data-ng-model="generalfilterfinn">
+       {{generalfilterfin | amDateFormat:'dddd, MMMM Do YYYY'}} </p>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    </div>
+  </a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <datetimepicker data-ng-model="generalfilterfin" data-datetimepicker-config="{ dropdownSelector: '#dropdown2', startView:'day', minView:'day' }"/>
+  </ul>
         </div>
+</div>
+
         <div class="col s12 m4">
 
           <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
         </div>
-        <!-- <div class="col s12 m2">
-          <button type="button" ng-csv="csv" filename="Datos-generales.csv">Exportar datos</button>
-        </div> -->
+       
     </form>
   </div>
-  <div class="row">
+  <div class="row numbers">
     <div class="col s12 m4 border-right">
       <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>
-       {{totalimport.import |currency}}
+       <h3>{{totalimport.import |currency}}</h3>
       </span></p>
     </div>
     <div class="col s12 m4 border-right">
       <p>CANTIDAD DE PROVEEDORES:<br><br><br><span>
-         {{totalproviders.length}}
+      <h3>{{totalproviders.length}}</h3>
       </span></p>
     </div>
     <div class="col s12 m4">
       <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>
-        {{totalorders}}
+        <h3>{{totalorders}}</h3>
       </span></p>
     </div>
   </div>

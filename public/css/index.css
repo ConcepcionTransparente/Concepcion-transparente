@@ -236,3 +236,9 @@ footer span{
 button{
   width: auto;
 }
+
+.numbers h3 {
+  text-align: center;
+  font-style: none;
+  font-size: 2em;
+}
