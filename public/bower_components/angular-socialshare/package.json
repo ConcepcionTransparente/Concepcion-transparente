@@ -1,43 +1,24 @@
 {
   "name": "angular-socialshare",
-  "version": "0.1.13",
-  "description": "A social urls and content sharing directive for angularjs.",
-  "homepage": "http://720kb.githb.io/angular-socialshare",
-  "keywords": [
-    "social",
-    "sharing",
-    "buttons",
-    "share",
-    "angular",
-    "angularjs"
-  ],
-  "main": "dist/angular-socialshare.min.js",
+  "version": "1.4.5",
+  "description": "Angular Social Share =========",
+  "main": "angular-socialshare.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/720kb/angular-socialshare.git"
+    "url": "https://github.com/djds4rce/angular-socialshare.git"
   },
+  "author": "",
   "license": "MIT",
-  "devDependencies": {
-    "connect-modrewrite": "*",
-    "grunt": "*",
-    "grunt-concurrent": "*",
-    "grunt-contrib-connect": "*",
-    "grunt-contrib-csslint": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-eslint": "*"
+  "bugs": {
+    "url": "https://github.com/djds4rce/angular-socialshare/issues"
   },
-  "author": {
-    "name": "Filippo Oretti",
-    "email": "filippo.oretti@gmail.com",
-    "url": "https://github.com/45kb"
-  },
-  "contributors": [
-    {
-      "name": "Dario Andrei",
-      "email": "wouldgo84@gmail.com",
-      "url": "https://github.com/wouldgo"
-    }
-  ]
+  "homepage": "https://github.com/djds4rce/angular-socialshare",
+  "dependencies": {
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4"
+  }
 }

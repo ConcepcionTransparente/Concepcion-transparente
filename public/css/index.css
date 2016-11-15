@@ -37,23 +37,7 @@ tr:nth-child(even){background-color: #f2f2f2}
   font-weight: bold;
 }
 
-.button-div{
-  margin-top: 3em;
-  width: 100%;
-}
-.show-more-btn{
-  background: #F2F2F2;
-  width: 10em;
-  height: 2em;
-  border: none;
-  margin: 0 auto;
-  display: block;
-}
-.show-more-btn:active, .show-more-btn:hover, .show-more-btn:focus{
-  background: #F2F2F2;
-  border: none;
 
-}
 /*------------pie chart row------------------*/
 #pie-info article p{
   font-size: 2em;
@@ -246,4 +230,9 @@ footer span{
 .resp-sharing-button--facebook:active {
   background-color: #2d4373;
   border-color: #2d4373;
+}
+
+
+button{
+  width: auto;
 }

@@ -1,281 +1,252 @@
-Angular Socialshare
-==================
+Angular Social Share
+=========
 
-[![Join the chat at https://gitter.im/720kb/angular-socialshare](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/720kb/angular-socialshare?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Angular Social Share is a collection of directives which lets you easily share your links various social networks. Currently Facebok, Google, Twitter and Linkdin are supported. Social Networks get the Meta data of the shared content like Title, Summary and Image from the Meta tags on the page by scraping. But Single Page Apps like Angular are unable to support crawling. But these dirictives use alternative so that Meta data is displayed where it is possible. 
+Checkout the [Demo].
+Change Log
+----
+As of Verstion 1 This directive supports two way binding of data, so now you can populate the data in the directive from a HTTP request.
 
+Future Plans
+----
+Support asyncronous loading of corresponding social plugin javascript assets.
 
-Angular Socialshare is an angularjs directive for sharing urls and content on social networks such as (facebook, google+, twitter, pinterest and so on).
-
-
-The angular socialshare is developed by [720kb](http://720kb.net).
-
-##Requirements
-
-
-AngularJS v1.2+
-
-##Screen
-![Angular socialshare](http://i.imgur.com/uRg6mO5.jpg)
-
-###Browser support
-
-
-![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png)
---- | --- | --- | --- | --- |
- ✔ | ✔ | IE9 + | ✔ | ✔ |
-
-
-## Load
-
-To use the directive, include the angular socialshare's javascript file in your web page:
-
+Getting Started
+-----
+Install the library through bower.
+```js
+bower install angular-socialshare
+```
+Include the script (and optional css file) in your html file.
 ```html
-<!DOCTYPE HTML>
-<html>
-<body ng-app="app">
-  //.....
-  <script src="src/js/angular-socialshare.js"></script>
-</body>
-</html>
+<link rel='stylesheet' href="bower_components/angular-socialshare/angular-socialshare.min.css">
+<script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
 ```
 
-##Installation
-
-####Bower
-
+Add to your APP's dependency.
+```js
+angular.module('testing',['djds4rce.angular-socialshare'])
 ```
-$ bower install angularjs-socialshare --save
+IMPORTANT
+----
+For Correct Sharing of links and updating share count you must enable HTML5 Mode True for your application. i.e No `#` in URL'S .
+```js
+angular.module('testing').config(function($locationProvider){
+    $locationProvider.html5Mode(true).hashPrefix('!');
+});
 ```
-####Npm
+HTML5 Mode requires server configration [Explained Here] 
 
-```
-$ npm install angular-socialshare --save
-```
 
-_then [load](https://github.com/720kb/angular-socialshare#load) it in your html_
-
-###Add module dependency
-Add the 720kb.socialshare module dependency
+Share on Facebook
+----
+Facebook share uses facebook API which requires us to provide a APPID. Register a facebook app and Configure the APPID in your appplication. Note that you will get an error regarding 'not permitted URL' if you are testing this button in a localhost environment.
 
 ```js
-angular.module('app', [
-  '720kb.socialshare'
- ]);
+angular.module('testing').run(function($FB){
+  $FB.init('YOUR_APPID');
+});
+```
+Use the Facebook Directive
+```html
+ <a facebook class="facebookShare" data-url='http://google.com' data-shares='shares'>{{ shares }}</a>
+```
+As we are using Facebook share API and not the facebook share button, you will have to style your own Facebook button, or use the provided stylesheet that has styles for the horizontal count button. You also need to display the share count, which the directive fetches from a diffrent API. The directive has transclusion set to true. The latest Facebook share API only allows for a URL to be supplied, it will scrape the other data (image, title, description) from the supplied URL.
+
+The Attributes for the directives are
+```js
+/*
+data-url: URL of the Shared Content
+data-shares: The Scope variable on which share count will be binded to. This lets you put
+multiple share buttons on a single page and bind the share count to the respective model object.
+data-callback: The Scope function which will receive [FB's Response object](https://developers.facebook.com/docs/javascript/reference/FB.ui)
+*/
 ```
 
-
-Call the directive wherever you want in your html page
+####Share via Feed Dialog
+The feed dialog works in the same way as the normal share dialog, but also has some addittional attributes available
 
 ```html
+ <a facebook-feed-share class="facebookShare" data-url='http://google.com' data-shares='shares', data-description="Example text">{{ shares }}</a>
+```
 
-<a href="#"
-socialshare
-socialshare-provider="facebook"
-socialshare-text="720kb angular-socialshare"
-socialshare-url="http://720kb.net">
-Share me
-</a>
+```js
+/*
+data-url: URL of the Shared Content
+data-shares: The Scope variable on which share count will be binded to. This lets you put
+multiple share buttons on a single page and bind the share count to the respective model object.
+data-picture: The URL of a picture attached to the share. The picture must be at least 200px by 200px.
+data-source: The URL of a media file (either SWF or MP3) attached to this share. If SWF, you must also specify picture to provide a thumbnail for the video.
+data-name: The name of the link attachment.
+data-caption: The caption of the link (appears beneath the link name). If not specified, this field is automatically populated with the URL of the link.
+data-description: The description of the link (appears beneath the link caption). If not specified, this field is automatically populated by information scraped from the link, typically the title of the page.
+data-properties: A JSON object of key/value pairs which will appear in the stream attachment beneath the description, with each property on its own line. Keys must be strings, and values can be either strings or JSON objects with the keys text and href.
+data-actions: A JSON array containing a single object describing the action link which will appear next to the 'Comment' and 'Like' link under posts. The contained object must have the keys name and link.
+data-callback: The Scope function which will receive [FB's Response object](https://developers.facebook.com/docs/javascript/reference/FB.ui)
+*/
+```
+
+Twitter
+----
+Include the twitter javascript in your HTML. 
+```html
+<script src="http://platform.twitter.com/widgets.js"></script>
+```
+Add Directive to the element where you want to display your Twitter Button
+```html
+<a twitter  data-lang="en" data-count='horizontal' data-url='http://google.com' data-via='notsosleepy' data-size="medium" data-text='Testing Twitter Share' ></a>
+```
+The Attributes for the directives are
+```js
+/*
+data-lang: Language of the tweet
+data-url: URL of the Shared Content
+data-count: Position of the share counter
+data-size: Size of the tweet button
+data-text: Content of the tweet
+data-via: User handle which will be tagged in the tweet
+For options checkout https://dev.twitter.com/docs/tweet-button
+*/
+```
+Linkedin
+----
+Although Linkedin has a share button and also a Javascript share API it does not take the title and the content as its parameters hence we will have to use the raw share URL to share the content.
+
+Use the Linkedin Directive
+```html
+<div linkedin class="linkedinShare" data-url='http://www.google.com.au' data-title='Linkedin Share' data-summary="testing Linkedin Share" data-shares='linkedinshares'>{{linkedinshares}}</div>
+```
+Linkedin Directive works similar to the Facebook Mechanism. This will force us to add our own style to the button and also display count which is fetched by the directive through a diffrent API. The supplied stylesheet contains styling for the horizontal styled button.
+
+The Attributes for the directives are
+```js
+/*
+data-title: Title of the Shared Content
+data-url: URL of the Shared Content
+data-summary: Summary of the content
+data-shares: The Scope variable on which share count will be binded to. This lets you put
+multiple share buttons on a single page and bind the share count to the respective model object.
+*/
+```
+
+Google +
+----
+```html
+ <div gplus class="g-plus" data-size="tall" data-annotation="bubble" data-href='http://google.com' data-action='share'></div>
+```
+For more information on the share button attributes check the [Google Share Documentation]
+>If you change the class of the button to `g-plusone' it will be converted to a google plus one button.
+
+Tumblr
+----
+
+
+####Link Share
+Include the tumblr javascript in your HTML. 
+```html
+<script src="http://platform.tumblr.com/v1/share.js"></script>
 
 ```
-##Options
-Angular socialshare allows you to use some options via `attribute` data
-
-####Sharing Provider
-You can set the social platform you want to share on using the `socialshare-provider=""` attribute.
-
-#####Providers:
-
-- facebook
-- twitter
-- linkedin
-- google+
-- pinterest
-- tumblr
-- reddit
-- stumbleupon
-- buffer
-- digg
-- delicious
-- vk
-
-Please use them all in lowercase (`socialshare-proivder="delicious"`)
 
 ```html
-<a href="#"
-socialshare
-socialshare-provider="reddit"
-socialshare-text="720kb is enough!" >
-Share me
-</a>
+<div tumblr-text data-url='http://google.com' data-name='Sharing to Tumblr' data-title='test' data-buttontext='Sharing Text' data-styling="display:inline-block; text-indent:-9999px; overflow:hidden; width:129px; height:20px; background:url('http://platform.tumblr.com/v1/share_3.png') top left no-repeat transparent;" data-description='this is awesome'></div>  
+
+```
+The Attributes for the directives are
+```js
+/*
+data-url: URL of the content to be shared
+data-name: Name of the content URL
+data-title(Optional): Title of the button on hover
+data-description: Description of the URL
+data-style(Optional): Style of the button
+*/
 ```
 
-####Sharing url
-You can set the url to share using the `socialshare-url=""` attribute
-```html
-<a href="#"
-socialshare
-socialshare-provider="google+"
-socialshare-url="http://my_page_url">
-Share me
-</a>
-```
-####Sharing content
-You can set the text to share using the `socialshare-text=""` attribute
+####Qoute Share
 
 ```html
-<a href="#"
-socialshare
-socialshare-provider="facebook"
-socialshare-text="720kb is enough!">
-Share me
-</a>
+<div tumblr-qoute data-qoute='Texting Tumblr Qoute share' data-source='http://djds4rce.github.io'></div>  
+```
+The Attributes for the directives are
+```js
+/*
+data-source: Source URL of the qoute to be shared
+data-qoute: Qoute to be shared
+data-title(Optional): Title of the button on hover
+data-style(Optional): Style of the button
+*/
 ```
 
-####Sharing media
-You can set the media source to share using the `socialshare-media=""` attribute
+####Image Share
 
 ```html
-<a href="#"
-socialshare
-socialshare-provider="pinterest"
-socialshare-media="http://720kb.net/assets/img/logo.png">
-Share me
-</a>
+<div tumblr-image data-source='http://plnkr.co/img/plunker.png' data-caption='Image Share' data-clickthru='http://google.com'></div>  
+```
+The Attributes for the directives are
+```js
+/*
+data-source: Source URL of the Image to be shared
+data-caption: Caption for the image
+data-clickthru: clickthru URL for the image
+data-title(Optional): Title of the button on hover
+data-style(Optional): Style of the button
+*/
 ```
 
-####Sharing hashtags
-You can set the hashtags to share using the `socialshare-hashtags=""` attribute (for example, you will use it for twitter)
+####Image Share
 
 ```html
-<a href="#"
-socialshare
-socialshare-provider="twitter"
-socialshare-url="http://720kb.net"
-socialshare-hashtags="woa, wonderful, interesting">
-Share me
-</a>
+<div tumblr-video data-embedcode='<iframe width="560" height="315" src="//www.youtube.com/embed/aqHBLS_6gF8" frameborder="0" allowfullscreen></iframe>'></div>  
+```
+The Attributes for the directives are
+```js
+/*
+data-embedcode: Embed code for the external video
+data-caption: Caption for the Video
+data-title(Optional): Title of the button on hover
+data-style(Optional): Style of the button
+*/
 ```
 
-####Sharing via
-You can set the twitter via to share using the `socialshare-via=""` attribute
 
+Pinterest
+----
+
+Include the  Pinterest javascript in your HTML. 
 ```html
-<a href="#"
-socialshare
-socialshare-provider="twitter"
-socialshare-via="@720kb"
-socialshare-url="http://720kb.net"
-socialshare-hashtags="woa, wonderful, interesting">
-Share me
-</a>
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js" data-pin-build='parsePins'></script>
+
 ```
 
-####Sharing type
-You can set the type of sharing window using the `socialshare-type=""` attribute
 
-At the moment this option is only supported for Facebook feed dialog.
-
-_Note: when you are using `socialshare-type="feed"` you must also supply your facebook app id using `socialshare-via`, and a redirect uri using `socialshare-redirect-uri`._
-
-#####Facebook _Dialog_:
-
-Available options:
-
+####Usage
 ```html
-<a href="#"
-socialshare
-socialshare-provider="facebook"
-socialshare-type="feed"
-socialshare-via="145634995501895"
-socialshare-to=""
-socialshare-from=""
-socialshare-ref=""
-socialshare-display="popup"
-socialshare-media="https://avatars0.githubusercontent.com/u/7762645?v=3&s=200"
-socialshare-source=""
-socialshare-description="Yes it's super awesome, seriously!"
-socialshare-text="720kb"
-socialshare-caption="720kb is awesome"
-socialshare-url="http://720kb.net"
-socialshare-redirect-uri="https://developers.facebook.com/tools/explorer">
-Share with Fb Dialog
-</a>
-```
-_For more details see https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4_
-
-####Sharing Event Trigger
-You can choose to bind a different event trigger for showing up the sharer popup using the `socialshare-trigger=""` attribute (you can use any angular `element.bind()` event you want)
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="reddit"
-socialshare-text="Sharing on mouseover"
-socialshare-trigger="mouseover">
-Share me when mouse is over
-</a>
-```
-or a set of
-
-```html
-<a href="#"
-socialshare
-socialshare-provider="reddit"
-socialshare-text="Sharing on mouseover"
-socialshare-trigger="focusout mouseleave">
-Share me when focusout or mouseleave
-</a>
+<div pintrest data-href='http://google.com' data-description='testing share' data-img='http://plnkr.co/img/plunker.png' data-pin-do='buttonPin' data-pin-config='beside'></div>
 ```
 
-####Sharing Popup Size
-you can set a specific Height or Width for the sharing popup using the `socialshare-popup-height=""` and `socialshare-popup-width=""` attributes
+The Attributes for the directives are
 
-```html
-<a href="#"
-socialshare
-socialshare-provider="reddit"
-socialshare-url="http://720kb.net"
-socialshare-text="Sharing it!"
-socialshare-popup-height="800"
-socialshare-popup-width="800">
-Share with a bigger popup
-</a>
-```
-#### Sharing to a subreddit
-You can set `socialshare-subreddit` to specify the subreddit you want to share to. Example:
-
-```html
-<a href='#'
-socialshare
-socialshare-provider="reddit"
-socialshare-subreddit="technology"
-socialshare-url="http://720kb.net"
-socialshare-text="Sharing it!"
-socialshare-popup-height="900"
-socialshare-popup-width="650">
-</a>
+```js
+/*
+data-href: Url To be shared
+data-Description: Description of the content
+data-img: Image for the Pin
+data-pin-do(Optional): Type of pin
+data-pin-config(Optional): Pin count Orientation 'beside' or 'above'
+*/
 ```
 
-**Note**: Minimum popup resolution for reddit popups is 900 x 650 pixels since the reddit submission page is not responsive and is broken on lesser widths.
 
-## Example
-
-####[Live demo](https://720kb.github.io/angular-socialshare)
+**Made with Love by [Djds4rce]**
+**Additions with ♡ by [haxxxton]**
 
 
-##Contributing
 
-We will be much grateful if you help us making this project to grow up.
-Feel free to contribute by forking, opening issues, pull requests etc.
+[Explained Here]:http://ericduran.io/2013/05/31/angular-html5Mode-with-yeoman/
+[Demo]:http://plnkr.co/edit/Cah9FtwXDrUMQjChdBG2?p=info    
+[Google Share Documentation]:https://developers.google.com/+/web/share/
+[Djds4rce]:http://djds4rce.wordpress.com/
+[haxxxton]:http://gaandder.com/
 
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Filippo Oretti, Dario Andrei
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Licenced Under MIT Licence. 
