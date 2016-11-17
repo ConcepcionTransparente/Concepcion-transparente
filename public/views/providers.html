@@ -2,21 +2,17 @@
   <br><div class="divider"></div>
   <br>
   <p class="text">
-    Para conocer el ranking de proveedores de obra pública tan solo selecciona el período de búsqueda y los datos se mostrarán en la tabla, ordenados de mayor a menor.
+    FALTA TEXTO
   </p>
-  <h3>Ranking de proveedores</h3>
+  <h3>FALTA TÍTULO</h3>
   <form ng-submit="submit()" data-ng-init="submit()">
       <div class="col s12 m4">Desde:
-        <!-- <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
-          <input ng-model="rankingFilterini" type="text" class="angular-datepicker-input"/>
-        </datepicker> -->
+
         <input type="date" name="name" ng-model="rankingFilterini">
 
       </div>
       <div class="col s12 m4">Hasta:
-        <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
-          <input ng-model="rankingFilterfin" type="text" class="angular-datepicker-input"/>
-        </datepicker> -->
+
         <input type="date" name="name" ng-model="rankingFilterfin">
 
       </div>
@@ -29,6 +25,7 @@
   </form>
 </div>
 <div class="row">
+  <input ng-model="searchText">
   <table>
     <thead>
       <tr>
@@ -39,7 +36,7 @@
       </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="x in getArray">
+        <tr ng-repeat="x in getArrayProviders | orderBy: 'nombre'  | limitTo: paginationLimit() | filter:searchText">
           <td>{{ x.nombre }}</td>
           <td>{{ x.cuit }}</td>
           <td>{{ x.importe | currency}}</td>
@@ -47,4 +44,7 @@
         </tr>
       </tbody>
   </table>
+  <div class="button-div">
+    <button class="show-more-btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Ver más</button>
+  </div>
 </div>

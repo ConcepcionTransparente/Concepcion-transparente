@@ -20,7 +20,12 @@ tr:nth-child(even){background-color: #f2f2f2}
   text-align: right;
   margin-top:2.6em;
 }
-
+.text{
+  text-align: justify;
+}
+.text span{
+  font-style: italic;
+}
 /*-------------general views-----------------------*/
 .general-data{
   text-align: center;

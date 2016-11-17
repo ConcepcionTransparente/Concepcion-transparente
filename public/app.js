@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////ANGULAR JS////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-var dcuApp = angular.module('dcuApp', 
+var dcuApp = angular.module('dcuApp',
     ['ui.router','720kb.datepicker',
     '720kb.socialshare','ngSanitize', 'angularMoment','ngCsv','ui.bootstrap.datetimepicker']);
 dcuApp.config(
@@ -43,7 +43,11 @@ dcuApp.config(
                             controller: 'purchaseController'
                         },
                         'Static2015': {
-                            templateUrl: './views/static2015.html',
+                            templateUrl: './views/static2015.html'
+                        },
+                        'Providers': {
+                            templateUrl: './views/providers.html',
+                            controller: 'providersController'
                         }
                     }
                 })
@@ -84,7 +88,9 @@ dcuApp.controller('historyController',['$scope','$http', function($scope,$http){
     });
 }]);
 dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope, $http, $q) {
-    $scope.generalfilterini = new Date(2009,00,01);
+  var fechaActual = new Date();
+  var anoActual = fechaActual.getFullYear();
+    $scope.generalfilterini = new Date(anoActual,00,01);
     $scope.generalfilterfin = new Date();
     $scope.submit = function(){
       $http.post('/api/post-totalimport',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin})
@@ -116,7 +122,9 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
 ////////////////////////////////////////////////////////////////////////////////
 //Bubblechart (comparación entre proveedores)
 dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, $http) {
-  $scope.bubblefilterini = new Date(2009,00,01);
+  var fechaActual = new Date();
+  var anoActual = fechaActual.getFullYear();
+  $scope.bubblefilterini = new Date(anoActual,00,01);
   $scope.bubblefilterfin = new Date();
   $scope.searchPurchase = "undefined";
 
@@ -706,7 +714,9 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
 ////////////////////////////////////////////////////////////////////////////////
 // Ranking de proveedores
 dcuApp.controller('rankingController', ['$scope', '$http','$interval', function($scope, $http,$interval) {
-  $scope.rankingFilterini = new Date(2009,00,01);
+  var fechaActual = new Date();
+  var anoActual = fechaActual.getFullYear();
+  $scope.rankingFilterini = new Date(anoActual,00,01);
   $scope.rankingFilterfin = new Date();
   //csv config
   $scope.getHeader = function(){
@@ -730,8 +740,9 @@ dcuApp.controller('rankingController', ['$scope', '$http','$interval', function(
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval', function($scope, $http,$interval) {
-
-  $scope.obrapublicaFilterini = new Date(2009,00,01);
+  var fechaActual = new Date();
+  var anoActual = fechaActual.getFullYear();
+  $scope.obrapublicaFilterini = new Date(anoActual,00,01);
   $scope.obrapublicaFilterfin = new Date();
   //csv config
   $scope.getHeader = function(){
@@ -758,7 +769,9 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval'
 dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function($scope, $http) {
     $scope.sortType = ''; // set the default sort type
     $scope.sortReverse = false; // set the default sort order
-    $scope.purchasefilterini =  new Date(2009,00,01);
+    var fechaActual = new Date();
+    var anoActual = fechaActual.getFullYear();
+    $scope.purchasefilterini =  new Date(anoActual,00,01);
     $scope.purchasefilterfin = new Date();
     $scope.searchPurchase = "undefined";
     //csv config
@@ -909,5 +922,45 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
         function(response) {
             console.debug('Error:' + response);
         };
+
+}]);
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Ranking de proveedores
+dcuApp.controller('providersController', ['$scope', '$http','$interval', function($scope, $http,$interval) {
+  // var fechaActual = new Date();
+  // var anoActual = fechaActual.getFullYear();
+  // $scope.rankingFilterini = new Date(anoActual,00,01);
+  // $scope.rankingFilterfin = new Date();
+  //csv config
+  // $scope.sortType = ''; // set the default sort type
+  // $scope.sortReverse = false; // set the default sort order
+  var pagesShown = 1;
+  var pageSize = 10;
+  $scope.paginationLimit = function(data) {
+      return pageSize * pagesShown;
+  };
+  $scope.hasMoreItemsToShow = function() {
+      return pagesShown < ($scope.getArrayPU.length / pageSize);
+  };
+  $scope.showMoreItems = function() {
+      pagesShown = pagesShown + 1;
+  };
+  $scope.getHeader = function(){
+    return ["PROVEEDOR","CUIT","IMPORTE"]
+  }
+  //
+  $http.get('/api/get-Providers').then(function(response) {
+
+      $scope.getArrayProviders = response.data;
+
+    },
+    function(response) {
+      console.debug('Error:' + response);
+  });
+
 
 }]);

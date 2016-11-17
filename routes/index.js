@@ -38,47 +38,47 @@ router.get('/', function(req, res, next) {
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-router.get('/api/get-importHistory',function(req,res,next){
+// router.get('/api/get-importHistory',function(req,res,next){
+//
+//   mongoose.model('PurchaseOrder').aggregate(
+//     [
+//      {
+//        $group : {
+//           "_id" : null,
+//           "import": { $sum: "$import" }, // for your case use local.user_totalthings
+//           // count: { $sum: 1 } // for no. of documents count
+//        }
+//      }
+//     ],function(err,importe){
+//         console.log("HISTORY IMPORT: "+importe[0].data);
+//         res.send(importe);
+//   });
+// });
 
-  mongoose.model('PurchaseOrder').aggregate(
-    [
-     {
-       $group : {
-          "_id" : null,
-          "import": { $sum: "$import" }, // for your case use local.user_totalthings
-          // count: { $sum: 1 } // for no. of documents count
-       }
-     }
-    ],function(err,importe){
-        console.log("HISTORY IMPORT: "+importe[0].data);
-        res.send(importe);
-  });
-});
-
-router.get('/api/get-providersHistory',function(req,res,next){
-  mongoose.model('PurchaseOrder')
-  .find()
-  .distinct('fk_Provider', function(error, response) {
-    console.log("HISTORY PROVIDERS: "+response);
-      res.send(response);
-  });
-
-});
-
-router.get('/api/get-ordersHistory',function(req,res,next){
-  mongoose.model('PurchaseOrder')
-  .find()
-  .distinct('fk_Provider')
-  .count(function (err, result) {
-      if (err) {
-          return console.log(err);
-      } else {
-          console.log("HISTORY ORDERS: "+result);
-          res.json(result);
-      }
-  });
-
-});
+// router.get('/api/get-providersHistory',function(req,res,next){
+//   mongoose.model('PurchaseOrder')
+//   .find()
+//   .distinct('fk_Provider', function(error, response) {
+//     console.log("HISTORY PROVIDERS: "+response);
+//       res.send(response);
+//   });
+//
+// });
+//
+// router.get('/api/get-ordersHistory',function(req,res,next){
+//   mongoose.model('PurchaseOrder')
+//   .find()
+//   .distinct('fk_Provider')
+//   .count(function (err, result) {
+//       if (err) {
+//           return console.log(err);
+//       } else {
+//           console.log("HISTORY ORDERS: "+result);
+//           res.json(result);
+//       }
+//   });
+//
+// });
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -469,4 +469,36 @@ router.post('/api/post-categoryID',function(req,res){
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+router.get('/api/get-Providers',function(req,res){
+  mongoose.model('PurchaseOrder')
+  .aggregate(
+    [
+     {"$group" : {
+        _id : "$fk_Provider",
+        import: { $sum: "$import" }
+        }
+    },
+     { "$sort": { import: -1 } },
+   ])
+   .exec(function(err,result){
+    mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+      docs=populatedTransactions.map(function(result){
+        return {
+          "nombre":result._id.grant_title,
+          "cuit":result._id.cuil,
+          "importe":result.import,
+          "id":result._id._id
+        }
+      });
+      res.send(docs);
+      // console.log(docs);
+      //  res.json(populatedTransactions);
+    });
+  // res.send(result);
+  });
+});
+
+
+
+
   module.exports = router;

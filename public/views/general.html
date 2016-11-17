@@ -1,11 +1,15 @@
 <br><div class="divider"></div>
 <div class="general-data" ng-cloak>
   <div class="row">
+    <br>
+    <p class="text">
+      Puedes conocer los gastos del municipio en un período determinado. Tienes que seleccionar el rango de fechas y filtrar. Los datos se muestran en una fecha con la descripción del monto total de compras, la cantidad de proveedores y la cantidad de órdenes de compra.
+    </p>
     <h3>Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio:</h3>
   </div>
   <div class="row">
     <form ng-submit="submit()" data-ng-init="submit()">
-    
+
         <div class="col s12 m4" style="text-align:left;">
           Desde:
            <div class="dropdown">
@@ -27,15 +31,15 @@
         <div class="col s12 m4" style="text-align:left;">
           Hasta:
          <div class="dropdown">
-  <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
-    <div class="input-group">  <p type="text" class="form-control" data-ng-model="generalfilterfinn">
-       {{generalfilterfin | amDateFormat:'dddd, MMMM Do YYYY'}} </p>
-      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    </div>
-  </a>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-    <datetimepicker data-ng-model="generalfilterfin" data-datetimepicker-config="{ dropdownSelector: '#dropdown2', startView:'day', minView:'day' }"/>
-  </ul>
+          <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+            <div class="input-group">  <p type="text" class="form-control" data-ng-model="generalfilterfinn">
+               {{generalfilterfin | amDateFormat:'dddd, MMMM Do YYYY'}} </p>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <datetimepicker data-ng-model="generalfilterfin" data-datetimepicker-config="{ dropdownSelector: '#dropdown2', startView:'day', minView:'day' }"/>
+          </ul>
         </div>
 </div>
 
@@ -43,7 +47,7 @@
 
           <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
         </div>
-       
+
     </form>
   </div>
   <div class="row numbers">
@@ -86,6 +90,6 @@
       <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
     </ul>
   </div>
-   
+
 
   </div>
