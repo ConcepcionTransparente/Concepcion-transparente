@@ -858,6 +858,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
     $scope.sortType = ''; // set the default sort type
     $scope.sortReverse = false; // set the default sort order
     $scope.searchPurchase = ''; // set the default search/filter term
+
     $http.get('/' + $stateParams.id).then(function(response) {
             $scope.detail = response.data;
             //Export CSV config
@@ -866,6 +867,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             }
             var pagesShown = 1;
             var pageSize = 5;
+
             $scope.paginationLimit = function(data) {
                 return pageSize * pagesShown;
             };
@@ -875,6 +877,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             $scope.showMoreItems = function() {
                 pagesShown = pagesShown + 1;
             };
+
             //
             var linechart = c3.generate({
                 bindto: '#lineschart-detail',
@@ -922,6 +925,38 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
         function(response) {
             console.debug('Error:' + response);
         };
+
+        var fechaActual = new Date();
+        var anoActual = fechaActual.getFullYear();
+        $scope.detailControllerini = new Date(anoActual,00,01);
+        $scope.detailControllerfin = new Date();
+        console.log(anoActual);
+        console.log(($scope.detailControllerini));
+        console.log($scope.detailControllerfin);
+        var pagesShown2 = 1;
+        var pageSize2 = 5;
+        $scope.paginationLimit2 = function(data) {
+            return pageSize2 * pagesShown2;
+        };
+        $scope.hasMoreItemsToShow2 = function() {
+            return pagesShown2 < ($scope.detailCategories.length / pageSize2);
+        };
+        $scope.showMoreItems2 = function() {
+            pagesShown2 = pagesShown2 + 1;
+        };
+        $http.post('/api/post-detailCategories',
+        {"valorini":$scope.detailControllerini,
+        "valorfin":$scope.detailControllerfin,
+        "id": $stateParams.id})
+        .then(function(response) {
+            $scope.detailCategories = response.data;
+            console.log("RESULTADO DE LA PRUEBA: "+ $scope.detailCategories);
+          },
+          function(response) {
+              console.debug('Error:' + response);
+          });
+
+
 
 }]);
 

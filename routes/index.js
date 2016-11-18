@@ -86,9 +86,9 @@ router.get('/', function(req, res, next) {
 // CANTIDAD DE ORDENES DE COMPRAS
 router.post('/api/post-totalimport',function(req,res,next){
   var start=new Date(req.body.valorini);
-  console.log("START: "+start);
+  // console.log("START: "+start);
   var end=new Date(req.body.valorfin);
-  console.log("END: "+end);
+  // console.log("END: "+end);
   var hoy=new Date();
   end.setHours(0,0,0,0);
   hoy.setHours(0,0,0,0);
@@ -174,7 +174,7 @@ router.post('/api/post-bubblechart',function(req,res,next){
   // console.log(end);
   // console.log("CATEGORY BACKEND: "+req.body.category);
   if(!req.body.category){
-    console.log("TODAS LAS CATEGORIAS: " + req.body.category);
+    // console.log("TODAS LAS CATEGORIAS: " + req.body.category);
     mongoose.model('PurchaseOrder')
     .aggregate(
       [
@@ -205,7 +205,7 @@ router.post('/api/post-bubblechart',function(req,res,next){
   else
   {
     var Category = mongoose.Types.ObjectId(req.body.category);
-    console.log("ALGUNA CATEGORIA: "+ Category);
+    // console.log("ALGUNA CATEGORIA: "+ Category);
     mongoose.model('PurchaseOrder')
     .aggregate(
       [
@@ -311,11 +311,10 @@ router.post('/api/post-ranking',function(req,res,next){
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 // CONTRATOS DE OBRAS PUBLICAS Y SERVICIOS
-// Reparticion - Proveedor - Detalle
 router.post("/api/post-purchases", function(req, res) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
-  console.log("REQ.BODY.CATEGORY: "+ req.body.category);
+  // console.log("REQ.BODY.CATEGORY: "+ req.body.category);
 
   if(!req.body.category){
     mongoose.model('PurchaseOrder')
@@ -388,7 +387,7 @@ router.get("/:id", function(req,res){
           "fecha":result.date
         }
       });
-      console.log(docs);
+      // console.log(docs);
       res.send(docs);
     }
   })
@@ -409,7 +408,7 @@ router.post('/api/post-categoryID',function(req,res){
   .exec(function(err,response){
     if(err){res.send(err);}
     else{
-      console.log("CATEGORIA ENCONTRADA: "+response);
+      // console.log("CATEGORIA ENCONTRADA: "+response);
       res.send(response);
     }
 
@@ -428,7 +427,7 @@ router.post('/api/post-categoryID',function(req,res){
     .exec(function(err,categoryID){
       if(err){res.send(err);}
       else{
-        console.log("CATEGORIA ENCONTRADA: "+categoryID);
+        // console.log("CATEGORIA ENCONTRADA: "+categoryID);
         var newId = new mongoose.mongo.ObjectId('580be5dddf50704715ece3cd');
         ////////////////////
         mongoose.model('PurchaseOrder')
@@ -450,7 +449,7 @@ router.post('/api/post-categoryID',function(req,res){
          ])
         .exec(function(err,result){
           mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
-              console.log("PROVEEDORES:"+populatedTransactions);
+              // console.log("PROVEEDORES:"+populatedTransactions);
               result=populatedTransactions.map(function(result){
                 return {
                   "nombre":result._id.grant_title,
@@ -499,6 +498,48 @@ router.get('/api/get-Providers',function(req,res){
 });
 
 
+
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//RANKING OBRA PUBLICAS
+  router.post('/api/post-detailCategories',function(req,res){
+    var start=new Date(req.body.valorini);
+    var end=new Date(req.body.valorfin);
+
+    var newId = new mongoose.mongo.ObjectId(req.body.id);
+        ////////////////////
+        mongoose.model('PurchaseOrder')
+        .aggregate(
+          [
+           {
+             "$match": {
+               date: {$gte:start, $lte:end},
+               fk_Provider:newId //ID DE LA CATEGORIA SERVICIO OBRA PUBLICA
+             }
+           },
+           {"$group" : {
+              _id : "$fk_Category",
+              import: { $sum: "$import" },
+              contracts: { $sum: "$numberOfContracts"}
+              }
+          }
+         ])
+        .exec(function(err,result){
+          mongoose.model('Category').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+              console.log("CATEGORIAS!!!:"+populatedTransactions);
+              result=populatedTransactions.map(function(result){
+                return {
+                  "nombre":result._id.category,
+                  "importe":result.import,
+                  "contratos": result.contracts
+                }
+              });
+              console.log(result);
+             res.send(result);
+          });
+        });
+  });//end route.post
 
 
   module.exports = router;
