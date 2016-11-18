@@ -6,6 +6,38 @@
   <div class="row">
     <div class="col s12 m6">
       <h3>Contrataciones por rubro: </h3>
+      <form ng-submit="submit()" data-ng-init="submit()">
+            Desde:
+             <div class="dropdown">
+              <a class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
+                <div class="input-group">
+
+                  <p type="text" class="form-control" data-ng-model="detailControllerini">
+                   {{detailControllerini | amDateFormat:'dddd, MMMM Do YYYY'}} </p>
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <datetimepicker data-ng-model="detailControllerini" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' , startView:'day', minView:'day'}"/>
+              </ul>
+            </div>
+
+
+            Hasta:
+           <div class="dropdown">
+            <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <div class="input-group">  <p type="text" class="form-control" data-ng-model="detailControllerfinn">
+                 {{detailControllerfin | amDateFormat:'dddd, MMMM Do YYYY'}} </p>
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker data-ng-model="detailControllerfin" data-datetimepicker-config="{ dropdownSelector: '#dropdown2', startView:'day', minView:'day' }"/>
+            </ul>
+          </div>
+          <button type="submit" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
+      </form>
+
       <table ng-cloak>
         <thead>
           <th>REPARTICIÓN</th>
@@ -33,7 +65,7 @@
   <br>
   <h3>Contratos de obra pública y servicios para el proveedor</h3>
   <form>
-    <!-- <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase"> -->
+    <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
     <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv">Export</button>
   </form>
   <table >

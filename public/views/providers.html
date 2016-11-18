@@ -5,6 +5,7 @@
     FALTA TEXTO
   </p>
   <h3>FALTA TÍTULO</h3>
+
   <form ng-submit="submit()" data-ng-init="submit()">
       <div class="col s12 m4">Desde:
 
@@ -25,7 +26,11 @@
   </form>
 </div>
 <div class="row">
-  <input ng-model="searchText" placeholder="Buscar Proveedores...">
+  <form>
+    <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
+    <!-- <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv">Export</button> -->
+  </form>
+  <!-- <input ng-model="searchText" placeholder="Buscar Proveedores..."> -->
   <table>
     <thead>
       <tr>
@@ -36,7 +41,7 @@
       </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="x in getArrayProviders | orderBy: 'nombre'  | limitTo: paginationLimit() | filter:searchText">
+        <tr ng-repeat="x in getArrayProviders | orderBy: 'nombre' | filter:searchPurchase | limitTo: paginationLimit() ">
           <td>{{ x.nombre }}</td>
           <td>{{ x.cuit }}</td>
           <td>{{ x.importe | currency}}</td>

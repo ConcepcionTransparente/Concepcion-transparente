@@ -926,35 +926,37 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             console.debug('Error:' + response);
         };
 
-        var fechaActual = new Date();
-        var anoActual = fechaActual.getFullYear();
-        $scope.detailControllerini = new Date(anoActual,00,01);
-        $scope.detailControllerfin = new Date();
-        console.log(anoActual);
-        console.log(($scope.detailControllerini));
-        console.log($scope.detailControllerfin);
-        var pagesShown2 = 1;
-        var pageSize2 = 5;
-        $scope.paginationLimit2 = function(data) {
-            return pageSize2 * pagesShown2;
-        };
-        $scope.hasMoreItemsToShow2 = function() {
-            return pagesShown2 < ($scope.detailCategories.length / pageSize2);
-        };
-        $scope.showMoreItems2 = function() {
-            pagesShown2 = pagesShown2 + 1;
-        };
-        $http.post('/api/post-detailCategories',
-        {"valorini":$scope.detailControllerini,
-        "valorfin":$scope.detailControllerfin,
-        "id": $stateParams.id})
-        .then(function(response) {
-            $scope.detailCategories = response.data;
-            console.log("RESULTADO DE LA PRUEBA: "+ $scope.detailCategories);
-          },
-          function(response) {
-              console.debug('Error:' + response);
-          });
+        $scope.submit=function(){
+          var fechaActual = new Date();
+          var anoActual = fechaActual.getFullYear();
+          $scope.detailControllerini = new Date(anoActual,00,01);
+          $scope.detailControllerfin = new Date();
+          console.log(anoActual);
+          console.log(($scope.detailControllerini));
+          console.log($scope.detailControllerfin);
+          var pagesShown2 = 1;
+          var pageSize2 = 5;
+          $scope.paginationLimit2 = function(data) {
+              return pageSize2 * pagesShown2;
+          };
+          $scope.hasMoreItemsToShow2 = function() {
+              return pagesShown2 < ($scope.detailCategories.length / pageSize2);
+          };
+          $scope.showMoreItems2 = function() {
+              pagesShown2 = pagesShown2 + 1;
+          };
+          $http.post('/api/post-detailCategories',
+          {"valorini":$scope.detailControllerini,
+          "valorfin":$scope.detailControllerfin,
+          "id": $stateParams.id})
+          .then(function(response) {
+              $scope.detailCategories = response.data;
+              console.log("RESULTADO DE LA PRUEBA: "+ $scope.detailCategories);
+            },
+            function(response) {
+                console.debug('Error:' + response);
+            });
+        }
 
 
 
