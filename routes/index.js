@@ -502,7 +502,7 @@ router.get('/api/get-Providers',function(req,res){
 /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-//RANKING OBRA PUBLICAS
+//DETAIL CATEGORIES
   router.post('/api/post-detailCategories',function(req,res){
     var start=new Date(req.body.valorini);
     var end=new Date(req.body.valorfin);
@@ -527,7 +527,7 @@ router.get('/api/get-Providers',function(req,res){
          ])
         .exec(function(err,result){
           mongoose.model('Category').populate(result, {path: '_id'}, function(err, populatedTransactions) {
-              console.log("CATEGORIAS!!!:"+populatedTransactions);
+              // console.log("CATEGORIAS!!!:"+populatedTransactions);
               result=populatedTransactions.map(function(result){
                 return {
                   "nombre":result._id.category,
@@ -535,11 +535,43 @@ router.get('/api/get-Providers',function(req,res){
                   "contratos": result.contracts
                 }
               });
-              console.log(result);
+              // console.log(result);
              res.send(result);
           });
         });
   });//end route.post
 
+  /////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
+  //DETAIL MONTH
+    router.post('/api/post-detailMonth',function(req,res){
+      var anio=req.body.anio;
+      anio = anio.toString();
+      console.log("el anio es: " + anio);
+      var newId = new mongoose.mongo.ObjectId(req.body.id);
+      console.log(newId);
+          ////////////////////
+          mongoose.model('PurchaseOrder')
+          .aggregate(
+            [
+             {
+               "$match": {
+                 year: anio,
+                 fk_Provider:newId
+               }
+             },
+             {"$group" : {
+                _id: "$month",
+                import: { $sum: "$import" },
+                contracts: { $sum: "$numberOfContracts"}
+                }
+            }
+           ])
+          .exec(function(err,result){
+            console.log("MESESSSS"+result);
+            res.send(result);
+          });
+    });//end route.post
 
   module.exports = router;

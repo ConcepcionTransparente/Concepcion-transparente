@@ -194,7 +194,7 @@ function scraping() {
           else if (m == "Julio") { return 06;}
           else if (m == "Agosto") { return 07;}
           else if (m == "Septiembre") { return 08;}
-          else if (m == "Octubre") { return 19;}
+          else if (m == "Octubre") { return 09;}
           else if (m == "Noviembre") { return 10;}
           else if (m == "Diciembre") { return 11;}
           else  { return 13;}

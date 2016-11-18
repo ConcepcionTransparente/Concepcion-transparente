@@ -958,6 +958,21 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             });
         }
 
+        // $scope.submit2 = function(){
+          var anio = new  Date();
+          $scope.anio = anio.getFullYear();
+          $http.post('/api/post-detailMonth',
+          {"anio": $scope.anio,
+           "id": $stateParams.id})
+          .then(function(response) {
+              $scope.detailMonth = response.data;
+              console.log("RESULTADO DE LA PRUEBA para meses: "+ $scope.detailMonth);
+            },
+            function(response) {
+                console.debug('Error:' + response);
+            });
+        // }
+
 
 
 }]);
