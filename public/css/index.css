@@ -260,3 +260,14 @@ button{
 .picker__weekday-display {
   background-color: #f48fb1 !important;
 }
+
+
+svg{
+    font-family: 'Open Sans';
+}
+
+circle.bubble {
+    fill: #ec407a;
+    stroke: #f6abcc;
+    stroke-width: 2;
+}
