@@ -262,10 +262,9 @@ button{
 }
 
 
-svg{
-    font-family: 'Open Sans';
+svg {
+    font-family: 'Open Sans' !important;
 }
-
 circle.bubble {
     fill: #ec407a;
     stroke: #f6abcc;

@@ -683,7 +683,7 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                     },
                 },
                 color: {
-                    pattern: ['#4db6ac','#004d40']
+                    pattern: ['#ec407a','#f48fb1']
                 },
                 axis: {
                     x: {
@@ -904,7 +904,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
                     }
                 },
                 color: {
-                    pattern: ['#4db6ac']
+                    pattern: ['#ec407a']
                 },
                 axis: {
 
