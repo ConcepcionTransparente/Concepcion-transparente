@@ -2,8 +2,7 @@
 //////////////////////////////ANGULAR JS////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 var dcuApp = angular.module('dcuApp',
-    ['ui.router','720kb.datepicker',
-    '720kb.socialshare','ngSanitize', 'angularMoment','ngCsv','ui.bootstrap.datetimepicker']);
+    ['ui.router','ui.materialize','720kb.socialshare','ngSanitize', 'angularMoment','ngCsv']);
 dcuApp.config(
     ["$stateProvider", "$urlRouterProvider",
         function($stateProvider, $urlRouterProvider) {
@@ -63,8 +62,19 @@ dcuApp.config(
 
         }
     ]);
-dcuApp.run(function(){
+dcuApp.run(function($rootScope){
   moment.locale('es');
+  var currentTime = new Date();
+  $rootScope.currentTime = currentTime;
+  $rootScope.month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  $rootScope.monthShort = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+  $rootScope.weekdaysFull = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
+  $rootScope.weekdaysLetter = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
+  $rootScope.disable = [false, 1, 7];
+  $rootScope.today = 'Hoy';
+  $rootScope.clear = 'Limpiar';
+  $rootScope.close = 'Cerrar';
+  var days = 15;
 })
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -90,6 +100,7 @@ dcuApp.controller('historyController',['$scope','$http', function($scope,$http){
 dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope, $http, $q) {
   var fechaActual = new Date();
   var anoActual = fechaActual.getFullYear();
+
     $scope.generalfilterini = new Date(anoActual,00,01);
     $scope.generalfilterfin = new Date();
     $scope.submit = function(){

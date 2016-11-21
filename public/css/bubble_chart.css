@@ -33,6 +33,7 @@ a, a:visited, a:active {
     overflow: hidden;
 }
 .svg-content-responsive {
+    font-family: 'Open Sans', sans-serif;
     display: inline-block;
     position: absolute;
     width: 100%;

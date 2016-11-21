@@ -21,6 +21,7 @@ tr:nth-child(even){background-color: #f2f2f2}
   margin-top:2.6em;
 }
 .text{
+
   text-align: justify;
 }
 .text span{
@@ -246,4 +247,16 @@ button{
   text-align: center;
   font-style: none;
   font-size: 2em;
+}
+.picker__close, .picker__today {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    color: #f48fb1 !important;
+}
+.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted, 
+.picker__date-display {
+    background-color: #d81b60 !important;
+}
+.picker__weekday-display {
+  background-color: #f48fb1 !important;
 }
