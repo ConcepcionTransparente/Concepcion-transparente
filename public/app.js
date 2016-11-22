@@ -104,7 +104,10 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     $scope.generalfilterini = new Date(anoActual,00,01);
     $scope.generalfilterfin = new Date();
     $scope.submit = function(){
-      $http.post('/api/post-totalimport',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin})
+      var from = new moment($scope.generalfilterini).toISOString();
+      var to = new moment($scope.generalfilterfin).toISOString();
+      $http.post('/api/post-totalimport',
+        {"valorini":from,"valorfin":to})
       .then(function(response) {
               console.log($scope.generalfilterini);
               console.log($scope.generalfilterfin);
