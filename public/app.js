@@ -638,7 +638,9 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
     //SI ES UNDEFINED LLAMA A /api/post-bubblechart SIN CATEGORIA ALGUNA
     //SI ES DISTINTO DE UNDEFINED (ALGUNA CATEGORIA EN PARTICULAR) LLAMA AL POST PASANDOLE DICHA CATEGORIA.
     var compare=$scope.searchPurchase.localeCompare('undefined');
+    console.log("CATEGORIA: "+$scope.searchPurchase);
     if(compare == 0){
+
       d3.json('/api/post-bubblechart',function(error, data) {
         display(error,data);
         })
