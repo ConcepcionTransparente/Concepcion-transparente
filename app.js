@@ -209,10 +209,12 @@ function scraping() {
         function stringToDate(month,year){
 
           var d = new Date(year,month,01);
-          console.log("fechaaaaaaaaa---------->: "+d);
+          d.toISOString().slice(0,10);
+          console.log("fechaaaaaaaaa------------------------------------------->: "+d);
           return d;
         }
         var newDate = stringToDate(monthNumber,childObject.year);
+        year = parseInt(year);
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
@@ -345,16 +347,16 @@ console.log("Si llegamos hasta aca, termino de escrapear bien y continua la app"
 
 
 // var now = new Date();
-// var esecuteScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
-// if (esecuteScraper < 0) {
-//      esecuteScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
+// var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
+// if (executeScraper < 0) {
+//      executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
 // }
 // setTimeout(function(){
 // //AQUI COMIENZA EL SCRAPER
 // console.log("COMIENZA EL SCRAPER");
 // scraping();
 // //AQUI TERMINA EL SCRAPER
-// }, esecuteScraper);
+// }, executeScraper);
 
 
 

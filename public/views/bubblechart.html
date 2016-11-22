@@ -16,25 +16,67 @@
       <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
         <input ng-model="bubblefilterini" type="text" class="angular-datepicker-input"/>
       </datepicker> -->
-      <input type="date" name="name" ng-model="bubblefilterini">
-    </div>
+      <!-- <input type="date" name="name" ng-model="bubblefilterini"> -->
+      <label for="inputCreated">Desde</label>
+      <!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
+      <input input-date
+          type="text"
+          name="created"
+          id="inputCreated"
+          ng-model="bubblefilterini"
+          container=""
+          format="dd/mm/yyyy"
+          disable="disable"
+          today="Hoy"
+          first-day="1"
+          clear="Limpiar"
+          close="Cerrar"
+           months-full="{{ month }}"
+          months-short="{{ monthShort }}"
+          weekdays-full="{{ weekdaysFull }}"
+          weekdays-short="{{ weekdaysShort }}"
+          weekdays-letter="{{ weekdaysLetter }}"/>
+      </div>
+
     <div class="col s12 m3">
       <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
         <input ng-model="bubblefilterfin" type="text" class="angular-datepicker-input"/>
       </datepicker> -->
-      <input type="date" name="name" ng-model="bubblefilterfin">
-
+      <!-- <input type="date" name="name" ng-model="bubblefilterfin"> -->
+      <label for="inputCreated">Hasta</label>
+      <!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
+      <input input-date
+          type="text"
+          name="created"
+          id="inputCreated"
+          ng-model="bubblefilterfin"
+          container=""
+          format="dd/mm/yyyy"
+          disable="disable"
+          today="Hoy"
+          first-day="1"
+          clear="Limpiar"
+          close="Cerrar"
+           months-full="{{ month }}"
+          months-short="{{ monthShort }}"
+          weekdays-full="{{ weekdaysFull }}"
+          weekdays-short="{{ weekdaysShort }}"
+          weekdays-letter="{{ weekdaysLetter }}"/>
     </div>
-    <div class="col s12 m3">
+
+    <div class="col s12 m3" >
       <div input-field>
-          <select class="select" ng-model="searchPurchase" >
+          <select class="select waves-effect pink lighten-1 waves-light btn" ng-model="searchPurchase" >
               <option value="undefined">TODOS LOS RUBROS</option>
               <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
           </select>
       </div>
     </div>
-    <div class="col s12 m3">
+    <!-- <div class="col s12 m3">
       <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
+    </div> -->
+    <div class="col s12 m3">
+      <button type="submit" id="ranking_filter" class="waves-effect  pink lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
     </div>
   </div>
 </form>

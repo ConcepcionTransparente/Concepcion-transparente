@@ -506,6 +506,8 @@ router.get('/api/get-Providers',function(req,res){
   router.post('/api/post-detailCategories',function(req,res){
     var start=new Date(req.body.valorini);
     var end=new Date(req.body.valorfin);
+    console.log("HOLAAAAAA: "+start);
+    console.log("CHAUUUUUU: "+end);
 
     var newId = new mongoose.mongo.ObjectId(req.body.id);
         ////////////////////
@@ -548,9 +550,9 @@ router.get('/api/get-Providers',function(req,res){
     router.post('/api/post-detailMonth',function(req,res){
       var anio=req.body.anio;
       anio = anio.toString();
-      console.log("el anio es: " + anio);
+      // console.log("el anio es: " + anio);
       var newId = new mongoose.mongo.ObjectId(req.body.id);
-      console.log(newId);
+      // console.log(newId);
           ////////////////////
           mongoose.model('PurchaseOrder')
           .aggregate(
@@ -569,7 +571,7 @@ router.get('/api/get-Providers',function(req,res){
             }
            ])
           .exec(function(err,result){
-            console.log("MESESSSS"+result);
+            // console.log("MESESSSS"+result);
             res.send(result);
           });
     });//end route.post
