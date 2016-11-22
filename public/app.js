@@ -111,6 +111,8 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
 
     $scope.generalfilterini = new Date(anoActual,00,01);
     $scope.generalfilterfin = new Date();
+    var from = new moment($scope.generalfilterini).toISOString();
+    var to = new moment($scope.generalfilterfin).toISOString();
     $scope.submit = function(){
       var from = new moment($scope.generalfilterini).toISOString();
       var to = new moment($scope.generalfilterfin).toISOString();
@@ -119,12 +121,12 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
       .then(function(response) {
               $scope.totalimport = response.data[0];
               // console.debug("1st callback...");
-              return $http.post('/api/post-totalproviders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterini});
+              return $http.post('/api/post-totalproviders',{"valorini":from,"valorfin":to});
           })
       .then(function(response) {
           $scope.totalproviders = response.data;
           // console.debug("2nd callback...");
-          return $http.post('/api/post-totalorders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin});
+          return $http.post('/api/post-totalorders',{"valorini":from,"valorfin":to});
       })
       .then(function(response) {
           $scope.totalorders = response.data;
@@ -150,7 +152,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
   $http.get('/api/get-categories').then(function(response){
     $scope.categories = response.data;
-    console.log("CATEGORIAS!!!!: "+$scope.categories);
+    // console.log("CATEGORIAS!!!!: "+$scope.categories);
   });
 
   $scope.submit = function(){
@@ -669,12 +671,16 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 ////////////////////////////////////////////////////////////////////////////////
 //Linechar (evolución del gasto)
 dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $http) {
-  $scope.rankingFilterini = new Date(2009,00,01);
-  $scope.rankingFilterfin = new Date();
+  $scope.linechartFilterini = new Date(2009,00,01);
+  $scope.linechartFilterfin = new Date();
+  var from = new moment($scope.linechartFilterini).toISOString();
+  var to = new moment($scope.linechartFilterfin).toISOString();
+  console.log(from);
+  console.log(to);
   $scope.submit = function(){
     $http.post('/api/post-linechart',
-    {"valorini":$scope.rankingFilterini,
-    "valorfin":$scope.rankingFilterfin})
+    {"valorini":from,
+    "valorfin":to})
     .then(function(response) {
           $scope.linechart = response.data;
             var linechart = c3.generate({
@@ -959,8 +965,11 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
         // console.log("categoryIni: "+$scope.categoryIni);
         // console.log("categoryFin: "+$scope.categoryFin);
         $scope.submitCategory=function(){
-          console.log("categoryIni: "+$scope.categoryIni);
-          console.log("categoryFin: "+$scope.categoryFin);
+          // console.log("categoryIni: "+$scope.categoryIni);
+          // console.log("categoryFin: "+$scope.categoryFin);
+          $scope.getHeader2 = function(){
+            return ["REPARTICIÓN","IMPORTE","CONTRATOS"]
+          }
           $http.post('/api/post-detailCategories',
           {"valorini":$scope.categoryIni,
           "valorfin":$scope.categoryFin,
@@ -991,8 +1000,11 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
         // console.log("holaaaaaa   "+anio);
         $scope.monthIni = anio.getFullYear();
         // console.log("monthIni: "+$scope.monthIni);
-
+        $scope.getHeader3 = function(){
+          return ["MES","IMPORTE","CONTRATOS"]
+        }
         $scope.submitMonth= function(){
+
           var dateString= $scope.monthIni;
           var dateParts = dateString.split("/");
           var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
@@ -1004,7 +1016,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
            "id": $stateParams.id})
           .then(function(response) {
               $scope.detailMonth = response.data;
-              console.log("RESULTADO DE LA PRUEBA para meses: "+ $scope.detailMonth);
+              // console.log("RESULTADO DE LA PRUEBA para meses: "+ $scope.detailMonth);
             },
             function(response) {
                 console.debug('Error:' + response);
@@ -1030,6 +1042,9 @@ dcuApp.controller('providersController', ['$scope', '$http','$interval', functio
   // $scope.sortReverse = false; // set the default sort order
 
   //
+  $scope.getHeader = function(){
+    return ["PROVEEDOR","CUIT","IMPORTE"]
+  }
   $http.get('/api/get-Providers').then(function(response) {
       $scope.getArrayProviders = response.data;
     },

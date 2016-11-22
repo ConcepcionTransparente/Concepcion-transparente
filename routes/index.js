@@ -137,17 +137,18 @@ router.post('/api/post-totalproviders',function(req,res,next){
 ////////////////////////////////////////////////////////////////////////////////
 //CANTIDAD DE ORDENES DE COMPRA
 router.post('/api/post-totalorders',function(req,res,next){
-  var start=new Date(req.body.valorini);
-  // console.log("START: "+start);
-  var end=new Date(req.body.valorfin);
-  var hoy=new Date();
-  end.setHours(0,0,0,0);
-  hoy.setHours(0,0,0,0);
+  // var start=new Date(req.body.valorini);
+  // // console.log("START: "+start);
+  // var end=new Date(req.body.valorfin);
+  // var hoy=new Date();
+  // end.setHours(0,0,0,0);
+  // hoy.setHours(0,0,0,0);
   // console.log("HOY:"+ hoy);
   // console.log("END:"+ end);
+  console.log(req.body.valorfin);
 
   mongoose.model('PurchaseOrder')
-  .find({"date": {"$gte": start, "$lte": end}})
+  .find({"date": {"$gte": req.body.valorini, "$lte": req.body.valorfin}})
   .distinct('fk_Provider')
   .count(function (err, result) {
       if (err) {
@@ -244,11 +245,11 @@ router.post('/api/post-linechart',function(req,res,next){
   var start=new Date(req.body.valorini);
   var startyear = start.getFullYear();
   // console.log("holaaaa");
-  // console.log(startyear);
+  console.log("START: "+startyear);
   var end=new Date(req.body.valorfin);
   // console.log(end);
   var endyear = end.getFullYear();
-  // console.log(endyear);
+  console.log("END: "+endyear);
   mongoose.model('Year').find({"year": {"$gte": startyear, "$lte": endyear}})
   .sort({year: 1})
   .exec(function(err,post){
@@ -427,8 +428,9 @@ router.post('/api/post-categoryID',function(req,res){
     .exec(function(err,categoryID){
       if(err){res.send(err);}
       else{
-        // console.log("CATEGORIA ENCONTRADA: "+categoryID);
-        var newId = new mongoose.mongo.ObjectId('580be5dddf50704715ece3cd');
+        console.log("CATEGORIA ENCONTRADA: "+categoryID);
+        var newId = new mongoose.mongo.ObjectId('58342af0b0eb2cc0be8f9221');
+        console.log("CATEGORIA ENCONTRADA ID: "+newId);
         ////////////////////
         mongoose.model('PurchaseOrder')
         .aggregate(

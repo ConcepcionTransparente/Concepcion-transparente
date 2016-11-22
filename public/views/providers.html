@@ -12,6 +12,9 @@
     <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
     <!-- <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv">Export</button> -->
   </form>
+  <div class="col s12 m4">
+    <button type="button" ng-csv="getArrayProviders" csv-header="getHeader()" filename="Proveedores.csv" class="waves-effect  pink lighten-1 waves-light btn">Exportar datos</button>
+  </div>
   <!-- <input ng-model="searchText" placeholder="Buscar Proveedores..."> -->
   <table>
     <thead>
