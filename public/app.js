@@ -75,7 +75,13 @@ dcuApp.run(function($rootScope){
   $rootScope.clear = 'Limpiar';
   $rootScope.close = 'Cerrar';
   var days = 15;
-})
+});
+dcuApp.filter('monthName', [function() {
+    return function (monthNumber) { //1 = January
+        var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        return monthNames[monthNumber];
+    }
+}]);
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -97,6 +103,8 @@ dcuApp.controller('historyController',['$scope','$http', function($scope,$http){
       console.log(error);
     });
 }]);
+
+
 dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope, $http, $q) {
   var fechaActual = new Date();
   var anoActual = fechaActual.getFullYear();
@@ -109,11 +117,9 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
       $http.post('/api/post-totalimport',
         {"valorini":from,"valorfin":to})
       .then(function(response) {
-              console.log($scope.generalfilterini);
-              console.log($scope.generalfilterfin);
               $scope.totalimport = response.data[0];
               // console.debug("1st callback...");
-              return $http.post('/api/post-totalproviders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterfin});
+              return $http.post('/api/post-totalproviders',{"valorini":$scope.generalfilterini,"valorfin":$scope.generalfilterini});
           })
       .then(function(response) {
           $scope.totalproviders = response.data;
@@ -144,6 +150,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
   $http.get('/api/get-categories').then(function(response){
     $scope.categories = response.data;
+    console.log("CATEGORIAS!!!!: "+$scope.categories);
   });
 
   $scope.submit = function(){
@@ -940,43 +947,60 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             console.debug('Error:' + response);
         };
 
-        $scope.submit=function(){
-          var fechaActual = new Date();
-          var anoActual = fechaActual.getFullYear();
-          $scope.detailControllerini = new Date(anoActual,00,01);
-          $scope.detailControllerfin = new Date();
-          console.log(anoActual);
-          console.log(($scope.detailControllerini));
-          console.log($scope.detailControllerfin);
-          var pagesShown2 = 1;
-          var pageSize2 = 5;
-          $scope.paginationLimit2 = function(data) {
-              return pageSize2 * pagesShown2;
-          };
-          $scope.hasMoreItemsToShow2 = function() {
-              return pagesShown2 < ($scope.detailCategories.length / pageSize2);
-          };
-          $scope.showMoreItems2 = function() {
-              pagesShown2 = pagesShown2 + 1;
-          };
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+        var fechaActual = new Date();
+        var anoActual = fechaActual.getFullYear();
+        $scope.categoryIni = new Date(anoActual,00,01);
+        $scope.categoryFin = new Date();
+
+        // console.log(anoActual);
+        // console.log("categoryIni: "+$scope.categoryIni);
+        // console.log("categoryFin: "+$scope.categoryFin);
+        $scope.submitCategory=function(){
+          console.log("categoryIni: "+$scope.categoryIni);
+          console.log("categoryFin: "+$scope.categoryFin);
           $http.post('/api/post-detailCategories',
-          {"valorini":$scope.detailControllerini,
-          "valorfin":$scope.detailControllerfin,
+          {"valorini":$scope.categoryIni,
+          "valorfin":$scope.categoryFin,
           "id": $stateParams.id})
           .then(function(response) {
               $scope.detailCategories = response.data;
-              console.log("RESULTADO DE LA PRUEBA: "+ $scope.detailCategories);
+              // console.log("RESULTADO DE LA PRUEBA: "+ $scope.detailCategories);
             },
             function(response) {
                 console.debug('Error:' + response);
             });
+            var pagesShown2 = 1;
+            var pageSize2 = 5;
+            $scope.paginationLimit2 = function(data) {
+                return pageSize2 * pagesShown2;
+            };
+            $scope.hasMoreItemsToShow2 = function() {
+                return pagesShown2 < ($scope.detailCategories.length / pageSize2);
+            };
+            $scope.showMoreItems2 = function() {
+                pagesShown2 = pagesShown2 + 1;
+            };
         }
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+        var anio = new  Date();
+        // console.log("holaaaaaa   "+anio);
+        $scope.monthIni = anio.getFullYear();
+        // console.log("monthIni: "+$scope.monthIni);
 
-        // $scope.submit2 = function(){
-          var anio = new  Date();
-          $scope.anio = anio.getFullYear();
+        $scope.submitMonth= function(){
+          var dateString= $scope.monthIni;
+          var dateParts = dateString.split("/");
+          var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+          // console.log("dateObject: "+ dateObject);
+          var aniox= dateObject.getFullYear();
+          // console.log("aa: "+aniox);
           $http.post('/api/post-detailMonth',
-          {"anio": $scope.anio,
+          {"anio": aniox,
            "id": $stateParams.id})
           .then(function(response) {
               $scope.detailMonth = response.data;
@@ -985,7 +1009,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             function(response) {
                 console.debug('Error:' + response);
             });
-        // }
+        }
 
 
 
@@ -1004,29 +1028,29 @@ dcuApp.controller('providersController', ['$scope', '$http','$interval', functio
   //csv config
   // $scope.sortType = ''; // set the default sort type
   // $scope.sortReverse = false; // set the default sort order
-  var pagesShown = 1;
-  var pageSize = 10;
-  $scope.paginationLimit = function(data) {
-      return pageSize * pagesShown;
-  };
-  $scope.hasMoreItemsToShow = function() {
-      return pagesShown < ($scope.getArrayPU.length / pageSize);
-  };
-  $scope.showMoreItems = function() {
-      pagesShown = pagesShown + 1;
-  };
-  $scope.getHeader = function(){
-    return ["PROVEEDOR","CUIT","IMPORTE"]
-  }
+
   //
   $http.get('/api/get-Providers').then(function(response) {
-
       $scope.getArrayProviders = response.data;
-
     },
     function(response) {
       console.debug('Error:' + response);
   });
+
+  var pagesShownP = 1;
+  var pageSizeP = 10;
+  $scope.paginationLimitP = function(data) {
+      return pageSizeP * pagesShownP;
+  };
+  $scope.hasMoreItemsToShowP = function() {
+      return pagesShownP < ($scope.getArrayProviders.length / pageSizeP);
+  };
+  $scope.showMoreItemsP = function() {
+      pagesShownP = pagesShownP + 1;
+  };
+  $scope.getHeader = function(){
+    return ["PROVEEDOR","CUIT","IMPORTE"]
+  }
 
 
 }]);
