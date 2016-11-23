@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
     <title>Concepción Transparente</title>
 
-
-
-
-
     <meta itemprop="name" content="Concepción Transparente">
     <meta itemprop="description" content="Detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay. ">
     <meta itemprop="image" content="https://dcu.herokuapp.com/main.png">
@@ -18,7 +14,7 @@
     <meta name="robots" content="Index, Follow">
     <meta name="revisit-after" content="4 days">
     <link rel="shortcut icon" href="favicon.ico"  type="image/x-icon">
-    <meta property="og:url" content="https://dcu.herokuapp.com">
+    <meta property="og:url" content="https://dcu.herokuapp.com/">
     <meta property="og:image" content="https://dcu.herokuapp.com/main.png">
     <meta property="og:description" content="Concepción Transparente es un detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay.">
     <meta property="og:title" content="Concepción Transparente">
@@ -63,54 +59,8 @@
 
   <body>
     <div class="container">
-      <header>
-        <div class="row">
-          <div class="col s12 m8 border-right">
-            <h1>CONCEPCIÓN TRANSPARENTE</h1>
-            <h3>Portal de visualización y apertura de datos de la Municipalidad de Concepción del Uruguay</h3>
-          </div>
-          <div class="col s12 m4 date">
-            <script>
-            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-            var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-            var f=new Date();
-            document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
-            </script>
-          </div>
-        </div>
-        <div class="row">
-          <!-- <p>
-            Este sitio web busca reflejar de manera fácil y comprensible el detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay.
-            <br>
-            Este proyecto de Datos Concepción busca dotar a la ciudadanía de una herramienta de acceso público para ejercer el control de las políticas públicas a través del detalle de gastos y contrataciones.
-          </p> -->
-          <p class="text">
-            Bienvenidos al Portal de Transparencia de la ciudad de Concepción del Uruguay (Entre Ríos, Argentina). <br>
-            Este sitio web busca reflejar de manera fácil y comprensible el detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay. <br>
-            <br><span>¿Qué puedo hacer?</span><br>
-            <br>Los usuarios pueden encontrar información pública de los gastos municipales. Te invitamos a explorarlo para conocer un poco más sobre el manejo de los fondos públicos de esta ciudad. <br>
-            <br>Recuerda que puedes utilizar diferentes filtros para facilitar la búsqueda de la información. Los datos a su vez son mostrados con diferentes gráficos, para favorecer una mejor comprensión. <br>
-            <br>Este proyecto de Datos Concepción busca dotar a la ciudadanía de una herramienta de acceso público para ejercer el control de las políticas públicas a través del detalle de gastos y contrataciones.
-          </p>
-        </div>
-      </header>
-
-
-
-    <!-- ////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////// -->
-    <!-- <div ng-cloak ui-view="History" class="row" autoscroll="false"></div> -->
-
-    <div ng-cloak ui-view="General" class="row" autoscroll="false"></div>
     <div ui-view="Bubblechart" class="row" autoscroll="false"></div>
     <div ui-view="Linechart" class="row" autoscroll="false"></div>
-    <div ui-view="Ranking" class="row" autoscroll="false"></div>
-    <div ui-view="RankingObraPublica" class="row" autoscroll="false"></div>
-    <div ui-view="Providers" class="row" autoscroll="false"></div>
-    <div ui-view="Purchases" class="row" autoscroll="false"></div>
-    <div ui-view="Detail" class="row" autoscroll="false"></div>
-    <!-- <div ui-view="Static2015" class="row" ></div>
 
 
 
