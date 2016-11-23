@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
     <title>Concepción Transparente</title>
 
+
+
+
+
     <meta itemprop="name" content="Concepción Transparente">
     <meta itemprop="description" content="Detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay. ">
     <meta itemprop="image" content="https://dcu.herokuapp.com/main.png">
@@ -24,7 +28,7 @@
     <meta name="twitter:creator" content="@DataConcepcion">
     <meta name="twitter:title" content="Concepción Transparente">
     <meta name="twitter:description" content="Concepción Transparente es un detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay.">
-     <meta name="twitter:player" content="https://dcu.herokuapp.com/index-embed.html">
+     <meta name="twitter:player" content="https://dcu.herokuapp.com">
     <meta name="twitter:player:height" content="450">
     <meta name="twitter:player:width" content="438">
 
@@ -39,8 +43,8 @@
     <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
 
     <!-- CSS  -->
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../css/index.css" />
@@ -59,8 +63,54 @@
 
   <body>
     <div class="container">
+      <header>
+        <div class="row">
+          <div class="col s12 m8 border-right">
+            <h1>CONCEPCIÓN TRANSPARENTE</h1>
+            <h3>Portal de visualización y apertura de datos de la Municipalidad de Concepción del Uruguay</h3>
+          </div>
+          <div class="col s12 m4 date">
+            <script>
+            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+            var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+            var f=new Date();
+            document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+            </script>
+          </div>
+        </div>
+        <div class="row">
+          <!-- <p>
+            Este sitio web busca reflejar de manera fácil y comprensible el detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay.
+            <br>
+            Este proyecto de Datos Concepción busca dotar a la ciudadanía de una herramienta de acceso público para ejercer el control de las políticas públicas a través del detalle de gastos y contrataciones.
+          </p> -->
+          <p class="text">
+            Bienvenidos al Portal de Transparencia de la ciudad de Concepción del Uruguay (Entre Ríos, Argentina). <br>
+            Este sitio web busca reflejar de manera fácil y comprensible el detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay. <br>
+            <br><span>¿Qué puedo hacer?</span><br>
+            <br>Los usuarios pueden encontrar información pública de los gastos municipales. Te invitamos a explorarlo para conocer un poco más sobre el manejo de los fondos públicos de esta ciudad. <br>
+            <br>Recuerda que puedes utilizar diferentes filtros para facilitar la búsqueda de la información. Los datos a su vez son mostrados con diferentes gráficos, para favorecer una mejor comprensión. <br>
+            <br>Este proyecto de Datos Concepción busca dotar a la ciudadanía de una herramienta de acceso público para ejercer el control de las políticas públicas a través del detalle de gastos y contrataciones.
+          </p>
+        </div>
+      </header>
+
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////// -->
+    <!-- <div ng-cloak ui-view="History" class="row" autoscroll="false"></div> -->
+
+    <div ng-cloak ui-view="General" class="row" autoscroll="false"></div>
     <div ui-view="Bubblechart" class="row" autoscroll="false"></div>
     <div ui-view="Linechart" class="row" autoscroll="false"></div>
+    <div ui-view="Ranking" class="row" autoscroll="false"></div>
+    <div ui-view="RankingObraPublica" class="row" autoscroll="false"></div>
+    <div ui-view="Providers" class="row" autoscroll="false"></div>
+    <div ui-view="Purchases" class="row" autoscroll="false"></div>
+    <div ui-view="Detail" class="row" autoscroll="false"></div>
+    <!-- <div ui-view="Static2015" class="row" ></div>
 
 
 
@@ -95,16 +145,16 @@
 
 
     <!-- ANGULAR AND FRONTEND -->
-     <script type="text/javascript" src="//code.jquery.com/jquery-3.0.0.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+     <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
 
     <script src="//code.angularjs.org/1.2.20/angular-sanitize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.6/ng-csv.js"></script>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
 
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/moment/locale/es.js"></script>
