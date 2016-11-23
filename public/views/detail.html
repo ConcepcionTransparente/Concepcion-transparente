@@ -5,7 +5,7 @@
 
   <div class="row">
     <div class="col s12 m6">
-      <h3>Contrataciones por rubro: </h3>
+      <h3>Contrataciones por rubro </h3>
       <form ng-submit="submitCategory()" data-ng-init="submitCategory()">
             <label for="inputCreated">Desde</label>
           <!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
@@ -68,9 +68,9 @@
         </tbody>
       </table>
       <div class="button-div">
-        <button class="show-more-btn" ng-show="hasMoreItemsToShow2()" ng-click="showMoreItems2()">Ver más</button>
+        <button class="show-more-btn" ng-show="hasMoreItemsToShow2()" ng-click="showMoreItems2()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
       </div>
-      <button type="button" ng-csv="detailCategories" csv-header="getHeader2()" filename="Proveedores.csv" class="waves-effect  green lighten-1 waves-light btn">Exportar datos</button>
+      <button type="button" ng-csv="detailCategories" csv-header="getHeader2()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
 
     </div>
 
@@ -132,7 +132,7 @@
           </tr>
         </tbody>
       </table>
-      <button type="button" ng-csv="detailMonth" csv-header="getHeader3()" filename="Proveedores.csv" class="waves-effect  green lighten-1 waves-light btn">Exportar datos</button>
+      <button type="button" ng-csv="detailMonth" csv-header="getHeader3()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
 
 
 
@@ -170,7 +170,8 @@
     </tbody>
   </table>
   <div class="button-div">
-    <button class="show-more-btn waves-effect  green lighten-1 waves-light btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Ver más</button>
+    <button class="light-green lighten-3
+show-more-btn waves-effect  light-green lighten-3 waves-light btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
   </div>
 
 

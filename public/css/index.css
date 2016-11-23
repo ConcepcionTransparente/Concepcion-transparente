@@ -277,6 +277,15 @@ button{
 svg {
     font-family: 'Open Sans' !important;
 }
+text,
+.c3-legend-item, 
+.c3-tooltip th ,
+.c3-tooltip td,
+g
+{
+  font-family: 'Open Sans' !important;
+}
+
 circle.bubble {
     fill: #2e7d32;
     stroke: #81c784 ;
@@ -286,3 +295,31 @@ circle.bubble {
 g.c3-chart-lines .c3-line {
   stroke-width: 2.5px;
 } 
+
+h1,h2, h3,h4,h5, label{ 
+  color:#a5d6a7;
+  text-transform: none;
+}
+nav{
+  background: #81c784;
+}
+.row{
+  margin-bottom: 0;
+}
+
+a.brand-logo {
+    font-style: normal;
+}
+
+nav div.nav-wrapper div{
+  padding: 1em;
+}
+nav div.nav-wrapper div h3{
+  display: inline;
+  color:#FFF;
+}
+
+nav div.nav-wrapper div a{
+  display: inline;
+  color:#FFF;
+}

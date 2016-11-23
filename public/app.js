@@ -700,6 +700,9 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                         budget: 'Presupuesto total'
                     },
                 },
+                point: {
+                  r: 5,
+                },
                 color: {
                     pattern: ['#81c784', '#2e7d32', '#66bb6a']
                 },
@@ -921,8 +924,11 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
                         import: 'Evolución del gasto'
                     }
                 },
+                point: {
+                  r: 5,
+                },
                 color: {
-                    pattern: ['#e8f5e9', '#2e7d32', '#66bb6a']
+                    pattern: ['#66bb6a', '#2e7d32']
                 },
                 axis: {
 

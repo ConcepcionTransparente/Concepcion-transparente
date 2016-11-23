@@ -1,10 +1,10 @@
 <div class="row">
   <br><div class="divider"></div>
-  <br>
+  <h3>FALTA TÍTULO</h3>
   <p class="text">
     FALTA TEXTO
   </p>
-  <h3>FALTA TÍTULO</h3>
+
 
 </div>
 <div class="row">
@@ -13,7 +13,7 @@
     <!-- <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv">Export</button> -->
   </form>
   <div class="col s12 m4">
-    <button type="button" ng-csv="getArrayProviders" csv-header="getHeader()" filename="Proveedores.csv" class="waves-effect  green lighten-1 waves-light btn">Exportar datos</button>
+    <button type="button" ng-csv="getArrayProviders" csv-header="getHeader()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
   </div>
   <!-- <input ng-model="searchText" placeholder="Buscar Proveedores..."> -->
   <table>
@@ -35,6 +35,7 @@
       </tbody>
   </table>
   <div class="button-div">
-    <button class="show-more-btn waves-effect  green lighten-1 waves-light btn" ng-show="hasMoreItemsToShowP()" ng-click="showMoreItemsP()">Ver más</button>
+    <button class="light-green lighten-3
+show-more-btn waves-effect  light-green lighten-3 waves-light btn" ng-show="hasMoreItemsToShowP()" ng-click="showMoreItemsP()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
   </div>
 </div>

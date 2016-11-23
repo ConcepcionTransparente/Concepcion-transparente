@@ -1,6 +1,6 @@
   <div class="row">
     <br><div class="divider"></div>
-    <h3>Total de ordenes de compra: </h3>
+    <h3>Total de ordenes de compra </h3>
   </div>
   <div class="row">
   <form ng-submit="submit()" data-ng-init="submit()">
@@ -79,11 +79,9 @@
     <div class="col s12 m10">
 
     </div>
-    <!-- <div class="col s12 m2">
-      <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv">Exportar datos</button>
-    </div> -->
+    
     <div class="col s12 m2">
-      <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv" class="waves-effect  green lighten-1 waves-light btn">Exportar datos</button>
+      <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
     </div>
   </div>
 
@@ -91,27 +89,7 @@
   <table>
     <thead>
       <tr>
-        <!-- <th>
-          <a href="" ng-click="sortType = 'fk_Provider'; sortReverse = !sortReverse">
-            PROVEEDOR
-            <span ng-show="sortType == 'fk_Provider' && !sortReverse"></span>
-            <span ng-show="sortType == 'fk_Provider' && sortReverse"></span>
-          </a>
-        </th>
-        <th>
-          <a href="" ng-click="sortType = 'fk_Category.category'; sortReverse = !sortReverse">
-            REPARTICIÓN
-            <span ng-show="sortType == 'fk_Category.category' && sortReverse"></span>
-            <span ng-show="sortType == 'fk_Category.category' && !sortReverse"></span>
-          </a>
-        </th>
-        <th>
-          <a href="" ng-click="sortType = 'import'; sortReverse = !sortReverse">
-            IMPORTE
-            <span ng-show="sortType == 'import' && !sortReverse"></span>
-            <span ng-show="sortType == 'import' && sortReverse"></span>
-          </a>
-        </th> -->
+       
         <th>
           PROVEEDOR
         </th>
@@ -137,7 +115,8 @@
     </tbody>
   </table>
   <div class="button-div">
-    <button class="show-more-btn waves-effect  green lighten-1 waves-light btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Ver más</button>
+    <button class="light-green lighten-3
+show-more-btn waves-effect  light-green lighten-3 waves-light btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
   </div>
 </div>
 
