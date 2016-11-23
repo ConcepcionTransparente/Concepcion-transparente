@@ -6,14 +6,14 @@ body {
 a {color: #00B7FF;}
 h1{font-size: 2.5em;font-family: 'Open Sans', sans-serif;padding: 0 !important;}
 h2{font-size: 2em;}
-h3{font-size: 1.5em;font-family: 'Roboto', sans-serif; font-weight: 300;font-style: italic;}
+h3{font-size: 1.5em;font-family: 'Open Sans', sans-serif; font-weight: 300;font-style: italic;}
 h4{font-size: 1em;}
 h3.links{font-style: normal !important;}
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: #e8f5e9}
 
 
 .border-right{
-  border-right: 1px solid lightgray;
+  border-right: 1px solid #a5d6a7;
 }
 .display{
   display: block !important;
@@ -245,23 +245,32 @@ footer span{
 button{
   width: auto;
 }
-
+.fa-2{
+  font-size: 2em;
+  color:#66BB6A;
+}
 .numbers h3 {
   text-align: center;
-  font-style: none;
+  font-style: normal;
   font-size: 2em;
+  line-height: 2.2em;
+}
+.numbers h1 {
+  text-align: center;
+  font-style: normal;
+  font-size: 3.2em;
 }
 .picker__close, .picker__today {
     font-size: 1.1rem;
     padding: 0 1rem;
-    color: #f48fb1 !important;
+    color: #2e7d32 !important;
 }
 .picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted,
 .picker__date-display {
-    background-color: #d81b60 !important;
+    background-color: #a5d6a7 !important;
 }
 .picker__weekday-display {
-  background-color: #f48fb1 !important;
+  background-color: #2e7d32 !important;
 }
 
 
@@ -269,11 +278,11 @@ svg {
     font-family: 'Open Sans' !important;
 }
 circle.bubble {
-    fill: #ec407a;
-    stroke: #f6abcc;
-    stroke-width: 2;
+    fill: #2e7d32;
+    stroke: #81c784 ;
+    stroke-width: 2.5px;
 }
 
-.c3-line {
-    stroke-width: 3px;
-}
+g.c3-chart-lines .c3-line {
+  stroke-width: 2.5px;
+} 

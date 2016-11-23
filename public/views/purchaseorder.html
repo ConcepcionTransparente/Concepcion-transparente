@@ -59,7 +59,7 @@
       </div>
       <div class="col s12 m3">
         <div input-field>
-            <select class="select waves-effect pink lighten-1 waves-light btn" ng-model="searchPurchase" >
+            <select class="select waves-effect green lighten-1 waves-light btn" ng-model="searchPurchase" >
                 <option value="undefined">TODOS LOS RUBROS</option>
                 <option ng-repeat="value in categories">{{value}}</option>
             </select>
@@ -69,7 +69,7 @@
         <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
       </div> -->
       <div class="col s12 m3">
-        <button type="submit" id="ranking_filter" class="waves-effect  pink lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
+        <button type="submit" id="ranking_filter" class="waves-effect  green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
       </div>
 
     </form>
@@ -83,7 +83,7 @@
       <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv">Exportar datos</button>
     </div> -->
     <div class="col s12 m2">
-      <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv" class="waves-effect  pink lighten-1 waves-light btn">Exportar datos</button>
+      <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv" class="waves-effect  green lighten-1 waves-light btn">Exportar datos</button>
     </div>
   </div>
 
@@ -122,7 +122,7 @@
           IMPORTE
         </th>
         <th>
-          DETALLE
+          
         </th>
       </tr>
     </thead>
@@ -131,13 +131,13 @@
         <td>{{ x.nombre }}</td>
         <td>{{ x.reparticion }}</td>
         <td>{{x.importe | currency}}</td>
-        <td><a ui-sref="Detail({id: x.id})">Ver detalle</a></td>
+        <td><a ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
         <td style="display:none;">{{ x.anio}}</td>
       </tr>
     </tbody>
   </table>
   <div class="button-div">
-    <button class="show-more-btn waves-effect  pink lighten-1 waves-light btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Ver más</button>
+    <button class="show-more-btn waves-effect  green lighten-1 waves-light btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Ver más</button>
   </div>
 </div>
 

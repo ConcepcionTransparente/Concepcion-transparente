@@ -245,7 +245,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         // Nice looking colors - no reason to buck the trend
         var fillColor = d3.scale.ordinal()
             .domain(['low', 'medium', 'high'])
-            .range(['#4db6ac', '#ffffff', '#202020']);
+            .range(['#e8f5e9', '#2e7d32', '#66bb6a']);
 
         // Sizes bubbles based on their area instead of raw radius
         var radiusScale = d3.scale.pow()
@@ -701,7 +701,7 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                     },
                 },
                 color: {
-                    pattern: ['#ec407a','#f48fb1']
+                    pattern: ['#81c784', '#2e7d32', '#66bb6a']
                 },
                 axis: {
                     x: {
@@ -922,7 +922,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
                     }
                 },
                 color: {
-                    pattern: ['#ec407a']
+                    pattern: ['#e8f5e9', '#2e7d32', '#66bb6a']
                 },
                 axis: {
 

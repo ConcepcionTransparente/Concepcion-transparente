@@ -63,13 +63,13 @@
         <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
       </div> -->
       <div class="col s12 m4">
-        <button type="submit" id="ranking_filter" class="waves-effect  pink lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
+        <button type="submit" id="ranking_filter" class="waves-effect  green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
       </div>
       <!-- <div class="col s12 m2">
         <button type="button" ng-csv="getArrayOP" csv-header="getHeader()" filename="ObraPublica.csv">Exportar datos</button>
       </div> -->
       <div class="col s12 m4">
-        <button type="button" ng-csv="getArrayOP" csv-header="getHeader()" filename="ObraPublica.csv" class="waves-effect  pink lighten-1 waves-light btn">Exportar datos</button>
+        <button type="button" ng-csv="getArrayOP" csv-header="getHeader()" filename="ObraPublica.csv" class="waves-effect  green lighten-1 waves-light btn">Exportar datos</button>
       </div>
   </form>
 </div>
@@ -81,7 +81,7 @@
         <th>PROVEEDOR</th>
         <th>CUIT</th>
         <th>IMPORTE TOTAL</th>
-        <th>DETALLE</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -89,7 +89,7 @@
           <td>{{ x.nombre }}</td>
           <td>{{ x.cuit }}</td>
           <td>{{ x.importe | currency}}</td>
-          <td><a  ui-sref="Detail({id: x.id})">Ver detalle</a></td>
+          <td><a  ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
   </table>
