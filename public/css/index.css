@@ -24,6 +24,7 @@ tr:nth-child(even){background-color: #e8f5e9}
   margin-left: -90px;
   margin-top: 10px;
 }
+
 /*-------------header-----------------------*/
 .date{
   text-align: right;
@@ -328,4 +329,58 @@ nav div.nav-wrapper div h3{
 nav div.nav-wrapper div a{
   display: inline;
   color:#FFF;
+}
+
+
+
+.social-media-icons {
+    list-style: none;
+    margin 0;
+    padding: 0;
+    float: right;
+    margin-right: 8px;
+}
+
+/* Displays the list-items in a row */
+.social-media-icons li {
+    display: inline-block;
+}
+
+/* Set up the social media icons and enable transitioning for a smooth hovering effect */
+.social-media-icons a {
+    background-image: url('social.png');
+    background-repeat: no-repeat;
+    display: block;
+    height: 32px;
+    transition: all 350ms ease-out;
+    -webkit-transition: all 350ms ease-out;
+    -o-transition: all 350ms ease-out;
+    width: 32px;
+    filter: alpha(opacity=50); /* Fallback for older versions of IE */
+    opacity: 0.5;
+}
+.social-media-icons a span{
+  display: none;
+}
+
+.social-media-icons a:hover {
+    filter: alpha(opacity=100); /* Fallback for older versions of IE */
+    opacity: 1;
+}
+
+/* Move the background to the right position for each social network */
+.twitter {
+    background-position: -50px -12px; /* Obviously, this is obsolete to use here, but it illustrates the fact the twitter image is the first image */
+}
+
+.facebook {
+    background-position: -12px -12px;
+}
+
+.linkedin {
+    background-position: -243px -12px;
+}
+
+.github {
+    background-position: -89px -166px;
 }
