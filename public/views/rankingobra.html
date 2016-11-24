@@ -21,7 +21,7 @@
       id="inputCreated"
       ng-model="obrapublicaFilterini"
       container=""
-      format="mm/dd/yyyy"
+      format="dd/mm/yyyy"
       disable="disable"
       today="Hoy"
       first-day="1"
@@ -47,7 +47,7 @@
       id="inputCreated"
       ng-model="obrapublicaFilterfin"
       container=""
-      format="mm/dd/yyyy"
+      format="dd/mm/yyyy"
       disable="disable"
       today="Hoy"
       first-day="1"
@@ -69,11 +69,10 @@
       <!-- <div class="col s12 m2">
         <button type="button" ng-csv="getArrayOP" csv-header="getHeader()" filename="ObraPublica.csv">Exportar datos</button>
       </div> -->
-
+      <div class="col s12 m4">
+        <button type="button" ng-csv="getArrayOP" csv-header="getHeader()" filename="ObraPublica.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
+      </div>
   </form>
-</div>
-<div class="row">
-    <button type="button" ng-csv="getArrayOP" csv-header="getHeader()" filename="ObraPublica.csv" class="waves-effect  lime  lighten-1 waves-light btn center-button"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
 </div>
 
 <div class="row">
@@ -83,7 +82,7 @@
         <th>PROVEEDOR</th>
         <th>CUIT</th>
         <th>IMPORTE TOTAL</th>
-        <th>DETALLE</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -91,7 +90,7 @@
           <td>{{ x.nombre }}</td>
           <td>{{ x.cuit }}</td>
           <td>{{ x.importe | currency}}</td>
-          <td><a target="_blank" ng-href="#/{{ x.id }}/"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+          <td><a target="_blank" ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
   </table>

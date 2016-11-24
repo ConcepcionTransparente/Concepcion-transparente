@@ -12,16 +12,17 @@
     <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
     <!-- <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv">Export</button> -->
   </form>
-    <button type="button" ng-csv="getArrayProviders" csv-header="getHeader()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn center-button"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
-</div>
-<div class="row">
+  <div class="col s12 m4">
+    <button type="button" ng-csv="getArrayProviders" csv-header="getHeader()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
+  </div>
+  <!-- <input ng-model="searchText" placeholder="Buscar Proveedores..."> -->
   <table>
     <thead>
       <tr>
         <th>PROVEEDOR</th>
         <th>CUIT</th>
         <th>IMPORTE TOTAL</th>
-        <th>DETALLE</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -29,12 +30,12 @@
           <td>{{ x.nombre }}</td>
           <td>{{ x.cuit }}</td>
           <td>{{ x.importe | currency}}</td>
-           <td><a target="_blank" ng-href="#/{{ x.id }}/"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+          <td><a  target="_blank" ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
   </table>
   <div class="button-div">
-    <button class="light-green lighten-3 show-more-btn waves-effect  light-green lighten-3 waves-light btn center-button" ng-show="hasMoreItemsToShowP()" ng-click="showMoreItemsP()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
+    <button class="light-green lighten-3
+show-more-btn waves-effect  light-green lighten-3 waves-light btn" ng-show="hasMoreItemsToShowP()" ng-click="showMoreItemsP()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
   </div>
-
 </div>
