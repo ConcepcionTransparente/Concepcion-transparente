@@ -5,7 +5,7 @@
     <p class="text">
       En este apartado puedes analizar y comparar el presupuesto municipal en curso y la evolución del total de pagos a proveedores en un período determinado, por medio de un gráfico de lìneas.
     </p>
-   
+
     <form ng-submit="submit()" data-ng-init="submit()">
       <div class="row">
         <div class="col s12 m4">
@@ -21,7 +21,7 @@
               id="inputCreated"
               ng-model="linechartFilterini"
               container=""
-              format="dd/mm/yyyy"
+              format="mm/dd/yyyy"
               disable="disable"
               today="Hoy"
               first-day="1"
@@ -48,7 +48,7 @@
                 id="inputCreated"
                 ng-model="linechartFilterfin"
                 container=""
-                format="dd/mm/yyyy"
+                format="mm/dd/yyyy"
                 disable="disable"
                 today="Hoy"
                 first-day="1"

@@ -17,7 +17,7 @@
       id="inputCreated"
       ng-model="purchasefilterini"
       container=""
-      format="dd/mm/yyyy"
+      format="mm/dd/yyyy"
       disable="disable"
       today="Hoy"
       first-day="1"
@@ -44,7 +44,7 @@
       id="inputCreated"
       ng-model="purchasefilterfin"
       container=""
-      format="dd/mm/yyyy"
+      format="mm/dd/yyyy"
       disable="disable"
       today="Hoy"
       first-day="1"
@@ -58,12 +58,10 @@
 
       </div>
       <div class="col s12 m3">
-        <div input-field>
-            <select class="select waves-effect green lighten-1 waves-light btn" ng-model="searchPurchase" >
-                <option value="undefined">TODOS LOS RUBROS</option>
-                <option ng-repeat="value in categories">{{value}}</option>
-            </select>
-        </div>
+        <select ng-model="searchPurchase" class="select  green lighten-1  btn">
+          <option value="undefined" selected>TODAS LAS CATEGORÍAS</option>
+          <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
+        </select>
       </div>
       <!-- <div class="col s12 m3">
         <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
@@ -75,21 +73,17 @@
     </form>
   </div>
 
-  <div class="row">
-    <div class="col s12 m10">
-
-    </div>
-    
-    <div class="col s12 m2">
-      <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
-    </div>
+  <div class="row" >
+      <button type="button" ng-csv="getArrayPU" csv-header="getHeader()" filename="Ordenes-Compra.csv" class="waves-effect  lime  lighten-1 waves-light btn center-button"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
   </div>
 
 <div class="row">
   <table>
     <thead>
       <tr>
-       
+        <th>
+          FECHA
+        </th>
         <th>
           PROVEEDOR
         </th>
@@ -100,12 +94,14 @@
           IMPORTE
         </th>
         <th>
-          
+          DETALLE
         </th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="x in getArrayPU | orderBy:sortType:sortReverse  | limitTo: paginationLimit()">
+        <td>{{ x.fecha | date:'MM/yyyy'}}</td>
+
         <td>{{ x.nombre }}</td>
         <td>{{ x.reparticion }}</td>
         <td>{{x.importe | currency}}</td>
@@ -115,8 +111,7 @@
     </tbody>
   </table>
   <div class="button-div">
-    <button class="light-green lighten-3
-show-more-btn waves-effect  light-green lighten-3 waves-light btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
+    <button class="light-green lighten-3 show-more-btn waves-effect  light-green lighten-3 waves-light btn center-button" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
   </div>
 </div>
 

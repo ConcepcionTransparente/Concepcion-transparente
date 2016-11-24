@@ -15,7 +15,7 @@
                 id="inputCreated"
                 ng-model="categoryIni"
                 container=""
-                format="dd/mm/yyyy"
+                format="mm/dd/yyyy"
                 disable="disable"
                 today="Hoy"
                 first-day="1"
@@ -36,7 +36,7 @@
               id="inputCreated"
               ng-model="categoryFin"
               container=""
-              format="dd/mm/yyyy"
+              format="mm/dd/yyyy"
               disable="disable"
               today="Hoy"
               first-day="1"
@@ -68,9 +68,10 @@
         </tbody>
       </table>
       <div class="button-div">
-        <button class="show-more-btn" ng-show="hasMoreItemsToShow2()" ng-click="showMoreItems2()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
+        <button class="light-green lighten-3
+    show-more-btn waves-effect  light-green lighten-3 waves-light btn center-button" ng-show="hasMoreItemsToShow2()" ng-click="showMoreItems2()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
       </div>
-      <button type="button" ng-csv="detailCategories" csv-header="getHeader2()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
+      <!-- <button type="button" ng-csv="detailCategories" csv-header="getHeader2()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn center-button"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button> -->
 
     </div>
 
@@ -101,7 +102,7 @@
         id="inputCreated"
         ng-model="monthIni"
         container=""
-        format="dd/mm/yyyy"
+        format="mm/dd/yyyy"
         disable="disable"
         today="Hoy"
         first-day="1"
@@ -125,14 +126,14 @@
           <th>IMPORTE</th>
         </thead>
         <tbody>
-          <tr ng-repeat="x in detailMonth | orderBy: '_id'">
+          <tr ng-repeat="x in detailMonth | orderBy: '_id' ">
             <td>{{ x._id | monthName }}</td>
             <td>{{x.contracts }}</td>
             <td>{{x.import | currency}}</td>
           </tr>
         </tbody>
       </table>
-      <button type="button" ng-csv="detailMonth" csv-header="getHeader3()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
+      <!-- <button type="button" ng-csv="detailMonth" csv-header="getHeader3()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn center-button"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button> -->
 
 
 
@@ -149,7 +150,7 @@
   <h3>Contratos de obra pública y servicios para el proveedor</h3>
   <form>
     <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
-    <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv" class="waves-effect lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar
+    <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv" class="waves-effect lime  lighten-1 waves-light btn center-button"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar
 </button>
 
     <!-- <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv">Export</button> -->
@@ -172,7 +173,7 @@
   </table>
   <div class="button-div">
     <button class="light-green lighten-3
-show-more-btn waves-effect  light-green lighten-3 waves-light btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
+show-more-btn waves-effect  light-green lighten-3 waves-light btn center-button" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
   </div>
 
 

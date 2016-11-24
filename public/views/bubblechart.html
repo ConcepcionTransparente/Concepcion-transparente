@@ -25,7 +25,7 @@
           id="inputCreated"
           ng-model="bubblefilterini"
           container=""
-          format="dd/mm/yyyy"
+          format="mm/dd/yyyy"
           disable="disable"
           today="Hoy"
           first-day="1"
@@ -51,7 +51,7 @@
           id="inputCreated"
           ng-model="bubblefilterfin"
           container=""
-          format="dd/mm/yyyy"
+          format="mm/dd/yyyy"
           disable="disable"
           today="Hoy"
           first-day="1"
@@ -74,7 +74,6 @@
       <select ng-model="searchPurchase" class="select  green lighten-1  btn">
         <option value="undefined" selected>TODAS LAS CATEGORÍAS</option>
         <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
-
       </select>
 
     </div>
