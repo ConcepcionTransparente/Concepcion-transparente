@@ -18,6 +18,7 @@
     "commit": "6ad5e86785cbc585824268ba065b8a37e7526458"
   },
   "_source": "https://github.com/asafdav/ng-csv.git",
-  "_target": "*",
-  "_originalSource": "ng-csv"
+  "_target": "^0.3.6",
+  "_originalSource": "ng-csv",
+  "_direct": true
 }

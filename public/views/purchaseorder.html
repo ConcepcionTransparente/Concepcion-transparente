@@ -94,7 +94,6 @@
           IMPORTE
         </th>
         <th>
-          DETALLE
         </th>
       </tr>
     </thead>
@@ -105,7 +104,7 @@
         <td>{{ x.nombre }}</td>
         <td>{{ x.reparticion }}</td>
         <td>{{x.importe | currency}}</td>
-        <td><a target="_blank" ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+        <td><a  ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
         <td style="display:none;">{{ x.anio}}</td>
       </tr>
     </tbody>
