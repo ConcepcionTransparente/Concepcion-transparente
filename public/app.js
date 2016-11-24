@@ -109,6 +109,7 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
   var fechaActual = new Date();
   var anoActual = fechaActual.getFullYear();
 
+
     $scope.generalfilterini = new Date(anoActual,00,01);
     $scope.generalfilterfin = new Date();
     var from = new moment($scope.generalfilterini).toISOString();
@@ -638,7 +639,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
     //SI ES UNDEFINED LLAMA A /api/post-bubblechart SIN CATEGORIA ALGUNA
     //SI ES DISTINTO DE UNDEFINED (ALGUNA CATEGORIA EN PARTICULAR) LLAMA AL POST PASANDOLE DICHA CATEGORIA.
     var compare=$scope.searchPurchase.localeCompare('undefined');
-    console.log("CATEGORIA: "+$scope.searchPurchase);
     if(compare == 0){
 
       d3.json('/api/post-bubblechart',function(error, data) {
@@ -675,11 +675,16 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $http) {
   $scope.linechartFilterini = new Date(2009,00,01);
   $scope.linechartFilterfin = new Date();
+
   var from = new moment($scope.linechartFilterini).toISOString();
   var to = new moment($scope.linechartFilterfin).toISOString();
-  console.log(from);
-  console.log(to);
+
+
   $scope.submit = function(){
+
+    var from = new moment($scope.linechartFilterini).toISOString();
+    var to = new moment($scope.linechartFilterfin).toISOString();
+
     $http.post('/api/post-linechart',
     {"valorini":from,
     "valorfin":to})
@@ -807,9 +812,9 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
     $scope.purchasefilterfin = new Date();
     $scope.searchPurchase = "undefined";
     //csv config
-    $scope.getHeader = function(){
-      return ["AÑO","MES","PROVEEDOR","RUBRO","IMPORTE"]
-    }
+    // $scope.getHeader = function(){
+    //   return ["AÑO","MES","PROVEEDOR","RUBRO","IMPORTE"]
+    // }
     //
     $http.get('/api/get-categories').then(function(response){
       $scope.categories = response.data;
@@ -1004,23 +1009,30 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-        var anio = new  Date();
-        // console.log("holaaaaaa   "+anio);
-        $scope.monthIni = anio.getFullYear();
-        // console.log("monthIni: "+$scope.monthIni);
+        // var from = new moment($scope.monthIni).year();
+        // // console.log("holaaaaaa   "+anio);
+        // $scope.monthIni = from;
+        // console.log("monthIni inicio: "+$scope.monthIni);
+        var from = new moment().year();
+        $scope.monthIni = new Date();
         $scope.getHeader3 = function(){
           return ["MES","IMPORTE","CONTRATOS"]
         }
-        $scope.submitMonth= function(){
 
+        $scope.submitMonth= function(){
           var dateString= $scope.monthIni;
-          var dateParts = dateString.split("/");
-          var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+          console.log("monthIni antes: "+$scope.monthIni);
+          // var dateParts = dateString.split("/");
+          // var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+          var from = new moment($scope.monthIni).year();
+          console.log("monthIni medio: "+ from);
+
           // console.log("dateObject: "+ dateObject);
-          var aniox= dateObject.getFullYear();
+
+
           // console.log("aa: "+aniox);
           $http.post('/api/post-detailMonth',
-          {"anio": aniox,
+          {"anio": from,
            "id": $stateParams.id})
           .then(function(response) {
               $scope.detailMonth = response.data;

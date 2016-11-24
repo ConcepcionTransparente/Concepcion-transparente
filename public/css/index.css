@@ -18,6 +18,12 @@ tr:nth-child(even){background-color: #e8f5e9}
 .display{
   display: block !important;
 }
+.center-button{
+  width: 180px;
+  left:50%;
+  margin-left: -90px;
+  margin-top: 10px;
+}
 /*-------------header-----------------------*/
 .date{
   text-align: right;
@@ -278,7 +284,7 @@ svg {
     font-family: 'Open Sans' !important;
 }
 text,
-.c3-legend-item, 
+.c3-legend-item,
 .c3-tooltip th ,
 .c3-tooltip td,
 g
@@ -294,9 +300,9 @@ circle.bubble {
 
 g.c3-chart-lines .c3-line {
   stroke-width: 2.5px;
-} 
+}
 
-h1,h2, h3,h4,h5, label{ 
+h1,h2, h3,h4,h5, label{
   color:#a5d6a7;
   text-transform: none;
 }

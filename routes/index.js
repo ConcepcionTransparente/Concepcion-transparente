@@ -145,10 +145,15 @@ router.post('/api/post-totalorders',function(req,res,next){
   // hoy.setHours(0,0,0,0);
   // console.log("HOY:"+ hoy);
   // console.log("END:"+ end);
-  console.log(req.body.valorfin);
-
+  var start=new Date(req.body.valorini);
+  // console.log("START: "+start);
+  var end=new Date(req.body.valorfin);
+  // console.log("END: "+end);
+  var hoy=new Date();
+  end.setHours(0,0,0,0);
+  hoy.setHours(0,0,0,0);
   mongoose.model('PurchaseOrder')
-  .find({"date": {"$gte": req.body.valorini, "$lte": req.body.valorfin}})
+  .find({"date": {"$gte": start, "$lte": end}})
   .distinct('fk_Provider')
   .count(function (err, result) {
       if (err) {
@@ -331,6 +336,7 @@ router.post("/api/post-purchases", function(req, res) {
           return {
             "anio":result.year,
             "mes":result.month,
+            "fecha": result.date,
             "nombre":result.fk_Provider.grant_title,
             "reparticion":result.fk_Category.category,
             "importe":result.import,
@@ -354,6 +360,8 @@ router.post("/api/post-purchases", function(req, res) {
         docs=populatedTransactions.map(function(result){
           return {
             "anio":result.year,
+            "mes":result.month,
+            "fecha": result.date,
             "nombre":result.fk_Provider.grant_title,
             "reparticion":result.fk_Category.category,
             "importe":result.import,

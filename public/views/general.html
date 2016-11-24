@@ -5,7 +5,7 @@
     <p class="text">
       Puedes conocer los gastos del municipio en un período determinado. Tienes que seleccionar el rango de fechas y filtrar. Los datos se muestran en una fecha con la descripción del monto total de compras, la cantidad de proveedores y la cantidad de órdenes de compra.
     </p>
-   
+
   </div>
   <div class="row">
     <form ng-submit="submit()" data-ng-init="submit()">
@@ -19,7 +19,7 @@
         id="inputCreated"
         ng-model="generalfilterini"
         container=""
-        format="dd/mm/yyyy"
+        format="mm/dd/yyyy"
         disable="disable"
         today="Hoy"
         first-day="1"
@@ -41,7 +41,7 @@
     id="inputCreated"
     ng-model="generalfilterfin"
     container=""
-    format="dd/mm/yyyy"
+    format="mm/dd/yyyy"
     disable="disable"
     today="Hoy"
     first-day="1"
@@ -51,10 +51,9 @@
     months-short="{{ monthShort }}"
     weekdays-full="{{ weekdaysFull }}"
     weekdays-short="{{ weekdaysShort }}"
-    weekdays-letter="{{ weekdaysLetter }}"/>
+    weekdays-letter="{{ weekdaysLetter }}"/></div>
 
 
-        </div>
 
         <div class="col s12 m4">
           <button type="submit" class="waves-effect  green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
