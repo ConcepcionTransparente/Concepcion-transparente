@@ -140,34 +140,15 @@
     <div ui-view="Providers" class="row" autoscroll="false"></div>
     <div ui-view="Purchases" class="row" autoscroll="false"></div>
     <div ui-view="Detail" class="row" autoscroll="false"></div>
-    <!-- <div ui-view="Static2015" class="row" ></div>
+    <div ui-view="Files" class="row" autoscroll="false"></div>
+
 
 
 
 <!-- ////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////// -->
-    <br><div class="divider"></div>
-    <div class="row presupuestos">
-      <div class="col s12 m6">
-        <a href="./Propuesta2016.xls" download="Propuesta modificación presupuesto 2016">
 
-            <img src="./propuesta2016image.png" alt="" />
-          </a>
-          <a class="waves-effect green lighten-3  waves-light btn" ref="./Propuesta2016.xls" download="Proyecto modificación presupuesto 2016">
-           <i class="fa fa-download material-icons left" aria-hidden="true"></i>Descargar Propuesta modificación presupuesto 2016</a>
-          </a>
-
-      </div>
-      <div class="col s12 m6">
-        <a href="./Presupuesto2016.pdf" download="Proyecto modificación presupuesto 2016">
-          <img src="./presupuesto2016image.png" alt="" />
-        </a>
-          <a class="waves-effect green lighten-3 waves-light btn" ref="./Presupuesto2016.pdf" download="Proyecto modificación presupuesto 2016">
-            <i class="fa fa-download material-icons left" aria-hidden="true"></i>Descargar Proyecto modificación presupuesto 2016</a>
-          </a>
-      </div>
-    </div>
 
    <footer class="footer">
      <p>
@@ -203,7 +184,7 @@
 
 
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script> -->
-    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.js"></script>
 
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script> -->
     <script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
@@ -216,6 +197,7 @@
        $(document).ready(function() {
           $('select').material_select();
       });
+
     </script>
     <!-- D3 AND PAINT SCRIPTS -->
     <script src="../lib/d3.js"></script>

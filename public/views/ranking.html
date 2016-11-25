@@ -1,10 +1,10 @@
 <div class="row">
   <br><div class="divider"></div>
   <br>
-  <p class="text">
-    Para conocer el ranking de proveedores de obra pública tan solo selecciona el período de búsqueda y los datos se mostrarán en la tabla, ordenados de mayor a menor.
-  </p>
   <h3>Ranking de proveedores</h3>
+  <p class="text">
+    Para conocer el ranking de proveedores tan solo selecciona el período de búsqueda y los datos se mostrarán en la tabla, ordenados de mayor a menor.
+  </p>
   <form ng-submit="submit()" data-ng-init="submit()">
       <div class="col s12 m4">
         <!-- <datepicker ng-submit="submit()"  datepicker-show="{{ctrl.visibility}}">
@@ -83,7 +83,7 @@
         <th>PROVEEDOR</th>
         <th>CUIT</th>
         <th>IMPORTE TOTAL</th>
-        <th></th>
+        <th>VER DETALLE</th>
       </tr>
       </thead>
       <tbody>
@@ -91,7 +91,8 @@
           <td>{{ x.nombre }}</td>
           <td>{{ x.cuit }}</td>
           <td>{{ x.importe | currency}}</td>
-           <td><a  ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+          <td><a  ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+           <!-- <td><a  ui-sref="Detail({id: x.id})" target="_blank"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td> -->
         </tr>
       </tbody>
   </table>

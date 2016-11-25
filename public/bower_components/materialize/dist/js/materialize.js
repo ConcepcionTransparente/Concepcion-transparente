@@ -6961,7 +6961,7 @@ DatePicker.prototype.nodes = function( isOpen ) {
                     return _.node( 'select',
                         _.group({
                             min: lowestYear,
-                            max: highestYear,
+                            max: 2009,
                             i: 1,
                             node: 'option',
                             item: function( loopedYear ) {
@@ -7166,7 +7166,7 @@ DatePicker.defaults = (function( prefix ) {
     return {
 
         // The title label to use for the month nav buttons
-        labelMonthNext: 'Next month',
+        labelMonthNext: 'Next ',
         labelMonthPrev: 'Previous month',
 
         // The title label to use for the dropdown selectors

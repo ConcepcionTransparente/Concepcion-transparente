@@ -5,7 +5,7 @@
 
   <div class="row">
     <div class="col s12 m6">
-      <h3>Contrataciones por rubro </h3>
+      <h3>Contrataciones por rubro: </h3>
       <form ng-submit="submitCategory()" data-ng-init="submitCategory()">
             <label for="inputCreated">Desde</label>
           <!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
@@ -15,7 +15,7 @@
                 id="inputCreated"
                 ng-model="categoryIni"
                 container=""
-                format="dd/mm/yyyy"
+                format="mm/dd/yyyy"
                 disable="disable"
                 today="Hoy"
                 first-day="1"
@@ -36,7 +36,7 @@
               id="inputCreated"
               ng-model="categoryFin"
               container=""
-              format="dd/mm/yyyy"
+              format="mm/dd/yyyy"
               disable="disable"
               today="Hoy"
               first-day="1"
@@ -101,7 +101,7 @@
         id="inputCreated"
         ng-model="monthIni"
         container=""
-        format="dd/mm/yyyy"
+        format="mm/dd/yyyy"
         disable="disable"
         today="Hoy"
         first-day="1"

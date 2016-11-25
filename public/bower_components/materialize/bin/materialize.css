@@ -8198,7 +8198,7 @@ input[type=range]:focus::-ms-fill-upper {
   padding: .66em 0;
   font-weight: bold;
   width: 33%;
-  display: inline-block;
+  display: none !important;
   vertical-align: bottom;
 }
 

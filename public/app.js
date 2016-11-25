@@ -47,6 +47,9 @@ dcuApp.config(
                         'Providers': {
                             templateUrl: './views/providers.html',
                             controller: 'providersController'
+                        },
+                        'Files': {
+                            templateUrl: './views/files.html'
                         }
                     }
                 })
@@ -76,6 +79,7 @@ dcuApp.run(function($rootScope){
   $rootScope.close = 'Cerrar';
   var days = 15;
 });
+
 dcuApp.filter('monthName', [function() {
     return function (monthNumber) { //1 = January
         var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
@@ -757,7 +761,7 @@ dcuApp.controller('rankingController', ['$scope', '$http','$interval', function(
   $scope.rankingFilterfin = new Date();
   //csv config
   $scope.getHeader = function(){
-    return ["PROVEEDOR","CUIT","IMPORTE"]
+    return ["PROVEEDOR","CUIT","IMPORTE","ID DEL PROVEEDOR"]
   }
   //
   $scope.submit = function(){
@@ -818,6 +822,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
     //
     $http.get('/api/get-categories').then(function(response){
       $scope.categories = response.data;
+      console.log($scope.categories);
     });
 
 

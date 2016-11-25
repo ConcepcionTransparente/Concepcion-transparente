@@ -79,6 +79,7 @@ p.fixedprice span{
 footer{
   text-align: center;
   color: gray;
+  margin-top: 20px !important;
 }
 footer p{
   margin-top: 1em;

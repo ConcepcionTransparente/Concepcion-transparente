@@ -1,6 +1,6 @@
   <div class="row">
     <br><div class="divider"></div>
-    <h3>Total de ordenes de compra </h3>
+    <h3>Total de órdenes de compra </h3>
   </div>
   <div class="row">
   <form ng-submit="submit()" data-ng-init="submit()">
@@ -59,8 +59,8 @@
       </div>
       <div class="col s12 m3">
         <select ng-model="searchPurchase" class="select  green lighten-1  btn">
-          <option value="undefined" selected>TODAS LAS CATEGORÍAS</option>
-          <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
+          <option value="undefined" selected>TODOS LOS RUBROS</option>
+          <option ng-repeat="value in categories | orderBy:'categories':true">{{value}}</option>
         </select>
       </div>
       <!-- <div class="col s12 m3">
@@ -94,6 +94,7 @@
           IMPORTE
         </th>
         <th>
+          VER DETALLE
         </th>
       </tr>
     </thead>
@@ -104,7 +105,8 @@
         <td>{{ x.nombre }}</td>
         <td>{{ x.reparticion }}</td>
         <td>{{x.importe | currency}}</td>
-        <td><a  ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+        <td><a  ui-sref="Detail({id: x.id})" ><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+        <!-- <td><a  ui-sref="Detail({id: x.id})" target="_blank"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td> -->
         <td style="display:none;">{{ x.anio}}</td>
       </tr>
     </tbody>

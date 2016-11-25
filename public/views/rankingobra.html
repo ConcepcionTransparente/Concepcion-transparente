@@ -2,9 +2,9 @@
 <div class="row">
     <div class="divider"></div>
     <br>
-    <h3>Ranking de Servicio Obra publica</h3>
+    <h3>Ranking de Obra pública</h3>
     <p class="text">
-        Para conocer el ranking de servicio de obra pública selecciona el período de búsqueda y los datos se mostrarán en la tabla, ordenados de mayor a menor.
+        Para conocer el ranking de obra pública selecciona el período de búsqueda y los datos se mostrarán en la tabla, ordenados de mayor a menor.
     </p>
 
     <form ng-submit="submit()" data-ng-init="submit()">
@@ -53,7 +53,7 @@
                 <th>PROVEEDOR</th>
                 <th>CUIT</th>
                 <th>IMPORTE TOTAL</th>
-                <th></th>
+                <th>VER DETALLE</th>
             </tr>
         </thead>
         <tbody>
@@ -62,6 +62,7 @@
                 <td>{{ x.cuit }}</td>
                 <td>{{ x.importe | currency}}</td>
                 <td><a ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+                <!-- <td><a ui-sref="Detail({id: x.id})" target="_blank"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td> -->
             </tr>
         </tbody>
     </table>
