@@ -8373,7 +8373,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .picker__footer {
-  display: none;
   text-align: right;
   padding: 5px 10px;
 }
