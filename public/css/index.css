@@ -6,7 +6,12 @@ body {
 a {color: #00B7FF;}
 h1{font-size: 2.5em;font-family: 'Open Sans', sans-serif;padding: 0 !important;}
 h2{font-size: 2em;}
-h3{font-size: 1.5em;font-family: 'Open Sans', sans-serif; font-weight: 300;font-style: italic;}
+h3 {font-size: 2.5em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    /* font-style: italic; */
+    margin: 1em 0em;
+  }
 h4{font-size: 1em;}
 h3.links{font-style: normal !important;}
 tr:nth-child(even){background-color: #e8f5e9}
@@ -382,6 +387,31 @@ nav div.nav-wrapper div a{
     background-position: -243px -12px;
 }
 
-.github {
-    background-position: -89px -166px;
+.divider {
+    height: 3px;
+    overflow: hidden;
+    background-color: #a5d6a7;
+    margin: 1em;
+  }
+
+strong {
+    font-weight: bolder;
+    font-size: 1.1em;
+    line-height: 0.2;
+}
+
+header{
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+header .row .col {
+  padding: 0;
+}
+
+footer img {
+  width: 25px;
+}
+footer {
+  font-size: 0.72em;
 }
