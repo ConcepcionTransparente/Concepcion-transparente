@@ -348,7 +348,7 @@ function scraping() {
 // }
 // setTimeout(function(){
 //AQUI COMIENZA EL SCRAPER
-scraping();
+// scraping();
 //AQUI TERMINA EL SCRAPER
 // }, executeScraper);
 
