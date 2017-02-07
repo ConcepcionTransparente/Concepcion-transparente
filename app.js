@@ -342,10 +342,6 @@ console.log("Si llegamos hasta aca, termino de escrapear bien y continua la app"
 ///////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
-
 // var now = new Date();
 // var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
 // if (executeScraper < 0) {
@@ -353,10 +349,9 @@ console.log("Si llegamos hasta aca, termino de escrapear bien y continua la app"
 // }
 // setTimeout(function(){
 //AQUI COMIENZA EL SCRAPER
-// scraping();
+scraping();
 //AQUI TERMINA EL SCRAPER
 // }, executeScraper);
-// console.log("funciona DO");
 
 
 
