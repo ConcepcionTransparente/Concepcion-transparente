@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 var db = require('./model/db');
 var model = require('./model/model');
 
-var x = Xray().throttle(50,1000);
+var x = Xray().throttle(5,1000);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
