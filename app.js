@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 var db = require('./model/db');
 var model = require('./model/model');
 
-var x = Xray().throttle(10,2000);
+var x = Xray().throttle(50,1000);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -86,6 +86,7 @@ app.use(function(err, req, res, next) {
 /////////////////////////////////////////////////////////////////////////////////////
 
 function scraping() {
+  console.log("funcion scrapping() corriendo");
     var error = [];
     var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php";
     x(url, 'body tr.textoTabla', [{
@@ -157,6 +158,7 @@ function scraping() {
     };
 
     function normalize(o) {
+      console.log("normalize");
         var parentObject = this;
         var year= parseInt(parentObject.year); //año
 
@@ -351,5 +353,5 @@ scraping();
 // }, executeScraper);
 
 
-
+console.log("TOMA EL ARCHIVO APP.JS");
 module.exports = app;
