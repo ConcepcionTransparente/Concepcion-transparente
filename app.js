@@ -356,7 +356,7 @@ console.log("Si llegamos hasta aca, termino de escrapear bien y continua la app"
 // scraping();
 //AQUI TERMINA EL SCRAPER
 // }, executeScraper);
-
+// console.log("funciona DO");
 
 
 
