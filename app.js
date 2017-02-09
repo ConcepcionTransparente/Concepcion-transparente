@@ -347,9 +347,7 @@ function scraping() {
 //      executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
 // }
 // setTimeout(function(){
-//AQUI COMIENZA EL SCRAPER
-scraping();
-//AQUI TERMINA EL SCRAPER
+// scraping();
 // }, executeScraper);
 
 
