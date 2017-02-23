@@ -375,5 +375,6 @@ var helloMongo = function(){
         console.log("SE INSERTO!");
       }
 }
+}
 helloMongo()
 module.exports = app;
