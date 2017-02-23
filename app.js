@@ -355,26 +355,23 @@ console.log("TOMA EL ARCHIVO APP.JS");
 
 var helloMongo = function(){
   console.log("DENTRO DE LA FUNCION HELLO MONGO");
-  var updateProvider = {
-          cuil: 34680536,
-          grant_title: "MANUEL PAIVA - GENOSHA"
-      },
-      options = {
-          upsert: true,
-          new: true,
-          setDefaultsOnInsert: true
-      };
-
-  mongoose.model('Provider').findOneAndUpdate({
-      cuil: 34680536
-  }, updateProvider, options, function(err, result1) {
-      if (err) {
+  year: 2016,
+  month: 3,
+  date: newDate,
+  numberOfContracts: 100,
+  import: 10000000,
+  fk_Provider: 0,
+  fk_Category: 0
+},Purchase,options, function(err, purchase) {
+    if (err) {
         console.log(err);
+        console.log("ERROR AL INTENTAR CARGAR ESTO");
         return;
-      }else{
-        console.log("SE INSERTO!");
-      }
-}
+    }else{
+      console.log("SE INSERTO CORRECTAMENTE LA MIERDA ESTA");
+    }
+    console.log("NEW PURCHASE: " + purchase);
+});//END INSERT PURCHASE
 }
 helloMongo()
 module.exports = app;
