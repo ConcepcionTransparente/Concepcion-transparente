@@ -353,25 +353,4 @@ function scraping() {
 
 console.log("TOMA EL ARCHIVO APP.JS");
 
-var helloMongo = function(){
-  console.log("DENTRO DE LA FUNCION HELLO MONGO");
-  year: 2016,
-  month: 3,
-  date: newDate,
-  numberOfContracts: 100,
-  import: 10000000,
-  fk_Provider: 0,
-  fk_Category: 0
-},Purchase,options, function(err, purchase) {
-    if (err) {
-        console.log(err);
-        console.log("ERROR AL INTENTAR CARGAR ESTO");
-        return;
-    }else{
-      console.log("SE INSERTO CORRECTAMENTE LA MIERDA ESTA");
-    }
-    console.log("NEW PURCHASE: " + purchase);
-});//END INSERT PURCHASE
-}
-helloMongo()
 module.exports = app;
