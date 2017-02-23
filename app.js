@@ -352,4 +352,28 @@ function scraping() {
 
 
 console.log("TOMA EL ARCHIVO APP.JS");
+
+var helloMongo = function(){
+  console.log("DENTRO DE LA FUNCION HELLO MONGO");
+  var updateProvider = {
+          cuil: 34680536,
+          grant_title: "MANUEL PAIVA - GENOSHA"
+      },
+      options = {
+          upsert: true,
+          new: true,
+          setDefaultsOnInsert: true
+      };
+
+  mongoose.model('Provider').findOneAndUpdate({
+      cuil: 34680536
+  }, updateProvider, options, function(err, result1) {
+      if (err) {
+        console.log(err);
+        return;
+      }else{
+        console.log("SE INSERTO!");
+      }
+}
+helloMongo()
 module.exports = app;
