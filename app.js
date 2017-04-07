@@ -351,7 +351,6 @@ scraping();
 }, executeScraper);
 
 
-
 console.log("TOMA EL ARCHIVO APP.JS");
 
 module.exports = app;
