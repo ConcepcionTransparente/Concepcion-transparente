@@ -10,7 +10,8 @@ var mongoose = require('mongoose');
 var db = require('./model/db');
 var model = require('./model/model');
 
-var x = Xray().throttle(1,1000);
+//Throttle the requests to n requests per ms milliseconds.
+var x = Xray().throttle(10,100);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -341,17 +342,16 @@ function scraping() {
 ///////////////////////////////////////////////////////////////////////////////////
 
 
-var now = new Date();
-// var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
-var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 00, 0, 0) - now;
-if (executeScraper < 0) {
-     executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
-}
-setTimeout(function(){
-scraping();
-}, executeScraper);
+// var now = new Date();
+// // var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
+// var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 00, 0, 0) - now;
+// if (executeScraper < 0) {
+//      executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
+// }
+// setTimeout(function(){
+// scraping();
+// }, executeScraper);
 
-
-console.log("TOMA EL ARCHIVO APP.JS");
+console.log("APP.JS");
 
 module.exports = app;
