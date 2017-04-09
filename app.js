@@ -342,7 +342,8 @@ function scraping() {
 
 
 var now = new Date();
-var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
+// var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
+var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 09, 40, 0, 0) - now;
 if (executeScraper < 0) {
      executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
 }
