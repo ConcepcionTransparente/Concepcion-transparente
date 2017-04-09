@@ -822,7 +822,6 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
     //
     $http.get('/api/get-categories').then(function(response){
       $scope.categories = response.data;
-      console.log($scope.categories);
     });
 
 
