@@ -11,7 +11,7 @@ var db = require('./model/db');
 var model = require('./model/model');
 
 //Throttle the requests to n requests per ms milliseconds.
-var x = Xray().throttle(10,100);
+var x = Xray().throttle(10, 100);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -87,7 +87,7 @@ app.use(function(err, req, res, next) {
 /////////////////////////////////////////////////////////////////////////////////////
 
 function scraping() {
-  console.log("funcion scrapping() corriendo");
+    console.log("funcion scrapping() corriendo");
     var error = [];
     var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php";
     x(url, 'body tr.textoTabla', [{
@@ -111,7 +111,7 @@ function scraping() {
             } else {
                 wrapperObj.map(wrapperMap, {
                     year: mappedObject.year,
-                    total_amount:mappedObject.total_amount
+                    total_amount: mappedObject.total_amount
                 });
             }
         })
@@ -132,7 +132,7 @@ function scraping() {
                 innerWrapperObject.map(innerWrapperMap, {
                     provider: mappedObject,
                     year: parentObject.year,
-                    total_amount:parentObject.total_amount
+                    total_amount: parentObject.total_amount
                 });
             }
         })
@@ -152,16 +152,16 @@ function scraping() {
                     category: mappedObject,
                     provider: parentObject.provider,
                     year: parentObject.year,
-                    total_amount:parentObject.total_amount
+                    total_amount: parentObject.total_amount
                 });
             }
         })
     };
 
     function normalize(o) {
-      console.log("normalize");
+        console.log("normalize");
         var parentObject = this;
-        var year= parseInt(parentObject.year); //año
+        var year = parseInt(parentObject.year); //año
 
         var childObject = {
             year: year, //year
@@ -187,20 +187,34 @@ function scraping() {
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
         //MONTH STRING TO MONTH NUMBER
-        function nuevoMes(m){
-          if(m == "Enero"){ return 00;}
-          else if (m == "Febrero") { return 01;}
-          else if (m == "Marzo") { return 02;}
-          else if (m == "Abril") { return 03;}
-          else if (m == "Mayo") { return 04;}
-          else if (m == "Junio") { return 05;}
-          else if (m == "Julio") { return 06;}
-          else if (m == "Agosto") { return 07;}
-          else if (m == "Septiembre") { return 08;}
-          else if (m == "Octubre") { return 09;}
-          else if (m == "Noviembre") { return 10;}
-          else if (m == "Diciembre") { return 11;}
-          else  { return 13;}
+        function nuevoMes(m) {
+            if (m == "Enero") {
+                return 00;
+            } else if (m == "Febrero") {
+                return 01;
+            } else if (m == "Marzo") {
+                return 02;
+            } else if (m == "Abril") {
+                return 03;
+            } else if (m == "Mayo") {
+                return 04;
+            } else if (m == "Junio") {
+                return 05;
+            } else if (m == "Julio") {
+                return 06;
+            } else if (m == "Agosto") {
+                return 07;
+            } else if (m == "Septiembre") {
+                return 08;
+            } else if (m == "Octubre") {
+                return 09;
+            } else if (m == "Noviembre") {
+                return 10;
+            } else if (m == "Diciembre") {
+                return 11;
+            } else {
+                return 13;
+            }
         }
         var monthNumber = nuevoMes(childObject.month);
         //  console.log("MESSSS STRING: ---> "+ childObject.month);
@@ -209,14 +223,14 @@ function scraping() {
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
         // CONVERT MONTH AND YEAR IN DATE
-        function stringToDate(month,year){
+        function stringToDate(month, year) {
 
-          var d = new Date(year,month,01);
-          d.toISOString().slice(0,10);
-          console.log("fechaaaaaaaaa------------------------------------------->: "+d);
-          return d;
+            var d = new Date(year, month, 01);
+            d.toISOString().slice(0, 10);
+            console.log("fechaaaaaaaaa------------------------------------------->: " + d);
+            return d;
         }
-        var newDate = stringToDate(monthNumber,childObject.year);
+        var newDate = stringToDate(monthNumber, childObject.year);
         year = parseInt(year);
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
@@ -226,17 +240,17 @@ function scraping() {
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
         //CONVERT IMPORT TO CORRECT FLOAT NUMBER
-        function nuevoImporte(m){
-          // console.log("NUMERO DEL SCRAPER ---> "+m);
-          var y = m.replace(/\./g,'').replace(/\,/g,'.');
-              y = parseFloat(y);
-          // console.log("NUMERO CONVERTIDO PERO STRING ---> " + y);
-          return y;
+        function nuevoImporte(m) {
+            // console.log("NUMERO DEL SCRAPER ---> "+m);
+            var y = m.replace(/\./g, '').replace(/\,/g, '.');
+            y = parseFloat(y);
+            // console.log("NUMERO CONVERTIDO PERO STRING ---> " + y);
+            return y;
         }
         var w = nuevoImporte(childObject.import);
         var z = nuevoImporte(childObject.total_amount);
-        var partialImport = parseFloat(w);//importe de un proveedor en un cierto mes
-        var totalImport = parseFloat(z);//importe total para el años correspondiente a esta fila
+        var partialImport = parseFloat(w); //importe de un proveedor en un cierto mes
+        var totalImport = parseFloat(z); //importe total para el años correspondiente a esta fila
 
 
         var updateProvider = {
@@ -253,28 +267,28 @@ function scraping() {
             cuil: childObject.cuil
         }, updateProvider, options, function(err, result1) {
             if (err) {
-              console.log(err);
-              return;
+                console.log(err);
+                return;
             }
             console.log("updateando provider");
-            console.log("result1:"+result1);
+            console.log("result1:" + result1);
 
             //insercion de category
             var updateCategory = {
-                    cod: childObject.cod,
-                    category: childObject.category
-                };
+                cod: childObject.cod,
+                category: childObject.category
+            };
             mongoose.model('Category').findOneAndUpdate({
                 // cod: childObject.cod,
                 category: childObject.category
             }, updateCategory, options, function(err, result2) {
-              if (err) {
-                console.log(err);
-                return;
-              }
-                console.log("result2"+ result2);
-                console.log("------------------------------------- RESULT1-ID: "+result1._id);
-                console.log("------------------------------------- RESULT2-ID: "+result2._id);
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                console.log("result2" + result2);
+                console.log("------------------------------------- RESULT1-ID: " + result1._id);
+                console.log("------------------------------------- RESULT2-ID: " + result2._id);
 
                 //insercion de orden de compra
                 var Purchase = {
@@ -287,20 +301,20 @@ function scraping() {
                     fk_Category: result2._id
                 };
                 mongoose.model('PurchaseOrder').findOneAndUpdate({
-                  year: childObject.year,
-                  month: monthNumber,
-                  date: newDate,
-                  numberOfContracts: childObject.numberOfContracts,
-                  import: partialImport,
-                  fk_Provider: result1._id,
-                  fk_Category: result2._id
-                },Purchase,options, function(err, purchase) {
+                    year: childObject.year,
+                    month: monthNumber,
+                    date: newDate,
+                    numberOfContracts: childObject.numberOfContracts,
+                    import: partialImport,
+                    fk_Provider: result1._id,
+                    fk_Category: result2._id
+                }, Purchase, options, function(err, purchase) {
                     if (err) {
                         console.log(err);
                         return;
                     }
                     console.log("NEW PURCHASE: " + purchase);
-                });//END INSERT PURCHASE
+                }); //END INSERT PURCHASE
                 // return;
                 console.log("NEW CATEGORY: " + result2);
 
@@ -309,23 +323,23 @@ function scraping() {
             console.log("NEW PROVIDER: " + result1);
 
             // result.status(200).send(result);
-        });//END UPDATE PROVIDER
+        }); //END UPDATE PROVIDER
 
 
         var updateYear = {
-                year: childObject.year,
-                total_contrats: childObject.total_contrats,
-                totalAmount: totalImport
-            };
+            year: childObject.year,
+            total_contrats: childObject.total_contrats,
+            totalAmount: totalImport
+        };
         mongoose.model('Year').findOneAndUpdate({
-          year: childObject.year
-        },updateYear,options, function(err,years){
-          if(err){
-            console.log(err);
-            return;
-          }else{
-            console.log("NEW YEAR: "+years);
-          }
+            year: childObject.year
+        }, updateYear, options, function(err, years) {
+            if (err) {
+                console.log(err);
+                return;
+            } else {
+                console.log("NEW YEAR: " + years);
+            }
         });
 
     }; //end normalize
@@ -342,15 +356,14 @@ function scraping() {
 ///////////////////////////////////////////////////////////////////////////////////
 
 
-// var now = new Date();
-// // var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
-// var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 00, 0, 0) - now;
-// if (executeScraper < 0) {
-//      executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
-// }
-// setTimeout(function(){
-// scraping();
-// }, executeScraper);
+var now = new Date();
+var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 03, 30, 0, 0) - now;
+if (executeScraper < 0) {
+    executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
+}
+setTimeout(function() {
+    scraping();
+}, executeScraper);
 
 console.log("APP.JS");
 
