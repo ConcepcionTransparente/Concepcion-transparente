@@ -992,7 +992,10 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
           "valorfin":$scope.categoryFin,
           "id": $stateParams.id})
           .then(function(response) {
-              $scope.detailCategories = response.data;
+            console.log("start:"+$scope.categoryIni);
+            console.log("end:"+$scope.categoryFin);
+            $scope.detailCategories = response.data;
+            console.log(response.data);
               // console.log("RESULTADO DE LA PRUEBA: "+ $scope.detailCategories);
             },
             function(response) {

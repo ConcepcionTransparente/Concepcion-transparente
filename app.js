@@ -224,8 +224,8 @@ function scraping() {
         ///////////////////////////////////////////////////////////////////
         // CONVERT MONTH AND YEAR IN DATE
         function stringToDate(month, year) {
-
-            var d = new Date(year, month, 01);
+            //new Date(year, month, day, hours, minutes, seconds, milliseconds)
+            var d = new Date(year, month, 01,00,00,00,00);
             d.toISOString().slice(0, 10);
             console.log("fechaaaaaaaaa------------------------------------------->: " + d);
             return d;
