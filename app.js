@@ -120,8 +120,6 @@ function scraping() {
         });
 
     function outerWrapperMap(mappedObject) {
-      console.log("************");
-
         x(mappedObject.href, 'body tr.textoTabla', [{
             cuil: 'td', //cuil proveedor
             grant_title: 'td:nth-of-type(2)', //nombre de fantasia del proveedor
@@ -140,14 +138,12 @@ function scraping() {
     }
 
     function wrapperMap(mappedObject) {
-        // console.log(mappedObject);
         var parentObject = this;
         x(mappedObject.href, 'body tr.textoTabla', [{
             cod: 'td', //codigo del rubro
             category: 'td:nth-of-type(2)', //nombre del rubro
             href: 'td:nth-of-type(7) a@href' //a@href a MESES
         }])(function(err, innerWrapperObject) {
-            // console.log('innerWrapperObject ' + JSON.stringify(innerWrapperObject));
             if (innerWrapperObject == null) {
                 error.push(innerWrapperObject);
             } else {
@@ -181,7 +177,6 @@ function scraping() {
     };
 
     function normalize(o) {
-        console.log("normalize");
         var parentObject = this;
         var year = parseInt(parentObject.year); //año
 
@@ -239,17 +234,13 @@ function scraping() {
             }
         }
         var monthNumber = nuevoMes(childObject.month);
-        //  console.log("MESSSS STRING: ---> "+ childObject.month);
-        //  console.log("MESSSS NUMBER: ---> "+ monthNumber);
-        ///////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////
+
         // CONVERT MONTH AND YEAR IN DATE
         function stringToDate(month, year) {
             //new Date(year, month, day, hours, minutes, seconds, milliseconds)
             var d = new Date(year, month, 01,00,00,00,00);
             d.toISOString().slice(0, 10);
-            console.log("fechaaaaaaaaa------------------------------------------->: " + d);
+            console.log("fecha: " + d);
             return d;
         }
         var newDate = stringToDate(monthNumber, childObject.year);
@@ -263,10 +254,8 @@ function scraping() {
         ///////////////////////////////////////////////////////////////////
         //CONVERT IMPORT TO CORRECT FLOAT NUMBER
         function nuevoImporte(m) {
-            // console.log("NUMERO DEL SCRAPER ---> "+m);
             var y = m.replace(/\./g, '').replace(/\,/g, '.');
             y = parseFloat(y);
-            // console.log("NUMERO CONVERTIDO PERO STRING ---> " + y);
             return y;
         }
         var w = nuevoImporte(childObject.import);

@@ -118,7 +118,6 @@ router.post('/api/post-totalproviders',function(req,res,next){
   mongoose.model('PurchaseOrder')
   .find({"date": {"$gte": start, "$lte": end}})
   .distinct('fk_Provider', function(error, response) {
-    // console.log("TOTAL DE PROVEEDORES: "+response);
       res.send(response);
   });
 
@@ -226,10 +225,8 @@ router.post('/api/post-bubblechart',function(req,res,next){
 router.post('/api/post-linechart',function(req,res,next){
   var start=new Date(req.body.valorini);
   var startyear = start.getFullYear();
-  console.log("START: "+startyear);
   var end=new Date(req.body.valorfin);
   var endyear = end.getFullYear();
-  console.log("END: "+endyear);
 
   mongoose.model('Year').find({"year": {"$gte": startyear, "$lte": endyear}})
   .sort({year: 1})
@@ -409,9 +406,7 @@ router.post('/api/post-categoryID',function(req,res){
     .exec(function(err,categoryID){
       if(err){res.send(err);}
       else{
-        console.log("CATEGORIA ENCONTRADA: "+categoryID);
         var newId = new mongoose.mongo.ObjectId('58342af0b0eb2cc0be8f9221');
-        console.log("CATEGORIA ENCONTRADA ID: "+newId);
         ////////////////////
         mongoose.model('PurchaseOrder')
         .aggregate(
@@ -432,7 +427,6 @@ router.post('/api/post-categoryID',function(req,res){
          ])
         .exec(function(err,result){
           mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
-              // console.log("PROVEEDORES:"+populatedTransactions);
               result=populatedTransactions.map(function(result){
                 return {
                   "nombre":result._id.grant_title,
@@ -441,7 +435,6 @@ router.post('/api/post-categoryID',function(req,res){
                   "id":result._id._id
                 }
               });
-              console.log(result);
              res.send(result);
           });
         });
@@ -473,7 +466,6 @@ router.get('/api/get-Providers',function(req,res){
         }
       });
       res.send(docs);
-      // console.log(docs);
       //  res.json(populatedTransactions);
     });
   // res.send(result);
@@ -489,8 +481,6 @@ router.get('/api/get-Providers',function(req,res){
   router.post('/api/post-detailCategories',function(req,res){
     var start=new Date(req.body.valorini);
     var end=new Date(req.body.valorfin);
-    console.log("START DATE: "+start);
-    console.log("END DATE: "+end);
 
     var newId = new mongoose.mongo.ObjectId(req.body.id);
         ////////////////////
@@ -512,7 +502,6 @@ router.get('/api/get-Providers',function(req,res){
          ])
         .exec(function(err,result){
           mongoose.model('Category').populate(result, {path: '_id'}, function(err, populatedTransactions) {
-              // console.log("CATEGORIAS!!!:"+populatedTransactions);
               result=populatedTransactions.map(function(result){
                 return {
                   "nombre":result._id.category,
@@ -520,8 +509,6 @@ router.get('/api/get-Providers',function(req,res){
                   "contratos": result.contracts
                 }
               });
-              console.log("RESULTADOSSSSSSSSSSSSSSSSS");
-              console.log(result);
              res.send(result);
           });
         });
@@ -534,10 +521,7 @@ router.get('/api/get-Providers',function(req,res){
     router.post('/api/post-detailMonth',function(req,res){
       var anio=req.body.anio;
       anio = anio.toString();
-      // console.log("el anio es: " + anio);
       var newId = new mongoose.mongo.ObjectId(req.body.id);
-      // console.log(newId);
-          ////////////////////
           mongoose.model('PurchaseOrder')
           .aggregate(
             [
@@ -555,7 +539,6 @@ router.get('/api/get-Providers',function(req,res){
             }
            ])
           .exec(function(err,result){
-            // console.log("MESESSSS"+result);
             res.send(result);
           });
     });//end route.post

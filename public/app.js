@@ -157,7 +157,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
   $http.get('/api/get-categories').then(function(response){
     $scope.categories = response.data;
-    // console.log("CATEGORIAS!!!!: "+$scope.categories);
   });
 
   $scope.submit = function(){
@@ -174,8 +173,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             // width = g.clientWidth,
             height = w.innerHeight || e.clientHeight || g.clientHeight;
         //ACA ESTA EL PROBLEMA DEL RESIZE - EL CENTRO LO CALCULA MAL
-        // console.log("Bubblechart WIDTH: " + width);
-        // console.log("Bubblechart HEIGHT: " + height);
+
         if(width < 600){ width += 750}
 
         // tooltip for mouseover functionality
@@ -187,8 +185,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             x: width / 2,
             y: height / 2
         };
-        // console.log("Bubblechart CENTER.x: " + center.x);
-        // console.log("Bubblechart CENTER.y: " + center.y);
+
 
 
         var yearCenters = {
@@ -282,9 +279,9 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             // Checkout http://learnjsdata.com/ for more on
             // working with data.
             var myNodes = rawData.map(function(d) {
-                // console.log(d.total_amount);
+
                 // d.total_amount = d.total_amount.split(',')[0];
-                // console.log(d.total_amount);
+
                 return {
                     id: d.total_amount,
                     radius: radiusScale(+d.total_amount),
@@ -635,7 +632,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
     // d3.json('/api/get-bubblechart', display);
     // d3.json('/api/post-bubblechart?year=2012&customer=type1').header("type", "POST").post(function(error, json) {
-    //    console.log("resultado: "+json);
     //    display(error,json);
     // });
 
@@ -836,7 +832,6 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
                 $scope.getArrayPU = response.data;
                 $scope.getArrayPUcsv = response.data;
 
-                // console.log("getARRAY: "+$scope.getArrayOP);
                 //show more functionality
                 var pagesShown = 1;
                 var pageSize = 5;
@@ -869,7 +864,6 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
                       $scope.getArrayPU = response.data;
                       $scope.getArrayPUcsv = response.data;
 
-                      // console.log("getARRAY: "+$scope.getArrayOP);
                       //show more functionality
                       var pagesShown = 1;
                       var pageSize = 5;
@@ -986,13 +980,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
         var anoActual = fechaActual.getFullYear();
         $scope.categoryIni = new Date(anoActual,00,01);
         $scope.categoryFin = new Date();
-
-        // console.log(anoActual);
-        // console.log("categoryIni: "+$scope.categoryIni);
-        // console.log("categoryFin: "+$scope.categoryFin);
         $scope.submitCategory=function(){
-          // console.log("categoryIni: "+$scope.categoryIni);
-          // console.log("categoryFin: "+$scope.categoryFin);
           $scope.getHeader2 = function(){
             return ["REPARTICIÓN","IMPORTE","CONTRATOS"]
           }
@@ -1001,37 +989,34 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
           "valorfin":$scope.categoryFin,
           "id": $stateParams.id})
           .then(function(response) {
-            console.log("start:"+$scope.categoryIni);
-            console.log("end:"+$scope.categoryFin);
             $scope.detailCategories = response.data;
-            console.log(response.data);
-              // console.log("RESULTADO DE LA PRUEBA: "+ $scope.detailCategories);
             },
             function(response) {
                 console.debug('Error:' + response);
-            });
-            var pagesShown2 = 1;
-            var pageSize2 = 5;
-            $scope.paginationLimit2 = function(data) {
-                return pageSize2 * pagesShown2;
-            };
-            if($scope.detailCategories.length){
-              $scope.hasMoreItemsToShow2 = function() {
-                  return pagesShown2 < ($scope.detailCategories.length / pageSize2);
+            }).then(function(){
+              var pagesShown2 = 1;
+              var pageSize2 = 5;
+              $scope.paginationLimit2 = function(data) {
+                  return pageSize2 * pagesShown2;
               };
-            }
+              if($scope.detailCategories.length){
+                $scope.hasMoreItemsToShow2 = function() {
+                    return pagesShown2 < ($scope.detailCategories.length / pageSize2);
+                };
+              }
 
-            $scope.showMoreItems2 = function() {
-                pagesShown2 = pagesShown2 + 1;
-            };
+              $scope.showMoreItems2 = function() {
+                  pagesShown2 = pagesShown2 + 1;
+              };
+            })
+
         }
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
         // var from = new moment($scope.monthIni).year();
-        // // console.log("holaaaaaa   "+anio);
+
         // $scope.monthIni = from;
-        // console.log("monthIni inicio: "+$scope.monthIni);
         var from = new moment().year();
         $scope.monthIni = new Date();
         $scope.getHeader3 = function(){
@@ -1040,22 +1025,14 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
         $scope.submitMonth= function(){
           var dateString= $scope.monthIni;
-          console.log("monthIni antes: "+$scope.monthIni);
           // var dateParts = dateString.split("/");
           // var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
           var from = new moment($scope.monthIni).year();
-          console.log("monthIni medio: "+ from);
-
-          // console.log("dateObject: "+ dateObject);
-
-
-          // console.log("aa: "+aniox);
           $http.post('/api/post-detailMonth',
           {"anio": from,
            "id": $stateParams.id})
           .then(function(response) {
               $scope.detailMonth = response.data;
-              // console.log("RESULTADO DE LA PRUEBA para meses: "+ $scope.detailMonth);
             },
             function(response) {
                 console.debug('Error:' + response);
@@ -1072,42 +1049,36 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 ////////////////////////////////////////////////////////////////////////////////
 // Ranking de proveedores
 dcuApp.controller('providersController', ['$scope', '$http','$interval', function($scope, $http,$interval) {
-  // var fechaActual = new Date();
-  // var anoActual = fechaActual.getFullYear();
-  // $scope.rankingFilterini = new Date(anoActual,00,01);
-  // $scope.rankingFilterfin = new Date();
-  //csv config
-  // $scope.sortType = ''; // set the default sort type
-  // $scope.sortReverse = false; // set the default sort order
-
-  //
   $scope.getHeader = function(){
     return ["PROVEEDOR","CUIT","IMPORTE"]
   }
+
   $http.get('/api/get-Providers').then(function(response) {
       $scope.getArrayProviders = response.data;
     },
     function(response) {
       console.debug('Error:' + response);
+  }).then(function(){
+    var pagesShownP = 1;
+    var pageSizeP = 10;
+    $scope.paginationLimitP = function(data) {
+        return pageSizeP * pagesShownP;
+    };
+
+      $scope.hasMoreItemsToShowP = function() {
+          return pagesShownP < ($scope.getArrayProviders.length / pageSizeP);
+      };
+
+
+    $scope.showMoreItemsP = function() {
+        pagesShownP = pagesShownP + 1;
+    };
+    $scope.getHeader = function(){
+      return ["PROVEEDOR","CUIT","IMPORTE"]
+    }
   });
 
-  var pagesShownP = 1;
-  var pageSizeP = 10;
-  $scope.paginationLimitP = function(data) {
-      return pageSizeP * pagesShownP;
-  };
-  if($scope.getArrayProviders.length){
-    $scope.hasMoreItemsToShowP = function() {
-        return pagesShownP < ($scope.getArrayProviders.length / pageSizeP);
-    };
-  }
 
-  $scope.showMoreItemsP = function() {
-      pagesShownP = pagesShownP + 1;
-  };
-  $scope.getHeader = function(){
-    return ["PROVEEDOR","CUIT","IMPORTE"]
-  }
 
 
 }]);
