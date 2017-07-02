@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var Xray = require('x-ray');
 var time = require('node-tictoc');
 var mongoose = require('mongoose');
-var db = require('./model/db');
 var model = require('./model/model');
 
 //Throttle the requests to n requests per ms milliseconds.
@@ -17,6 +16,27 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// MONGO DB
+var mongoose = require('mongoose');
+var colors = require('colors')
+require('dotenv').config()
+
+// try {
+//   let host = process.env.MONGO_HOST || 'localhost'
+//   let port = process.env.MONGO_PORT || '27017'
+//   let db = process.env.MONGO_DB || 'grapql-exmaple'
+//   let mdbUri = 'mongodb://'
+//
+//   mdbUri = mdbUri + host + ':' + port + '/' + db
+//   console.log(colors.green.underline("MONGODB URI"))
+//   console.log(colors.green(">> ") + mdbUri)
+//   mongoose.Promise = global.Promise
+//   app.connection = mongoose.connect(mdbUri)
+// } catch (error) {
+//   console.log(colors.green.underline("MONGO CONNECTION ERROR"))
+//   console.log(colors.green(">> ") + JSON.stringify(error))
+// }
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -100,6 +120,8 @@ function scraping() {
         });
 
     function outerWrapperMap(mappedObject) {
+      console.log("************");
+
         x(mappedObject.href, 'body tr.textoTabla', [{
             cuil: 'td', //cuil proveedor
             grant_title: 'td:nth-of-type(2)', //nombre de fantasia del proveedor

@@ -844,9 +844,12 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
                 $scope.paginationLimit = function(data) {
                     return pageSize * pagesShown;
                 };
-                $scope.hasMoreItemsToShow = function() {
-                    return pagesShown < ($scope.getArrayPU.length / pageSize);
-                };
+                if($scope.getArrayPU.length){
+                  $scope.hasMoreItemsToShow = function() {
+                      return pagesShown < ($scope.getArrayPU.length / pageSize);
+                  };
+                }
+
                 $scope.showMoreItems = function() {
                     pagesShown = pagesShown + 1;
                 };
@@ -874,9 +877,12 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
                       $scope.paginationLimit = function(data) {
                           return pageSize * pagesShown;
                       };
-                      $scope.hasMoreItemsToShow = function() {
-                          return pagesShown < ($scope.getArrayPU.length / pageSize);
-                      };
+                      if($scope.getArrayPU.length){
+                        $scope.hasMoreItemsToShow = function() {
+                            return pagesShown < ($scope.getArrayPU.length / pageSize);
+                        };
+                      }
+
                       $scope.showMoreItems = function() {
                           pagesShown = pagesShown + 1;
                       };
@@ -912,9 +918,12 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             $scope.paginationLimit = function(data) {
                 return pageSize * pagesShown;
             };
-            $scope.hasMoreItemsToShow = function() {
-                return pagesShown < ($scope.detail.length / pageSize);
-            };
+            if($scope.detail.length ){
+              $scope.hasMoreItemsToShow = function() {
+                  return pagesShown < ($scope.detail.length / pageSize);
+              };
+            }
+
             $scope.showMoreItems = function() {
                 pagesShown = pagesShown + 1;
             };
@@ -1006,9 +1015,12 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             $scope.paginationLimit2 = function(data) {
                 return pageSize2 * pagesShown2;
             };
-            $scope.hasMoreItemsToShow2 = function() {
-                return pagesShown2 < ($scope.detailCategories.length / pageSize2);
-            };
+            if($scope.detailCategories.length){
+              $scope.hasMoreItemsToShow2 = function() {
+                  return pagesShown2 < ($scope.detailCategories.length / pageSize2);
+              };
+            }
+
             $scope.showMoreItems2 = function() {
                 pagesShown2 = pagesShown2 + 1;
             };
@@ -1084,9 +1096,12 @@ dcuApp.controller('providersController', ['$scope', '$http','$interval', functio
   $scope.paginationLimitP = function(data) {
       return pageSizeP * pagesShownP;
   };
-  $scope.hasMoreItemsToShowP = function() {
-      return pagesShownP < ($scope.getArrayProviders.length / pageSizeP);
-  };
+  if($scope.getArrayProviders.length){
+    $scope.hasMoreItemsToShowP = function() {
+        return pagesShownP < ($scope.getArrayProviders.length / pageSizeP);
+    };
+  }
+
   $scope.showMoreItemsP = function() {
       pagesShownP = pagesShownP + 1;
   };
