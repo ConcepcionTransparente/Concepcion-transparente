@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////ANGULAR JS////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+var arr = [];
 var dcuApp = angular.module('dcuApp',
     ['ui.router','ui.materialize','720kb.socialshare','ngSanitize', 'angularMoment','ngCsv']);
 dcuApp.config(
@@ -804,6 +805,7 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http','$interval'
 ////////////////////////////////////////////////////////////////////////////////
 // Contratos de obras públicas y servicios
 dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function($scope, $http) {
+
     $scope.sortType = ''; // set the default sort type
     $scope.sortReverse = false; // set the default sort order
     var fechaActual = new Date();
@@ -811,11 +813,8 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
     $scope.purchasefilterini =  new Date(anoActual,00,01);
     $scope.purchasefilterfin = new Date();
     $scope.searchPurchase = "undefined";
-    //csv config
-    // $scope.getHeader = function(){
-    //   return ["AÑO","MES","PROVEEDOR","RUBRO","IMPORTE"]
-    // }
-    //
+
+
     $http.get('/api/get-categories').then(function(response){
       $scope.categories = response.data;
     });
@@ -829,6 +828,30 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
         {"valorini":$scope.purchasefilterini,
         "valorfin":$scope.purchasefilterfin,"category":""})
         .then(function(response) {
+              var j=0;
+              var i=0;
+
+                vector = response.data;
+                docs = vector.map(function(vect){
+                  if(vect.fecha.indexOf("-01T03") == -1){
+                    // console.log(vect.fecha + " - " + vect.importe);
+                    j = j+1;
+                    arr.push(vect.idPO)
+                  }
+                  else{i=i+1;}
+                })
+                console.log("docs: " + docs.length);
+                console.log("fechas SIN el 03: "+ j);
+                console.log("fechas CON el 03: "+ i);
+                console.log("arr length: " + arr.length);
+                for(i = 0; i < arr.length;i++){
+                  console.log(arr[i]);
+                  $http.post('/deleteOrders', {"id":arr[i]})
+                  .then(function(){
+                    console.log("entrada eliminada: "+arr[i]);
+                  })
+                  }
+
                 $scope.getArrayPU = response.data;
                 $scope.getArrayPUcsv = response.data;
 
@@ -852,7 +875,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
             },
             function(response) {
                 console.debug('Error:' + response);
-            });
+            })
         }else{
           $http.post('/api/post-categoryID',{categorySelect:$scope.searchPurchase})
           .then(function(response) {
@@ -888,6 +911,8 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
             });
         };
     }
+
+
 
 }]);
 

@@ -150,6 +150,7 @@ router.post('/api/post-totalorders',function(req,res,next){
   });
 
 });
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -221,7 +222,7 @@ router.post('/api/post-bubblechart',function(req,res,next){
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-// EVOLUCION DEL GASTO - LINECHART
+// EVOLUCION DEL GASTO - ºART
 router.post('/api/post-linechart',function(req,res,next){
   var start=new Date(req.body.valorini);
   var startyear = start.getFullYear();
@@ -287,7 +288,6 @@ router.post('/api/post-ranking',function(req,res,next){
 router.post("/api/post-purchases", function(req, res) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
-
   if(!req.body.category){
     mongoose.model('PurchaseOrder')
     .find({"date": {"$gte": start, "$lte": end}})
@@ -299,6 +299,7 @@ router.post("/api/post-purchases", function(req, res) {
       else{
         docs=populatedTransactions.map(function(result){
           return {
+            "idPO": result._id,
             "anio":result.year,
             "mes":result.month,
             "fecha": result.date,
@@ -338,6 +339,20 @@ router.post("/api/post-purchases", function(req, res) {
   }
 
 });
+router.post("/deleteOrders",function(req,res){
+
+  // find each person with a name contains 'Ghost'
+  mongoose.model('PurchaseOrder').remove({ _id: req.body.id }, function(err) {
+    if (!err) {
+            console.log("removed!");
+    }
+    else {
+            console.log(err);
+    }
+});
+})
+
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
