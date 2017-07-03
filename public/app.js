@@ -840,17 +840,17 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
                   }
                   else{i=i+1;}
                 })
-                console.log("docs: " + docs.length);
-                console.log("fechas SIN el 03: "+ j);
-                console.log("fechas CON el 03: "+ i);
-                console.log("arr length: " + arr.length);
-                for(i = 0; i < arr.length;i++){
-                  console.log(arr[i]);
-                  // $http.post('/deleteOrders', {"id":arr[i]})
-                  // .then(function(){
-                  //   console.log("entrada eliminada: "+arr[i]);
-                  // })
-                  }
+                // console.log("docs: " + docs.length);
+                // console.log("fechas SIN el 03: "+ j);
+                // console.log("fechas CON el 03: "+ i);
+                // console.log("arr length: " + arr.length);
+                // for(i = 0; i < arr.length;i++){
+                //   console.log(arr[i]);
+                //   $http.post('/deleteOrders', {"id":arr[i]})
+                //   .then(function(){
+                //     console.log("entrada eliminada: "+arr[i]);
+                //   })
+                //   }
 
                 $scope.getArrayPU = response.data;
                 $scope.getArrayPUcsv = response.data;
