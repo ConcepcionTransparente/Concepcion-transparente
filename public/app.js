@@ -846,10 +846,10 @@ dcuApp.controller('purchaseController', ['$scope', '$http','$interval', function
                 console.log("arr length: " + arr.length);
                 for(i = 0; i < arr.length;i++){
                   console.log(arr[i]);
-                  $http.post('/deleteOrders', {"id":arr[i]})
-                  .then(function(){
-                    console.log("entrada eliminada: "+arr[i]);
-                  })
+                  // $http.post('/deleteOrders', {"id":arr[i]})
+                  // .then(function(){
+                  //   console.log("entrada eliminada: "+arr[i]);
+                  // })
                   }
 
                 $scope.getArrayPU = response.data;
