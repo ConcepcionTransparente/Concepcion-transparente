@@ -340,8 +340,6 @@ router.post("/api/post-purchases", function(req, res) {
 
 });
 router.post("/deleteOrders",function(req,res){
-
-  // find each person with a name contains 'Ghost'
   mongoose.model('PurchaseOrder').remove({ _id: req.body.id }, function(err) {
     if (!err) {
             console.log("removed!");
