@@ -107,9 +107,9 @@ app.use(function(err, req, res, next) {
 /////////////////////////////////////////////////////////////////////////////////////
 
 function scraping() {
-    console.log("funcion scrapping() corriendo");
+    console.log("START");
     var error = [];
-    var url = "http://www.cdeluruguay.gov.ar/datagov/proveedoresContratados.php";
+    var url = "http://www.cdeluruguay.gob.ar/datagov/proveedoresContratados.php";
     x(url, 'body tr.textoTabla', [{
             year: 'td', //año
             total_amount: 'td:nth-of-type(4)', //importe de ese proveedor en ese año
@@ -198,8 +198,6 @@ function scraping() {
         ///////////////////////////////////////////////////////////////////
         //CADA LINEA DEL SCRAPING CUENTA CON:
         //YEAR-CUIL-GRANT_TITLE-COD-CATEGORY-MONTH-NUMBEROFCONTRACTS-IMPORT
-        ///////////////////////////////////////////////////////////////////
-
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////
@@ -297,9 +295,9 @@ function scraping() {
                     console.log(err);
                     return;
                 }
-                console.log("result2" + result2);
-                console.log("------------------------------------- RESULT1-ID: " + result1._id);
-                console.log("------------------------------------- RESULT2-ID: " + result2._id);
+                // console.log("result2" + result2);
+                // console.log("------------------------------------- RESULT1-ID: " + result1._id);
+                // console.log("------------------------------------- RESULT2-ID: " + result2._id);
 
                 //insercion de orden de compra
                 var Purchase = {
@@ -321,10 +319,10 @@ function scraping() {
                     fk_Category: result2._id
                 }, Purchase, options, function(err, purchase) {
                     if (err) {
-                        console.log(err);
+                        console.log("ERROR AL INSERTAR PURCHASE EN LA DATABASE: "+ err);
                         return;
                     }
-                    console.log("NEW PURCHASE: " + purchase);
+                    console.log("NEW PURCHASE: " + Purchase);
                 }); //END INSERT PURCHASE
                 // return;
                 console.log("NEW CATEGORY: " + result2);
@@ -355,11 +353,11 @@ function scraping() {
 
     }; //end normalize
     return;
-}; //end scraping()////////////////////////////////////////////////////////////////////
-//
-// time.tic();
+}; //end scraping()////////////////////////////////////////////////////////////////
+// //
+// // time.tic();
 // scraping();
-// time.toc();
+// // time.toc();
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -373,7 +371,7 @@ function scraping() {
 //     executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
 // }
 // setTimeout(function() {
-//     scraping();
+    scraping();
 // }, executeScraper);
 
 console.log("APP.JS");

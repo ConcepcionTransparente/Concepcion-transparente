@@ -127,12 +127,6 @@ router.post('/api/post-totalproviders',function(req,res,next){
 ////////////////////////////////////////////////////////////////////////////////
 //CANTIDAD DE ORDENES DE COMPRA
 router.post('/api/post-totalorders',function(req,res,next){
-  // var start=new Date(req.body.valorini);
-  // var end=new Date(req.body.valorfin);
-  // var hoy=new Date();
-  // end.setHours(0,0,0,0);
-  // hoy.setHours(0,0,0,0);
-
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   var hoy=new Date();

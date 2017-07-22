@@ -17,6 +17,7 @@
     "fs": "0.0.2",
     "jade": "~1.11.0",
     "method-override": "^2.3.6",
+    "mongodb": "^2.2.30",
     "mongoose": "^4.6.0",
     "mongoose-float": "^1.0.2",
     "morgan": "~1.6.1",
