@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 var model = require('./model/model');
 
 //Throttle the requests to n requests per ms milliseconds.
-var x = Xray().throttle(10, 100);
+var x = Xray().throttle(10, 1000);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -105,7 +105,7 @@ app.use(function(err, req, res, next) {
 /////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////SCRAPER////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
-
+var counter = 0;
 function scraping() {
     console.log("START");
     var error = [];
@@ -177,6 +177,9 @@ function scraping() {
     };
 
     function normalize(o) {
+      console.log("counter");
+      console.log(counter);
+      counter = counter +1;
         var parentObject = this;
         var year = parseInt(parentObject.year); //año
 
@@ -261,7 +264,6 @@ function scraping() {
         var partialImport = parseFloat(w); //importe de un proveedor en un cierto mes
         var totalImport = parseFloat(z); //importe total para el años correspondiente a esta fila
 
-
         var updateProvider = {
                 cuil: childObject.cuil,
                 grant_title: childObject.grant_title
@@ -319,20 +321,24 @@ function scraping() {
                     fk_Category: result2._id
                 }, Purchase, options, function(err, purchase) {
                     if (err) {
-                        console.log("ERROR AL INSERTAR PURCHASE EN LA DATABASE: "+ err);
+                        console.log("ERROR AL INSERTAR PURCHASE EN LA DATABASE: ");
+                        console.log(err);
                         return;
                     }
-                    console.log("NEW PURCHASE: " + Purchase);
+                    console.log("NEW PURCHASE: " );
+                    console.log(Purchase);
                 }); //END INSERT PURCHASE
                 // return;
-                console.log("NEW CATEGORY: " + result2);
+                // console.log("NEW CATEGORY: " + result2);
 
             }); //END UPDATE CATEGORY
             // return;
-            console.log("NEW PROVIDER: " + result1);
+            // console.log("NEW PROVIDER: " + result1);
 
             // result.status(200).send(result);
         }); //END UPDATE PROVIDER
+
+
 
 
         var updateYear = {
@@ -347,7 +353,7 @@ function scraping() {
                 console.log(err);
                 return;
             } else {
-                console.log("NEW YEAR: " + years);
+                // console.log("NEW YEAR: " + years);
             }
         });
 
@@ -365,14 +371,14 @@ function scraping() {
 ///////////////////////////////////////////////////////////////////////////////////
 
 
-// var now = new Date();
-// var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 04, 30, 0, 0) - now;
-// if (executeScraper < 0) {
-//     executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
-// }
-// setTimeout(function() {
-    // scraping();
-// }, executeScraper);
+var now = new Date();
+var executeScraper = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 07, 30, 0, 0) - now;
+if (executeScraper < 0) {
+    executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
+}
+setTimeout(function() {
+    scraping();
+}, executeScraper);
 
 console.log("APP.JS");
 

@@ -1,6 +1,11 @@
 var mongoose = require('mongoose');
-
-// mongoose.connect('mongodb://heroku_0n621108:hgsolivj50plo8bvbmckme8sa9@ds035856.mlab.com:35856/heroku_0n621108');
+// mongoose.connect('mongodb://127.0.0.1:27017/dcu?socketTimeoutMS=90000', function(err, db) {
+//     if (err) {
+//         console.log('Unable to connect to the server. Please start the server.', err);
+//     } else {
+//         console.log('Connected to Server successfully');
+//     }
+// });
 
 mongoose.connect('mongodb://heroku_0n621108:hgsolivj50plo8bvbmckme8sa9@ds035856.mlab.com:35856/heroku_0n621108?socketTimeoutMS=90000', function(err, db) {
     if (err) {
@@ -19,4 +24,15 @@ mongoose.connect('mongodb://heroku_0n621108:hgsolivj50plo8bvbmckme8sa9@ds035856.
 //         console.log("successfully connected to the database DO");
 //     }
 //     db.close();
+// });
+
+// var MongoClient = require('mongodb').MongoClient;
+//
+// var uri = "mongodb://concepciontransparente:genosha@cluster0-shard-00-00-z1nxi.mongodb.net:27017,cluster0-shard-00-01-z1nxi.mongodb.net:27017,cluster0-shard-00-02-z1nxi.mongodb.net:27017/dcu?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin";
+// MongoClient.connect(uri, function(err, db) {
+//       if (err) {
+//           console.log('Unable to connect to the server. Please start the server.', err);
+//       } else {
+//           console.log('Connected to Server successfully');
+//       }
 // });
