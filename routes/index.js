@@ -413,7 +413,6 @@ router.post('/api/post-categoryID',function(req,res){
     .exec(function(err,categoryID){
       if(err){res.send(err);}
       else{
-        console.log("esta es la categoria");
         console.log(categoryID);
         var newId = new mongoose.mongo.ObjectId('596e0604d06aa12140892f8b');
         ////////////////////
@@ -444,8 +443,7 @@ router.post('/api/post-categoryID',function(req,res){
                   "id":result._id._id
                 }
               });
-              console.log("HOLA RANKING OBRA PUBLICA");
-              console.log(result);
+
              res.send(result);
           });
         });
