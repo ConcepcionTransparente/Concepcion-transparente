@@ -835,7 +835,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
                   var j = 0;
                   var i = 0;
                   var vector = response.data;
-                  console.log(vector);
+                  // console.log(vector);
                   docs = vector.map(function(vect) {
                       if (vect.fecha.indexOf("-01T03") == -1) {
                           // console.log(vect.fecha + " - " + vect.importe);
@@ -846,12 +846,12 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
                           i = i + 1;
                       }
                   })
-                  console.log("docs: " + docs.length);
-                  console.log("fechas SIN el 03: " + j);
-                  console.log("fechas CON el 03: " + i);
-                  console.log("arr length: " + arr.length);
+                  // console.log("docs: " + docs.length);
+                  // console.log("fechas SIN el 03: " + j);
+                  // console.log("fechas CON el 03: " + i);
+                  // console.log("arr length: " + arr.length);
                   for (i = 0; i < arr.length; i++) {
-                      console.log(arr[i]);
+                      // console.log(arr[i]);
                       // $http.post('/deleteOrders', {"id":arr[i]})
                       // .then(function(){
                       //   console.log("entrada eliminada: "+arr[i]);
