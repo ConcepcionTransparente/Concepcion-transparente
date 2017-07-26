@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ng-app="dcuApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Concepción Transparente</title>
+
+
+
+
+
+    <meta itemprop="name" content="Concepción Transparente">
+    <meta itemprop="description" content="Detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay. ">
+    <meta itemprop="image" content="//dcu.herokuapp.com/main.png">
+    <meta name="keywords" content="argentina, polticos, cargos">
+    <meta name="robots" content="Index, All">
+    <meta name="robots" content="Index, Follow">
+    <meta name="revisit-after" content="4 days">
+    <link rel="shortcut icon" href="favicon.ico"  type="image/x-icon">
+    <meta property="og:url" content="//dcu.herokuapp.com/">
+    <meta property="og:image" content="//dcu.herokuapp.com/main.png">
+    <meta property="og:description" content="Concepción Transparente es un detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay.">
+    <meta property="og:title" content="Concepción Transparente">
+
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:site" content="@DataConcepcion">
+    <meta name="twitter:creator" content="@DataConcepcion">
+    <meta name="twitter:title" content="Concepción Transparente">
+    <meta name="twitter:description" content="Concepción Transparente es un detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay.">
+     <meta name="twitter:player" content="//dcu.herokuapp.com">
+    <meta name="twitter:player:height" content="450">
+    <meta name="twitter:player:width" content="438">
+
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+
+    <!-- CSS  -->
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    <link type="text/css" rel="stylesheet" href="../css/bubble_chart.css">
+    <!-- Load c3.css -->
+    <link href="/lib/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
+    <!-- Load d3.js and c3.js -->
+    <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
+    <script src="../lib/d3.js"></script>
+
+    <script src="/lib/c3/htdocs/js/c3.min.js"></script>
+
+
+  </head>
+
+
+  <body>
+    <div class="container">
+     
+    <div ng-cloak ui-view="General" class="row" autoscroll="false"></div>
+    <div ui-view="Bubblechart" class="row" autoscroll="false"></div>
+    <div ui-view="Linechart" class="row" autoscroll="false"></div>
+    <div ui-view="Ranking" class="row" autoscroll="false"></div>
+    <div ui-view="RankingObraPublica" class="row" autoscroll="false"></div>
+    <div ui-view="Providers" class="row" autoscroll="false"></div>
+    <div ui-view="Purchases" class="row" autoscroll="false"></div>
+    <div ui-view="Detail" class="row" autoscroll="false"></div>
+
+
+
+<!-- ////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////// -->
+    <br><div class="divider"></div>
+    <div class="row presupuestos">
+      <div class="col s12 m6">
+        <a href="./Propuesta2016.xls" download="Propuesta modificación presupuesto 2016"><h3 class="links">
+          <img src="./propuesta2016image.png" alt="" /><br><br>
+          Descargar Propuesta modificación presupuesto 2016</h3></a>
+      </div>
+      <div class="col s12 m6">
+        <a href="./Presupuesto2016.pdf" download="Proyecto modificación presupuesto 2016"><h3 class="links">
+          <img src="./presupuesto2016image.png" alt="" /><br><br>
+          Descargar Proyecto modificación presupuesto 2016</h3></a>
+      </div>
+    </div>
+
+   <footer class="footer">
+     <p>
+       La participación ciudadana es importante para que cada vez todos los vecinos conozcan cómo se utilizan los fondos públicos.
+     </p>
+     <p>2016 - Un proyecto de <a target="_blank" href="//datosconcepcion.com.ar/">Datos Concepción</a><br><br> Desarrollado por <a target="_blank" href="//genosha.com.ar">GENOSHA</a> -      <a href="#">Github</a></p>
+  </footer>
+<!-- ////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////// -->
+</div> <!-- end container -->
+
+
+
+    <!-- ANGULAR AND FRONTEND -->
+     <script type="text/javascript" src="//code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+
+    <script src="//code.angularjs.org/1.2.20/angular-sanitize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.6/ng-csv.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/moment/locale/es.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/materialize/dist/js/initial.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function() {
+          $('select').material_select();
+      });
+    </script>
+    <!-- D3 AND PAINT SCRIPTS -->
+    <script src="../lib/d3.js"></script>
+    <script src="../src/tooltip.js"></script>
+    <script src="app.js"></script>
+    <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+
+    <script src="bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<div class="row">
+  <br><div class="divider"></div>
+  <h3>Listado completo de Proveedores</h3>
+  <p class="text">
+    Esta sección muestra la totalidad de los proveedores contratados por la Municipalidad de Concepción del Uruguay desde el 01/01/2009 a la actualidad. Están ordenados alfabéticamente. La sección cuenta con un filtro que permite buscar proveedores específicos por nombre.
+  </p>
+
+
+</div>
+<div class="row">
+  <form>
+    <input type="text" placeholder="Filtrar nombre de proveedor" ng-model="searchPurchase">
+    <!-- <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv">Export</button> -->
+  </form>
+    <button type="button" ng-csv="getArrayProviders" csv-header="getHeader()" filename="Proveedores.csv" class="waves-effect  lime  lighten-1 waves-light btn center-button"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar </button>
+</div>
+<div class="row">
+  <table>
+    <thead>
+      <tr>
+        <th>PROVEEDOR</th>
+        <th>CUIT</th>
+        <th>IMPORTE TOTAL</th>
+        <th>VER DETALLE</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="x in getArrayProviders | orderBy: 'nombre' | filter:searchPurchase | limitTo: paginationLimitP() ">
+          <td>{{ x.nombre }}</td>
+          <td>{{ x.cuit }}</td>
+          <td>{{ x.importe | currency}}</td>
+          <!-- <td><a ui-sref="Detail({id: x.id})"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td> -->
+           <td><a ui-sref="Detail({id: x.id})" target="_blank"><i class="fa fa-arrow-circle-o-right fa-2 " aria-hidden="true"></i></a></td>
+        </tr>
+      </tbody>
+  </table>
+  <div class="button-div">
+    <button class="light-green lighten-3 show-more-btn waves-effect  light-green lighten-3 waves-light btn center-button" ng-show="hasMoreItemsToShowP()" ng-click="showMoreItemsP()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
+  </div>
+
+</div>

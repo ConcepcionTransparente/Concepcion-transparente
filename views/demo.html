@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Datos abiertos</title>
+    <!-- CSS  -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,300,300italic' rel='stylesheet' type='text/css'>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/bubble_chart.css">
+
+    <!-- Load c3.css -->
+    <link href="/lib/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
+    <!-- Load d3.js and c3.js -->
+    <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
+    <script src="../lib/d3.js"></script>
+    <script src="/lib/c3/htdocs/js/c3.min.js"></script>
+  </head>
+
+
+  <body>
+    <div class="container">
+
+        <header class="row">
+          <div class="col s12 m8 border-right">
+            <h1>CONCEPCIÓN DEL URUGUAY</h1>
+            <h3>Visualización de datos publicos</h3>
+          </div>
+          <div class="col s12 m4 date">
+            <script>
+            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+            var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+            var f=new Date();
+            document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+            </script>
+          </div>
+        </header>
+
+        <div class="divider"></div>
+        <div class="row general-data">
+          <h3>En 2016 la municipalidad de Concepción del Uruguay:</h3>
+          <div class="col s12 m3 border-right">
+            <p>TOTAL DE ORDENES DE COMPRA POR:<br><br><br><span>$..............</span></p>
+          </div>
+          <div class="col s12 m3 border-right">
+            <p>PROMEDIO DE GASTO MENSUAL:<br><br><br><span>$..............</span></p>
+          </div>
+          <div class="col s12 m3 border-right">
+            <p>CANTIDAD DE PROVEEDORES:<br><br><br><br><span>..............</span></p>
+          </div>
+          <div class="col s12 m3">
+            <p>CANTIDAD DE ORDENES DE COMPRAS:<br><br><br><span>$..............</span></p>
+          </div>
+        <div class="divider"></div>
+        <div class="row">
+          <br><br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida.</p>
+          <br>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <h3>Total de proveedores 2016:</h3>
+    </div>
+      <div id="vis"></div>
+    <div class="container">
+
+      <br>
+      <div class="divider"></div>
+      <br>
+
+          <div class="row">
+            <div class="article">
+              <h3>Evolución del gasto durante el año 2016: </h3>
+              <div id="lineschart" class=""></div>
+            </div>
+            <br>
+            <div class="divider"></div>
+            <br>
+          </div>
+          <div class="row">
+            <br>
+            <h3>Ranking de proveedores 2016: </h3>
+            <div class="col s12">
+              <table class="striped">
+                <thead>
+                  <tr>
+                      <th data-field="id">Proveedor</th>
+                      <th data-field="name">Contrataciones</th>
+                      <th data-field="price">Monto total</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>NOMBRE DEL PROVEEDOR.</td>
+                    <td>CANTIDAD CONTRATACIONES</td>
+                    <td>$.......................</td>
+                  </tr>
+                  <tr>
+                    <td>NOMBRE DEL PROVEEDOR.</td>
+                    <td>CANTIDAD CONTRATACIONES</td>
+                    <td>$.......................</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- <div class="col s12 m4">
+              <div id="donut"></div>
+            </div> -->
+          </div>
+          <br>
+          <div class="divider"></div>
+          <br>
+          <!-- <div class="row">
+            <div class="article">
+              <h3>Comparación de gasto total entre 2009 y 2016: </h3>
+              <div id="barschart"></div>
+            </div>
+          </div>
+          <div class="divider"></div> -->
+
+          <div class="row">
+            <br><br>
+            <h3>Contratos de obras publicas y servicios durante el año 2016:</h3>
+            <table class="striped">
+              <thead>
+                <tr>
+                    <th data-field="category">Rubro</th>
+                    <th data-field="providers">Cantidad de proveedores</th>
+                    <th data-field="price">Importe</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>NOMBE DEL RUBRO</td>
+                  <td>CANTIDAD</td>
+                  <td>$.......................</td>
+                </tr>
+                <tr>
+                  <td>NOMBE DEL RUBRO</td>
+                  <td>CANTIDAD</td>
+                  <td>$.......................</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+
+            <div class="divider">
+
+            </div>
+            <!--   Icon Section   -->
+              <div class="row">
+                <div class="col s12 m12">
+                  <h3>Presupuesto del año 2015:</h3>
+                </div>
+                <div class="col s12 m6" style="text-align:center">
+                  <div class="icon-block">
+                    <p class="light">
+                      <svg width="150" height="150">
+                        <circle cx="50%" cy="50%" r="70" fill="#880e4f" />
+                        <text x="25%" y="60%" font-family="sans-serif" font-size="40px" font-weight="bold" fill="white">57%</text>
+                      </svg>
+                      <p class="fixedprice">
+                        <span>$220</span>.000.000 <br>Millones <br>Destinado a sueldos
+                      </p>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col s12 m6" style="text-align:center">
+                  <div class="icon-block">
+                    <p class="light">
+                      <svg width="150" height="150">
+                        <circle cx="50%" cy="50%" r="70" fill="#880e4f" />
+                        <text x="25%" y="60%" font-family="sans-serif" font-size="40px" font-weight="bold" fill="white">43%</text>
+                      </svg>
+                      <p class="fixedprice">
+                        <span>$164</span>.000.000 <br>Millones <br>Otros gastos
+                      </p>
+                    </p>
+                  </div>
+                </div>
+              </div> <!-- end row -->
+
+
+            <!-- <div id="pie-info" class="row">
+              <div class="divider"></div>
+              <div class="col s12 m8">
+                <br><br>
+                <article>
+                  <h3>Presupuesto del año 2015:</h3>
+                  <p>
+                    $<span>220.</span>000.000 <span class="color">destinados a sueldos</span><br>
+                  </p>
+                  <p>
+                    <span>$164.</span>000.000 <span class="color">otros gastos</span>
+                  </p>
+                </article>
+              </div>
+              <div class="col s12 m4">
+                <div id="pie-chart"></div>
+              </div>
+            </div> -->
+            <!-- <div class="divider"></div>
+            <div ="row">
+              <div class="s12">
+                <h3>OPCIONES</h3>
+                <div class="paint"></div>
+                <br><br><br><br>
+              </div>
+            </div> -->
+            <br><br>
+
+
+
+        <footer>
+          <div class="divider"></div>
+          <p>
+          Gasto Público de Concepción del Uruguay - <span>Copyright (c) 2016 Copyright All Rights Reserved.</span>
+          </p>
+        </footer>
+    </div>
+
+
+        <script>
+        var chart = c3.generate({
+          bindto: '#pie-chart',
+            data: {
+                // iris data from R
+                columns: [
+                    ['Sueldos', 220000000],
+                    ['Otros gastos', 164000000],
+                ],
+                type : 'pie',
+                onclick: function (d, i) { console.log("onclick", d, i); },
+                onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+            }
+        });
+        var linechart = c3.generate({
+            bindto: '#lineschart',
+            // data: {
+            //   columns: [
+            //     ['data1', 30, 200, 100, 400, 150],
+            //     ['proveedores',1149, 1005, 1197, 1355, 816,985,1008,312],
+            //     ['data4',180, 150, 300, 70, 120],
+            //     ['data5',200, 310, 150, 100, 180]
+            //   ]
+            // }
+            data: {
+              url: 'example.json', //la carpeta raiz de busqueda es /public/
+              mimeType: 'json'
+            }
+          });
+
+        var barchart = c3.generate({
+              bindto: '#barschart',
+              data: {
+                columns: [
+                  ['periodo', 50, 20, 10, 40, 15, 25,22,30]
+                ],
+                axes: {
+                  data2: 'y2'
+                },
+                types: {
+                  'periodo': 'bar' // ADD
+                },
+                colors:{
+                  'periodo': 'lightgray'
+                }
+              },
+              axis: {
+                y: {
+                  label: {
+                    text: 'Gastos anuales',
+                    position: 'outer-middle'
+                  }
+                }
+              }
+          });
+
+          var donut = c3.generate({
+            bindto: '#donut',
+            data: {
+              columns: [
+                ['ARENERA DON ANTONIO S.A',1432562],
+                ['A. ROPELATO S.R.L.',854538],
+                ['AMX ARGENTINA S.A.',268856],
+                ['AMX ARGENTINA S.A.',268856],
+                ['AMX ARGENTINA S.A.',268856],
+                ['AMX ARGENTINA S.A.',268856]
+              ],
+              type: 'donut'
+            },
+            donut:{
+              title: "Mejores proveedores"
+            }
+          });
+        </script>
+
+        <!-- <script type="text/javascript">
+            var width = 900,
+                height = 350;
+
+            var canvas = d3.select("div.paint").append("svg")
+                  .attr("width", width)
+                  .attr("height",height)
+                  .append("g")
+                    //.attr("transform","translate(50, 50)")
+                    ;
+
+            var pack = d3.layout.pack()
+                  .size([width, height - 50])
+                  .padding(1);
+
+            d3.json("mydata.json",function(data){
+              var nodes = pack.nodes(data);
+              // Evito el nodo raiz
+              nodes.shift();
+
+              var node = canvas.selectAll(".node")
+                  .data(nodes)
+                  .enter()
+                  .append("g")
+                    .attr("class","node")
+                    .attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";});
+
+              node.append("circle")
+                    .attr("r",function(d){return d.r; })
+                    // .attr("r",function(d){
+                    //   console.log(d.value);
+                    //   var value=String(d.value);
+                    //   console.log(value);
+                    //   var index = value.indexOf(',');
+                    //   var indexpoint = value.indexOf('.');
+                    //   var string1 = value.substring(0,indexpoint);
+                    //   var string2 = value.substring(indexpoint+1,index);
+                    //   var string = string1.concat(string2);
+                    //   var radius = parseInt(string) /15000;
+                    //   console.log("index:"+index);
+                    //   console.log("indexpoint:"+indexpoint);
+                    //   console.log("strin1:"+strin1);
+                    //   console.log("string2:"+string2);
+                    //   console.log("string:"+string);
+                    //   console.log("Radius:" +radius);
+                    //   return radius;
+                    // })
+                    .attr("fill","#e91e63")
+                    .attr("opacity",function(){var opacity=0;opacity=Math.random();return opacity});
+            });
+            </script> -->
+
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../bower_components/materialize/dist/materialize.min.js"></script>
+    <script src="../bower_components/materialize/dist/js/init.js"></script>
+
+    <script src="../lib/d3.js"></script>
+    <script src="../src/tooltip.js"></script>
+    <script src="../src/bubble_chart.js"></script>
+
+  </body>
+</html>

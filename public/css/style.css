@@ -1,0 +1,8 @@
+
+p.fixedprice{
+  font-size: 2em;
+  font-weight: bold;
+}
+p.fixedprice span{
+  font-size: 1.5em;
+}
