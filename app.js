@@ -377,7 +377,7 @@ if (executeScraper < 0) {
     executeScraper += 86400000; // si se pasaron las 3.30 am que lo vuelva a ejecutar mañana a la misma hora
 }
 setTimeout(function() {
-    scraping();
+    // scraping();
 }, executeScraper);
 
 console.log("APP.JS");
