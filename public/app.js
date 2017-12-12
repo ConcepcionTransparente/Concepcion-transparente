@@ -1,10 +1,12 @@
-////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////ANGULAR JS////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+// AngularJS
+
 var arr = [];
 var dcuApp = angular.module('dcuApp', ['ui.router', 'ui.materialize', '720kb.socialshare', 'ngSanitize', 'angularMoment', 'ngCsv']);
+
 dcuApp.config(
-    ["$stateProvider", "$urlRouterProvider",
+    [
+        "$stateProvider",
+        "$urlRouterProvider",
         function($stateProvider, $urlRouterProvider) {
 
             $urlRouterProvider.otherwise("/");
@@ -62,9 +64,10 @@ dcuApp.config(
                         }
                     }
                 })
-
         }
-    ]);
+    ]
+);
+
 dcuApp.run(function($rootScope) {
     moment.locale('es');
     var currentTime = new Date();
@@ -86,18 +89,16 @@ dcuApp.filter('monthName', [function() {
         return monthNames[monthNumber];
     }
 }]);
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+
 dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope, $http, $q) {
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-
 
     $scope.generalfilterini = new Date(anoActual, 00, 01);
     $scope.generalfilterfin = new Date();
     var from = new moment($scope.generalfilterini).toISOString();
     var to = new moment($scope.generalfilterfin).toISOString();
+
     $scope.submit = function() {
         var from = new moment($scope.generalfilterini).toISOString();
         var to = new moment($scope.generalfilterfin).toISOString();
@@ -130,12 +131,9 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
                 console.log(error);
             });
     };
-
 }]);
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//Bubblechart (comparación entre proveedores)
+
+// Bubblechart (comparación entre proveedores)
 dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, $http) {
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
@@ -148,7 +146,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
     });
 
     $scope.submit = function() {
-
         var svg = d3.select("#bubbleChart");
         svg.selectAll("*").remove();
 
@@ -551,7 +548,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
          * Below is the initialization code as well as some helper functions
          * to create a new bubble chart instance, load the data, and display it.
          */
-
         var myBubbleChart = bubbleChart();
 
         /*
@@ -565,8 +561,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
             myBubbleChart('#bubbleChart', data);
         }
-
-        //????????????????????????????????????????????????????????????????????????????????
 
         /*
          * Sets up the layout buttons to allow for toggling between view modes.
@@ -630,7 +624,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         //SI ES DISTINTO DE UNDEFINED (ALGUNA CATEGORIA EN PARTICULAR) LLAMA AL POST PASANDOLE DICHA CATEGORIA.
         var compare = $scope.searchPurchase.localeCompare('undefined');
         if (compare == 0) {
-
             d3.json('/api/post-bubblechart', function(error, data) {
                     display(error, data);
                 })
@@ -640,7 +633,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                     "valorfin": $scope.bubblefilterfin,
                     "category": ""
                 }));
-
         } else {
             $http.post('/api/post-categoryID', {
                     categorySelect: $scope.searchPurchase
@@ -660,18 +652,14 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                     function(response) {
                         console.debug('Error:' + response);
                     });
-        };
+        }
 
         // setup the buttons.
         setupButtons();
-
     };
-
 }]);
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//Linechar (evolución del gasto)
+
+// Linechart (evolución del gasto)
 dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $http) {
     $scope.linechartFilterini = new Date(2009, 00, 01);
     $scope.linechartFilterfin = new Date();
@@ -685,11 +673,13 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
         var from = new moment($scope.linechartFilterini).toISOString();
         var to = new moment($scope.linechartFilterfin).toISOString();
 
-        $http.post('/api/post-linechart', {
+        $http
+            .post('/api/post-linechart', {
                 "valorini": from,
                 "valorfin": to
             })
-            .then(function(response) {
+            .then(
+                function(response) {
                     $scope.linechart = response.data;
                     var linechart = c3.generate({
                         bindto: '#lineschart',
@@ -738,18 +728,18 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                             }
                         }
                     });
+
                     //   setTimeout(function () {
                     //     linechart.transform('bar', 'amount');
                     // }, 2000);
                 },
                 function(response) {
                     console.debug('Error' + response);
-                });
+                }
+            );
     };
 }]);
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+
 // Ranking de proveedores
 dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
     var fechaActual = new Date();
@@ -775,36 +765,35 @@ dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function
     };
 
 }]);
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+
 dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
     $scope.obrapublicaFilterini = new Date(anoActual, 00, 01);
     $scope.obrapublicaFilterfin = new Date();
-    //csv config
+
+    // CSV config
     $scope.getHeader = function() {
-            return ["PROVEEDOR", "CUIT", "IMPORTE"]
-        }
-        //
+        return ["PROVEEDOR", "CUIT", "IMPORTE"]
+    };
+
     $scope.submit = function() {
-        $http.post('/api/post-rankingObraPublica', {
+        $http
+            .post('/api/post-rankingObraPublica', {
                 "valorini": $scope.obrapublicaFilterini,
                 "valorfin": $scope.obrapublicaFilterfin
             })
-            .then(function(response) {
-
+            .then(
+                function(response) {
                     $scope.getArrayOP = response.data;
                 },
                 function(response) {
                     console.debug('Error:' + response);
-                });
+                }
+            );
     };
 }]);
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
+
 // Contratos de obras públicas y servicios
 dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', function($scope, $http) {
 
@@ -815,12 +804,9 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
     $scope.purchasefilterini = new Date(anoActual, 00, 01);
     $scope.purchasefilterfin = new Date();
     $scope.searchPurchase = "undefined";
-
-
     $http.get('/api/get-categories').then(function(response) {
         $scope.categories = response.data;
     });
-
 
     $scope.submit = function() {
         var compare = $scope.searchPurchase.localeCompare('undefined');
@@ -918,17 +904,11 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
                                 console.debug('Error:' + response);
                             });
                 });
-        };
+        }
     }
-
-
-
 }]);
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-//Detalle de cada proveedor seleccionado
+// Detalle de cada proveedor seleccionado
 dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
     $scope.sortType = ''; // set the default sort type
     $scope.sortReverse = false; // set the default sort order
@@ -936,7 +916,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
     $http.get('/' + $stateParams.id).then(function(response) {
             $scope.detail = response.data;
-            //Export CSV config
+            // Export CSV config
             $scope.getHeader = function() {
                 return ["Nombre", "Cuit", "Reparticion", "Importe", "Fecha"]
             }
@@ -956,7 +936,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
                 pagesShown = pagesShown + 1;
             };
 
-            //
+
             var linechart = c3.generate({
                 bindto: '#lineschart-detail',
                 data: {
@@ -999,17 +979,12 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
                         }
                     }
                 }
-            })
-
-
+            });
         }),
         function(response) {
             console.debug('Error:' + response);
         };
 
-    ///////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
     $scope.categoryIni = new Date(anoActual, 00, 01);
@@ -1046,9 +1021,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
                 })
 
         }
-        ///////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////
+
         // var from = new moment($scope.monthIni).year();
 
     // $scope.monthIni = from;
@@ -1063,58 +1036,60 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
         // var dateParts = dateString.split("/");
         // var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
         var from = new moment($scope.monthIni).year();
-        $http.post('/api/post-detailMonth', {
+        $http
+            .post('/api/post-detailMonth', {
                 "anio": from,
                 "id": $stateParams.id
             })
-            .then(function(response) {
+            .then(
+                function(response) {
                     $scope.detailMonth = response.data;
                 },
                 function(response) {
                     console.debug('Error:' + response);
-                });
-    }
-
-
-
+                }
+            );
+    };
 }]);
 
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
 // Ranking de proveedores
 dcuApp.controller('providersController', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
     $scope.getHeader = function() {
         return ["PROVEEDOR", "CUIT", "IMPORTE"]
-    }
+    };
 
-    $http.get('/api/get-Providers').then(function(response) {
-            $scope.getArrayProviders = response.data;
-        },
-        function(response) {
-            console.debug('Error:' + response);
-        }).then(function() {
-        var pagesShownP = 1;
-        var pageSizeP = 10;
-        $scope.paginationLimitP = function(data) {
-            return pageSizeP * pagesShownP;
-        };
+    $http
+        .get('/api/get-Providers')
+        .then(
+            function(response) {
+                $scope.getArrayProviders = response.data;
+            },
 
-        $scope.hasMoreItemsToShowP = function() {
-            return pagesShownP < ($scope.getArrayProviders.length / pageSizeP);
-        };
+            function(response) {
+                console.debug('Error:' + response);
+            }
+        )
+        .then(
+            function() {
+                var pagesShownP = 1;
+                var pageSizeP = 10;
 
+                $scope.paginationLimitP = function(data) {
+                    return pageSizeP * pagesShownP;
+                };
 
-        $scope.showMoreItemsP = function() {
-            pagesShownP = pagesShownP + 1;
-        };
-        $scope.getHeader = function() {
-            return ["PROVEEDOR", "CUIT", "IMPORTE"]
-        }
-    });
+                $scope.hasMoreItemsToShowP = function() {
+                    return pagesShownP < ($scope.getArrayProviders.length / pageSizeP);
+                };
 
+                $scope.showMoreItemsP = function() {
+                    pagesShownP = pagesShownP + 1;
+                };
 
-
-
+                $scope.getHeader = function() {
+                    return ["PROVEEDOR", "CUIT", "IMPORTE"]
+                }
+            }
+        );
 }]);
