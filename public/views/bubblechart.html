@@ -19,9 +19,12 @@
       <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
         <input ng-model="bubblefilterini" type="text" class="angular-datepicker-input"/>
       </datepicker> -->
+
       <!-- <input type="date" name="name" ng-model="bubblefilterini"> -->
+
       <label for="inputCreated">Desde</label>
-      <!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
+
+      <!--Docs here: http://krescruz.github.io/angular-materialize/#input-date -->
       <input input-date
           type="text"
           name="created"
@@ -74,6 +77,7 @@
               <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
           </select>
       </div> -->
+
       <select ng-model="searchPurchase" class="select  green lighten-1  btn">
         <option value="undefined" selected>TODOS LOS RUBROS</option>
         <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
@@ -84,7 +88,7 @@
       <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
     </div> -->
     <div class="col s12 m3">
-      <button type="submit" id="ranking_filter" class="waves-effect  green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
+      <button type="submit" id="ranking_filter" class="waves-effect green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
     </div>
   </div>
 </form>

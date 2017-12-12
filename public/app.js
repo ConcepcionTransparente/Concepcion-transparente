@@ -162,7 +162,8 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                 width = w.innerWidth || e.clientWidth || g.clientWidth,
                 // width = g.clientWidth,
                 height = w.innerHeight || e.clientHeight || g.clientHeight;
-            //ACA ESTA EL PROBLEMA DEL RESIZE - EL CENTRO LO CALCULA MAL
+
+            // Aca esta el problema del resize - el centro lo calcula mal
 
             if (width < 600) {
                 width += 750
@@ -177,8 +178,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                 x: width / 2,
                 y: height / 2
             };
-
-
 
             var yearCenters = {
                 2008: {
@@ -600,6 +599,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
             return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
         };
+
         //option 2
         function addCommas(nStr) {
             nStr += '';
@@ -629,7 +629,8 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         //SI ES DISTINTO DE UNDEFINED (ALGUNA CATEGORIA EN PARTICULAR) LLAMA AL POST PASANDOLE DICHA CATEGORIA.
         var compare = $scope.searchPurchase.localeCompare('undefined');
         if (compare == 0) {
-            d3.json('/api/post-bubblechart', function(error, data) {
+            d3
+                .json('/api/post-bubblechart', function(error, data) {
                     display(error, data);
                 })
                 .header('Content-Type', 'application/json')
@@ -638,11 +639,14 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                     'valorfin': $scope.bubblefilterfin,
                     'category': ''
                 }));
+
         } else {
-            $http.post('/api/post-categoryID', {
+            $http
+                .post('/api/post-categoryID', {
                     categorySelect: $scope.searchPurchase
                 })
-                .then(function(response) {
+                .then(
+                    function(response) {
                         $scope.bubbleCategory = response.data[0]._id;
                         d3.json('/api/post-bubblechart', function(error, data) {
                                 display(error, data);
@@ -656,7 +660,8 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                     },
                     function(response) {
                         console.debug('Error:' + response);
-                    });
+                    }
+                );
         }
 
         // setup the buttons.
@@ -757,16 +762,19 @@ dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function
     };
 
     $scope.submit = function() {
-        $http.post('/api/post-ranking', {
+        $http
+            .post('/api/post-ranking', {
                 'valorini': $scope.rankingFilterini,
                 'valorfin': $scope.rankingFilterfin
             })
-            .then(function(response) {
+            .then(
+                function(response) {
                     $scope.getArray = response.data;
                 },
                 function(response) {
                     console.debug('Error:' + response);
-                });
+                }
+            );
     };
 }]);
 
