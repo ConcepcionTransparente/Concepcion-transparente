@@ -1,95 +1,98 @@
 <div class="general-data" ng-cloak>
   <div class="row">
-  <div class="divider"></div>
-   <h5>Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio</h5>
+    <div class="divider"></div>
+    <h5>Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio</h5>
     <p class="text">
-      Puedes conocer los gastos del municipio en un período determinado. Tienes que seleccionar el rango de fechas y filtrar. Los datos se muestran en una fecha con la descripción del monto total de compras, la cantidad de proveedores y la cantidad de órdenes de compra.
+      Puedes conocer los gastos del municipio en un período determinado. Tienes
+      que seleccionar el rango de fechas y filtrar. Los datos se muestran en
+      una fecha con la descripción del monto total de compras, la cantidad de
+      proveedores y la cantidad de órdenes de compra.
     </p>
-
   </div>
+
   <div class="row">
     <form ng-submit="submit()" data-ng-init="submit()">
+      <div class="col s12 m4" style="text-align:left;">
+        <label for="inputCreated">Desde</label>
 
-        <div class="col s12 m4" style="text-align:left;">
-          <label for="inputCreated">Desde</label>
-<!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
-    <input input-date
-        type="text"
-        name="created"
-        id="inputCreated"
-        ng-model="generalfilterini"
-        container=""
-        format="mm/dd/yyyy"
-        disable="disable"
-        today="Hoy"
-        first-day="1"
-        clear="Limpiar"
-        close="Cerrar"
-         months-full="{{ month }}"
-        months-short="{{ monthShort }}"
-        weekdays-full="{{ weekdaysFull }}"
-        weekdays-short="{{ weekdaysShort }}"
-        weekdays-letter="{{ weekdaysLetter }}"/></div>
+        <!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
+        <input input-date
+          type="text"
+          name="created"
+          id="inputCreated"
+          ng-model="generalfilterini"
+          container=""
+          format="dd/mm/yyyy"
+          disable="disable"
+          today="Hoy"
+          first-day="1"
+          clear="Limpiar"
+          close="Cerrar"
+           months-full="{{ month }}"
+          months-short="{{ monthShort }}"
+          weekdays-full="{{ weekdaysFull }}"
+          weekdays-short="{{ weekdaysShort }}"
+          weekdays-letter="{{ weekdaysLetter }}"
+        />
+      </div>
 
-        <div class="col s12 m4" style="text-align:left;">
+      <div class="col s12 m4" style="text-align:left;">
+        <label for="inputCreated">Hasta</label>
 
-         <label for="inputCreated">Hasta</label>
-<!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
-<input input-date
-    type="text"
-    name="created"
-    id="inputCreated"
-    ng-model="generalfilterfin"
-    container=""
-    format="mm/dd/yyyy"
-    disable="disable"
-    today="Hoy"
-    first-day="1"
-    clear="Limpiar"
-    close="Cerrar"
-     months-full="{{ month }}"
-    months-short="{{ monthShort }}"
-    weekdays-full="{{ weekdaysFull }}"
-    weekdays-short="{{ weekdaysShort }}"
-    weekdays-letter="{{ weekdaysLetter }}"/>
+        <!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
+        <input input-date
+          type="text"
+          name="created"
+          id="inputCreated"
+          ng-model="generalfilterfin"
+          container=""
+          format="dd/mm/yyyy"
+          disable="disable"
+          today="Hoy"
+          first-day="1"
+          clear="Limpiar"
+          close="Cerrar"
+          months-full="{{ month }}"
+          months-short="{{ monthShort }}"
+          weekdays-full="{{ weekdaysFull }}"
+          weekdays-short="{{ weekdaysShort }}"
+          weekdays-letter="{{ weekdaysLetter }}"
+        />
+      </div>
 
-
-        </div>
-
-        <div class="col s12 m4">
-          <button type="submit" class="waves-effect  green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
-        </div>
+      <div class="col s12 m4">
+        <button
+          type="submit"
+          class="waves-effect  green lighten-1 waves-light btn"
+        >
+          <i class="material-icons left">search</i>Filtrar
+        </button>
+      </div>
     </form>
-
   </div>
+
   <div class="row numbers">
     <div class="col s12 m4 border-right">
       <p>TOTAL DE ORDENES DE COMPRA POR<br><br><br><span>
        <h3>{{totalimport.import | currency}}</h3>
       </span></p>
     </div>
+
     <div class="col s12 m4 border-right">
       <p>CANTIDAD DE PROVEEDORES<br><br><br><span>
       <h1>{{totalproviders.length}}</h1>
       </span></p>
     </div>
+
     <div class="col s12 m4">
       <p>CANTIDAD DE ORDENES DE COMPRAS<br><br><br><span>
         <h1>{{totalorders}}</h1>
       </span></p>
     </div>
   </div>
+
   <div class="row">
-    <div class="col s12 m8">
-
-    </div>
-    <div class="col s12 m4">
-    </div>
+    <div class="col s12 m8"></div>
+    <div class="col s12 m4"></div>
   </div>
-
-  </div>
-
-
-
-
-  </div>
+</div>
