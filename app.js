@@ -103,18 +103,18 @@ app.use(function(err, req, res, next) {
 // Scraper
 var counter = 0;
 function scraping() {
-    console.log("START");
+    console.log('START');
     var error = [];
-    var url = "http://www.cdeluruguay.gob.ar/datagov/proveedoresContratados.php";
+    var url = 'http://www.cdeluruguay.gob.ar/datagov/proveedoresContratados.php';
 
     x(url, 'body tr.textoTabla', [{
         year: 'td', //año
         total_amount: 'td:nth-of-type(4)', //importe de ese proveedor en ese año
         href: 'td:nth-of-type(8) a@href' //a@href a VER POR PROVEEDORES
     }])
-    (function(err, wrapperObj) {
-        wrapperObj.map(outerWrapperMap);
-    });
+        (function(err, wrapperObj) {
+            wrapperObj.map(outerWrapperMap);
+        });
 
     function outerWrapperMap(mappedObject) {
         x(mappedObject.href, 'body tr.textoTabla', [{
@@ -122,16 +122,17 @@ function scraping() {
             grant_title: 'td:nth-of-type(2)', //nombre de fantasia del proveedor
             total_contrats: 'td:nth-of-type(4)', //cantidad de contrataciones en ese año
             href: 'td:nth-of-type(8) a@href' //a@href a VER POR RUBROS
-        }])(function(err, wrapperObj) {
-            if (wrapperObj == null) {
-                error.push(wrapperObj);
-            } else {
-                wrapperObj.map(wrapperMap, {
-                    year: mappedObject.year,
-                    total_amount: mappedObject.total_amount
-                });
-            }
-        });
+        }])
+            (function(err, wrapperObj) {
+                if (wrapperObj == null) {
+                    error.push(wrapperObj);
+                } else {
+                    wrapperObj.map(wrapperMap, {
+                        year: mappedObject.year,
+                        total_amount: mappedObject.total_amount
+                    });
+                }
+            });
     }
 
     function wrapperMap(mappedObject) {
@@ -141,17 +142,18 @@ function scraping() {
             cod: 'td', //codigo del rubro
             category: 'td:nth-of-type(2)', //nombre del rubro
             href: 'td:nth-of-type(7) a@href' //a@href a MESES
-        }])(function(err, innerWrapperObject) {
-            if (innerWrapperObject == null) {
-                error.push(innerWrapperObject);
-            } else {
-                innerWrapperObject.map(innerWrapperMap, {
-                    provider: mappedObject,
-                    year: parentObject.year,
-                    total_amount: parentObject.total_amount
-                });
-            }
-        });
+        }])
+            (function(err, innerWrapperObject) {
+                if (innerWrapperObject == null) {
+                    error.push(innerWrapperObject);
+                } else {
+                    innerWrapperObject.map(innerWrapperMap, {
+                        provider: mappedObject,
+                        year: parentObject.year,
+                        total_amount: parentObject.total_amount
+                    });
+                }
+            });
     };
 
     function innerWrapperMap(mappedObject) {
@@ -161,25 +163,26 @@ function scraping() {
             month: 'td', //mes
             numberOfContracts: 'td:nth-of-type(2)', //cantidad de contratos
             import: 'td:nth-of-type(4)' //importe para ese mes
-        }])(function(err, finalObject) {
-            if (finalObject == null) {
-                error.push(finalObject);
-            } else {
-                finalObject.map(normalize, {
-                    category: mappedObject,
-                    provider: parentObject.provider,
-                    year: parentObject.year,
-                    total_amount: parentObject.total_amount
-                });
-            }
-        });
+        }])
+            (function(err, finalObject) {
+                if (finalObject == null) {
+                    error.push(finalObject);
+                } else {
+                    finalObject.map(normalize, {
+                        category: mappedObject,
+                        provider: parentObject.provider,
+                        year: parentObject.year,
+                        total_amount: parentObject.total_amount
+                    });
+                }
+            });
     };
 
     function normalize(o) {
-      console.log('counter');
-      console.log(counter);
+        console.log('counter');
+        console.log(counter);
 
-      counter = counter +1;
+        counter = counter +1;
         var parentObject = this;
         var year = parseInt(parentObject.year); //año
 

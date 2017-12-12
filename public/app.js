@@ -103,33 +103,36 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     $scope.submit = function() {
         var from = new moment($scope.generalfilterini).toISOString();
         var to = new moment($scope.generalfilterfin).toISOString();
+
         $http
             .post('/api/post-totalimport', {
                 'valorini': from,
                 'valorfin': to
             })
+
             .then(function(response) {
-                    $scope.totalimport = response.data[0];
-                // console.debug('1st callback...');
+                $scope.totalimport = response.data[0];
+
                 return $http.post('/api/post-totalproviders', {
                     'valorini': from,
                     'valorfin': to
                 });
             })
+
             .then(function(response) {
                 $scope.totalproviders = response.data;
-                // console.debug('2nd callback...');
+
                 return $http.post('/api/post-totalorders', {
                     'valorini': from,
                     'valorfin': to
                 });
             })
+
             .then(function(response) {
                 $scope.totalorders = response.data;
-                // console.debug('3nd callback...');
             })
+
             .catch(function(error) {
-                console.warn('ERROR...');
                 console.log(error);
             });
     };
