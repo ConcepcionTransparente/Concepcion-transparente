@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
     <title>Concepción Transparente</title>
 
-
-
-
-
     <meta itemprop="name" content="Concepción Transparente">
     <meta itemprop="description" content="Detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay. ">
     <meta itemprop="image" content="https://dcu.herokuapp.com/main.png">
@@ -56,128 +52,116 @@
     <script src="../lib/d3.js"></script>
 
     <script src="/lib/c3/htdocs/js/c3.min.js"></script>
-
-
   </head>
 
-
   <body>
-
     <div class="container">
-
       <header>
         <div class="row">
-
           <div class="col s12 m8 border-right">
             <h1 class="header">CONCEPCIÓN TRANSPARENTE</h1 >
           </div>
           <div class="col s12 m4 date">
             <script>
-            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-            var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-            var f=new Date();
-            document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+              var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+              var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+              var f=new Date();
+              document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
             </script>
           </div>
         </div>
+
         <div class="row">
           <ul class="social-media-icons">
-            <li><a class="twitter" href="#"
-              socialshare
-              socialshare-provider="twitter"
-              socialshare-text="Concepción Trasparente"
-              socialshare-url="http://dcu.herokuapp.com"><span>Twitter</span>
-            </a></li>
-            <li><a class="facebook" href="#"
-              socialshare
-              socialshare-provider="facebook"
-              socialshare-type="share"
-              socialshare-via="180018385783180"
-              socialshare-text="Concepción Transparente"
-              socialshare-url="http://dcu.herokuapp.com"
-              socialshare-quote="720kb Angular-Social-Share"
-              socialshare-popup-height="300"
-              socialshare-popup-width="400"
-              socialshare-trigger="click"><span>Facebook</span>
-              </a></li>
+            <li>
+              <a class="twitter" href="#"
+                socialshare
+                socialshare-provider="twitter"
+                socialshare-text="Concepción Trasparente"
+                socialshare-url="http://dcu.herokuapp.com"><span>Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a class="facebook" href="#"
+                socialshare
+                socialshare-provider="facebook"
+                socialshare-type="share"
+                socialshare-via="180018385783180"
+                socialshare-text="Concepción Transparente"
+                socialshare-url="http://dcu.herokuapp.com"
+                socialshare-quote="720kb Angular-Social-Share"
+                socialshare-popup-height="300"
+                socialshare-popup-width="400"
+                socialshare-trigger="click"><span>Facebook</span>
+              </a>
+            </li>
           </ul>
 
           <div class="col s12 ">
           <p class="text caption" >
-            Bienvenidos al <strong> Portal de Transparencia </strong> de la ciudad de Concepción del Uruguay (Entre Ríos, Argentina). Este sitio web refleja de manera fácil y comprensible el detalle de gastos, compras, proveedores, contrataciones y otras modalidades a partir de la información <strong> oficial </strong> que publica la Municipalidad de Concepción del Uruguay. 
+            Bienvenidos al <strong> Portal de Transparencia </strong> de la ciudad
+            de Concepción del Uruguay (Entre Ríos, Argentina). Este sitio web refleja
+            de manera fácil y comprensible el detalle de gastos, compras, proveedores,
+            contrataciones y otras modalidades a partir de la información <strong>
+            oficial </strong> que publica la Municipalidad de Concepción del Uruguay.
          <br>
             </p>
             <h3 class="header">¿Qué puedo hacer?</h3 >
             <p class="text caption" >
-            <br>Los usuarios pueden encontrar información pública de los gastos municipales. Te invitamos a explorarlo para conocer más sobre el manejo de los fondos públicos de esta ciudad. Puedes utilizar diferentes filtros para facilitar la búsqueda de la información. Los datos a su vez son mostrados con diferentes gráficos, para favorecer una mejor comprensión. 
             <br>
-            Este proyecto de <a href="http://www.datosconcepcion.com.ar/" target="_blank">Datos Concepción </a> busca dotar a la ciudadanía de una herramienta de acceso público para ejercer el control de las políticas públicas a través del detalle de gastos y contrataciones oficiales que publica el Municipio.
+              Los usuarios pueden encontrar información pública de los gastos municipales.
+              Te invitamos a explorarlo para conocer más sobre el manejo de los fondos
+              públicos de esta ciudad. Puedes utilizar diferentes filtros para facilitar
+              la búsqueda de la información. Los datos a su vez son mostrados con
+              diferentes gráficos, para favorecer una mejor comprensión.
+            <br>
 
+            Este proyecto de <a href="http://www.datosconcepcion.com.ar/" target="_blank">Datos
+            Concepción</a> busca dotar a la ciudadanía de una herramienta de acceso
+            público para ejercer el control de las políticas públicas a través del
+            detalle de gastos y contrataciones oficiales que publica el Municipio.
           </p>
         </div>
         </div>
       </header>
 
+      <!-- <div ng-cloak ui-view="History" class="row" autoscroll="false"></div> -->
+      <div ng-cloak ui-view="General" class="row" autoscroll="false"></div>
+      <div ui-view="Bubblechart" class="row" autoscroll="false"></div>
+      <div ui-view="Linechart" class="row" autoscroll="false"></div>
+      <div ui-view="Ranking" class="row" autoscroll="false"></div>
+      <div ui-view="RankingObraPublica" class="row" autoscroll="false"></div>
+      <div ui-view="Providers" class="row" autoscroll="false"></div>
+      <div ui-view="Purchases" class="row" autoscroll="false"></div>
+      <div ui-view="Detail" class="row" autoscroll="false"></div>
+      <div ui-view="Files" class="row" autoscroll="false"></div>
 
+      <footer class="footer">
+        <p>
+          Reutilizá nuestro proyecto - Estamos para colaborar - <a href="" target="_blank">
+          <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        </a>
 
-    <!-- ////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////// -->
-    <!-- <div ng-cloak ui-view="History" class="row" autoscroll="false"></div> -->
+        2016  - Un proyecto de <a target="_blank" href="http://datosconcepcion.com.ar/"><img src="images/logo.png"></a>
+        Desarrollado por <a target="_blank" href="http://genosha.com.ar">GEN<strong>O</strong>SHA</a> - </p>
+      </footer>
+    </div> <!-- end container -->
 
-    <div ng-cloak ui-view="General" class="row" autoscroll="false"></div>
-    <div ui-view="Bubblechart" class="row" autoscroll="false"></div>
-    <div ui-view="Linechart" class="row" autoscroll="false"></div>
-    <div ui-view="Ranking" class="row" autoscroll="false"></div>
-    <div ui-view="RankingObraPublica" class="row" autoscroll="false"></div>
-    <div ui-view="Providers" class="row" autoscroll="false"></div>
-    <div ui-view="Purchases" class="row" autoscroll="false"></div>
-    <div ui-view="Detail" class="row" autoscroll="false"></div>
-    <div ui-view="Files" class="row" autoscroll="false"></div>
-
-
-
-
-<!-- ////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////// -->
-
-
-   <footer class="footer">
-      <p>
-       Reutilizá nuestro proyecto - Estamos para colaborar - <a href="" target="_blank">
-       <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-      </a>
-    
-      2016  - Un proyecto de <a target="_blank" href="http://datosconcepcion.com.ar/"><img src="images/logo.png"></a> 
-      Desarrollado por <a target="_blank" href="http://genosha.com.ar">GEN<strong>O</strong>SHA</a> - </p>
-  </footer>
-<!-- ////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////// -->
-</div> <!-- end container -->
-
-
-
-    <!-- ANGULAR AND FRONTEND -->
-     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script> -->
-     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- Angular and frontend -->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script> -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
 
     <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script> -->
     <script src="bower_components/angular/angular.min.js"></script>
 
-
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script> -->
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-
 
     <!-- <script src="//code.angularjs.org/1.2.20/angular-sanitize.min.js"></script> -->
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.3.6/ng-csv.js"></script>
     <!-- <script src="bower_components/ng-csv/src/ng-csv/ng-csv.js"></script> -->
-
 
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script> -->
     <script src="bower_components/materialize/dist/js/materialize.js"></script>
@@ -188,21 +172,20 @@
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/moment/locale/es.js"></script>
     <script src="bower_components/angular-moment/angular-moment.js"></script>
+
     <!-- <script src="bower_components/materialize/dist/js/initial.js"></script> -->
+
     <script type="text/javascript">
        $(document).ready(function() {
           $('select').material_select();
       });
-
     </script>
+
     <!-- D3 AND PAINT SCRIPTS -->
     <script src="../lib/d3.js"></script>
     <script src="../src/tooltip.js"></script>
     <script src="app.js"></script>
     <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
-
     <script src="bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
-
-
   </body>
 </html>
