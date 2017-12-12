@@ -3,74 +3,74 @@
 var arr = [];
 var dcuApp = angular.module('dcuApp', ['ui.router', 'ui.materialize', '720kb.socialshare', 'ngSanitize', 'angularMoment', 'ngCsv']);
 
-dcuApp.config(
-    [
-        "$stateProvider",
-        "$urlRouterProvider",
-        function($stateProvider, $urlRouterProvider) {
+dcuApp.config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise('/');
 
-            $stateProvider
-                .state('home', {
-                    url: '/',
-                    views: {
-                        'History': {
-                            templateUrl: './views/history.html',
-                            controller: 'historyController'
-                        },
-                        'General': {
-                            templateUrl: './views/general.html',
-                            controller: 'generalController'
-                        },
-                        'Bubblechart': {
-                            templateUrl: './views/bubblechart.html',
-                            controller: 'bubblechartController'
-                        },
-                        'Linechart': {
-                            templateUrl: './views/linechart.html',
-                            controller: 'linechartController'
-                        },
-                        'Ranking': {
-                            templateUrl: './views/ranking.html',
-                            controller: 'rankingController'
-                        },
-                        'RankingObraPublica': {
-                            templateUrl: './views/rankingobra.html',
-                            controller: 'rankingObraPublicaController'
-                        },
-                        'Purchases': {
-                            templateUrl: './views/purchaseorder.html',
-                            controller: 'purchaseController'
-                        },
-                        'Static2015': {
-                            templateUrl: './views/static2015.html'
-                        },
-                        'Providers': {
-                            templateUrl: './views/providers.html',
-                            controller: 'providersController'
-                        },
-                        'Files': {
-                            templateUrl: './views/files.html'
-                        }
+        $stateProvider
+            .state('home', {
+                url: '/',
+                views: {
+                    'History': {
+                        templateUrl: './views/history.html',
+                        controller: 'historyController'
+                    },
+                    'General': {
+                        templateUrl: './views/general.html',
+                        controller: 'generalController'
+                    },
+                    'Bubblechart': {
+                        templateUrl: './views/bubblechart.html',
+                        controller: 'bubblechartController'
+                    },
+                    'Linechart': {
+                        templateUrl: './views/linechart.html',
+                        controller: 'linechartController'
+                    },
+                    'Ranking': {
+                        templateUrl: './views/ranking.html',
+                        controller: 'rankingController'
+                    },
+                    'RankingObraPublica': {
+                        templateUrl: './views/rankingobra.html',
+                        controller: 'rankingObraPublicaController'
+                    },
+                    'Purchases': {
+                        templateUrl: './views/purchaseorder.html',
+                        controller: 'purchaseController'
+                    },
+                    'Static2015': {
+                        templateUrl: './views/static2015.html'
+                    },
+                    'Providers': {
+                        templateUrl: './views/providers.html',
+                        controller: 'providersController'
+                    },
+                    'Files': {
+                        templateUrl: './views/files.html'
                     }
-                })
-                .state('Detail', {
-                    url: '/:id',
-                    views: {
-                        'Detail': {
-                            templateUrl: './views/detail.html',
-                            controller: 'detailController'
-                        }
+                }
+            })
+            .state('Detail', {
+                url: '/:id',
+                views: {
+                    'Detail': {
+                        templateUrl: './views/detail.html',
+                        controller: 'detailController'
                     }
-                })
-        }
-    ]
-);
+                }
+            });
+    }
+]);
 
 dcuApp.run(function($rootScope) {
     moment.locale('es');
+
     var currentTime = new Date();
+
     $rootScope.currentTime = currentTime;
     $rootScope.month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     $rootScope.monthShort = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
@@ -80,6 +80,7 @@ dcuApp.run(function($rootScope) {
     $rootScope.today = 'Hoy';
     $rootScope.clear = 'Limpiar';
     $rootScope.close = 'Cerrar';
+
     var days = 15;
 });
 
@@ -102,32 +103,33 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     $scope.submit = function() {
         var from = new moment($scope.generalfilterini).toISOString();
         var to = new moment($scope.generalfilterfin).toISOString();
-        $http.post('/api/post-totalimport', {
-                "valorini": from,
-                "valorfin": to
+        $http
+            .post('/api/post-totalimport', {
+                'valorini': from,
+                'valorfin': to
             })
             .then(function(response) {
                     $scope.totalimport = response.data[0];
-                // console.debug("1st callback...");
+                // console.debug('1st callback...');
                 return $http.post('/api/post-totalproviders', {
-                    "valorini": from,
-                    "valorfin": to
+                    'valorini': from,
+                    'valorfin': to
                 });
             })
             .then(function(response) {
                 $scope.totalproviders = response.data;
-                // console.debug("2nd callback...");
+                // console.debug('2nd callback...');
                 return $http.post('/api/post-totalorders', {
-                    "valorini": from,
-                    "valorfin": to
+                    'valorini': from,
+                    'valorfin': to
                 });
             })
             .then(function(response) {
                 $scope.totalorders = response.data;
-                // console.debug("3nd callback...");
+                // console.debug('3nd callback...');
             })
             .catch(function(error) {
-                console.warn("ERROR...");
+                console.warn('ERROR...');
                 console.log(error);
             });
     };
@@ -139,15 +141,15 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
     var anoActual = fechaActual.getFullYear();
     $scope.bubblefilterini = new Date(anoActual, 00, 01);
     $scope.bubblefilterfin = new Date();
-    $scope.searchPurchase = "undefined";
+    $scope.searchPurchase = 'undefined';
 
     $http.get('/api/get-categories').then(function(response) {
         $scope.categories = response.data;
     });
 
     $scope.submit = function() {
-        var svg = d3.select("#bubbleChart");
-        svg.selectAll("*").remove();
+        var svg = d3.select('#bubbleChart');
+        svg.selectAll('*').remove();
 
         function bubbleChart() {
             var w = window,
@@ -327,13 +329,13 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                     //.append('svg')
                     //.attr('width', width)
                     //.attr('height', height);
-                    .classed("svg-container", true) //container class to make it responsive
-                    .append("svg")
+                    .classed('svg-container', true) //container class to make it responsive
+                    .append('svg')
                     //responsive SVG needs these 2 attributes and no width and height attr
-                    .attr("preserveAspectRatio", "xMidYMid meet")
-                    .attr("viewBox", "0 0 1200 900")
+                    .attr('preserveAspectRatio', 'xMidYMid meet')
+                    .attr('viewBox', '0 0 1200 900')
                     //class to make it responsive
-                    .classed("svg-content-responsive", true);
+                    .classed('svg-content-responsive', true);
 
                 // Bind nodes data to what will become DOM elements to represent them.
                 bubbles = svg.selectAll('.bubble')
@@ -371,7 +373,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             };
 
             /*
-             * Sets visualization in "single group mode".
+             * Sets visualization in 'single group mode'.
              * The year labels are hidden and the force layout
              * tick function is set to move all nodes to the
              * center of the visualization.
@@ -393,7 +395,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             }
 
             /*
-             * Helper function for "single group mode".
+             * Helper function for 'single group mode'.
              * Returns a function that takes the data for a
              * single node and adjusts the position values
              * of that node to move it toward the center of
@@ -414,7 +416,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             }
 
             /*
-             * Sets visualization in "split by year mode".
+             * Sets visualization in 'split by year mode'.
              * The year labels are shown and the force layout
              * tick function is set to move nodes to the
              * yearCenter of their data's year.
@@ -436,7 +438,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             }
 
             /*
-             * Helper function for "split by year mode".
+             * Helper function for 'split by year mode'.
              * Returns a function that takes the data for a
              * single node and adjusts the position values
              * of that node to move it the year center for that
@@ -527,7 +529,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             /*
              * Externally accessible function (this is attached to the
              * returned chart function). Allows the visualization to toggle
-             * between "single group" and "split by year" modes.
+             * between 'single group' and 'split by year' modes.
              *
              * displayName is expected to be a string and either 'year' or 'all'.
              */
@@ -615,7 +617,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         // d3.csv('../jsons/yearProvider/providers_2016.csv', display);
 
         // d3.json('/api/get-bubblechart', display);
-        // d3.json('/api/post-bubblechart?year=2012&customer=type1').header("type", "POST").post(function(error, json) {
+        // d3.json('/api/post-bubblechart?year=2012&customer=type1').header('type', 'POST').post(function(error, json) {
         //    display(error,json);
         // });
 
@@ -627,11 +629,11 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             d3.json('/api/post-bubblechart', function(error, data) {
                     display(error, data);
                 })
-                .header("Content-Type", "application/json")
-                .send("POST", JSON.stringify({
-                    "valorini": $scope.bubblefilterini,
-                    "valorfin": $scope.bubblefilterfin,
-                    "category": ""
+                .header('Content-Type', 'application/json')
+                .send('POST', JSON.stringify({
+                    'valorini': $scope.bubblefilterini,
+                    'valorfin': $scope.bubblefilterfin,
+                    'category': ''
                 }));
         } else {
             $http.post('/api/post-categoryID', {
@@ -642,11 +644,11 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                         d3.json('/api/post-bubblechart', function(error, data) {
                                 display(error, data);
                             })
-                            .header("Content-Type", "application/json")
-                            .send("POST", JSON.stringify({
-                                "valorini": $scope.bubblefilterini,
-                                "valorfin": $scope.bubblefilterfin,
-                                "category": $scope.bubbleCategory
+                            .header('Content-Type', 'application/json')
+                            .send('POST', JSON.stringify({
+                                'valorini': $scope.bubblefilterini,
+                                'valorfin': $scope.bubblefilterfin,
+                                'category': $scope.bubbleCategory
                             }));
                     },
                     function(response) {
@@ -675,8 +677,8 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
 
         $http
             .post('/api/post-linechart', {
-                "valorini": from,
-                "valorfin": to
+                'valorini': from,
+                'valorfin': to
             })
             .then(
                 function(response) {
@@ -708,7 +710,7 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                             },
                             y: {
                                 tick: {
-                                    format: d3.format("$,.2f")
+                                    format: d3.format('$,.2f')
                                 }
                             }
                         },
@@ -746,15 +748,15 @@ dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function
     var anoActual = fechaActual.getFullYear();
     $scope.rankingFilterini = new Date(anoActual, 00, 01);
     $scope.rankingFilterfin = new Date();
-    //csv config
+    // CSV config
     $scope.getHeader = function() {
-            return ["PROVEEDOR", "CUIT", "IMPORTE", "ID DEL PROVEEDOR"]
-        }
-        //
+        return ['PROVEEDOR', 'CUIT', 'IMPORTE', 'ID DEL PROVEEDOR']
+    };
+
     $scope.submit = function() {
         $http.post('/api/post-ranking', {
-                "valorini": $scope.rankingFilterini,
-                "valorfin": $scope.rankingFilterfin
+                'valorini': $scope.rankingFilterini,
+                'valorfin': $scope.rankingFilterfin
             })
             .then(function(response) {
                     $scope.getArray = response.data;
@@ -763,7 +765,6 @@ dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function
                     console.debug('Error:' + response);
                 });
     };
-
 }]);
 
 dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
@@ -774,14 +775,14 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval
 
     // CSV config
     $scope.getHeader = function() {
-        return ["PROVEEDOR", "CUIT", "IMPORTE"]
+        return ['PROVEEDOR', 'CUIT', 'IMPORTE']
     };
 
     $scope.submit = function() {
         $http
             .post('/api/post-rankingObraPublica', {
-                "valorini": $scope.obrapublicaFilterini,
-                "valorfin": $scope.obrapublicaFilterfin
+                'valorini': $scope.obrapublicaFilterini,
+                'valorfin': $scope.obrapublicaFilterfin
             })
             .then(
                 function(response) {
@@ -796,14 +797,13 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval
 
 // Contratos de obras públicas y servicios
 dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', function($scope, $http) {
-
     $scope.sortType = ''; // set the default sort type
     $scope.sortReverse = false; // set the default sort order
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
     $scope.purchasefilterini = new Date(anoActual, 00, 01);
     $scope.purchasefilterfin = new Date();
-    $scope.searchPurchase = "undefined";
+    $scope.searchPurchase = 'undefined';
     $http.get('/api/get-categories').then(function(response) {
         $scope.categories = response.data;
     });
@@ -813,9 +813,9 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
 
         if (compare == 0) {
             $http.post('/api/post-purchases', {
-                    "valorini": $scope.purchasefilterini,
-                    "valorfin": $scope.purchasefilterfin,
-                    "category": ""
+                    'valorini': $scope.purchasefilterini,
+                    'valorfin': $scope.purchasefilterfin,
+                    'category': ''
                 })
                 .then(function(response) {
                   var j = 0;
@@ -823,8 +823,8 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
                   var vector = response.data;
                   // console.log(vector);
                   docs = vector.map(function(vect) {
-                      if (vect.fecha.indexOf("-01T03") == -1) {
-                          // console.log(vect.fecha + " - " + vect.importe);
+                      if (vect.fecha.indexOf('-01T03') == -1) {
+                          // console.log(vect.fecha + ' - ' + vect.importe);
                           j = j + 1;
                           // arr.push(vect.idPO)
                           arr.push(vect.fecha)
@@ -832,15 +832,15 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
                           i = i + 1;
                       }
                   })
-                  // console.log("docs: " + docs.length);
-                  // console.log("fechas SIN el 03: " + j);
-                  // console.log("fechas CON el 03: " + i);
-                  // console.log("arr length: " + arr.length);
+                  // console.log('docs: ' + docs.length);
+                  // console.log('fechas SIN el 03: ' + j);
+                  // console.log('fechas CON el 03: ' + i);
+                  // console.log('arr length: ' + arr.length);
                   for (i = 0; i < arr.length; i++) {
                       // console.log(arr[i]);
-                      // $http.post('/deleteOrders', {"id":arr[i]})
+                      // $http.post('/deleteOrders', {'id':arr[i]})
                       // .then(function(){
-                      //   console.log("entrada eliminada: "+arr[i]);
+                      //   console.log('entrada eliminada: '+arr[i]);
                       // })
                   }
                         $scope.getArrayPU = response.data;
@@ -874,9 +874,9 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
                 .then(function(response) {
                     $scope.category = response.data[0]._id;
                     $http.post('/api/post-purchases', {
-                            "valorini": $scope.purchasefilterini,
-                            "valorfin": $scope.purchasefilterfin,
-                            "category": $scope.category
+                            'valorini': $scope.purchasefilterini,
+                            'valorfin': $scope.purchasefilterfin,
+                            'category': $scope.category
                         })
                         .then(function(response) {
                                 $scope.getArrayPU = response.data;
@@ -918,7 +918,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             $scope.detail = response.data;
             // Export CSV config
             $scope.getHeader = function() {
-                return ["Nombre", "Cuit", "Reparticion", "Importe", "Fecha"]
+                return ['Nombre', 'Cuit', 'Reparticion', 'Importe', 'Fecha']
             }
             var pagesShown = 1;
             var pageSize = 5;
@@ -960,7 +960,7 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
                     y: {
                         tick: {
-                            format: d3.format("$,.2f")
+                            format: d3.format('$,.2f')
                         }
                     }
                 },
@@ -991,12 +991,12 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
     $scope.categoryFin = new Date();
     $scope.submitCategory = function() {
             $scope.getHeader2 = function() {
-                return ["REPARTICIÓN", "IMPORTE", "CONTRATOS"]
+                return ['REPARTICIÓN', 'IMPORTE', 'CONTRATOS']
             }
             $http.post('/api/post-detailCategories', {
-                    "valorini": $scope.categoryIni,
-                    "valorfin": $scope.categoryFin,
-                    "id": $stateParams.id
+                    'valorini': $scope.categoryIni,
+                    'valorfin': $scope.categoryFin,
+                    'id': $stateParams.id
                 })
                 .then(function(response) {
                         $scope.detailCategories = response.data;
@@ -1028,18 +1028,18 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
     var from = new moment().year();
     $scope.monthIni = new Date();
     $scope.getHeader3 = function() {
-        return ["MES", "IMPORTE", "CONTRATOS"]
+        return ['MES', 'IMPORTE', 'CONTRATOS']
     }
 
     $scope.submitMonth = function() {
         var dateString = $scope.monthIni;
-        // var dateParts = dateString.split("/");
+        // var dateParts = dateString.split('/');
         // var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
         var from = new moment($scope.monthIni).year();
         $http
             .post('/api/post-detailMonth', {
-                "anio": from,
-                "id": $stateParams.id
+                'anio': from,
+                'id': $stateParams.id
             })
             .then(
                 function(response) {
@@ -1052,11 +1052,10 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
     };
 }]);
 
-
 // Ranking de proveedores
 dcuApp.controller('providersController', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
     $scope.getHeader = function() {
-        return ["PROVEEDOR", "CUIT", "IMPORTE"]
+        return ['PROVEEDOR', 'CUIT', 'IMPORTE']
     };
 
     $http
@@ -1088,7 +1087,7 @@ dcuApp.controller('providersController', ['$scope', '$http', '$interval', functi
                 };
 
                 $scope.getHeader = function() {
-                    return ["PROVEEDOR", "CUIT", "IMPORTE"]
+                    return ['PROVEEDOR', 'CUIT', 'IMPORTE']
                 }
             }
         );
