@@ -45,8 +45,10 @@
     <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css" media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../css/index.css" />
     <link type="text/css" rel="stylesheet" href="../css/bubble_chart.css">
+
     <!-- Load c3.css -->
     <link href="/lib/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
+
     <!-- Load d3.js and c3.js -->
     <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
     <script src="../lib/d3.js"></script>
@@ -63,10 +65,19 @@
           </div>
           <div class="col s12 m4 date">
             <script>
-              var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-              var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-              var f=new Date();
-              document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+              var meses = new Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+              var diasSemana = new Array('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado');
+              var f = new Date();
+
+              document.write(
+                diasSemana[f.getDay()]
+                  + ", "
+                  + f.getDate()
+                  + " de "
+                  + meses[f.getMonth()]
+                  + " de "
+                  + f.getFullYear()
+              );
             </script>
           </div>
         </div>
@@ -98,34 +109,36 @@
           </ul>
 
           <div class="col s12 ">
-          <p class="text caption" >
-            Bienvenidos al <strong> Portal de Transparencia </strong> de la ciudad
-            de Concepción del Uruguay (Entre Ríos, Argentina). Este sitio web refleja
-            de manera fácil y comprensible el detalle de gastos, compras, proveedores,
-            contrataciones y otras modalidades a partir de la información <strong>
-            oficial </strong> que publica la Municipalidad de Concepción del Uruguay.
-         <br>
-            </p>
-            <h3 class="header">¿Qué puedo hacer?</h3 >
             <p class="text caption" >
-            <br>
-              Los usuarios pueden encontrar información pública de los gastos municipales.
-              Te invitamos a explorarlo para conocer más sobre el manejo de los fondos
-              públicos de esta ciudad. Puedes utilizar diferentes filtros para facilitar
-              la búsqueda de la información. Los datos a su vez son mostrados con
-              diferentes gráficos, para favorecer una mejor comprensión.
-            <br>
+              Bienvenidos al <strong>Portal de Transparencia </strong> de la ciudad
+              de Concepción del Uruguay (Entre Ríos, Argentina). Este sitio web refleja
+              de manera fácil y comprensible el detalle de gastos, compras, proveedores,
+              contrataciones y otras modalidades a partir de la información <strong>
+              oficial </strong> que publica la Municipalidad de Concepción del Uruguay.
+           <br>
+              </p>
+              <h3 class="header">¿Qué puedo hacer?</h3 >
+              <p class="text caption" >
+              <br>
+                Los usuarios pueden encontrar información pública de los gastos municipales.
+                Te invitamos a explorarlo para conocer más sobre el manejo de los fondos
+                públicos de esta ciudad. Puedes utilizar diferentes filtros para facilitar
+                la búsqueda de la información. Los datos a su vez son mostrados con
+                diferentes gráficos, para favorecer una mejor comprensión.
+              <br>
 
-            Este proyecto de <a href="http://www.datosconcepcion.com.ar/" target="_blank">Datos
-            Concepción</a> busca dotar a la ciudadanía de una herramienta de acceso
-            público para ejercer el control de las políticas públicas a través del
-            detalle de gastos y contrataciones oficiales que publica el Municipio.
-          </p>
-        </div>
+              Este proyecto de <a href="http://www.datosconcepcion.com.ar/" target="_blank">Datos
+              Concepción</a> busca dotar a la ciudadanía de una herramienta de acceso
+              público para ejercer el control de las políticas públicas a través del
+              detalle de gastos y contrataciones oficiales que publica el Municipio.
+            </p>
+          </div>
         </div>
       </header>
 
+      <!-- TODO: Determinar qué onda con esta vista -->
       <!-- <div ng-cloak ui-view="History" class="row" autoscroll="false"></div> -->
+
       <div ng-cloak ui-view="General" class="row" autoscroll="false"></div>
       <div ui-view="Bubblechart" class="row" autoscroll="false"></div>
       <div ui-view="Linechart" class="row" autoscroll="false"></div>

@@ -1,7 +1,17 @@
 // AngularJS
 
 var arr = [];
-var dcuApp = angular.module('dcuApp', ['ui.router', 'ui.materialize', '720kb.socialshare', 'ngSanitize', 'angularMoment', 'ngCsv']);
+var dcuApp = angular.module(
+    'dcuApp',
+    [
+        'ui.router',
+        'ui.materialize',
+        '720kb.socialshare',
+        'ngSanitize',
+        'angularMoment',
+        'ngCsv'
+    ]
+);
 
 dcuApp.config([
     '$stateProvider',
@@ -97,12 +107,13 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
 
     $scope.generalfilterini = new Date(anoActual, 00, 01);
     $scope.generalfilterfin = new Date();
+
     var from = new moment($scope.generalfilterini).toISOString();
     var to = new moment($scope.generalfilterfin).toISOString();
 
     $scope.submit = function() {
-        var from = new moment($scope.generalfilterini).toISOString();
-        var to = new moment($scope.generalfilterfin).toISOString();
+        var from = new moment($scope.generalfilterini, 'DD/MM/YYYY').toISOString();
+        var to = new moment($scope.generalfilterfin, 'DD/MM/YYYY').toISOString();
 
         $http
             .post('/api/post-totalimport', {
@@ -146,9 +157,11 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
     $scope.bubblefilterfin = new Date();
     $scope.searchPurchase = 'undefined';
 
-    $http.get('/api/get-categories').then(function(response) {
-        $scope.categories = response.data;
-    });
+    $http
+        .get('/api/get-categories')
+        .then(function(response) {
+            $scope.categories = response.data;
+        });
 
     $scope.submit = function() {
         var svg = d3.select('#bubbleChart');
@@ -594,13 +607,13 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
          * Helper function to convert a number into a string
          * and add commas to it to improve presentation.
          */
-        //option 1
+        // Option 1
         Number.prototype.format = function(n, x) {
             var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
             return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
         };
 
-        //option 2
+        // Option 2
         function addCommas(nStr) {
             nStr += '';
             var x = nStr.split('.');
