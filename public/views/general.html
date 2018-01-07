@@ -13,21 +13,23 @@
   <div class="row">
     <form ng-submit="submit()" data-ng-init="submit()">
       <div class="col s12 m4" style="text-align:left;">
-        <label for="inputCreated">Desde</label>
+        <label for="generalFechaInicio">Desde</label>
 
         <!-- Docs here: http://krescruz.github.io/angular-materialize/#input-date -->
         <input input-date
-          type="text"
-          name="created"
-          id="inputCreated"
+          id="generalFechaInicio"
           ng-model="generalfilterini"
-          container=""
+          type="text"
           format="dd/mm/yyyy"
+          first-day="0"
+          name="created"
           disable="disable"
-          today="Hoy"
-          first-day="1"
-          clear="Limpiar"
-          close="Cerrar"
+          today="today"
+          clear="clear"
+          close="close"
+          container=""
+          select-years="10"
+          select-months="true"
           months-full="{{ month }}"
           months-short="{{ monthShort }}"
           weekdays-full="{{ weekdaysFull }}"
@@ -37,21 +39,23 @@
       </div>
 
       <div class="col s12 m4" style="text-align:left;">
-        <label for="inputCreated">Hasta</label>
+        <label for="generalFechaFin">Hasta</label>
 
         <!-- Docs here: http://krescruz.github.io/angular-materialize/#input-date -->
         <input input-date
-          type="text"
-          name="created"
-          id="inputCreated"
+          id="generalFechaFin"
           ng-model="generalfilterfin"
-          container=""
+          type="text"
           format="dd/mm/yyyy"
+          first-day="0"
+          name="created"
           disable="disable"
-          today="Hoy"
-          first-day="1"
-          clear="Limpiar"
-          close="Cerrar"
+          today="today"
+          clear="clear"
+          close="close"
+          container=""
+          select-years="10"
+          select-months="true"
           months-full="{{ month }}"
           months-short="{{ monthShort }}"
           weekdays-full="{{ weekdaysFull }}"
