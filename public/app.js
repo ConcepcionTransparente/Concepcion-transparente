@@ -86,7 +86,10 @@ dcuApp.run(function($rootScope) {
     $rootScope.monthShort = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
     $rootScope.weekdaysFull = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
     $rootScope.weekdaysLetter = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
-    $rootScope.disable = [false, 1, 7];
+
+    // TODO: Disable days from today on
+    // $rootScope.disable = "[false, 1, 7]";
+
     $rootScope.today = 'Hoy';
     $rootScope.clear = 'Limpiar';
     $rootScope.close = 'Cerrar';
