@@ -1,9 +1,3 @@
-<!-- <div class="container"> -->
-<!-- <div id="toolbar">
-  <a href="#" id="all" class="button active">All Grants</a>
-  <a href="#" id="year" class="button">Grants By Year</a>
-</div> -->
-
 <br><div class="divider"></div>
 <h3>Pago a Proveedores</h3>
 
@@ -15,80 +9,61 @@
 </p>
 <form ng-submit="submit()" data-ng-init="submit()">
   <div class="row">
-    <div class="col s12 m3">
-      <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
-        <input ng-model="bubblefilterini" type="text" class="angular-datepicker-input"/>
-      </datepicker> -->
-
-      <!-- <input type="date" name="name" ng-model="bubblefilterini"> -->
-
+    <div class="col s12 m2">
       <label for="inputCreated">Desde</label>
-
-      <!--Docs here: http://krescruz.github.io/angular-materialize/#input-date -->
       <input input-date
-          type="text"
-          name="created"
-          id="inputCreated"
-          ng-model="bubblefilterini"
-          container=""
-          format="mm/dd/yyyy"
-          disable="disable"
-          today="Hoy"
-          first-day="1"
-          clear="Limpiar"
-          close="Cerrar"
-           months-full="{{ month }}"
-          months-short="{{ monthShort }}"
-          weekdays-full="{{ weekdaysFull }}"
-          weekdays-short="{{ weekdaysShort }}"
-          weekdays-letter="{{ weekdaysLetter }}"/>
-      </div>
-
-    <div class="col s12 m3">
-      <!-- <datepicker ng-submit="submit()" datepicker-show="{{ctrl.visibility}}">
-        <input ng-model="bubblefilterfin" type="text" class="angular-datepicker-input"/>
-      </datepicker> -->
-      <!-- <input type="date" name="name" ng-model="bubblefilterfin"> -->
-      <label for="inputCreated">Hasta</label>
-      <!--Docs Here>> http://krescruz.github.io/angular-materialize/#input-date -->
-      <input input-date
-          type="text"
-          name="created"
-          id="inputCreated"
-          ng-model="bubblefilterfin"
-          container=""
-          format="mm/dd/yyyy"
-          disable="disable"
-          today="Hoy"
-          first-day="1"
-          clear="Limpiar"
-          close="Cerrar"
-           months-full="{{ month }}"
-          months-short="{{ monthShort }}"
-          weekdays-full="{{ weekdaysFull }}"
-          weekdays-short="{{ weekdaysShort }}"
-          weekdays-letter="{{ weekdaysLetter }}"/>
+        type="text"
+        name="created"
+        id="inputCreated"
+        ng-model="bubblefilterini"
+        container=""
+        format="mm/dd/yyyy"
+        disable="disable"
+        today="Hoy"
+        first-day="1"
+        clear="Limpiar"
+        close="Cerrar"
+        months-full="{{ month }}"
+        months-short="{{ monthShort }}"
+        weekdays-full="{{ weekdaysFull }}"
+        weekdays-short="{{ weekdaysShort }}"
+        weekdays-letter="{{ weekdaysLetter }}"
+      />
     </div>
 
-    <div class="col s12 m3" >
-      <!-- <div input-field>
-          <select class="select waves-effect green lighten-1 waves-light btn" ng-model="searchPurchase" material-select watch >
-              <option value="undefined">TODOS LOS RUBROS</option>
-              <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
-          </select>
-      </div> -->
+    <div class="col s12 m2">
+      <label for="inputCreated">Hasta</label>
+      <input input-date
+        type="text"
+        name="created"
+        id="inputCreated"
+        ng-model="bubblefilterfin"
+        container=""
+        format="mm/dd/yyyy"
+        disable="disable"
+        today="Hoy"
+        first-day="1"
+        clear="Limpiar"
+        close="Cerrar"
+        months-full="{{ month }}"
+        months-short="{{ monthShort }}"
+        weekdays-full="{{ weekdaysFull }}"
+        weekdays-short="{{ weekdaysShort }}"
+        weekdays-letter="{{ weekdaysLetter }}"
+      />
+    </div>
 
+    <div class="col s12 m5" >
       <select ng-model="searchPurchase" class="select  green lighten-1  btn">
         <option value="undefined" selected>TODOS LOS RUBROS</option>
         <option ng-repeat="value in categories | orderBy:'categories' ">{{value}}</option>
       </select>
 
     </div>
-    <!-- <div class="col s12 m3">
-      <button type="submit" id="ranking_filter" value="add a new filter">Filtrar</button>
-    </div> -->
     <div class="col s12 m3">
-      <button type="submit" id="ranking_filter" class="waves-effect green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
+      <button type="submit" id="ranking_filter" class="waves-effect green lighten-1 waves-light btn">
+        <i class="material-icons left">search</i>Filtrar
+      </button>
     </div>
   </div>
 </form>
