@@ -79,9 +79,6 @@ dcuApp.config([
 dcuApp.run(function($rootScope) {
     moment.locale('es');
 
-    var currentTime = new Date();
-
-    $rootScope.currentTime = currentTime;
     $rootScope.month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     $rootScope.monthShort = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
     $rootScope.weekdaysFull = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado'];
@@ -93,13 +90,13 @@ dcuApp.run(function($rootScope) {
     $rootScope.today = 'Hoy';
     $rootScope.clear = 'Limpiar';
     $rootScope.close = 'Cerrar';
-
-    var days = 15;
+    $rootScope.fechaInicioDatos = new moment('2009-01-01').format();
 });
 
 dcuApp.filter('monthName', [function() {
     return function(monthNumber) { //1 = January
         var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
         return monthNames[monthNumber];
     }
 }]);
@@ -108,15 +105,17 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.generalfilterini = new Date(anoActual, 00, 01);
-    $scope.generalfilterfin = new Date();
+    $scope.generalFechaInicio = new Date(anoActual, 00, 01);
+    $scope.generalFechaFin = new Date();
+    $scope.generalFechaInicioMaxDate = new moment(new Date()).add(1, 'days').format('YYYY-MM-DD');
+    $scope.generalFechaFinMaxDate = new moment(new Date()).add(1, 'days').format('YYYY-MM-DD');
 
-    var from = new moment($scope.generalfilterini).toISOString();
-    var to = new moment($scope.generalfilterfin).toISOString();
+    var from = new moment($scope.generalFechaInicio).toISOString();
+    var to = new moment($scope.generalFechaFin).toISOString();
 
     $scope.submit = function() {
-        var from = new moment($scope.generalfilterini, 'DD/MM/YYYY').toISOString();
-        var to = new moment($scope.generalfilterfin, 'DD/MM/YYYY').toISOString();
+        var from = new moment($scope.generalFechaInicio, 'DD/MM/YYYY').toISOString();
+        var to = new moment($scope.generalFechaFin, 'DD/MM/YYYY').toISOString();
 
         $http
             .post('/api/post-totalimport', {
@@ -941,7 +940,8 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
     $scope.sortReverse = false; // set the default sort order
     $scope.searchPurchase = ''; // set the default search/filter term
 
-    $http.get('/' + $stateParams.id).then(function(response) {
+    $http.get('/' + $stateParams.id)
+        .then(function(response) {
             $scope.detail = response.data;
             // Export CSV config
             $scope.getHeader = function() {
@@ -962,7 +962,6 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
             $scope.showMoreItems = function() {
                 pagesShown = pagesShown + 1;
             };
-
 
             var linechart = c3.generate({
                 bindto: '#lineschart-detail',
@@ -1049,9 +1048,6 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
         }
 
-        // var from = new moment($scope.monthIni).year();
-
-    // $scope.monthIni = from;
     var from = new moment().year();
     $scope.monthIni = new Date();
     $scope.getHeader3 = function() {
@@ -1060,8 +1056,6 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
     $scope.submitMonth = function() {
         var dateString = $scope.monthIni;
-        // var dateParts = dateString.split('/');
-        // var dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
         var from = new moment($scope.monthIni).year();
         $http
             .post('/api/post-detailMonth', {

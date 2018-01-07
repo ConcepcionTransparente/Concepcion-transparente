@@ -18,8 +18,10 @@
         <!-- Docs here: http://krescruz.github.io/angular-materialize/#input-date -->
         <input input-date
           id="generalFechaInicio"
-          ng-model="generalfilterini"
+          ng-model="generalFechaInicio"
           type="text"
+          max="{{ generalFechaInicioMaxDate }}"
+          min="{{ fechaInicioDatos }}"
           format="dd/mm/yyyy"
           first-day="0"
           name="created"
@@ -28,7 +30,7 @@
           clear="clear"
           close="close"
           container=""
-          select-years="10"
+          select-years="20"
           select-months="true"
           months-full="{{ month }}"
           months-short="{{ monthShort }}"
@@ -44,8 +46,10 @@
         <!-- Docs here: http://krescruz.github.io/angular-materialize/#input-date -->
         <input input-date
           id="generalFechaFin"
-          ng-model="generalfilterfin"
+          ng-model="generalFechaFin"
           type="text"
+          max="{{ generalFechaFinMaxDate }}"
+          min="{{ fechaInicioDatos }}"
           format="dd/mm/yyyy"
           first-day="0"
           name="created"
@@ -54,7 +58,7 @@
           clear="clear"
           close="close"
           container=""
-          select-years="10"
+          select-years="20"
           select-months="true"
           months-full="{{ month }}"
           months-short="{{ monthShort }}"
