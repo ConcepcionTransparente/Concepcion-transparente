@@ -91,6 +91,7 @@ dcuApp.run(function($rootScope) {
     $rootScope.clear = 'Limpiar';
     $rootScope.close = 'Cerrar';
     $rootScope.fechaInicioDatos = new moment('2009-01-01').format();
+    $rootScope.fechaMananaString = new moment(new Date()).add(1, 'days').format('YYYY-MM-DD');
 });
 
 dcuApp.filter('monthName', [function() {
@@ -110,25 +111,22 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     $scope.generalFechaInicioMaxDate = new moment(new Date()).add(1, 'days').format('YYYY-MM-DD');
     $scope.generalFechaFinMaxDate = new moment(new Date()).add(1, 'days').format('YYYY-MM-DD');
 
-    var from = new moment($scope.generalFechaInicio).toISOString();
-    var to = new moment($scope.generalFechaFin).toISOString();
-
     $scope.submit = function() {
-        var from = new moment($scope.generalFechaInicio, 'DD/MM/YYYY').toISOString();
-        var to = new moment($scope.generalFechaFin, 'DD/MM/YYYY').toISOString();
+        var fechaInicio = new moment($scope.generalFechaInicio, 'DD/MM/YYYY').toISOString();
+        var fechaFin = new moment($scope.generalFechaFin, 'DD/MM/YYYY').toISOString();
 
         $http
             .post('/api/post-totalimport', {
-                'valorini': from,
-                'valorfin': to
+                'valorini': fechaInicio,
+                'valorfin': fechaFin
             })
 
             .then(function(response) {
                 $scope.totalimport = response.data[0];
 
                 return $http.post('/api/post-totalproviders', {
-                    'valorini': from,
-                    'valorfin': to
+                    'valorini': fechaInicio,
+                    'valorfin': fechaFin
                 });
             })
 
@@ -136,8 +134,8 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
                 $scope.totalproviders = response.data;
 
                 return $http.post('/api/post-totalorders', {
-                    'valorini': from,
-                    'valorfin': to
+                    'valorini': fechaInicio,
+                    'valorfin': fechaFin
                 });
             })
 
@@ -155,8 +153,8 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
 dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, $http) {
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.bubblefilterini = new Date(anoActual, 00, 01);
-    $scope.bubblefilterfin = new Date();
+    $scope.bubbleFechaInicio = new Date(anoActual, 00, 01);
+    $scope.bubbleFechaFin = new Date();
     $scope.searchPurchase = 'undefined';
 
     $http
@@ -166,6 +164,9 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         });
 
     $scope.submit = function() {
+        var fechaInicio = new moment($scope.bubbleFechaInicio, 'DD/MM/YYYY').toISOString();
+        var fechaFin = new moment($scope.bubbleFechaFin, 'DD/MM/YYYY').toISOString();
+
         var svg = d3.select('#bubbleChart');
         svg.selectAll('*').remove();
 
@@ -639,9 +640,10 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         //    display(error,json);
         // });
 
-        //COMPARA SI LA CATEGORIA ES UNA EN PARTICULAR O UNDEFINED(TODAS)
-        //SI ES UNDEFINED LLAMA A /api/post-bubblechart SIN CATEGORIA ALGUNA
-        //SI ES DISTINTO DE UNDEFINED (ALGUNA CATEGORIA EN PARTICULAR) LLAMA AL POST PASANDOLE DICHA CATEGORIA.
+        // Compara si la categoria es una en particular o undefined(todas)
+        // si es undefined llama a /api/post-bubblechart sin categoria alguna
+        // si es distinto de undefined (alguna categoria en particular) llama al
+        // POST pasandole dicha categoria.
         var compare = $scope.searchPurchase.localeCompare('undefined');
         if (compare == 0) {
             d3
@@ -650,8 +652,8 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                 })
                 .header('Content-Type', 'application/json')
                 .send('POST', JSON.stringify({
-                    'valorini': $scope.bubblefilterini,
-                    'valorfin': $scope.bubblefilterfin,
+                    'valorini': fechaInicio,
+                    'valorfin': fechaFin,
                     'category': ''
                 }));
 
@@ -668,8 +670,8 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                             })
                             .header('Content-Type', 'application/json')
                             .send('POST', JSON.stringify({
-                                'valorini': $scope.bubblefilterini,
-                                'valorfin': $scope.bubblefilterfin,
+                                'valorini': fechaInicio,
+                                'valorfin': fechaFin,
                                 'category': $scope.bubbleCategory
                             }));
                     },
