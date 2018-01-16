@@ -79,7 +79,7 @@ router.get('/favicon.ico', function (req, res) {
 // });
 
 // Cantidad de órdenes de compra
-router.post('/api/post-totalimport',function(req,res,next){
+router.post('/api/post-totalimport', function(req,res,next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   var hoy=new Date();
@@ -101,7 +101,7 @@ router.post('/api/post-totalimport',function(req,res,next){
 });
 
 // Cantidad de proveedores
-router.post('/api/post-totalproviders',function(req,res,next){
+router.post('/api/post-totalproviders', function(req,res,next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   var hoy=new Date();
@@ -115,7 +115,7 @@ router.post('/api/post-totalproviders',function(req,res,next){
 });
 
 // Cantidad de órdenes de compra
-router.post('/api/post-totalorders',function(req,res,next){
+router.post('/api/post-totalorders', function(req,res,next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   var hoy=new Date();
@@ -134,7 +134,7 @@ router.post('/api/post-totalorders',function(req,res,next){
 });
 
 // Bubble chart
-router.post('/api/post-bubblechart',function(req,res,next){
+router.post('/api/post-bubblechart', function(req,res,next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   var hoy=new Date();
@@ -197,7 +197,7 @@ router.post('/api/post-bubblechart',function(req,res,next){
 });
 
 // Evolución del gasto - ºArt
-router.post('/api/post-linechart',function(req,res,next){
+router.post('/api/post-linechart', function(req,res,next) {
   var start=new Date(req.body.valorini);
   var startyear = start.getFullYear();
   var end=new Date(req.body.valorfin);
@@ -213,7 +213,7 @@ router.post('/api/post-linechart',function(req,res,next){
   })
 });
 
-router.post('/api/post-ranking',function(req,res,next){
+router.post('/api/post-ranking', function(req,res,next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   mongoose.model('PurchaseOrder')
@@ -306,7 +306,7 @@ router.post('/api/post-purchases', function(req, res) {
   }
 });
 
-router.post('/deleteOrders',function(req,res){
+router.post('/deleteOrders', function(req,res) {
   mongoose
     .model('PurchaseOrder')
     .remove({ _id: req.body.id }, function(err) {
@@ -319,7 +319,7 @@ router.post('/deleteOrders',function(req,res){
 })
 
 // Contratos de obras publicas y servicios (detalle de cada proveedor)
-router.get('/:id', function(req,res){
+router.get('/:id', function(req,res) {
   var dataaa=new Date();
   mongoose.model('PurchaseOrder').find({'fk_Provider' : req.params.id})
   .sort({date: -1})
@@ -351,13 +351,13 @@ router.get('/:id', function(req,res){
   })
 });
 
-router.get('/api/get-categories',function(req,res){
+router.get('/api/get-categories', function(req,res) {
   mongoose.model('Category').distinct('category', function(error, response) {
       res.send(response);
   });
 });
 
-router.post('/api/post-categoryID',function(req,res){
+router.post('/api/post-categoryID', function(req,res) {
   mongoose.model('Category')
   .find({'category':req.body.categorySelect})
   .exec(function(err,response){
@@ -370,7 +370,7 @@ router.post('/api/post-categoryID',function(req,res){
 });
 
 // Ranking obra publicas
-router.post('/api/post-rankingObraPublica',function(req,res){
+router.post('/api/post-rankingObraPublica', function(req,res) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   mongoose.model('Category')
@@ -416,7 +416,7 @@ router.post('/api/post-rankingObraPublica',function(req,res){
   });
 });
 
-router.get('/api/get-Providers',function(req,res){
+router.get('/api/get-Providers', function(req,res) {
   mongoose.model('PurchaseOrder')
   .aggregate(
     [
@@ -445,7 +445,7 @@ router.get('/api/get-Providers',function(req,res){
 });
 
 // Detail categories
-router.post('/api/post-detailCategories',function(req,res){
+router.post('/api/post-detailCategories', function(req,res) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
 
@@ -482,7 +482,7 @@ router.post('/api/post-detailCategories',function(req,res){
 });
 
 // Detail month
-router.post('/api/post-detailMonth',function(req,res){
+router.post('/api/post-detailMonth', function(req,res) {
   var anio=req.body.anio;
   anio = anio.toString();
   var newId = new mongoose.mongo.ObjectId(req.body.id);
