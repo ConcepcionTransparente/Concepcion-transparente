@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async": "^2.1.4",
     "angular-socialshare": "^2.3.3",
     "body-parser": "^1.15.2",
     "colors": "^1.1.2",
