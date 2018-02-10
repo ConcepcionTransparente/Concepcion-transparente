@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Float = require('mongoose-float').loadType(mongoose,2);
+var Float = require('mongoose-float').loadType(mongoose, 2);
 var Schema = mongoose.Schema;
 
 
