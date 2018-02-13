@@ -1,4 +1,5 @@
 # Concepción-transparente
+
 Portal de Transparencia de la ciudad de Concepción del Uruguay (Entre Ríos, Argentina).
 Este sitio web refleja de manera fácil y comprensible el detalle de gastos, compras,
 proveedores, contrataciones y otras modalidades a partir de la información oficial
