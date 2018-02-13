@@ -80,11 +80,13 @@ router.get('/favicon.ico', function (req, res) {
 
 // Cantidad de órdenes de compra
 router.post('/api/post-totalimport', function(req,res,next) {
-  var start=new Date(req.body.valorini);
-  var end=new Date(req.body.valorfin);
-  var hoy=new Date();
-  end.setHours(0,0,0,0);
-  hoy.setHours(0,0,0,0);
+  var start = new Date(req.body.valorini);
+  var end = new Date(req.body.valorfin);
+  var hoy = new Date();
+
+  end.setHours(0, 0, 0, 0);
+  hoy.setHours(0, 0, 0, 0);
+
   mongoose.model('PurchaseOrder').aggregate(
     [
       {'$match': {date: {$gte:start, $lte:end}}},
