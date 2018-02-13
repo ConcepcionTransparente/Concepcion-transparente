@@ -1,4 +1,6 @@
-// ExpressJS
+/**
+ * Express JS application
+ */
 
 var express = require('express');
 var path = require('path');
@@ -19,42 +21,11 @@ var mongoose = require('mongoose');
 var colors = require('colors')
 require('dotenv').config()
 
-// try {
-//   let host = process.env.MONGO_HOST || 'localhost'
-//   let port = process.env.MONGO_PORT || '27017'
-//   let db = process.env.MONGO_DB || 'grapql-exmaple'
-//   let mdbUri = 'mongodb://'
-//
-//   mdbUri = mdbUri + host + ':' + port + '/' + db
-//   console.log(colors.green.underline("MONGODB URI"))
-//   console.log(colors.green(">> ") + mdbUri)
-//   mongoose.Promise = global.Promise
-//   app.connection = mongoose.connect(mdbUri)
-// } catch (error) {
-//   console.log(colors.green.underline("MONGO CONNECTION ERROR"))
-//   console.log(colors.green(">> ") + JSON.stringify(error))
-// }
-
-// view engine setup
+// View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 app.use(express.static(__dirname + '/public'));
-
 app.set('views', __dirname + '/views');
-// app.engine('html', require('ejs').renderFile);
-// app.set('view engine', 'html');
-// view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'jade');
-
-// app.use(express.static(__dirname + '/public'));
-// app.set('views', __dirname + '/views');
-// app.engine('html', require('ejs').renderFile);
-// app.set('view engine', 'html');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
