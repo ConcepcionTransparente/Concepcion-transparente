@@ -6961,7 +6961,7 @@ DatePicker.prototype.nodes = function( isOpen ) {
                     return _.node( 'select',
                         _.group({
                             min: lowestYear,
-                            max: 2009,
+                            max: highestYear,
                             i: 1,
                             node: 'option',
                             item: function( loopedYear ) {
