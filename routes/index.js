@@ -82,24 +82,24 @@ router.get('/favicon.ico', function (req, res) {
 router.post('/api/post-totalimport', function(req,res,next) {
   var start = new Date(req.body.valorini);
   var end = new Date(req.body.valorfin);
-  var hoy = new Date();
 
   end.setHours(0, 0, 0, 0);
-  hoy.setHours(0, 0, 0, 0);
 
   mongoose.model('PurchaseOrder').aggregate(
     [
-      {'$match': {date: {$gte:start, $lte:end}}},
-     {
-       $group : {
-          '_id' : null,
-          'import': { $sum: '$import' }, // for your case use local.user_totalthings
-          // count: { $sum: 1 } // for no. of documents count
+      { '$match': { date: { $gte: start, $lte: end } } },
+        {
+          $group : {
+            '_id' : null,
+            'import': { $sum: '$import' }, // for your case use local.user_totalthings
+            // count: { $sum: 1 } // for no. of documents count
+         }
        }
-     }
-    ],function(err,importe){
+    ],
+    function(err,importe) {
         res.send(importe);
-  });
+    }
+  );
 });
 
 // Cantidad de proveedores
@@ -199,20 +199,24 @@ router.post('/api/post-bubblechart', function(req,res,next) {
 });
 
 // Evolución del gasto - ºArt
-router.post('/api/post-linechart', function(req,res,next) {
-  var start=new Date(req.body.valorini);
+router.post('/api/post-linechart', function(req, res, next) {
+  var start = new Date(req.body.valorini);
   var startyear = start.getFullYear();
-  var end=new Date(req.body.valorfin);
+  var end = new Date(req.body.valorfin);
   var endyear = end.getFullYear();
 
-  mongoose.model('Year').find({'year': {'$gte': startyear, '$lte': endyear}})
-  .sort({year: 1})
-  .exec(function(err,post){
-    if (err){console.log(err);}
-    else{
-      res.send(post);
-    }
-  })
+  mongoose
+    .model('Year')
+    .find({'year': {'$gte': startyear, '$lte': endyear}})
+    .sort({year: 1})
+    .exec(function(err, post){
+      if (err){
+        console.log(err);
+      }
+      else {
+        res.send(post);
+      }
+    });
 });
 
 router.post('/api/post-ranking', function(req,res,next) {
@@ -322,35 +326,26 @@ router.post('/deleteOrders', function(req,res) {
 
 // Contratos de obras publicas y servicios (detalle de cada proveedor)
 router.get('/:id', function(req,res) {
-  var dataaa=new Date();
+
   mongoose.model('PurchaseOrder').find({'fk_Provider' : req.params.id})
-  .sort({date: -1})
-  .populate('fk_Category')
-  .populate('fk_Provider')
-  .exec(function(err,populatedTransactions){
-    if (err){console.log(err);}
-    else{
-      docs=populatedTransactions.map(function(result){
-        return {
-          'nombre':result.fk_Provider.grant_title,
-          'cuit':result.fk_Provider.cuil,
-          'reparticion':result.fk_Category.category,
-          'importe':result.import,
-          'fecha':result.date
-        }
-        // if(result.year == 2017){
-        //   console.log('HORAAAAA:' + dataaa);
-        //   return {
-        //       'importe':result.import,
-        //       'fecha':result.date,
-        //     'month':result.month,
-        //     'numberOfContracts':result.numberOfContracts,
-        //   }
-        // }
-      });
-      res.send(docs);
-    }
-  })
+    .sort({date: -1})
+    .populate('fk_Category')
+    .populate('fk_Provider')
+    .exec(function(err,populatedTransactions){
+      if (err){console.log(err);}
+      else{
+        docs = populatedTransactions.map(function(result){
+          return {
+            'nombre':result.fk_Provider.grant_title,
+            'cuit':result.fk_Provider.cuil,
+            'reparticion':result.fk_Category.category,
+            'importe':result.import,
+            'fecha':result.date
+          }
+        });
+        res.send(docs);
+      }
+    });
 });
 
 router.get('/api/get-categories', function(req,res) {
@@ -372,53 +367,64 @@ router.post('/api/post-categoryID', function(req,res) {
 });
 
 // Ranking obra publicas
-router.post('/api/post-rankingObraPublica', function(req,res) {
-  var start=new Date(req.body.valorini);
-  var end=new Date(req.body.valorfin);
+router.post('/api/post-rankingObraPublica', function(req, res) {
+  var start = new Date(req.body.valorini);
+  var end = new Date(req.body.valorfin);
+
+  start.setHours(0, 0, 0, 0);
+  end.setHours(0, 0, 0, 0);
+
   mongoose.model('Category')
-  .find({'category':'SERVICIO OBRA PUBLICA'})
-  .exec(function(err,categoryID){
-    if(err){res.send(err);}
-    else{
-      console.log(categoryID);
-      var newId = new mongoose.mongo.ObjectId('596e0604d06aa12140892f8b');
+    .findOne({'category': 'SERVICIO OBRA PUBLICA'})
+    .exec()
+    .then(function(category) {
+      categoryId = category._id
 
       mongoose.model('PurchaseOrder')
-      .aggregate(
-        [
-         {
-           '$match': {
-             date: {$gte:start, $lte:end},
-             fk_Category:newId //ID DE LA CATEGORIA SERVICIO OBRA PUBLICA
-           }
-         },
-         {'$group' : {
-            _id : '$fk_Provider',
-            import: { $sum: '$import' }
-            }
-        },
-         { '$sort': { import: -1 } },
-         { '$limit': 10}
-       ])
-      .exec(function(err,result){
-        mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
-            result=populatedTransactions.map(function(result){
-              return {
-                'nombre':result._id.grant_title,
-                'cuit':result._id.cuil,
-                'importe':result.import,
-                'id':result._id._id
-              }
-            });
+        .aggregate([
+          {
+            '$match': {
+              date: { $gte: start, $lte: end },
 
-           res.send(result);
+              // Id de la categoría de servicio para obra pública
+              fk_Category: mongoose.mongo.ObjectId(categoryId)
+            }
+          },
+          {
+            '$group': {
+              _id : '$fk_Provider',
+              import: { $sum: '$import' }
+            }
+          },
+          {'$sort': { import: -1 }},
+          {'$limit': 10}
+        ])
+        .exec()
+        .then(function(result) {
+          mongoose.model('Provider')
+            .populate(
+              result,
+              { path: '_id' },
+              function(err, populatedTransactions) {
+                result = populatedTransactions.map(function(result) {
+                  return {
+                    'nombre':result._id.grant_title,
+                    'cuit':result._id.cuil,
+                    'importe':result.import,
+                    'id':result._id._id
+                  }
+                });
+
+                 res.send(result);
+              });
         });
-      });
-    }
-  });
+    })
+    .catch(function(error) {
+      res.send(error);
+    });
 });
 
-router.get('/api/get-Providers', function(req,res) {
+router.get('/api/get-Providers', function(req, res) {
   mongoose.model('PurchaseOrder')
   .aggregate(
     [
@@ -431,7 +437,7 @@ router.get('/api/get-Providers', function(req,res) {
    ])
    .exec(function(err,result){
     mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
-      docs=populatedTransactions.map(function(result){
+      docs = populatedTransactions.map(function(result){
         return {
           'nombre':result._id.grant_title,
           'cuit':result._id.cuil,
@@ -447,7 +453,7 @@ router.get('/api/get-Providers', function(req,res) {
 });
 
 // Detail categories
-router.post('/api/post-detailCategories', function(req,res) {
+router.post('/api/post-detailCategories', function(req, res) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
 
@@ -484,7 +490,7 @@ router.post('/api/post-detailCategories', function(req,res) {
 });
 
 // Detail month
-router.post('/api/post-detailMonth', function(req,res) {
+router.post('/api/post-detailMonth', function(req, res) {
   var anio=req.body.anio;
   anio = anio.toString();
   var newId = new mongoose.mongo.ObjectId(req.body.id);

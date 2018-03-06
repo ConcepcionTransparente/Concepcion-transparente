@@ -59,11 +59,14 @@ dcuApp.config([
                         templateUrl: './views/providers.html',
                         controller: 'providersController'
                     },
+
+                    // Deprecated
                     'Files': {
                         templateUrl: './views/files.html'
                     }
                 }
             })
+            // Deprecated
             .state('Detail', {
                 url: '/:id',
                 views: {
@@ -108,8 +111,14 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
 
     $scope.generalFechaInicio = new Date(anoActual, 00, 01);
     $scope.generalFechaFin = new Date();
-    $scope.generalFechaInicioMaxDate = new moment(new Date()).add(1, 'days').format('YYYY-MM-DD');
-    $scope.generalFechaFinMaxDate = new moment(new Date()).add(1, 'days').format('YYYY-MM-DD');
+
+    $scope.generalFechaInicioMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
+
+    $scope.generalFechaFinMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
 
     $scope.submit = function() {
         var fechaInicio = new moment($scope.generalFechaInicio, 'DD/MM/YYYY').toISOString();
@@ -694,7 +703,6 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
     var from = new moment($scope.linechartFilterini).toISOString();
     var to = new moment($scope.linechartFilterfin).toISOString();
 
-
     $scope.submit = function() {
 
         var from = new moment($scope.linechartFilterini).toISOString();
@@ -711,7 +719,6 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                     var linechart = c3.generate({
                         bindto: '#lineschart',
                         data: {
-                            // url: 'example.json', //la carpeta raiz de busqueda es /public/
                             json: $scope.linechart,
                             mimeType: 'json',
                             keys: {
@@ -755,10 +762,6 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
                             }
                         }
                     });
-
-                    //   setTimeout(function () {
-                    //     linechart.transform('bar', 'amount');
-                    // }, 2000);
                 },
                 function(response) {
                     console.debug('Error' + response);
@@ -771,18 +774,31 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
 dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.rankingFilterini = new Date(anoActual, 00, 01);
-    $scope.rankingFilterfin = new Date();
+
+    $scope.rankingFechaInicio = new Date(anoActual, 00, 01);
+    $scope.rankingFechaFin = new Date();
+
+    $scope.rankingFechaInicioMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
+
+    $scope.rankingFechaFinMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
+
     // CSV config
     $scope.getHeader = function() {
         return ['PROVEEDOR', 'CUIT', 'IMPORTE', 'ID DEL PROVEEDOR']
     };
 
     $scope.submit = function() {
+        var fechaInicio = new moment($scope.rankingFechaInicio, 'DD/MM/YYYY').toISOString();
+        var fechaFin = new moment($scope.rankingFechaFin, 'DD/MM/YYYY').toISOString();
+
         $http
             .post('/api/post-ranking', {
-                'valorini': $scope.rankingFilterini,
-                'valorfin': $scope.rankingFilterfin
+                'valorini': fechaInicio,
+                'valorfin': fechaFin
             })
             .then(
                 function(response) {
@@ -798,8 +814,17 @@ dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function
 dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.obrapublicaFilterini = new Date(anoActual, 00, 01);
-    $scope.obrapublicaFilterfin = new Date();
+
+    $scope.rankingObraFechaInicio = new Date(anoActual, 00, 01);
+    $scope.rankingObraFechaFin = new Date();
+
+    $scope.rankingObraFechaInicioMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
+
+    $scope.rankingObraFechaInicioMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
 
     // CSV config
     $scope.getHeader = function() {
@@ -807,10 +832,13 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval
     };
 
     $scope.submit = function() {
+        var fechaInicio = new moment($scope.rankingObraFechaInicio, 'DD/MM/YYYY').toISOString();
+        var fechaFin = new moment($scope.rankingObraFechaFin, 'DD/MM/YYYY').toISOString();
+
         $http
             .post('/api/post-rankingObraPublica', {
-                'valorini': $scope.obrapublicaFilterini,
-                'valorfin': $scope.obrapublicaFilterfin
+                'valorini': fechaInicio,
+                'valorfin': fechaFin
             })
             .then(
                 function(response) {
@@ -827,11 +855,23 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval
 dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', function($scope, $http) {
     $scope.sortType = ''; // set the default sort type
     $scope.sortReverse = false; // set the default sort order
+
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.purchasefilterini = new Date(anoActual, 00, 01);
-    $scope.purchasefilterfin = new Date();
+
+    $scope.purchaseFechaInicio = new Date(anoActual, 00, 01);
+    $scope.purchaseFechaFin = new Date();
+
+    $scope.purchaseFechaInicioMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
+
+    $scope.purchaseFechaFinMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
+
     $scope.searchPurchase = 'undefined';
+
     $http.get('/api/get-categories').then(function(response) {
         $scope.categories = response.data;
     });
@@ -839,48 +879,29 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
     $scope.submit = function() {
         var compare = $scope.searchPurchase.localeCompare('undefined');
 
+        var fechaInicio = new moment($scope.purchaseFechaInicio, 'DD/MM/YYYY').toISOString();
+        var fechaFin = new moment($scope.purchaseFechaFin, 'DD/MM/YYYY').toISOString();
+
         if (compare == 0) {
-            $http.post('/api/post-purchases', {
-                    'valorini': $scope.purchasefilterini,
-                    'valorfin': $scope.purchasefilterfin,
+            $http
+                .post('/api/post-purchases', {
+                    'valorini': fechaInicio,
+                    'valorfin': fechaFin,
                     'category': ''
                 })
-                .then(function(response) {
-                  var j = 0;
-                  var i = 0;
-                  var vector = response.data;
-                  // console.log(vector);
-                  docs = vector.map(function(vect) {
-                      if (vect.fecha.indexOf('-01T03') == -1) {
-                          // console.log(vect.fecha + ' - ' + vect.importe);
-                          j = j + 1;
-                          // arr.push(vect.idPO)
-                          arr.push(vect.fecha)
-                      } else {
-                          i = i + 1;
-                      }
-                  })
-                  // console.log('docs: ' + docs.length);
-                  // console.log('fechas SIN el 03: ' + j);
-                  // console.log('fechas CON el 03: ' + i);
-                  // console.log('arr length: ' + arr.length);
-                  for (i = 0; i < arr.length; i++) {
-                      // console.log(arr[i]);
-                      // $http.post('/deleteOrders', {'id':arr[i]})
-                      // .then(function(){
-                      //   console.log('entrada eliminada: '+arr[i]);
-                      // })
-                  }
+                .then(
+                    function(response) {
                         $scope.getArrayPU = response.data;
                         $scope.getArrayPUcsv = response.data;
 
-                        //show more functionality
+                        // Show more functionality
                         var pagesShown = 1;
                         var pageSize = 5;
 
                         $scope.paginationLimit = function(data) {
                             return pageSize * pagesShown;
                         };
+
                         if ($scope.getArrayPU.length) {
                             $scope.hasMoreItemsToShow = function() {
                                 return pagesShown < ($scope.getArrayPU.length / pageSize);
@@ -890,27 +911,30 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
                         $scope.showMoreItems = function() {
                             pagesShown = pagesShown + 1;
                         };
-
                     },
                     function(response) {
                         console.debug('Error:' + response);
-                    })
+                    }
+                );
         } else {
-            $http.post('/api/post-categoryID', {
+            $http
+                .post('/api/post-categoryID', {
                     categorySelect: $scope.searchPurchase
                 })
                 .then(function(response) {
                     $scope.category = response.data[0]._id;
-                    $http.post('/api/post-purchases', {
-                            'valorini': $scope.purchasefilterini,
-                            'valorfin': $scope.purchasefilterfin,
+                    $http
+                        .post('/api/post-purchases', {
+                            'valorini': fechaInicio,
+                            'valorfin': fechaFin,
                             'category': $scope.category
                         })
-                        .then(function(response) {
+                        .then(
+                            function(response) {
                                 $scope.getArrayPU = response.data;
                                 $scope.getArrayPUcsv = response.data;
 
-                                //show more functionality
+                                // Show more functionality
                                 var pagesShown = 1;
                                 var pageSize = 5;
 
@@ -930,7 +954,8 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
                             },
                             function(response) {
                                 console.debug('Error:' + response);
-                            });
+                            }
+                        );
                 });
         }
     }
