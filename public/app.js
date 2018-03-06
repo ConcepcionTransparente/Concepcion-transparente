@@ -109,8 +109,8 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.generalFechaInicio = new Date(anoActual, 00, 01);
-    $scope.generalFechaFin = new Date();
+    $scope.generalFechaInicio = (new Date(anoActual, 00, 01)).format('dd-mm-yyyy');
+    $scope.generalFechaFin = (new Date()).format('dd-mm-yyyy');
 
     $scope.generalFechaInicioMaxDate = new moment(new Date())
         .add(1, 'days')
@@ -121,8 +121,8 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
         .format('YYYY-MM-DD');
 
     $scope.submit = function() {
-        var fechaInicio = new moment($scope.generalFechaInicio, 'DD/MM/YYYY').toISOString();
-        var fechaFin = new moment($scope.generalFechaFin, 'DD/MM/YYYY').toISOString();
+        var fechaInicio = new moment($scope.generalFechaInicio + ' 00:00.000Z').toISOString();
+        var fechaFin = new moment($scope.generalFechaFin + ' 00:00.000Z').toISOString();
 
         $http
             .post('/api/post-totalimport', {
@@ -697,21 +697,27 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
 // Linechart (evolución del gasto)
 dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $http) {
-    $scope.linechartFilterini = new Date(2009, 00, 01);
-    $scope.linechartFilterfin = new Date();
 
-    var from = new moment($scope.linechartFilterini).toISOString();
-    var to = new moment($scope.linechartFilterfin).toISOString();
+    $scope.lineChartFechaInicio = $scope.fechaInicioDatos;
+    $scope.lineChartFechaFin = new Date();
+
+    $scope.lineChartFechaInicioMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
+
+    $scope.lineChartFechaFinMaxDate = new moment(new Date())
+        .add(1, 'days')
+        .format('YYYY-MM-DD');
 
     $scope.submit = function() {
 
-        var from = new moment($scope.linechartFilterini).toISOString();
-        var to = new moment($scope.linechartFilterfin).toISOString();
+        var fechaInicio = new moment($scope.lineChartFechaInicio).toISOString();
+        var fechaFin = new moment($scope.lineChartFechaFin).toISOString();
 
         $http
             .post('/api/post-linechart', {
-                'valorini': from,
-                'valorfin': to
+                'valorini': fechaInicio,
+                'valorfin': fechaFin
             })
             .then(
                 function(response) {

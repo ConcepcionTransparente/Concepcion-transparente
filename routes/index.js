@@ -36,7 +36,7 @@ router.get('/favicon.ico', function (req, res) {
 
 // Controllers
 
-// router.get('/api/get-importHistory',function(req,res,next){
+// router.get('/api/get-importHistory',function(req, res, next){
 //
 //   mongoose.model('PurchaseOrder').aggregate(
 //     [
@@ -53,7 +53,7 @@ router.get('/favicon.ico', function (req, res) {
 //   });
 // });
 
-// router.get('/api/get-providersHistory',function(req,res,next){
+// router.get('/api/get-providersHistory',function(req, res, next){
 //   mongoose.model('PurchaseOrder')
 //   .find()
 //   .distinct('fk_Provider', function(error, response) {
@@ -63,7 +63,7 @@ router.get('/favicon.ico', function (req, res) {
 //
 // });
 //
-// router.get('/api/get-ordersHistory',function(req,res,next){
+// router.get('/api/get-ordersHistory',function(req, res, next){
 //   mongoose.model('PurchaseOrder')
 //   .find()
 //   .distinct('fk_Provider')
@@ -79,22 +79,27 @@ router.get('/favicon.ico', function (req, res) {
 // });
 
 // Cantidad de órdenes de compra
-router.post('/api/post-totalimport', function(req,res,next) {
+router.post('/api/post-totalimport', function(req, res, next) {
   var start = new Date(req.body.valorini);
   var end = new Date(req.body.valorfin);
 
   end.setHours(0, 0, 0, 0);
 
+  console.log('-----------');
+  console.log(start);
+  console.log(end);
+  console.log('-----------');
+
   mongoose.model('PurchaseOrder').aggregate(
     [
       { '$match': { date: { $gte: start, $lte: end } } },
-        {
-          $group : {
-            '_id' : null,
-            'import': { $sum: '$import' }, // for your case use local.user_totalthings
-            // count: { $sum: 1 } // for no. of documents count
-         }
+      {
+        $group : {
+          '_id' : null,
+          'import': { $sum: '$import' },
+          'count': { $sum: 1 }
        }
+     }
     ],
     function(err,importe) {
         res.send(importe);
@@ -103,7 +108,7 @@ router.post('/api/post-totalimport', function(req,res,next) {
 });
 
 // Cantidad de proveedores
-router.post('/api/post-totalproviders', function(req,res,next) {
+router.post('/api/post-totalproviders', function(req, res, next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   var hoy=new Date();
@@ -117,7 +122,7 @@ router.post('/api/post-totalproviders', function(req,res,next) {
 });
 
 // Cantidad de órdenes de compra
-router.post('/api/post-totalorders', function(req,res,next) {
+router.post('/api/post-totalorders', function(req, res, next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   var hoy=new Date();
@@ -136,7 +141,7 @@ router.post('/api/post-totalorders', function(req,res,next) {
 });
 
 // Bubble chart
-router.post('/api/post-bubblechart', function(req,res,next) {
+router.post('/api/post-bubblechart', function(req, res, next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   var hoy=new Date();
@@ -162,7 +167,7 @@ router.post('/api/post-bubblechart', function(req,res,next) {
        { '$sort': { import: 1 } }
      ])
     .exec(function(err,result){
-      mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+      mongoose.model('Provider').populate(result, { path: '_id' }, function(err, populatedTransactions) {
          // Your populated translactions are inside populatedTransactions
          res.json(populatedTransactions);
       });
@@ -190,7 +195,7 @@ router.post('/api/post-bubblechart', function(req,res,next) {
        { '$sort': { import: 1 } }
      ])
     .exec(function(err,result){
-      mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+      mongoose.model('Provider').populate(result, { path: '_id' }, function(err, populatedTransactions) {
          res.json(populatedTransactions);
       });
     // res.send(result);
@@ -210,16 +215,17 @@ router.post('/api/post-linechart', function(req, res, next) {
     .find({'year': {'$gte': startyear, '$lte': endyear}})
     .sort({year: 1})
     .exec(function(err, post){
-      if (err){
+      if (err) {
         console.log(err);
+
+        return;
       }
-      else {
-        res.send(post);
-      }
+
+      res.send(post);
     });
 });
 
-router.post('/api/post-ranking', function(req,res,next) {
+router.post('/api/post-ranking', function(req, res, next) {
   var start=new Date(req.body.valorini);
   var end=new Date(req.body.valorfin);
   mongoose.model('PurchaseOrder')
@@ -241,7 +247,7 @@ router.post('/api/post-ranking', function(req,res,next) {
      { '$limit': 10}
    ])
    .exec(function(err,result){
-    mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+    mongoose.model('Provider').populate(result, { path: '_id' }, function(err, populatedTransactions) {
        // Your populated translactions are inside populatedTransactions
       docs=populatedTransactions.map(function(result){
         return {
@@ -436,7 +442,7 @@ router.get('/api/get-Providers', function(req, res) {
      { '$sort': { import: -1 } },
    ])
    .exec(function(err,result){
-    mongoose.model('Provider').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+    mongoose.model('Provider').populate(result, { path: '_id' }, function(err, populatedTransactions) {
       docs = populatedTransactions.map(function(result){
         return {
           'nombre':result._id.grant_title,
@@ -476,7 +482,7 @@ router.post('/api/post-detailCategories', function(req, res) {
     }
    ])
   .exec(function(err,result){
-    mongoose.model('Category').populate(result, {path: '_id'}, function(err, populatedTransactions) {
+    mongoose.model('Category').populate(result, { path: '_id' }, function(err, populatedTransactions) {
         result=populatedTransactions.map(function(result){
           return {
             'nombre':result._id.category,
