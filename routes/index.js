@@ -212,8 +212,8 @@ router.post('/api/post-linechart', function(req, res, next) {
 
   mongoose
     .model('Year')
-    .find({'year': {'$gte': startyear, '$lte': endyear}})
-    .sort({year: 1})
+    .find({ 'year': { '$gte': startyear, '$lte': endyear } })
+    .sort({ year: 1 })
     .exec(function(err, post){
       if (err) {
         console.log(err);
@@ -355,9 +355,11 @@ router.get('/:id', function(req,res) {
 });
 
 router.get('/api/get-categories', function(req,res) {
-  mongoose.model('Category').distinct('category', function(error, response) {
-      res.send(response);
-  });
+  mongoose
+    .model('Category')
+    .distinct('category', function(error, response) {
+      res.send(response.sort());
+    });
 });
 
 router.post('/api/post-categoryID', function(req,res) {
