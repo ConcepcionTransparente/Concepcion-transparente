@@ -30,65 +30,12 @@ router.get('/favicon.ico', function (req, res) {
   res.status(204);
 });
 
-// router.get('/demo', function(req, res, next) {
-//     res.sendfile('views/demo.html');
-// });
-
-// Controllers
-
-// router.get('/api/get-importHistory',function(req, res, next){
-//
-//   mongoose.model('PurchaseOrder').aggregate(
-//     [
-//      {
-//        $group : {
-//           '_id' : null,
-//           'import': { $sum: '$import' }, // for your case use local.user_totalthings
-//           // count: { $sum: 1 } // for no. of documents count
-//        }
-//      }
-//     ],function(err,importe){
-//         console.log('HISTORY IMPORT: '+importe[0].data);
-//         res.send(importe);
-//   });
-// });
-
-// router.get('/api/get-providersHistory',function(req, res, next){
-//   mongoose.model('PurchaseOrder')
-//   .find()
-//   .distinct('fk_Provider', function(error, response) {
-//     console.log('HISTORY PROVIDERS: '+response);
-//       res.send(response);
-//   });
-//
-// });
-//
-// router.get('/api/get-ordersHistory',function(req, res, next){
-//   mongoose.model('PurchaseOrder')
-//   .find()
-//   .distinct('fk_Provider')
-//   .count(function (err, result) {
-//       if (err) {
-//           return console.log(err);
-//       } else {
-//           console.log('HISTORY ORDERS: '+result);
-//           res.json(result);
-//       }
-//   });
-//
-// });
-
 // Cantidad de órdenes de compra
 router.post('/api/post-totalimport', function(req, res, next) {
   var start = new Date(req.body.valorini);
   var end = new Date(req.body.valorfin);
 
   end.setHours(0, 0, 0, 0);
-
-  console.log('-----------');
-  console.log(start);
-  console.log(end);
-  console.log('-----------');
 
   mongoose.model('PurchaseOrder').aggregate(
     [

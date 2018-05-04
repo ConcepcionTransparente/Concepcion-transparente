@@ -59,6 +59,10 @@ dcuApp.config([
                         templateUrl: './views/providers.html',
                         controller: 'providersController'
                     },
+                    'VisualizacionesPresupuesto': {
+                        templateUrl: './views/visualizacionesPresupuesto.html',
+                        controller: 'visualizacionesPresupuestoController'
+                    },
 
                     // Deprecated
                     'Files': {
@@ -973,7 +977,8 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
     $scope.sortReverse = false; // set the default sort order
     $scope.searchPurchase = ''; // set the default search/filter term
 
-    $http.get('/' + $stateParams.id)
+    $http
+        .get('/' + $stateParams.id)
         .then(function(response) {
             $scope.detail = response.data;
             // Export CSV config
@@ -1049,37 +1054,41 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
     $scope.categoryIni = new Date(anoActual, 00, 01);
     $scope.categoryFin = new Date();
     $scope.submitCategory = function() {
-            $scope.getHeader2 = function() {
-                return ['REPARTICIÓN', 'IMPORTE', 'CONTRATOS']
-            }
-            $http.post('/api/post-detailCategories', {
+        $scope.getHeader2 = function() {
+            return ['REPARTICIÓN', 'IMPORTE', 'CONTRATOS']
+        }
+
+        $http
+            .post(
+                '/api/post-detailCategories',
+                {
                     'valorini': $scope.categoryIni,
                     'valorfin': $scope.categoryFin,
                     'id': $stateParams.id
-                })
-                .then(function(response) {
-                        $scope.detailCategories = response.data;
-                    },
-                    function(response) {
-                        console.debug('Error:' + response);
-                    }).then(function() {
-                    var pagesShown2 = 1;
-                    var pageSize2 = 5;
-                    $scope.paginationLimit2 = function(data) {
-                        return pageSize2 * pagesShown2;
+                }
+            )
+            .then(function(response) {
+                    $scope.detailCategories = response.data;
+                },
+                function(response) {
+                    console.debug('Error:' + response);
+                }).then(function() {
+                var pagesShown2 = 1;
+                var pageSize2 = 5;
+                $scope.paginationLimit2 = function(data) {
+                    return pageSize2 * pagesShown2;
+                };
+                if ($scope.detailCategories.length) {
+                    $scope.hasMoreItemsToShow2 = function() {
+                        return pagesShown2 < ($scope.detailCategories.length / pageSize2);
                     };
-                    if ($scope.detailCategories.length) {
-                        $scope.hasMoreItemsToShow2 = function() {
-                            return pagesShown2 < ($scope.detailCategories.length / pageSize2);
-                        };
-                    }
+                }
 
-                    $scope.showMoreItems2 = function() {
-                        pagesShown2 = pagesShown2 + 1;
-                    };
-                })
-
-        }
+                $scope.showMoreItems2 = function() {
+                    pagesShown2 = pagesShown2 + 1;
+                };
+            });
+    }
 
     var from = new moment().year();
     $scope.monthIni = new Date();
@@ -1145,4 +1154,37 @@ dcuApp.controller('providersController', ['$scope', '$http', '$interval', functi
                 }
             }
         );
+}]);
+
+dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($scope) {
+    var data = [
+        ['INTENDENCIA', 26286028.00],
+        ['SEC. DE COORD. GRAL. Y JEFE GABINETE', 1011884.21],
+        ['SEC. GOBIERNO', 64391753.52],
+        ['SECRETARIA DE HACIENDA', 31965955.79],
+        ['SECRETARIA DE DESARROLLO SOCIAL Y EDUCACION', 67264629.06],
+        ['SECRETARIA DE SALUD, DISCAPACIDAD Y DERECHOS HUMANOS', 59896536.88],
+        ['SEC. CULTURA, TURISMO Y DEPORTES', 63732405.82],
+        ['COORDINACIÓN GRAL. DEL INFRAESTRUCTURA', 193920653.38],
+        ['COORDINACION GENERAL DE SERVICIOS SANITARIOS', 71271420.75],
+        ['COORDINACION GENERAL DE SERVICIOS PUBLICOS', 82006346.89],
+        ['JUZGADO DE FALTAS Nº 1 Y Nº 2', 6402936.06],
+        ['COORDINADOR GENERAL DE PLANEAMIENTO', 14429996.21],
+        ['COORD GRAL DE EVALUACION POLITICAS PUBLICAS Y CONTROL DE GASTOS ', 71338734.11],
+        ['HONORABLE CONCEJO DELIBERANTE', 11877509.35]
+    ];
+
+    c3.generate({
+        bindto: '#donutchartPresupuesto',
+        data: {
+            columns: data,
+            type : 'donut',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        },
+        donut: {
+            title: 'Presupuesto 2018'
+        }
+    });
 }]);
