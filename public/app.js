@@ -1174,17 +1174,16 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
         ['HONORABLE CONCEJO DELIBERANTE', 11877509.35]
     ];
 
+    var totalPresupuesto = data.reduce(function(acc, element) { return acc + element[1]; }, 0);
+
     c3.generate({
         bindto: '#donutchartPresupuesto',
         data: {
             columns: data,
-            type : 'donut',
-            onclick: function (d, i) { console.log("onclick", d, i); },
-            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+            type : 'donut'
         },
         donut: {
-            title: 'Presupuesto 2018'
+            title: 'Presupuesto 2018: ' + d3.format('$,.2f')(totalPresupuesto)
         },
         tooltip: {
             format: {
@@ -1192,6 +1191,10 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
                     return d3.format('$,.2f')(value);
                 }
             }
+        },
+        // TODO: Estoy no ayuda al responsiveness al ser un alto fijo
+        size: {
+            height: 600
         }
     });
 }]);
