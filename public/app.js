@@ -9,7 +9,8 @@ var dcuApp = angular.module(
         '720kb.socialshare',
         'ngSanitize',
         'angularMoment',
-        'ngCsv'
+        'ngCsv',
+        'angular-d3plus'
     ]
 );
 
@@ -1157,7 +1158,7 @@ dcuApp.controller('providersController', ['$scope', '$http', '$interval', functi
 }]);
 
 dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($scope) {
-    var data = [
+    $scope.data = [
         ['INTENDENCIA', 26286028.00],
         ['SEC. DE COORD. GRAL. Y JEFE GABINETE', 1011884.21],
         ['SEC. GOBIERNO', 64391753.52],
@@ -1174,16 +1175,16 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
         ['HONORABLE CONCEJO DELIBERANTE', 11877509.35]
     ];
 
-    var totalPresupuesto = data.reduce(function(acc, element) { return acc + element[1]; }, 0);
+    $scope.totalPresupuesto = $scope.data.reduce(function(acc, element) { return acc + element[1]; }, 0);
 
     c3.generate({
         bindto: '#donutchartPresupuesto',
         data: {
-            columns: data,
+            columns: $scope.data,
             type : 'donut'
         },
         donut: {
-            title: 'Presupuesto 2018: ' + d3.format('$,.2f')(totalPresupuesto)
+            title: 'Presupuesto 2018: ' + d3.format('$,.2f')($scope.totalPresupuesto)
         },
         tooltip: {
             format: {
@@ -1196,5 +1197,12 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
         size: {
             height: 600
         }
+    });
+
+    $scope.sample_data = $scope.data.map(function(element) {
+        return {
+            name: element[0],
+            value: element[1]
+        };
     });
 }]);

@@ -1,0 +1,39 @@
+{
+  "name": "angular-d3plus",
+  "homepage": "https://github.com/mariohmol/angular-d3plus",
+  "authors": [
+    "Mario Mol <mariohmol@gmail.com>"
+  ],
+  "description": "Angularjs directives for d3plus",
+  "main": "src/angular-d3plus.js",
+  "moduleType": [],
+  "keywords": [
+    "angularjs",
+    "javascript",
+    "d3plus",
+    "d3"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.16",
+    "d3plus": "~1.9.1",
+    "angular": "~1.5.0"
+  },
+  "_release": "50d9a3e916",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "50d9a3e916c522613da8849a91623cc158a5d90a"
+  },
+  "_source": "https://github.com/mariohmol/angular-d3plus.git",
+  "_target": "*",
+  "_originalSource": "angular-d3plus",
+  "_direct": true
+}

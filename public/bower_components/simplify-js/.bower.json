@@ -1,0 +1,14 @@
+{
+  "name": "simplify-js",
+  "homepage": "https://github.com/mourner/simplify-js",
+  "version": "1.2.3",
+  "_release": "1.2.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.3",
+    "commit": "b5e161f7dee35e2f7c201c15bf138331079c18e7"
+  },
+  "_source": "https://github.com/mourner/simplify-js.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/mourner/simplify-js.git"
+}
