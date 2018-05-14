@@ -1021,7 +1021,6 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
                     pattern: ['#66bb6a', '#2e7d32']
                 },
                 axis: {
-
                     y: {
                         tick: {
                             format: d3.format('$,.2f')
@@ -1051,8 +1050,9 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.categoryIni = new Date(anoActual, 00, 01);
+    $scope.categoryIni = new Date(anoActual, '0', '1');
     $scope.categoryFin = new Date();
+
     $scope.submitCategory = function() {
         $scope.getHeader2 = function() {
             return ['REPARTICIÓN', 'IMPORTE', 'CONTRATOS']
@@ -1185,6 +1185,13 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
         },
         donut: {
             title: 'Presupuesto 2018'
+        },
+        tooltip: {
+            format: {
+                value: function(value, ratio, id, index) {
+                    return d3.format('$,.2f')(value);
+                }
+            }
         }
     });
 }]);
