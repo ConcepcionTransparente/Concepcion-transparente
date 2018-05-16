@@ -236,8 +236,9 @@
                 restrict: 'AE',
                 scope: angularD3plusUtils.scope({
                     data: '=',
-                    id: '@',
-                    size: '@?'
+                    id: '=',
+                    size: '@?',
+                    format: '='
                 }),
                 template: angularD3plusUtils.template,
                 link: angularD3plusUtils.link,
@@ -301,6 +302,7 @@
                     if ($scope.y) services.setvar($scope.viz.y, $scope.y);
                     if ($scope.coords) services.setvar($scope.viz.coords, $scope.coords);
                     if ($scope.tooltip) services.setvar($scope.viz.tooltip, $scope.tooltip);
+                    if ($scope.format) services.setvar($scope.viz.format, $scope.format);
                     $scope.viz.type(type);
                 },
                 scope: function(typescope) {

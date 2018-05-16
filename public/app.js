@@ -1159,23 +1159,37 @@ dcuApp.controller('providersController', ['$scope', '$http', '$interval', functi
 
 dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($scope) {
     $scope.data = [
-        ['INTENDENCIA', 26286028.00],
-        ['SEC. DE COORD. GRAL. Y JEFE GABINETE', 1011884.21],
-        ['SEC. GOBIERNO', 64391753.52],
-        ['SECRETARIA DE HACIENDA', 31965955.79],
-        ['SECRETARIA DE DESARROLLO SOCIAL Y EDUCACION', 67264629.06],
-        ['SECRETARIA DE SALUD, DISCAPACIDAD Y DERECHOS HUMANOS', 59896536.88],
-        ['SEC. CULTURA, TURISMO Y DEPORTES', 63732405.82],
-        ['COORDINACIÓN GRAL. DEL INFRAESTRUCTURA', 193920653.38],
-        ['COORDINACION GENERAL DE SERVICIOS SANITARIOS', 71271420.75],
-        ['COORDINACION GENERAL DE SERVICIOS PUBLICOS', 82006346.89],
-        ['JUZGADO DE FALTAS Nº 1 Y Nº 2', 6402936.06],
-        ['COORDINADOR GENERAL DE PLANEAMIENTO', 14429996.21],
-        ['COORD GRAL DE EVALUACION POLITICAS PUBLICAS Y CONTROL DE GASTOS ', 71338734.11],
-        ['HONORABLE CONCEJO DELIBERANTE', 11877509.35]
+        ['INTENDENCIA', 'CATEGORIA A', 26286028.00],
+        ['INTENDENCIA', 'CATEGORIA B', 26286028.00],
+        ['SEC. DE COORD. GRAL. Y JEFE GABINETE', 'CATEGORIA A', 1011884.21],
+        ['SEC. DE COORD. GRAL. Y JEFE GABINETE', 'CATEGORIA B', 1011884.21],
+        ['SEC. GOBIERNO', 'CATEGORIA A', 64391753.52],
+        ['SEC. GOBIERNO', 'CATEGORIA B', 64391753.52],
+        ['SECRETARIA DE HACIENDA', 'CATEGORIA A', 31965955.79],
+        ['SECRETARIA DE HACIENDA', 'CATEGORIA B', 31965955.79],
+        ['SECRETARIA DE DESARROLLO SOCIAL Y EDUCACION', 'CATEGORIA A', 67264629.06],
+        ['SECRETARIA DE DESARROLLO SOCIAL Y EDUCACION', 'CATEGORIA B', 67264629.06],
+        ['SECRETARIA DE SALUD, DISCAPACIDAD Y DERECHOS HUMANOS', 'CATEGORIA A', 59896536.88],
+        ['SECRETARIA DE SALUD, DISCAPACIDAD Y DERECHOS HUMANOS', 'CATEGORIA B', 59896536.88],
+        ['SEC. CULTURA, TURISMO Y DEPORTES', 'CATEGORIA A', 63732405.82],
+        ['SEC. CULTURA, TURISMO Y DEPORTES', 'CATEGORIA B', 63732405.82],
+        ['COORDINACIÓN GRAL. DEL INFRAESTRUCTURA', 'CATEGORIA A', 193920653.38],
+        ['COORDINACIÓN GRAL. DEL INFRAESTRUCTURA', 'CATEGORIA B', 193920653.38],
+        ['COORDINACION GENERAL DE SERVICIOS SANITARIOS', 'CATEGORIA A', 71271420.75],
+        ['COORDINACION GENERAL DE SERVICIOS SANITARIOS', 'CATEGORIA B', 71271420.75],
+        ['COORDINACION GENERAL DE SERVICIOS PUBLICOS', 'CATEGORIA A', 82006346.89],
+        ['COORDINACION GENERAL DE SERVICIOS PUBLICOS', 'CATEGORIA B', 82006346.89],
+        ['JUZGADO DE FALTAS Nº 1 Y Nº 2', 'CATEGORIA A', 6402936.06],
+        ['JUZGADO DE FALTAS Nº 1 Y Nº 2', 'CATEGORIA B', 6402936.06],
+        ['COORDINADOR GENERAL DE PLANEAMIENTO', 'CATEGORIA A', 14429996.21],
+        ['COORDINADOR GENERAL DE PLANEAMIENTO', 'CATEGORIA B', 14429996.21],
+        ['COORD GRAL DE EVALUACION POLITICAS PUBLICAS Y CONTROL DE GASTOS ', 'CATEGORIA A', 71338734.11],
+        ['COORD GRAL DE EVALUACION POLITICAS PUBLICAS Y CONTROL DE GASTOS ', 'CATEGORIA B', 71338734.11],
+        ['HONORABLE CONCEJO DELIBERANTE', 'CATEGORIA A', 11877509.35],
+        ['HONORABLE CONCEJO DELIBERANTE', 'CATEGORIA B', 11877509.35]
     ];
 
-    $scope.totalPresupuesto = $scope.data.reduce(function(acc, element) { return acc + element[1]; }, 0);
+    $scope.totalPresupuesto = $scope.data.reduce(function(acc, element) { return acc + element[2]; }, 0);
 
     c3.generate({
         bindto: '#donutchartPresupuesto',
@@ -1201,8 +1215,15 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
 
     $scope.sample_data = $scope.data.map(function(element) {
         return {
-            name: element[0],
-            value: element[1]
+            nivelUno: element[0],
+            nivelDos: element[1],
+            value: element[2]
         };
     });
+
+    $scope.format = {
+        locale: 'es_ES'
+    };
+
+    $scope.group_by = ['nivelUno', 'nivelDos'];
 }]);
