@@ -10581,6 +10581,8 @@ print.time = function(message) {
   if (!ie) {
     console.time(message);
   }
+
+  console.log(message);
 };
 
 print.timeEnd = function(message) {

@@ -237,8 +237,7 @@
                 scope: angularD3plusUtils.scope({
                     data: '=',
                     id: '=',
-                    size: '@?',
-                    format: '='
+                    size: '@?'
                 }),
                 template: angularD3plusUtils.template,
                 link: angularD3plusUtils.link,
@@ -303,6 +302,10 @@
                     if ($scope.coords) services.setvar($scope.viz.coords, $scope.coords);
                     if ($scope.tooltip) services.setvar($scope.viz.tooltip, $scope.tooltip);
                     if ($scope.format) services.setvar($scope.viz.format, $scope.format);
+                    if ($scope.font) services.setvar($scope.viz.font, $scope.font);
+                    if ($scope.labels) services.setvar($scope.viz.labels, $scope.labels);
+                    if ($scope.title) services.setvar($scope.viz.title, $scope.title);
+                    if ($scope.legend) services.setvar($scope.viz.legend, $scope.legend);
                     $scope.viz.type(type);
                 },
                 scope: function(typescope) {
@@ -313,6 +316,11 @@
                     typescope.tooltip = '@?';
                     typescope.elementid = '@?';
                     typescope.config = '@?';
+                    typescope.format = '=';
+                    typescope.font = '=';
+                    typescope.labels = '=';
+                    typescope.title = '=';
+                    typescope.legend = '=';
                     return typescope;
                 },
                 setvar: function(func, val) {

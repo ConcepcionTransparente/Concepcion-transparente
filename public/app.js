@@ -1225,5 +1225,15 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
         locale: 'es_ES'
     };
 
+    $scope.font = {
+        family: 'Helvetica, Arial, sans-serif'
+    };
+
+    $scope.labels = { align: 'left', valign: 'top' };
+
     $scope.group_by = ['nivelUno', 'nivelDos'];
+
+    $scope.legend = true;
+
+    $scope.title = { total: true };
 }]);
