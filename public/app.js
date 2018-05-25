@@ -109,8 +109,8 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.generalFechaInicio = (new Date(anoActual, 00, 01)).format('dd-mm-yyyy');
-    $scope.generalFechaFin = (new Date()).format('dd-mm-yyyy');
+    $scope.generalFechaInicio = new Date(anoActual, 0, 1);
+    $scope.generalFechaFin = new Date();
 
     $scope.generalFechaInicioMaxDate = new moment(new Date())
         .add(1, 'days')
@@ -121,8 +121,11 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
         .format('YYYY-MM-DD');
 
     $scope.submit = function() {
-        var fechaInicio = new moment($scope.generalFechaInicio + ' 00:00.000Z').toISOString();
-        var fechaFin = new moment($scope.generalFechaFin + ' 00:00.000Z').toISOString();
+        // var fechaInicio = new moment($scope.generalFechaInicio + ' 00:00.000Z').toISOString();
+        // var fechaFin = new moment($scope.generalFechaFin + ' 00:00.000Z').toISOString();
+
+        var fechaInicio = new moment($scope.generalFechaInicio, 'DD/MM/YYYY').toISOString();
+        var fechaFin = new moment($scope.generalFechaFin, 'DD/MM/YYYY').toISOString();
 
         $http
             .post('/api/post-totalimport', {
@@ -162,8 +165,10 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
 dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, $http) {
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.bubbleFechaInicio = new Date(anoActual, 00, 01);
+
+    $scope.bubbleFechaInicio = new Date(anoActual, 0, 1);
     $scope.bubbleFechaFin = new Date();
+
     $scope.searchPurchase = 'undefined';
 
     $http
@@ -781,7 +786,7 @@ dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.rankingFechaInicio = new Date(anoActual, 00, 01);
+    $scope.rankingFechaInicio = new Date(anoActual, 0, 1);
     $scope.rankingFechaFin = new Date();
 
     $scope.rankingFechaInicioMaxDate = new moment(new Date())
@@ -821,7 +826,7 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.rankingObraFechaInicio = new Date(anoActual, 00, 01);
+    $scope.rankingObraFechaInicio = new Date(anoActual, 0, 1);
     $scope.rankingObraFechaFin = new Date();
 
     $scope.rankingObraFechaInicioMaxDate = new moment(new Date())
@@ -865,7 +870,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.purchaseFechaInicio = new Date(anoActual, 00, 01);
+    $scope.purchaseFechaInicio = new Date(anoActual, 0, 1);
     $scope.purchaseFechaFin = new Date();
 
     $scope.purchaseFechaInicioMaxDate = new moment(new Date())
@@ -1046,8 +1051,10 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.categoryIni = new Date(anoActual, 00, 01);
+
+    $scope.categoryIni = new Date(anoActual, 0, 1);
     $scope.categoryFin = new Date();
+
     $scope.submitCategory = function() {
             $scope.getHeader2 = function() {
                 return ['REPARTICIÓN', 'IMPORTE', 'CONTRATOS']
