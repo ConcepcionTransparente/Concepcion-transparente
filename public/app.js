@@ -663,9 +663,6 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         // POST pasandole dicha categoria.
         var compare = $scope.searchPurchase.localeCompare('undefined');
 
-        // console.log($http);
-        // post(url: string, body: any, options?: RequestOptionsArgs) : Observable<Response>
-
         if (compare == 0) {
             $http
                 .post(
