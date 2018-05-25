@@ -9,8 +9,26 @@
     <div id="donutchartPresupuesto"></div>
 
     <d3plus-treemap
-        data="sample_data"
-        id="group_by"
+        data="presupuesto_treemap_data"
+        id="presupuesto_group_by"
+        size="value"
+        format="format"
+        font="font"
+        labels="labels"
+        title="title"
+        legend="legend" />
+  </div>
+</div>
+
+<div>
+  <div class="article">
+    <h3>Visualizaciones de ingresos:</h3>
+
+    <div id="donutchartIngresos"></div>
+
+    <d3plus-treemap
+        data="ingresos_treemap_data"
+        id="ingresos_group_by"
         size="value"
         format="format"
         font="font"
