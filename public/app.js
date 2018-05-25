@@ -114,8 +114,8 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.generalFechaInicio = (new Date(anoActual, 00, 01)).format('dd-mm-yyyy');
-    $scope.generalFechaFin = (new Date()).format('dd-mm-yyyy');
+    $scope.generalFechaInicio = new Date(anoActual, 0, 1);
+    $scope.generalFechaFin = new Date();
 
     $scope.generalFechaInicioMaxDate = new moment(new Date())
         .add(1, 'days')
@@ -126,8 +126,11 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
         .format('YYYY-MM-DD');
 
     $scope.submit = function() {
-        var fechaInicio = new moment($scope.generalFechaInicio + ' 00:00.000Z').toISOString();
-        var fechaFin = new moment($scope.generalFechaFin + ' 00:00.000Z').toISOString();
+        // var fechaInicio = new moment($scope.generalFechaInicio + ' 00:00.000Z').toISOString();
+        // var fechaFin = new moment($scope.generalFechaFin + ' 00:00.000Z').toISOString();
+
+        var fechaInicio = new moment($scope.generalFechaInicio, 'DD/MM/YYYY').toISOString();
+        var fechaFin = new moment($scope.generalFechaFin, 'DD/MM/YYYY').toISOString();
 
         $http
             .post('/api/post-totalimport', {
@@ -167,8 +170,10 @@ dcuApp.controller('generalController', ['$scope', '$http', '$q', function($scope
 dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, $http) {
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.bubbleFechaInicio = new Date(anoActual, 00, 01);
+
+    $scope.bubbleFechaInicio = new Date(anoActual, 0, 1);
     $scope.bubbleFechaFin = new Date();
+
     $scope.searchPurchase = 'undefined';
 
     $http
@@ -586,11 +591,14 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
         /*
          * Function called once data is loaded from CSV.
+         *
          * Calls bubble chart function to display inside #vis div.
          */
         function display(error, data) {
             if (error) {
                 console.log(error);
+
+                return;
             }
 
             myBubbleChart('#bubbleChart', data);
@@ -659,18 +667,24 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         // si es distinto de undefined (alguna categoria en particular) llama al
         // POST pasandole dicha categoria.
         var compare = $scope.searchPurchase.localeCompare('undefined');
-        if (compare == 0) {
-            d3
-                .json('/api/post-bubblechart', function(error, data) {
-                    display(error, data);
-                })
-                .header('Content-Type', 'application/json')
-                .send('POST', JSON.stringify({
-                    'valorini': fechaInicio,
-                    'valorfin': fechaFin,
-                    'category': ''
-                }));
 
+        // console.log($http);
+        // post(url: string, body: any, options?: RequestOptionsArgs) : Observable<Response>
+
+        if (compare == 0) {
+            $http
+                .post(
+                    '/api/post-bubblechart',
+                    JSON.stringify({
+                        'valorini': fechaInicio,
+                        'valorfin': fechaFin,
+                        'category': ''
+                    }),
+                    { headers: { 'Content-Type': 'application/json' } }
+                )
+                .then(function(data) {
+                    display(null, data['data']);
+                });
         } else {
             $http
                 .post('/api/post-categoryID', {
@@ -679,15 +693,20 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                 .then(
                     function(response) {
                         $scope.bubbleCategory = response.data[0]._id;
-                        d3.json('/api/post-bubblechart', function(error, data) {
-                                display(error, data);
-                            })
-                            .header('Content-Type', 'application/json')
-                            .send('POST', JSON.stringify({
-                                'valorini': fechaInicio,
-                                'valorfin': fechaFin,
-                                'category': $scope.bubbleCategory
-                            }));
+
+                        $http
+                            .post(
+                                '/api/post-bubblechart',
+                                JSON.stringify({
+                                    'valorini': fechaInicio,
+                                    'valorfin': fechaFin,
+                                    'category': $scope.bubbleCategory
+                                }),
+                                { headers: { 'Content-Type': 'application/json' } }
+                            )
+                            .then(function(data) {
+                                display(null, data['data']);
+                            });
                     },
                     function(response) {
                         console.debug('Error:' + response);
@@ -786,7 +805,7 @@ dcuApp.controller('rankingController', ['$scope', '$http', '$interval', function
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.rankingFechaInicio = new Date(anoActual, 00, 01);
+    $scope.rankingFechaInicio = new Date(anoActual, 0, 1);
     $scope.rankingFechaFin = new Date();
 
     $scope.rankingFechaInicioMaxDate = new moment(new Date())
@@ -826,7 +845,7 @@ dcuApp.controller('rankingObraPublicaController', ['$scope', '$http', '$interval
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.rankingObraFechaInicio = new Date(anoActual, 00, 01);
+    $scope.rankingObraFechaInicio = new Date(anoActual, 0, 1);
     $scope.rankingObraFechaFin = new Date();
 
     $scope.rankingObraFechaInicioMaxDate = new moment(new Date())
@@ -870,7 +889,7 @@ dcuApp.controller('purchaseController', ['$scope', '$http', '$interval', functio
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
 
-    $scope.purchaseFechaInicio = new Date(anoActual, 00, 01);
+    $scope.purchaseFechaInicio = new Date(anoActual, 0, 1);
     $scope.purchaseFechaFin = new Date();
 
     $scope.purchaseFechaInicioMaxDate = new moment(new Date())
@@ -1051,7 +1070,8 @@ dcuApp.controller('detailController', ['$scope', '$http', '$stateParams', functi
 
     var fechaActual = new Date();
     var anoActual = fechaActual.getFullYear();
-    $scope.categoryIni = new Date(anoActual, '0', '1');
+
+    $scope.categoryIni = new Date(anoActual, 0, 1);
     $scope.categoryFin = new Date();
 
     $scope.submitCategory = function() {
