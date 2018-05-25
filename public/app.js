@@ -586,11 +586,14 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
 
         /*
          * Function called once data is loaded from CSV.
+         *
          * Calls bubble chart function to display inside #vis div.
          */
         function display(error, data) {
             if (error) {
                 console.log(error);
+
+                return;
             }
 
             myBubbleChart('#bubbleChart', data);
@@ -659,18 +662,24 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
         // si es distinto de undefined (alguna categoria en particular) llama al
         // POST pasandole dicha categoria.
         var compare = $scope.searchPurchase.localeCompare('undefined');
-        if (compare == 0) {
-            d3
-                .json('/api/post-bubblechart', function(error, data) {
-                    display(error, data);
-                })
-                .header('Content-Type', 'application/json')
-                .send('POST', JSON.stringify({
-                    'valorini': fechaInicio,
-                    'valorfin': fechaFin,
-                    'category': ''
-                }));
 
+        // console.log($http);
+        // post(url: string, body: any, options?: RequestOptionsArgs) : Observable<Response>
+
+        if (compare == 0) {
+            $http
+                .post(
+                    '/api/post-bubblechart',
+                    JSON.stringify({
+                        'valorini': fechaInicio,
+                        'valorfin': fechaFin,
+                        'category': ''
+                    }),
+                    { headers: { 'Content-Type': 'application/json' } }
+                )
+                .then(function(data) {
+                    display(null, data['data']);
+                });
         } else {
             $http
                 .post('/api/post-categoryID', {
@@ -679,15 +688,20 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
                 .then(
                     function(response) {
                         $scope.bubbleCategory = response.data[0]._id;
-                        d3.json('/api/post-bubblechart', function(error, data) {
-                                display(error, data);
-                            })
-                            .header('Content-Type', 'application/json')
-                            .send('POST', JSON.stringify({
-                                'valorini': fechaInicio,
-                                'valorfin': fechaFin,
-                                'category': $scope.bubbleCategory
-                            }));
+
+                        $http
+                            .post(
+                                '/api/post-bubblechart',
+                                JSON.stringify({
+                                    'valorini': fechaInicio,
+                                    'valorfin': fechaFin,
+                                    'category': $scope.bubbleCategory
+                                }),
+                                { headers: { 'Content-Type': 'application/json' } }
+                            )
+                            .then(function(data) {
+                                display(null, data['data']);
+                            });
                     },
                     function(response) {
                         console.debug('Error:' + response);
