@@ -1,39 +1,20 @@
-<br />
+<div class="row">
+    <div class="col-md-6">
 
-<div class="divider"></div>
+        <h3 class="h3-responsive">Visualizaciones de presupuesto:</h3>
 
-<div>
-  <div class="article">
-    <h3>Visualizaciones de presupuesto:</h3>
+        <div id="donutchartPresupuesto" style="color: #000;"></div>
 
-    <div id="donutchartPresupuesto"></div>
+        <d3plus-treemap data="presupuesto_treemap_data" id="presupuesto_group_by" size="value" format="format" font="font" labels="labels" title="title" legend="legend">
 
-    <d3plus-treemap
-        data="presupuesto_treemap_data"
-        id="presupuesto_group_by"
-        size="value"
-        format="format"
-        font="font"
-        labels="labels"
-        title="title"
-        legend="legend" />
-  </div>
-</div>
+    </div>
 
-<div>
-  <div class="article">
-    <h3>Visualizaciones de ingresos:</h3>
+    <div class="col-md-6">
+        
+        <h3 class="h3-responsive">Visualizaciones de ingresos:</h3>
 
-    <div id="donutchartIngresos"></div>
+        <div id="donutchartIngresos" style="color: #000;"></div>
 
-    <d3plus-treemap
-        data="ingresos_treemap_data"
-        id="ingresos_group_by"
-        size="value"
-        format="format"
-        font="font"
-        labels="labels"
-        title="title"
-        legend="legend" />
-  </div>
+        <d3plus-treemap data="ingresos_treemap_data" id="ingresos_group_by" size="value" format="format" font="font" labels="labels" title="title" legend="legend">
+    </div>
 </div>

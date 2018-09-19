@@ -1,105 +1,106 @@
+
 <div class="general-data" ng-cloak>
-  <div class="row">
-    <div class="divider"></div>
-    <h5>Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio</h5>
-    <p class="text">
-      Puedes conocer los gastos del municipio en un período determinado. Tienes
-      que seleccionar el rango de fechas y filtrar. Los datos se muestran en
-      una fecha con la descripción del monto total de compras, la cantidad de
-      proveedores y la cantidad de órdenes de compra.
-    </p>
-  </div>
-
-  <div class="row">
-    <form ng-submit="submit()" data-ng-init="submit()">
-      <div class="col s12 m4" style="text-align:left;">
-        <label for="generalFechaInicio">Desde</label>
-
-        <!-- Docs here: http://krescruz.github.io/angular-materialize/#input-date -->
-        <input input-date
-          id="generalFechaInicio"
-          ng-model="generalFechaInicio"
-          type="text"
-          max="{{ generalFechaInicioMaxDate }}"
-          min="{{ fechaInicioDatos }}"
-          format="dd/mm/yyyy"
-          first-day="0"
-          name="created"
-          disable="disable"
-          today="today"
-          clear="clear"
-          close="close"
-          container=""
-          select-years="20"
-          select-months="true"
-          months-full="{{ month }}"
-          months-short="{{ monthShort }}"
-          weekdays-full="{{ weekdaysFull }}"
-          weekdays-short="{{ weekdaysShort }}"
-          weekdays-letter="{{ weekdaysLetter }}"
-        />
-      </div>
-
-      <div class="col s12 m4" style="text-align:left;">
-        <label for="generalFechaFin">Hasta</label>
-
-        <input input-date
-          id="generalFechaFin"
-          ng-model="generalFechaFin"
-          type="text"
-          max="{{ generalFechaFinMaxDate }}"
-          min="{{ fechaInicioDatos }}"
-          format="dd/mm/yyyy"
-          first-day="0"
-          name="created"
-          disable="disable"
-          today="today"
-          clear="clear"
-          close="close"
-          container=""
-          select-years="20"
-          select-months="true"
-          months-full="{{ month }}"
-          months-short="{{ monthShort }}"
-          weekdays-full="{{ weekdaysFull }}"
-          weekdays-short="{{ weekdaysShort }}"
-          weekdays-letter="{{ weekdaysLetter }}"
-        />
-      </div>
-
-      <div class="col s12 m4">
-        <button
-          type="submit"
-          class="waves-effect green lighten-1 waves-light btn"
-        >
-          <i class="material-icons left">search</i>Filtrar
-        </button>
-      </div>
-    </form>
-  </div>
-
-  <div class="row numbers">
-    <div class="col s12 m4 border-right">
-      <p>TOTAL DE ORDENES DE COMPRA POR<br><br><br><span>
-       <h3>{{totalimport.import | currency}}</h3>
-      </span></p>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <!-- <div class="divider"></div> -->
+      <h2 class="h2-responsive text-center">Actualmente la Municipalidad de Concepción del Uruguay informa en su sitio</h2>
+      
+      <p class="lead text-center">Puedes conocer los gastos del municipio en un período determinado. Tienes que seleccionar el rango de fechas y filtrar.
+      Los datos se muestran en una fecha con la descripción del monto total de compras, la cantidad de proveedores y la cantidad de órdenes de compra.</p>
     </div>
+  
+    <div class="row justify-content-md-center">
+      <form ng-submit="submit()" data-ng-init="submit()">
+        <div class="col-md-12">
 
-    <div class="col s12 m4 border-right">
-      <p>CANTIDAD DE PROVEEDORES<br><br><br><span>
-      <h1>{{totalproviders.length}}</h1>
-      </span></p>
-    </div>
+          <div style="padding:10px; float:left;">
+            <label for="generalFechaInicio" class="white-text">Desde</label>
 
-    <div class="col s12 m4">
-      <p>CANTIDAD DE ORDENES DE COMPRAS<br><br><br><span>
-        <h1>{{totalorders}}</h1>
-      </span></p>
+            <!-- Docs here: http://krescruz.github.io/angular-materialize/#input-date -->
+            <input input-date
+              id="generalFechaInicio"
+              ng-model="generalFechaInicio"
+              type="text"
+              max="{{ generalFechaInicioMaxDate }}"
+              min="{{ fechaInicioDatos }}"
+              format="dd/mm/yyyy"
+              first-day="0"
+              name="created"
+              disable="disable"
+              today="today"
+              clear="clear"
+              close="close"
+              container=""
+              select-years="20"
+              select-months="true"
+              months-full="{{ month }}"
+              months-short="{{ monthShort }}"
+              weekdays-full="{{ weekdaysFull }}"
+              weekdays-short="{{ weekdaysShort }}"
+              weekdays-letter="{{ weekdaysLetter }}"
+            />
+
+          </div>
+
+          <div style="padding:10px; float:left;">
+            <label for="generalFechaFin" class="white-text">Hasta</label>
+
+            <input input-date
+              id="generalFechaFin"
+              ng-model="generalFechaFin"
+              type="text"
+              max="{{ generalFechaFinMaxDate }}"
+              min="{{ fechaInicioDatos }}"
+              format="dd/mm/yyyy"
+              first-day="0"
+              name="created"
+              disable="disable"
+              today="today"
+              clear="clear"
+              close="close"
+              container=""
+              select-years="20"
+              select-months="true"
+              months-full="{{ month }}"
+              months-short="{{ monthShort }}"
+              weekdays-full="{{ weekdaysFull }}"
+              weekdays-short="{{ weekdaysShort }}"
+              weekdays-letter="{{ weekdaysLetter }}"
+            />
+          </div>
+
+          <div style="padding:10px; float:left;">
+            <button type="submit" class="waves-effect orange lighten-1 waves-light btn btn-large">
+              <i class="fas fa-filter"></i> Filtrar
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row justify-content-md-center">
+    <div class="col-md-3" style="padding:30px; background-color:#FFF; color:#000; margin:10px;">
+      <center><i class="fas fa-file-alt fa-4x" style="color:#606060; margin-bottom:10px;"></i></center>
+      <p class="lead text-center">TOTAL DE ORDENES DE COMPRA POR</p>
+      <h3 class="h3-responsive text-center">{{totalimport.import | currency}}</h3>
+    </div>
+
+    <div class="col-md-3" style="padding:30px; background-color:#FFF; color:#000; margin:10px;">
+      <center><i class="fas fa-dolly fa-4x" style="color:#606060; margin-bottom:10px;"></i></center>
+      <p class="lead text-center">CANTIDAD DE PROVEEDORES</p>
+      <h3 class="h3-responsive text-center">{{totalproviders.length}}</h3>
+    </div>
+
+    <div class="col-md-3" style="padding:30px; background-color:#FFF; color:#000; margin:10px;">
+      <center><i class="fas fa-clipboard-list fa-4x" style="color:#606060; margin-bottom:10px;"></i></center>
+      <p class="lead text-center">CANTIDAD DE ORDENES DE COMPRAS</p>
+      <h3 class="h3-responsive text-center">{{totalorders}}</h3>
+    </div>
+  </div>
+
+  <!-- <div class="row">
     <div class="col s12 m8"></div>
     <div class="col s12 m4"></div>
-  </div>
+  </div> -->
 </div>

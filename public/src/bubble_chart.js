@@ -172,13 +172,13 @@ function bubbleChart() {
       //.append('svg')
       //.attr('width', width)
       //.attr('height', height);
-      .classed("svg-container", true) //container class to make it responsive
+      .classed("svg-container", false) //container class to make it responsive
       .append("svg")
       //responsive SVG needs these 2 attributes and no width and height attr
       .attr("preserveAspectRatio", "xMidYMid meet")
-      .attr("viewBox", "0 0 1200 800")
+      .attr("viewBox", "500 200 600 1900") //0 0 1200 800
       //class to make it responsive
-       .classed("svg-content-responsive", true);
+       .classed("svg-content-responsive", false);
 
     // Bind nodes data to what will become DOM elements to represent them.
     bubbles = svg.selectAll('.bubble')

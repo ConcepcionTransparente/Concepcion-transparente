@@ -47,7 +47,7 @@
               weekdays-letter="{{ weekdaysLetter }}"
             />
 
-                <button type="submit" class="waves-effect  green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
+                <button type="submit" class="waves-effect indigo lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
             </form>
 
       <table ng-cloak>
@@ -73,7 +73,7 @@
 
 
 
-    <div class="col s12 m6">
+    <div class="col-md-12">
       <h3>Contrataciones por mes: </h3>
       <form ng-submit="submitMonth()" data-ng-init="submitMonth()">
 
@@ -128,7 +128,7 @@
   <h3>Contratos de obra pública y servicios para el proveedor</h3>
   <form>
     <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
-    <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv" class="waves-effect lime  lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar
+    <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv" class="waves-effect indigo lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar
 </button>
 
   </form>
