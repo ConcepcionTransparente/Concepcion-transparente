@@ -727,8 +727,8 @@ dcuApp.controller('linechartController', ['$scope', '$http', function($scope, $h
 
     $scope.submit = function() {
 
-        var fechaInicio = new moment($scope.lineChartFechaInicio).toISOString();
-        var fechaFin = new moment($scope.lineChartFechaFin).toISOString();
+        var fechaInicio = new moment($scope.lineChartFechaInicio, 'DD/MM/YYYY').toISOString();
+        var fechaFin = new moment($scope.lineChartFechaFin, 'DD/MM/YYYY').toISOString();
 
         $http
             .post('/api/post-linechart', {
