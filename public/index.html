@@ -72,68 +72,71 @@
     <script src="/lib/c3/htdocs/js/c3.min.js"></script>
 
     <style type="text/css">
-    
-      .picker__close, .picker__today {
-        font-size: 1.1rem!important;
-        padding: 0 1rem!important;
-        color: #4a348e!important;
-      }
 
-      .picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted,
-      .picker__date-display {
-          background-color: #826acc!important;
-      }
+		[ng-cloak]{
+			display: none !important;
+		}
 
-      .picker__weekday-display {
-        background-color: #4a348e!important;
-      }
+		.picker__close, .picker__today {
+			font-size: 1.1rem!important;
+			padding: 0 1rem!important;
+			color: #4a348e!important;
+		}
 
-      .indigo {
-        background-color: #422f7f!important;
-      }
+		.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted,
+		.picker__date-display {
+			background-color: #826acc!important;
+		}
 
-      svg {
-        font-family: 'Open Sans'!important;
-      }
+		.picker__weekday-display {
+			background-color: #4a348e!important;
+		}
 
-      text, .c3-legend-item, .c3-tooltip th , .c3-tooltip td, g {
-        font-family: 'Open Sans'!important;
-      }
+		.indigo {
+			background-color: #422f7f!important;
+		}
 
-      circle.bubble {
-        fill: #653fe0!important;
-        stroke: #826acc!important;
-        stroke-width: 2px!important;
-      }
+		svg {
+			font-family: 'Open Sans'!important;
+		}
 
-      g.c3-chart-lines .c3-line {
-        stroke-width: 2.5px!important;
-      }
+		text, .c3-legend-item, .c3-tooltip th , .c3-tooltip td, g {
+			font-family: 'Open Sans'!important;
+		}
 
-      .barra-flotante {
-        float: left;
-        position: fixed;
-        left: 0;
-        top: 30%;
-        z-index: 100;
-        transition: .5s;
-      }
+		circle.bubble {
+			fill: #653fe0!important;
+			stroke: #826acc!important;
+			stroke-width: 2px!important;
+		}
 
-      .btn-ayuda {
-        background-color: #c5c5c5;
-        padding: 20px;
-        transition: .5s;
-      }
+		g.c3-chart-lines .c3-line {
+			stroke-width: 2.5px!important;
+		}
 
-      .btn-ayuda:hover {
-          padding-left: 40px;
-      }
+		.barra-flotante {
+			float: left;
+			position: fixed;
+			left: 0;
+			top: 30%;
+			z-index: 100;
+			transition: .5s;
+		}
 
-      @media(max-width: 700px) {
-        .barra-flotante {
-          
-        }
-      }
+		.btn-ayuda {
+			background-color: #c5c5c5;
+			padding: 20px;
+			transition: .5s;
+		}
+
+		.btn-ayuda:hover {
+			padding-left: 40px;
+		}
+
+		@media(max-width: 700px) {
+			.barra-flotante {
+			}
+		}
 
   /* tr:nth-child(even){background-color: #4929b0!important;} */
     </style>
@@ -189,25 +192,25 @@
       </div>
     </section>
 
-    <section class="wow animated fadeInUpBig" style="background-color:#653fe0; color:#FFF; padding-top: 80px; padding-bottom: 80px;">
+    <section ng-cloak class="wow animated fadeInUpBig" style="background-color:#653fe0; color:#FFF; padding-top: 80px; padding-bottom: 80px;">
       <div class="container">
         <div class="row">
           <!-- Actualimente la Municipalidad de Concepción del Uruguay informa en su sitio -->
-          <div ng-cloak ui-view="General" class="col-md-12" autoscroll="false"></div>
+          <div ui-view="General" class="col-md-12" autoscroll="false"></div>
         </div>
       </div>
     </section>
 
-    <!-- <section class="animated fadeInUpBig" style="background-color: #eee; color: #000; padding-top: 80px; padding-bottom: 80px;">
+    <section ng-cloak class="animated fadeInUpBig" style="background-color: #eee; color: #000; padding-top: 80px; padding-bottom: 80px;">
         <div class="container">
           <div class="row">
-            Visualizaciones de presupuesto actual
+          	<!-- Presupuesto actual -->
             <div ui-view="VisualizacionesPresupuesto" class="col-md-12" autoscroll="false"></div>
           </div>
         </div>
-    </section> -->
+    </section>
 
-    <section class="wow animated fadeInUpBig" style="background-color:#d2d2d2; color:#000; padding-top: 20px; padding-bottom: 80px;">
+    <section ng-cloak class="wow animated fadeInUpBig" style="background-color:#d2d2d2; color:#000; padding-top: 20px; padding-bottom: 80px;">
         <div class="container">
           <div class="row">
             <!-- Pago a proveedores -->
@@ -216,7 +219,7 @@
         </div>
     </section>
 
-    <section class="wow animated fadeInUpBig" style="background-color: #eee; color: #000; padding-top: 20px; padding-bottom: 80px;">
+    <section ng-cloak class="wow animated fadeInUpBig" style="background-color: #eee; color: #000; padding-top: 20px; padding-bottom: 80px;">
         <div class="container">
           <div class="row">
             <!-- Ranking de proveedores -->
@@ -225,7 +228,7 @@
         </div>
     </section>
 
-    <section class="wow animated fadeInUpBig" style="background-color:#d2d2d2; color:#000; padding-top: 20px; padding-bottom: 80px;">
+    <section ng-cloak class="wow animated fadeInUpBig" style="background-color:#d2d2d2; color:#000; padding-top: 20px; padding-bottom: 80px;">
         <div class="container">
           <div class="row">
             <!-- Ranking de Óbra pública -->
@@ -238,7 +241,7 @@
         </div>
     </section>
 
-    <section class="wow animated fadeInUpBig" style="background-color:#653fe0; color:#FFF; padding-top: 20px; padding-bottom: 80px;">
+    <section ng-cloak class="wow animated fadeInUpBig" style="background-color:#653fe0; color:#FFF; padding-top: 20px; padding-bottom: 80px;">
         <div class="container">
           <div class="row">
             <!-- Evolución del gasto en proveedores -->
@@ -247,15 +250,71 @@
         </div>
     </section>
 
+    <section id="proyectBy" style="background-color: #3e3e3e; padding: 20px 0;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <center>
+            <br>
+            <a href="http://www.datosconcepcion.com.ar">
+              <img class="img-responsive" src="https://www.datosconcepcion.com.ar/blog/wp-content/uploads/2014/09/Datos-Concepcion-Curvas.png" width="100">
+              <h2 style="color: #FFF;">Un proyecto de Datos Concepción</h2>
+            </a>
+
+            <br>
+            <a href="https://www.theengineroom.org/" target="_blank">
+              <b style="color: #FFF;">Mentoring by</b><br>
+              <img src="https://www.theengineroom.org/wp-content/themes/theengineroom/img/logo-2.png" width="50">
+            </a>
+            </center>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apoyoDe" style="background-color: #b1b1b1; padding: 45px 0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <br>
+
+            <p style="color: #000;"><b>Argentina – Latam</b><br>
+              <a style="color: #000;" href="https://github.com/ConcepcionTransparente" target="_blank" >
+              <b>Reutilizá nuestro proyecto <i class="fab fa-github"></i></a>, estamos para ayudarte.</b>
+            </p>
+
+            <div id="redes-sociales" style="color: #000;">  
+              <a href="https://www.facebook.com/datosconcepcion22" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+              <a href="https://twitter.com/dataconcepcion" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="https://www.instagram.com/datos.concepcion/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <a href="http://www.redciudadana.org/" target="_blank">
+              <img class="img-responsive" src="http://redciudadana.org/wp-content/uploads/2018/05/red-logo-01.png">
+              <p style="color: #000;">Con el apoyo de <b>Red Ciudadana</b></p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <!-- Ventana Modal -->
       <div class="modal fade" id="ayuda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-dialog modal-md" role="document">
+
+              <b>Cerrar</b>
 
               <!--Content-->
               <div class="modal-content">
                 <h3 class="h3-responsive">¿Qué puedo hacer?</h3>
-
+                  
+                  <!--Body-->
+                  <div class="modal-body mb-0 p-0">
                       <p class="leads">
                         Los usuarios pueden encontrar información pública de los gastos municipales.
                         Te invitamos a explorarlo para conocer más sobre el manejo de los fondos
@@ -263,17 +322,15 @@
                         la búsqueda de la información. Los datos a su vez son mostrados con
                         diferentes gráficos, para favorecer una mejor comprensión.
                       </p>
-                      
+
                       <p class="leads">Este proyecto de <a href="http://www.datosconcepcion.com.ar/" target="_blank">Datos
                         Concepción</a> busca dotar a la ciudadanía de una herramienta de acceso
                         público para ejercer el control de las políticas públicas a través del
                         detalle de gastos y contrataciones oficiales que publica el Municipio.
                       </p>
-                  <!--Body
-                  <div class="modal-body mb-0 p-0">
-                      
-                  </div>-->
+                  </div>
               </div>
+
           </div>
       </div>
     </footer>
