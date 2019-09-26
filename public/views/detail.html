@@ -7,7 +7,7 @@
     <div class="col s12 m6">
       <h3>Contrataciones por rubro: </h3>
       <form ng-submit="submitCategory()" data-ng-init="submitCategory()">
-            <label for="inputCreated">Desde</label>
+            <label for="inputCreated">Desde
             <input input-date
                 type="text"
                 name="created"
@@ -24,10 +24,10 @@
                 months-short="{{ monthShort }}"
                 weekdays-full="{{ weekdaysFull }}"
                 weekdays-short="{{ weekdaysShort }}"
-                weekdays-letter="{{ weekdaysLetter }}"/>
+                weekdays-letter="{{ weekdaysLetter }}"/></label>
 
 
-          <label for="inputCreated">Hasta</label>
+          <label for="inputCreated">Hasta
           <input input-date
               type="text"
               name="created"
@@ -45,7 +45,7 @@
               weekdays-full="{{ weekdaysFull }}"
               weekdays-short="{{ weekdaysShort }}"
               weekdays-letter="{{ weekdaysLetter }}"
-            />
+            /></label>
 
                 <button type="submit" class="waves-effect indigo lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
             </form>
@@ -76,28 +76,28 @@
     <div class="col-md-12">
       <h3>Contrataciones por mes: </h3>
       <form ng-submit="submitMonth()" data-ng-init="submitMonth()">
+          <label for="inputCreated">Año
+          <input input-date
+              type="text"
+              name="created"
+              id="inputCreated"
+              ng-model="monthIni"
+              container=""
+              format="mm/dd/yyyy"
+              disable="disable"
+              today="Hoy"
+              first-day="1"
+              clear="Limpiar"
+              close="Cerrar"
+               months-full="{{ month }}"
+              months-short="{{ monthShort }}"
+              weekdays-full="{{ weekdaysFull }}"
+              weekdays-short="{{ weekdaysShort }}"
+              weekdays-letter="{{ weekdaysLetter }}"/>
+          </label>
 
-          <label for="inputCreated">Año</label>
-    <input input-date
-        type="text"
-        name="created"
-        id="inputCreated"
-        ng-model="monthIni"
-        container=""
-        format="mm/dd/yyyy"
-        disable="disable"
-        today="Hoy"
-        first-day="1"
-        clear="Limpiar"
-        close="Cerrar"
-         months-full="{{ month }}"
-        months-short="{{ monthShort }}"
-        weekdays-full="{{ weekdaysFull }}"
-        weekdays-short="{{ weekdaysShort }}"
-        weekdays-letter="{{ weekdaysLetter }}"/>
 
-
-          <button type="submit" class="waves-effect  green lighten-1 waves-light btn"><i class="material-icons left">search</i>Filtrar</button>
+          <button type="submit" class="waves-effect  green lighten-1 waves-light btn"><i class="material-icons left"></i> Filtrar</button>
 
       </form>
 
@@ -121,34 +121,37 @@
   <br>
 
   <div class="divider"></div><br>
-  <h3>Evolución del gasto: </h3>
-  <div id="lineschart-detail" ></div>
-  <br><div class="divider"></div>
-  <br>
-  <h3>Contratos de obra pública y servicios para el proveedor</h3>
-  <form>
-    <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
-    <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv" class="waves-effect indigo lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar
-</button>
+    
+    <h3>Evolución del gasto: </h3>
+    <div id="lineschart-detail"></div>
+    <br>
+    <div class="divider"></div>
+    <br>
+    <h3>Contratos de obra pública y servicios para el proveedor</h3>
+    <form>
+      <input type="text" placeholder="Filtrar Categoria / Importe / Año" ng-model="searchPurchase">
+      <button type="button" ng-csv="detail" csv-header="getHeader()" filename="detalle.csv" class="waves-effect indigo lighten-1 waves-light btn"> <i class="fa fa-download material-icons left" aria-hidden="true"></i>Exportar</button>
+    </form>
 
-  </form>
-  <table>
-    <thead>
-      <th>FECHA</th>
-      <th>REPARTICIÓN</th>
-      <th>PROVEEDOR</th>
-      <th>IMPORTE</th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="x in detail | filter:searchPurchase | limitTo: paginationLimit()">
-        <td>{{ x.fecha | date:'MM/yyyy' }}</td>
-        <td>{{ x.reparticion }}</td>
-        <td>{{ x.nombre }}</td>
-        <td>{{x.importe | currency}}</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="button-div">
-    <button class="light-green lighten-3 show-more-btn waves-effect  light-green lighten-3 waves-light btn center-button" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
-  </div>
+    <table>
+      <thead>
+        <th>FECHA</th>
+        <th>REPARTICIÓN</th>
+        <th>PROVEEDOR</th>
+        <th>IMPORTE</th>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="x in detail | filter:searchPurchase | limitTo: paginationLimit()">
+          <td>{{ x.fecha | date:'MM/yyyy' }}</td>
+          <td>{{ x.reparticion }}</td>
+          <td>{{ x.nombre }}</td>
+          <td>{{x.importe | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="button-div">
+      <button class="light-green lighten-3 show-more-btn waves-effect  light-green lighten-3 waves-light btn center-button" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()"> <i class="fa fa-ellipsis-h material-icons left" aria-hidden="true"></i>Ver más</button>
+    </div>
 </div>

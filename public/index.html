@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="dcuApp">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <title>Concepción Transparente</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Concepción Transparente</title>
-
-    <meta itemprop="name" content="Concepción Transparente">
-    <meta itemprop="description" content="Detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay. ">
-    <meta itemprop="image" content="https://dcu.herokuapp.com/main.png">
-    <meta name="keywords" content="argentina, polticos, cargos">
-    <meta name="robots" content="Index, Follow">
-    <meta name="revisit-after" content="4 days">
-    <link rel="shortcut icon" href="favicon.ico"  type="image/x-icon">
+    <!-- Contenido estructurado -->
     <meta property="og:url" content="https://dcu.herokuapp.com">
     <meta property="og:image" content="https://dcu.herokuapp.com/main.png">
     <meta property="og:description" content="Concepción Transparente es un detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay.">
     <meta property="og:title" content="Concepción Transparente">
 
-    <!-- OG Twitter -->
+    <!-- Open Graph Tw -->
     <meta name="twitter:card" content="player">
     <meta name="twitter:site" content="@DataConcepcion">
     <meta name="twitter:creator" content="@DataConcepcion">
@@ -30,310 +25,225 @@
     <meta name="twitter:player:height" content="450">
     <meta name="twitter:player:width" content="438">
 
+    <!-- SEO e INDEXADO -->
+    <meta itemprop="name" content="Concepción Transparente">
+    <meta itemprop="description" content="Detalle de gastos, compras, proveedores, contrataciones y otras modalidades que demanda la administración de los dineros públicos de la Municipalidad de Concepción del Uruguay. ">
+    <meta itemprop="image" content="https://dcu.herokuapp.com/main.png">
+    <meta name="keywords" content="argentina, polticos, cargos">
+    <meta name="robots" content="Index, Follow">
+    <meta name="revisit-after" content="4 days">
 
-    <!-- CSS  -->
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <!-- CSS -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css" media="screen,projection"/>
-
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-
-
-    <!-- <link type="text/css" rel="stylesheet" href="../css/index.css" /> -->
-
+    <!-- Datapicker custom -->
+    <link rel="stylesheet" type="text/css" href="custom-datapicker-materialize.css">
+    
+    <!-- CSS Buble chart -->
     <link type="text/css" rel="stylesheet" href="../css/bubble_chart.css">
 
-    <!-- MDB 4.5.4 -->
-      <!-- Bootstrap core CSS  -->
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-
-      <!-- Material Design Bootstrap  -->
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
-
-      <!-- Bootstrap core JavaScript -->
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <!-- /// MDB -->
-
-    <!-- Load c3.css -->
-    <link href="/lib/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
+    <!-- JS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
 
     <!-- Load d3.js and c3.js -->
     <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
     <script src="../lib/d3.js"></script>
-
     <script src="/lib/c3/htdocs/js/c3.min.js"></script>
+    <!-- Load c3.css -->
+    <link href="/lib/c3/htdocs/css/c3.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="menu-flotante.css">
 
     <style type="text/css">
-
-		[ng-cloak]{
-			display: none !important;
-		}
-
-		.picker__close, .picker__today {
-			font-size: 1.1rem!important;
-			padding: 0 1rem!important;
-			color: #4a348e!important;
-		}
-
-		.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted,
-		.picker__date-display {
-			background-color: #826acc!important;
-		}
-
-		.picker__weekday-display {
-			background-color: #4a348e!important;
-		}
-
-		.indigo {
-			background-color: #422f7f!important;
-		}
-
-		svg {
-			font-family: 'Open Sans'!important;
-		}
-
-		text, .c3-legend-item, .c3-tooltip th , .c3-tooltip td, g {
-			font-family: 'Open Sans'!important;
-		}
-
-		circle.bubble {
-			fill: #653fe0!important;
-			stroke: #826acc!important;
-			stroke-width: 2px!important;
-		}
-
-		g.c3-chart-lines .c3-line {
-			stroke-width: 2.5px!important;
-		}
-
-		.barra-flotante {
-			float: left;
-			position: fixed;
-			left: 0;
-			top: 30%;
-			z-index: 100;
-			transition: .5s;
-		}
-
-		.btn-ayuda {
-			background-color: #c5c5c5;
-			padding: 20px;
-			transition: .5s;
-		}
-
-		.btn-ayuda:hover {
-			padding-left: 40px;
-		}
-
-		@media(max-width: 700px) {
-			.barra-flotante {
-			}
-		}
-
-  /* tr:nth-child(even){background-color: #4929b0!important;} */
+        .leads {
+            font-size: 17px;
+        }
     </style>
 
-  </head>
+</head>
 
-  <body>
-    <div class="barra-flotante wow animated fadeInLeft" data-wow-delay="1s">
-      <!-- Boton que trae ventana Modal -->
-      <a href="" data-toggle="modal" data-target="#ayuda" aria-hidden="true">
-        <div class="btn-ayuda">
-          <i class="far fa-question-circle" style="color: #404040; font-size: 2em;"></i>
+    <header>
+    <!-- MENU LATERAL -->
+    <div class="barra-flotante wow animated fadeInLeft sticky-content" data-wow-delay="3s">
+        <div id="btn-lateral1">
+            <a href="#inicio">
+                <div class="d-flex justify-content-end">                
+                    <span class="tag">INICIO / PRESENTACIÓN</span>
+                    <i class="fas fa-bars" style="font-size: 2em;"></i>                
+                </div>
+            </a>
         </div>
-      </a>
+
+        <div id="btn-lateral2">
+            <a href="#general">
+            <div class="d-flex justify-content-end">
+                <span class="tag">RESUMEN GENERAL</span>
+                <i class="fas fa-search-dollar" style="font-size: 2em;"></i>
+            </div>
+            </a>
+        </div>
+
+        <div id="btn-lateral3">
+            <a href="#visualizacionPresupuesto">
+                <div class="d-flex justify-content-end">
+                    <span class="tag">PAGOS A PROVEEDORES</span>
+                    <i class="fas fa-dolly" style="font-size: 2em;"></i>
+                </div>
+            </a>
+        </div>
+
+        <div id="btn-lateral4">
+            <a href="#">
+                <div class="d-flex justify-content-end">
+                    <span class="tag">RANKING PROVEEDORES</span>
+                    <i class="fas fa-certificate" style="font-size: 2em;"></i>  
+                </div>
+            </a>
+        </div>
+
+        <div id="btn-lateral5">
+            <a href="#">
+                <div class="d-flex justify-content-end">
+                    <span class="tag">OBRA PÚBLICA</span>
+                    <i class="fas fa-hammer" style="font-size: 2em;"></i>
+                </div>
+            </a>
+        </div>
+
+        <div id="btn-lateral6">
+            <a href="#">
+                <div class="d-flex justify-content-end">
+                    <span class="tag">LISTADO DE PROVEEDORES</span>
+                    <i class="fas fa-clipboard-list" style="font-size: 2em;"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    </header>
+
+<body>
+	
+    <div class="container">
+        <div ng-cloak class="row" style="padding-top: 45px;">
+            <div id="inicio" class="col-md-8" style="display: flex;">
+                <div class="card wow fadeInUp" style="background-color: #500506;">
+                    <!-- <div class="card-header">
+                        <h2 class="h1-responsive text-white text-center">Portal de Transparencia</h2>
+                    </div> -->
+                    
+                    <div class="card-body text-center text-white" style="align-content: center; display: grid;">
+                        <h2 class="card-title">Concepción Transparente</h2>
+                        
+                        <!-- class card-text -->
+                        <p class="leads text-white">Bienvenidos al <strong>Portal de Transparencia </strong> de la ciudad de Concepción del Uruguay (Entre Ríos, Argentina). Este sitio web refleja de manera fácil y comprensible el detalle de gastos, compras, proveedores, contrataciones y otras modalidades a partir de la información <strong> oficial </strong> que publica la Municipalidad de Concepción del Uruguay.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" style="display: flex;">
+                <div class="card text-white bg-info wow fadeInRight" data-wow-delay="1s">
+                    <!-- <div class="card-body text-center"></div> -->
+
+                    <div class="view">
+                        <img src="https://i.ibb.co/wp3cbJX/bg-qh.jpg" class="img-fluid">
+                        
+                        <div class="mask flex-center waves-effect waves-light rgba-teal-strong">
+                            <a href="" data-toggle="modal" data-target="#ayuda" aria-hidden="true">
+
+                                <p class="text-white text-center" style="padding: 2px 10px;color: #000!important;background-color: #eee;margin-bottom: 10px;">
+                                    <script>
+                                    var meses = new Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+                                    var diasSemana = new Array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado');
+                                    var f = new Date();
+
+                                    document.write(
+                                    diasSemana[f.getDay()]
+                                    + ", "
+                                    + f.getDate()
+                                    + " de "
+                                    + meses[f.getMonth()]
+                                    + " de "
+                                    + f.getFullYear()
+                                    );
+                                    </script>
+                                </p>
+
+                            
+                                <h2 class="white-text text-center" style="font-weight: 600;">QUÉ PUEDO HACER?</h2>
+                            </a>
+                        </div>
+
+                        <!-- <a href="" data-toggle="modal" data-target="#ayuda" aria-hidden="true" class="waves-effect orange lighten-1 waves-light btn btn-large" style="width: 97%;">Info</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-cloak class="row">
+            
+            <!-- Actualimente la Municipalidad de Concepción del Uruguay informa en su sitio -->
+            <div id="general" ui-view="General" class="col-md-12 wow fadeInUp" data-wow-delay="1.5s" autoscroll="false" style="padding-top: 30px; padding-bottom: 30px;"></div>
+
+            <!-- Presupuesto actual -->
+            <div id="visualizacionPresupuesto" ui-view="VisualizacionesPresupuesto" data-wow-delay="1s" class="col-md-12" autoscroll="false" style="padding-top: 30px; padding-bottom: 30px;"></div>
+
+
+
+
+
+
+
+        </div>
     </div>
 
-    <section style="padding:10px 0px 1px 0px; background-color:#eee; color:#000;margin-bottom:25px;">
-      <p class="text-center">
-        <script>
-          var meses = new Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
-          var diasSemana = new Array('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado');
-          var f = new Date();
-
-          document.write(
-            diasSemana[f.getDay()]
-              + ", "
-              + f.getDate()
-              + " de "
-              + meses[f.getMonth()]
-              + " de "
-              + f.getFullYear()
-          );
-        </script>
-      </p>
-    </section>
 
 
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-              <h1 class="h1-responsive">Concepción Transparente</h1>
 
-              <p class="leads">
-                Bienvenidos al <strong>Portal de Transparencia </strong> de la ciudad
-                de Concepción del Uruguay (Entre Ríos, Argentina). Este sitio web refleja
-                de manera fácil y comprensible el detalle de gastos, compras, proveedores,
-                contrataciones y otras modalidades a partir de la información <strong>
-                oficial </strong> que publica la Municipalidad de Concepción del Uruguay.
-              </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section ng-cloak class="wow animated fadeInUpBig" style="background-color:#653fe0; color:#FFF; padding-top: 80px; padding-bottom: 80px;">
-      <div class="container">
-        <div class="row">
-          <!-- Actualimente la Municipalidad de Concepción del Uruguay informa en su sitio -->
-          <div ui-view="General" class="col-md-12" autoscroll="false"></div>
-        </div>
-      </div>
-    </section>
 
-    <section ng-cloak class="animated fadeInUpBig" style="background-color: #eee; color: #000; padding-top: 80px; padding-bottom: 80px;">
-        <div class="container">
-          <div class="row">
-          	<!-- Presupuesto actual -->
-            <div ui-view="VisualizacionesPresupuesto" class="col-md-12" autoscroll="false"></div>
-          </div>
-        </div>
-    </section>
 
-    <section ng-cloak class="wow animated fadeInUpBig" style="background-color:#d2d2d2; color:#000; padding-top: 20px; padding-bottom: 80px;">
-        <div class="container">
-          <div class="row">
-            <!-- Pago a proveedores -->
-            <div ui-view="Bubblechart" class="col-md-12" autoscroll="false"></div>
-          </div>
-        </div>
-    </section>
-
-    <section ng-cloak class="wow animated fadeInUpBig" style="background-color: #eee; color: #000; padding-top: 20px; padding-bottom: 80px;">
-        <div class="container">
-          <div class="row">
-            <!-- Ranking de proveedores -->
-            <div ui-view="Ranking" class="col-md-12" autoscroll="false"></div>
-          </div>
-        </div>
-    </section>
-
-    <section ng-cloak class="wow animated fadeInUpBig" style="background-color:#d2d2d2; color:#000; padding-top: 20px; padding-bottom: 80px;">
-        <div class="container">
-          <div class="row">
-            <!-- Ranking de Óbra pública -->
-            <div ui-view="RankingObraPublica" class="col-md-12" autoscroll="false"></div>
-            <div ui-view="Providers" class="col-md-12" autoscroll="false"></div>
-            <div ui-view="Purchases" class="col-md-12" autoscroll="false"></div>
-
-            <div ui-view="Detail" class="col-md-12" autoscroll="false"></div>
-          </div>
-        </div>
-    </section>
-
-    <section ng-cloak class="wow animated fadeInUpBig" style="background-color:#653fe0; color:#FFF; padding-top: 20px; padding-bottom: 80px;">
-        <div class="container">
-          <div class="row">
-            <!-- Evolución del gasto en proveedores -->
-            <div ui-view="Linechart" class="col-md-12" autoscroll="false"></div>
-          </div>
-        </div>
-    </section>
-
-    <section id="proyectBy" style="background-color: #3e3e3e; padding: 20px 0;">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <center>
-            <br>
-            <a href="http://www.datosconcepcion.com.ar">
-              <img class="img-responsive" src="https://www.datosconcepcion.com.ar/blog/wp-content/uploads/2014/09/Datos-Concepcion-Curvas.png" width="100">
-              <h2 style="color: #FFF;">Un proyecto de Datos Concepción</h2>
-            </a>
-
-            <br>
-            <a href="https://www.theengineroom.org/" target="_blank">
-              <b style="color: #FFF;">Mentoring by</b><br>
-              <img src="https://www.theengineroom.org/wp-content/themes/theengineroom/img/logo-2.png" width="50">
-            </a>
-            </center>
-          </div>
-          <div class="col-md-4"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="apoyoDe" style="background-color: #b1b1b1; padding: 45px 0;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <br>
-
-            <p style="color: #000;"><b>Argentina – Latam</b><br>
-              <a style="color: #000;" href="https://github.com/ConcepcionTransparente" target="_blank" >
-              <b>Reutilizá nuestro proyecto <i class="fab fa-github"></i></a>, estamos para ayudarte.</b>
-            </p>
-
-            <div id="redes-sociales" style="color: #000;">  
-              <a href="https://www.facebook.com/datosconcepcion22" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-              <a href="https://twitter.com/dataconcepcion" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-              <a href="https://www.instagram.com/datos.concepcion/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <a href="http://www.redciudadana.org/" target="_blank">
-              <img class="img-responsive" src="http://redciudadana.org/wp-content/uploads/2018/05/red-logo-01.png">
-              <p style="color: #000;">Con el apoyo de <b>Red Ciudadana</b></p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <!-- Ventana Modal -->
-      <div class="modal fade" id="ayuda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-md" role="document">
-
-              <b>Cerrar</b>
-
-              <!--Content-->
-              <div class="modal-content">
+    <!-- Ventana Modal -->
+    <div class="modal fade" id="ayuda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md text-center" role="document">
+            <!-- <b>Cerrar</b> -->
+            <!--Content-->
+            <div class="modal-content" style="padding: 50px;">
                 <h3 class="h3-responsive">¿Qué puedo hacer?</h3>
-                  
-                  <!--Body-->
-                  <div class="modal-body mb-0 p-0">
-                      <p class="leads">
+                
+                <div class="modal-body mb-0 p-0">
+                    <p class="leads">
                         Los usuarios pueden encontrar información pública de los gastos municipales.
                         Te invitamos a explorarlo para conocer más sobre el manejo de los fondos
                         públicos de esta ciudad. Puedes utilizar diferentes filtros para facilitar
                         la búsqueda de la información. Los datos a su vez son mostrados con
                         diferentes gráficos, para favorecer una mejor comprensión.
-                      </p>
+                    </p>
 
-                      <p class="leads">Este proyecto de <a href="http://www.datosconcepcion.com.ar/" target="_blank">Datos
+                    <p class="leads">
+                        Este proyecto de <a href="http://www.datosconcepcion.com.ar/" target="_blank">Datos
                         Concepción</a> busca dotar a la ciudadanía de una herramienta de acceso
                         público para ejercer el control de las políticas públicas a través del
                         detalle de gastos y contrataciones oficiales que publica el Municipio.
-                      </p>
-                  </div>
-              </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-          </div>
-      </div>
-    </footer>
+
+    
 
     <!-- Angular and frontend -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script> 
@@ -372,6 +282,12 @@
       });
     </script>
 
+    <!-- WOW JS -->
+    <script src="https://wowjs.uk/dist/wow.min.js"></script>
+    <script>
+     new WOW().init();
+    </script>
+
     <!-- D3 and paint scripts -->
     <script src="../lib/d3.js"></script>
     <script src="../src/tooltip.js"></script>
@@ -379,5 +295,7 @@
     <script src="app.js"></script>
     <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
     <script src="bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
-  </body>
-</html>
+
+    -->
+</body>
+</html> 

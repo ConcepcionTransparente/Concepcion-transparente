@@ -273,7 +273,7 @@ dcuApp.controller('bubblechartController', ['$scope', '$http', function($scope, 
             // Nice looking colors - no reason to buck the trend
             var fillColor = d3.scale.ordinal()
                 .domain(['low', 'medium', 'high'])
-                .range(['#e8f5e9', '#2e7d32', '#66bb6a']);
+                .range(['#5c6bc0', '#5c6bc0', '#5c6bc0']);
 
             // Sizes bubbles based on their area instead of raw radius
             var radiusScale = d3.scale.pow()
@@ -1337,6 +1337,11 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
             columns: $scope.reducedData,
             type : 'donut'
         },
+
+        color: {
+            pattern: ['#9c383a', '#76191b', '#500507', '#2f0001', '#9e7b38','#775719','#2c4069','#172950','#091736','#074104','#32802d','#186015','#500506','#500506']
+        },
+	   
         donut: {
             title: 'Presupuesto 2018: ' + d3.format('$,.2f')($scope.totalPresupuesto)
         },
@@ -1457,6 +1462,9 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
             columns: $scope.ingresosFirstLevelReducedData,
             type : 'donut'
         },
+	    color: {
+	        pattern: ['#500506', '#85393a', '#b86668']
+	    },
         donut: {
             title: 'Ingresos 2018: ' + d3.format('$,.2f')($scope.ingresosFirstLevelReducedData)
         },
@@ -1469,7 +1477,8 @@ dcuApp.controller('visualizacionesPresupuestoController', ['$scope', function($s
         },
         // TODO: Estoy no ayuda al responsiveness al ser un alto fijo
         size: {
-            height: 600
+            height: 400,
+            width: 400
         }
     });
 

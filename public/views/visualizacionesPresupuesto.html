@@ -1,20 +1,39 @@
 <div class="row">
     <div class="col-md-6">
 
-        <h3 class="h3-responsive">Visualizaciones de presupuesto:</h3>
+        <div class="card wow animated fadeInLeft" style="padding-top: 30px;">
 
-        <div id="donutchartPresupuesto" style="color: #000;"></div>
+            <div class="card-body text-center">
+              <h4 class="card-title">Visualizaciones de presupuesto:</h4>
 
-        <d3plus-treemap data="presupuesto_treemap_data" id="presupuesto_group_by" size="value" format="format" font="font" labels="labels" title="title" legend="legend">
+              <div id="donutchartPresupuesto" style="color: #000;"></div>
+              <d3plus-treemap data="presupuesto_treemap_data" id="presupuesto_group_by" size="value" format="format" font="font" labels="labels" title="title" legend="legend">
+            </div>
+            <!-- <h3 class="h3-responsive"></h3> -->
+
+        </div>
 
     </div>
 
     <div class="col-md-6">
-        
-        <h3 class="h3-responsive">Visualizaciones de ingresos:</h3>
+        <div class="card wow animated fadeInRight" style="padding-top: 30px;">
+            <div class="card-body text-center">
+                <h4 class="card-title">Visualizaciones de ingresos:</h4>
+                <!-- <h3 class="h3-responsive">V</h3> -->
 
-        <div id="donutchartIngresos" style="color: #000;"></div>
+                <div id="donutchartIngresos" style="color: #000;"></div>
 
-        <d3plus-treemap data="ingresos_treemap_data" id="ingresos_group_by" size="value" format="format" font="font" labels="labels" title="title" legend="legend">
+                <d3plus-treemap
+                    data="ingresos_treemap_data"
+                    id="ingresos_group_by"
+                    size="value"
+                    format="format"
+                    font="font"
+                    labels="labels"
+                    title="title"
+                    legend="legend">
+                </d3plus-treemap>
+            </div>
+        </div>
     </div>
 </div>

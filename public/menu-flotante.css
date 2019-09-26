@@ -1,0 +1,67 @@
+.barra-flotante {
+    float: left;
+    position: fixed;
+    left: 5px;
+    top: 0%;
+    z-index: 100;
+    transition: .5s;
+}
+
+#btn-lateral1,#btn-lateral2,#btn-lateral3,#btn-lateral4,#btn-lateral5,#btn-lateral6 {
+    background-color: #c5c5c5;
+    padding: 20px;
+    transition: 3s;
+    left: -225px!important;
+    position: relative;
+    border-bottom: 1px solid #eeeeee8c;
+}
+
+#btn-lateral1:hover,#btn-lateral2:hover, #btn-lateral3:hover,#btn-lateral4:hover,#btn-lateral5:hover,#btn-lateral6:hover {
+    padding-left: 275px;
+    background-color: #500506;
+    color: #FFF;
+    transition: .8s
+}
+
+#btn-lateral1:hover > a {
+    color: #FFF!important;
+}
+
+#btn-lateral2:hover > a {
+    color: #FFF!important;
+}
+
+#btn-lateral3:hover > a {
+    color: #FFF!important;
+}
+
+#btn-lateral4:hover > a {
+    color: #FFF!important;
+}
+
+#btn-lateral5:hover > a {
+    color: #FFF!important;
+}
+
+#btn-lateral6:hover > a {
+    color: #FFF!important;
+}
+
+.barra-flotante > i,a {
+    color:  #404040!important;
+}
+
+.barra-flotante > a:hover {
+    color:  #FFF!important;
+}
+
+@media(max-width: 500px) {
+    .barra-flotante {
+        display: none;
+    }
+}
+
+.tag {
+    padding-right: 25px;
+    padding-top: 5px;
+}
